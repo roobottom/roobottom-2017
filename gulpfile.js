@@ -54,6 +54,13 @@ gulp.task('test_server',() => {
 //static pages
 gulp.task('html:pages',() => {
   gulp.src(opts.pages_folder)
+  .pipe($.if(src => {
+    if (path.basename(src.path) != 'index.html')
+      return true;
+  }, $.rename(src => {
+    src.dirname = src.basename + '/';
+    src.basename = 'index'
+  })))
   .pipe(renderPage())
   .pipe(gulp.dest(opts.publish_folder))
 });
