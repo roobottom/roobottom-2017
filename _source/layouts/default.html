@@ -1,3 +1,4 @@
+{% import "patterns/modules/m_navigation/m_navigation.html" as pattern %}
 <!doctype html>
 <html lang="en">
     <head>
@@ -7,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <h1>{{page.title}}</h1>
-        {{content|safe}}
+        {{pattern.m_navigation(site)}}
+        {% block content %}
+        {% endblock %}
     </body>
 </html>

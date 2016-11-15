@@ -1,14 +1,4 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Roobottom.com ni</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <h1>Welcome!</h1>
-        {% set name = 'bob' %}
-        <p>Hi {{name}}</p>
-    </body>
-</html>
+{% include "layouts/default.html" %}
+{% block content %}
+<h1>welcome home!</h1>
+{% endblock %}
