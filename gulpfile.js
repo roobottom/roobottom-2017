@@ -46,14 +46,22 @@ gulp.task('clean',() => {
 });
 
 /*
+process all posts
+*/
+gulp.task('posts:process', () => {
+  return gulp.src('./_source/posts/**/*.md')
+    .pipe($.fm({property: 'page', remove: true}))
+    .pipe(updatePostsObject())
+});
+
+/*
 render posts
 */
 
-gulp.task('posts', () => {
+gulp.task('posts', ['posts:process'], () => {
   return gulp.src('./_source/posts/**/*.md')
     .pipe($.fm({property: 'page', remove: true}))
     .pipe($.marked())
-    .pipe(updatePostsObject())
     .pipe(renderFileWithTemplate('./_source/templates/article.html'))
     .pipe($.rename((src)=> {
       src.dirname = 'articles/' + src.basename + '/';
@@ -74,6 +82,9 @@ gulp.task('archives', ['posts'], () => {
 var updatePostsObject = () => {
   let posts = [];
   return through.obj(function (file, enc, cb) {
+    let fileobj = path.parse(file.path);
+    file.page.id = fileobj.name;
+    file.page.category = fileobj.dir.split('/').slice(-1)[0];
     posts.push(file.page);
     this.push(file);
     cb();
@@ -83,8 +94,24 @@ var updatePostsObject = () => {
         return b.date - a.date;
     });
     for (let key in posts) {
-      console.log(posts[key].title)
-    }
+      let next = parseInt(key)-1;
+      let prev = parseInt(key)+1;
+      console.log(posts[key].title);
+      if(next in posts) {
+        posts[key].next = {};
+        posts[key].next.title = posts[next].title;
+        posts[key].next.id = posts[next].id;
+        posts[key].next.date = posts[next].date;
+        posts[key].next.category = posts[next].category;
+      }
+      if(prev in posts) {
+        posts[key].prev = {};
+        posts[key].prev.title = posts[prev].title;
+        posts[key].prev.id = posts[prev].id;
+        posts[key].prev.date = posts[prev].date;
+        posts[key].prev.category = posts[prev].category;
+      }
+    };
     console.log('bye!');
     site.posts = posts;
     cb();
@@ -93,6 +120,8 @@ var updatePostsObject = () => {
 
 var renderFileWithTemplate = (templateFile) => {
   return through.obj(function (file, enc, cb) {
+    let fileobj = path.parse(file.path);
+    file.page.id = fileobj.name;
     let data = {
         site: site,
         page: file.page,

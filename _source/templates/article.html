@@ -2,4 +2,22 @@
 {% block content %}
 <h1>{{page.title}}</h1>
 {{content|safe}}
+<nav class="m_prevNext">
+  {% for post in site.posts -%}
+    {% if post.id == page.id %}
+      {% if post.prev %}
+      <div class="m_prevNext__item m_prevNext__item--prev">
+        <p class="m_prevNext__label">&larr; Previous article</p>
+        <a class="m_prevNext__link" href="/{{post.prev.category}}/{{post.prev.id}}">{{post.prev.title}}</a>
+      </div>
+      {% endif %}
+      {% if post.next %}
+      <div class="m_prevNext__item m_prevNext__item--next">
+        <p class="m_prevNext__label">Next article &rarr;</p>
+        <a class="m_prevNext__link" href="/{{post.next.category}}/{{post.next.id}}">{{post.next.title}}</a>
+      </div>
+      {% endif %}
+    {% endif %}
+  {%- endfor %}
+</nav>
 {% endblock %}
