@@ -13,6 +13,7 @@ const _ = require('lodash');
 
 const updatePostsObject = require('./modules_backend/updatePostsObject');
 const renderFileWithTemplate = require('./modules_backend/renderFileWithTemplate');
+const processArchive = require('./modules_backend/processArchive');
 
 const $ = require('gulp-load-plugins')({
   rename: {
@@ -93,115 +94,14 @@ gulp.task('posts', ['posts:process'], () => {
 render archive pages
 */
 gulp.task('archives', ['posts'], () => {
-  return processArchive('articles',10)
+  return processArchive('articles',10,site)
   .pipe(renderFileWithTemplate('./_source/pages/articles.html',site))
   .pipe(gulp.dest('./docs'))
 });
 
 
 
-var processArchive = (basename, count) => {
 
-  var stream = through.obj(function(file, enc, cb) {
-		this.push(file);
-		cb();
-	});
-
-  if (site.posts)
-  {
-    var c     = 0;
-    var page  = 0;
-    var posts = [];
-
-    var pagination = [];
-    var pageCount = 0;
-
-    site.posts.forEach(function (post) {
-      if(c == count || c == 0) {
-
-        let fromID = site.posts.length - (pageCount * c);
-        let toID = site.posts.length - ((pageCount * c) + (count - 1));
-        if (toID <= 0) {toID = 1;}
-
-        let url;
-        if(pageCount == 0) {
-          url = '/' + basename;
-        } else {
-          url = '/' + basename + '/page-' + pageCount;
-        }
-
-        pagination.push({
-          page: pageCount+1,
-          items: count,
-          from: fromID,
-          to: toID,
-          url: url,
-          current: false
-        });
-        c=0;
-        pageCount++;
-      }
-      c++;
-    });
-
-
-    c=0;
-    site.posts.forEach(function (post) {
-      posts.push(post);
-      c++;
-
-      if (c == count) {
-
-        let outputPath;
-        if(page==0) {
-          outputPath = './' + basename + '/index.html';
-        } else {
-          outputPath = './' + basename + '/page-' + page + '/index.html';
-        }
-
-        var file = new gutil.File({
-          path: outputPath,
-          contents: new Buffer('')
-        });
-
-        pagination[page].current = true;
-        file.page = {
-          posts: posts,
-          pagination: pagination
-        };
-        stream.write(file);
-
-        //console.log(pagination);
-
-        pagination[page].current = false;
-        c = 0;
-        posts = [];
-        page++;
-
-      }
-    });
-
-    if (posts.length != 0) {
-
-      pagination.current = page + 1;
-
-      var file = new gutil.File({
-        path: './' + basename + '/page-' + page + '/index.html',
-        contents: new Buffer('')
-      });
-      file.page = {
-        posts: posts,
-        pagination: pagination
-        };
-      stream.write(file);
-    }
-  }
-
-  stream.end();
-  stream.emit("end");
-
-  return stream;
-}
 
 var renderSmartTags = () => {
 
