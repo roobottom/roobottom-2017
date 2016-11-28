@@ -1,4 +1,13 @@
 {% extends "layouts/default.html" %}
 {% block content %}
 <h1>Articles!</h1>
+{% for post in page.posts %}
+<h2>{{post.title}}</h2>
+{% endfor %}
+{{page.pagination|dump}}
+<ol>
+{% for page in page.pagination %}
+<li><a href="{{page.url}}">{{page.page}}</a></li>
+{% endfor %}
+</ol>
 {% endblock %}

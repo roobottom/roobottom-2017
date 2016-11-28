@@ -1,0 +1,2 @@
+{% import "./m_figure.html" as pattern %}
+{{ pattern.m_figure(images) }}
