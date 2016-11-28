@@ -2,52 +2,32 @@
 
 const gulp = require('gulp');
 const del = require('del');
-const updatePostsObject = require('./modules_backend/updatePostsObject');
-const renderFileWithTemplate = require('./modules_backend/renderFileWithTemplate');
-const processArchive = require('./modules_backend/processArchive');
-const renderSmartTags = require('./modules_backend/renderSmartTags');
 const $ = require('gulp-load-plugins')({
   rename: {
     'gulp-front-matter': 'fm'
   }
 });
 
-const site = {
-  name: 'Roobottom.com',
-  pages: [
-    {
-      url: '/',
-      title: 'Home'
-    },
-    {
-      url: '/articles',
-      title: 'Articles'
-    }
-  ]
-}
-const opts = {
-  publish_folder: './docs',
-  pages_folder: './_source/pages/**/*',
-  categories: [
-    {
-      name: 'articles',
-      source: './_source/posts/articles/*.md',
-      template: './_source/templates/article.html'
-    }
-  ]
-}
+const updatePostsObject = require('./modules_backend/updatePostsObject');
+const renderFileWithTemplate = require('./modules_backend/renderFileWithTemplate');
+const processArchive = require('./modules_backend/processArchive');
+const renderSmartTags = require('./modules_backend/renderSmartTags');
+
+const site = require('./site');
 
 gulp.task('clean',() => {
-  return del([opts.publish_folder]);
+  return del([site.publish_folder]);
 });
 
+
+
+/*
+patterns
+*/
 gulp.task('clean:patterns',()=>{
   return del('_source/patterns/patterns.html');
 })
 
-/*
-merge patterns
-*/
 gulp.task('patterns',['clean:patterns'],() => {
   gulp.src('./_source/patterns/**/*.html')
   .pipe($.concat('patterns.html'))
@@ -55,37 +35,37 @@ gulp.task('patterns',['clean:patterns'],() => {
 });
 
 /*
-process all posts
+Articles!
 */
 
-gulp.task('posts:process', () => {
-  return gulp.src('./_source/posts/**/*.md')
+
+gulp.task('clean:articles',() => {
+  return del(site.publish_folder + '/articles');
+});
+
+gulp.task('articles:process', ['clean:articles'], () => {
+  return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
     .pipe(updatePostsObject(site))
 });
 
-/*
-render posts
-*/
-
-gulp.task('posts', ['posts:process'], () => {
-  return gulp.src('./_source/posts/**/*.md')
+gulp.task('articles:render', ['articles:process'], () => {
+  return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
     .pipe($.marked())
     .pipe(renderSmartTags())
-    .pipe(renderFileWithTemplate('./_source/templates/article.html',site))
+    .pipe(renderFileWithTemplate(site.articles.template,site))
     .pipe($.rename((src)=> {
       src.dirname = 'articles/' + src.basename + '/';
       src.basename = 'index'
     }))
-    .pipe(gulp.dest(opts.publish_folder))
+    .pipe(gulp.dest(site.publish_folder))
 });
 
-/*
-render archive pages
-*/
-gulp.task('archives', ['posts'], () => {
+gulp.task('articles:archives', ['articles:render'], () => {
   return processArchive('articles',10,site)
-  .pipe(renderFileWithTemplate('./_source/pages/articles.html',site))
-  .pipe(gulp.dest('./docs'))
+  .pipe(renderFileWithTemplate(site.articles.template,site))
+  .pipe(gulp.dest(site.publish_folder))
 });
+
+gulp.task('articles',['articles:archives']);
