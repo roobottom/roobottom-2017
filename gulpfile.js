@@ -1,20 +1,11 @@
 'use strict';
 
 const gulp = require('gulp');
-const through = require('through2');
-const nunjucks = require('nunjucks');
-const nunjucks_env = new nunjucks.Environment(new nunjucks.FileSystemLoader('./_source'));
-
-const path = require('path');
 const del = require('del');
-const fs = require('fs');
-const gutil = require('gulp-util');
-const _ = require('lodash');
-
 const updatePostsObject = require('./modules_backend/updatePostsObject');
 const renderFileWithTemplate = require('./modules_backend/renderFileWithTemplate');
 const processArchive = require('./modules_backend/processArchive');
-
+const renderSmartTags = require('./modules_backend/renderSmartTags');
 const $ = require('gulp-load-plugins')({
   rename: {
     'gulp-front-matter': 'fm'
@@ -98,44 +89,3 @@ gulp.task('archives', ['posts'], () => {
   .pipe(renderFileWithTemplate('./_source/pages/articles.html',site))
   .pipe(gulp.dest('./docs'))
 });
-
-
-
-
-
-var renderSmartTags = () => {
-
-  var tags = ['gallery','figure']
-
-  return through.obj(function (file, enc, cb) {
-    for(var i in tags) {
-      var regexp = new RegExp('<p>\\s*\\(' + tags[i] + '([^\\)]+)?\\)\\s*<\\/p>','igm');
-      let match;
-      let contents = file.contents.toString();
-      while(match = regexp.exec(contents)) {
-        let tagOpts = getTagOptions(match[1]);
-        if(tags[i] == 'figure' || tags[i] == 'gallery') {
-          var figure_object = {"images":[]};
-          for(let i in file.page.images) {
-            if(file.page.images[i].set === tagOpts.set) {
-              figure_object["images"].push(file.page.images[i]);
-            }
-          };
-          let renderedTag = nunjucks_env.render('./patterns/modules/m_figure/m_figure.smartTag',figure_object);
-          file.contents = new Buffer(contents.replace(match[0],renderedTag), 'utf8');;
-        }
-      }
-    }
-    this.push(file);
-    cb();
-  });
-};
-
-var getTagOptions = function(match) {
-    var terms = [];
-    var items = _.trim(match).split(',');
-    for(var i in items) {
-        terms.push(items[i].split(':'));
-    }
-    return _.fromPairs(terms);
-};
