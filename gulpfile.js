@@ -12,6 +12,7 @@ const gutil = require('gulp-util');
 const _ = require('lodash');
 
 const updatePostsObject = require('./modules_backend/updatePostsObject');
+const renderFileWithTemplate = require('./modules_backend/renderFileWithTemplate');
 
 const $ = require('gulp-load-plugins')({
   rename: {
@@ -80,7 +81,7 @@ gulp.task('posts', ['posts:process'], () => {
     .pipe($.fm({property: 'page', remove: true}))
     .pipe($.marked())
     .pipe(renderSmartTags())
-    .pipe(renderFileWithTemplate('./_source/templates/article.html'))
+    .pipe(renderFileWithTemplate('./_source/templates/article.html',site))
     .pipe($.rename((src)=> {
       src.dirname = 'articles/' + src.basename + '/';
       src.basename = 'index'
@@ -93,29 +94,11 @@ render archive pages
 */
 gulp.task('archives', ['posts'], () => {
   return processArchive('articles',10)
-  .pipe(renderFileWithTemplate('./_source/pages/articles.html'))
+  .pipe(renderFileWithTemplate('./_source/pages/articles.html',site))
   .pipe(gulp.dest('./docs'))
 });
 
 
-
-var renderFileWithTemplate = (templateFile) => {
-  return through.obj(function (file, enc, cb) {
-    let fileobj = path.parse(file.path);
-    file.page.id = fileobj.name;
-    let data = {
-        site: site,
-        page: file.page,
-        content: file.contents.toString()
-    };
-    //choosing to open the file manually, and render the template as a string
-    //as nunjucks.render caches the file its passed, and the watch function doesn't work.
-    var wrapper = fs.readFileSync(path.join(__dirname, templateFile),{encoding:'utf8'});
-    file.contents = new Buffer(nunjucks_env.renderString(wrapper,data), 'utf8');
-    this.push(file);
-    cb();
-  });
-};
 
 var processArchive = (basename, count) => {
 
