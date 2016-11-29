@@ -7,6 +7,8 @@ const $ = require('gulp-load-plugins')({
     'gulp-front-matter': 'fm'
   }
 });
+const path = require('path');
+
 
 const updatePostsObject = require('./modules_backend/updatePostsObject');
 const renderFileWithTemplate = require('./modules_backend/renderFileWithTemplate');
@@ -29,7 +31,7 @@ gulp.task('clean:patterns',()=>{
 })
 
 gulp.task('patterns',['clean:patterns'],() => {
-  gulp.src('./_source/patterns/**/*.html')
+  return gulp.src('./_source/patterns/**/*.html')
   .pipe($.concat('patterns.html'))
   .pipe(gulp.dest('_source/patterns/'))
 });
@@ -37,8 +39,6 @@ gulp.task('patterns',['clean:patterns'],() => {
 /*
 Articles!
 */
-
-
 gulp.task('clean:articles',() => {
   return del(site.publish_folder + '/articles');
 });
@@ -68,4 +68,28 @@ gulp.task('articles:archives', ['articles:render'], () => {
   .pipe(gulp.dest(site.publish_folder))
 });
 
-gulp.task('articles',['articles:archives']);
+gulp.task('pages', () => {
+  return gulp.src('./_source/pages/*.md')
+  .pipe($.fm({property: 'page', remove: true}))
+  .pipe($.marked())
+  .pipe(renderFileWithTemplate(null,site))
+  .pipe($.if(src => {
+    let filename = path.parse(src.path);
+    if (filename.name == 'home')
+      return true;
+    },
+    $.rename(src => {
+      src.basename = 'index',
+      src.extname = '.html'
+    }),
+    $.rename(src => {
+      src.dirname = src.basename + '/';
+      src.basename = 'index',
+      src.extname = '.html'
+    })))
+  .pipe(gulp.dest(site.publish_folder))
+})
+
+//the default task. This will call the first step in the build-chain of pages
+//pages and archives MUST be run in a set order.
+gulp.task('default',['articles:archives','pages']);

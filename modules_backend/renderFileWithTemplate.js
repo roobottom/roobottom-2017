@@ -8,6 +8,7 @@ const fs = require('fs');
 
 module.exports = function(templateFile,site) {
   return through.obj(function (file, enc, cb) {
+    if(!templateFile) templateFile = './_source/templates/' + file.page.template;
     let fileobj = path.parse(file.path);
     file.page.id = fileobj.name;
     let data = {

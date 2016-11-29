@@ -13,7 +13,7 @@ module.exports = {
   ],
   articles: {
     source: './_source/posts/articles/*.md',
-    page: './_source/pages/article.html',
-    archives: './_source/pages/articles.html'
+    page: './_source/templates/article.html',
+    archives: './_source/templates/articles.html'
   }
 }
