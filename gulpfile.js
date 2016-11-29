@@ -54,7 +54,7 @@ gulp.task('articles:render', ['articles:process'], () => {
     .pipe($.fm({property: 'page', remove: true}))
     .pipe($.marked())
     .pipe(renderSmartTags())
-    .pipe(renderFileWithTemplate(site.articles.template,site))
+    .pipe(renderFileWithTemplate(site.articles.page,site))
     .pipe($.rename((src)=> {
       src.dirname = 'articles/' + src.basename + '/';
       src.basename = 'index'
@@ -64,7 +64,7 @@ gulp.task('articles:render', ['articles:process'], () => {
 
 gulp.task('articles:archives', ['articles:render'], () => {
   return processArchive('articles',10,site)
-  .pipe(renderFileWithTemplate(site.articles.template,site))
+  .pipe(renderFileWithTemplate(site.articles.archives,site))
   .pipe(gulp.dest(site.publish_folder))
 });
 
