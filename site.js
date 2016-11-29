@@ -1,7 +1,7 @@
 module.exports = {
   name: 'Roobottom.com',
   publish_folder: './docs',
-  pages: [
+  menu: [
     {
       url: '/',
       title: 'Home'

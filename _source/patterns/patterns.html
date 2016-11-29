@@ -12,7 +12,7 @@
 {% macro m_navigation(site) %}
 <nav class="m_navigation">
   <ul>
-    {% for page in site.pages %}
+    {% for page in site.menu %}
       <li><a href="{{page.url}}">{{page.title}}</a></li>
     {% endfor %}
   </ul>

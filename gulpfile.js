@@ -17,8 +17,18 @@ const renderSmartTags = require('./modules_backend/renderSmartTags');
 
 const site = require('./site');
 
+
+/* util tasks */
 gulp.task('clean',() => {
   return del([site.publish_folder]);
+});
+
+gulp.task('server',() => {
+  $.connect.server({
+    root: './docs',
+    port: 8000,
+    name: 'Test Server'
+  })
 });
 
 
@@ -39,7 +49,7 @@ gulp.task('patterns',['clean:patterns'],() => {
 /*
 Articles!
 */
-gulp.task('clean:articles',() => {
+gulp.task('clean:articles', () => {
   return del(site.publish_folder + '/articles');
 });
 
@@ -92,4 +102,31 @@ gulp.task('pages', () => {
 
 //the default task. This will call the first step in the build-chain of pages
 //pages and archives MUST be run in a set order.
-gulp.task('default',['articles:archives','pages']);
+gulp.task('default',['articles:archives','pages','server','watch']);
+
+//watchers
+gulp.task('watch:content',()=>{
+  gulp.watch(
+    [
+      './_source/layouts/*',
+      './_source/pages/*',
+      './_source/templates/*',
+      './_source/posts/*'
+    ],
+    [
+      'articles:archives',
+      'pages'
+    ]);
+});
+
+gulp.task('watch:patterns',()=>{
+  gulp.watch(
+    [
+      './_source/patterns/**/*'
+    ],
+    [
+      'patterns'
+    ]);
+});
+
+gulp.task('watch',['watch:content','watch:patterns']);
