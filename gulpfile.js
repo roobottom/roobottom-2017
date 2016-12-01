@@ -34,26 +34,28 @@ gulp.task('server',() => {
 
 
 /*
-patterns
+01. Patterns
 */
-gulp.task('clean:patterns',()=>{
+gulp.task('clean:patterns',(cb)=>{
   return del('_source/patterns/patterns.html');
+    cb();
 })
 
-gulp.task('patterns',['clean:patterns'],() => {
+gulp.task('patterns',['clean:patterns'],(cb) => {
   return gulp.src('./_source/patterns/**/*.html')
   .pipe($.concat('patterns.html'))
   .pipe(gulp.dest('_source/patterns/'))
+  cb();
 });
 
 /*
-Articles!
+02. Articles
 */
-gulp.task('clean:articles', () => {
+gulp.task('clean:articles',['patterns'], () => {
   return del(site.publish_folder + '/articles');
 });
 
-gulp.task('articles:process', ['clean:articles'], () => {
+gulp.task('articles:process', () => {
   return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
     .pipe(updatePostsObject(site))
@@ -78,7 +80,10 @@ gulp.task('articles:archives', ['articles:render'], () => {
   .pipe(gulp.dest(site.publish_folder))
 });
 
-gulp.task('pages', () => {
+/*
+03. Pages
+*/
+gulp.task('pages', ['articles:archives'], () => {
   return gulp.src('./_source/pages/*.md')
   .pipe($.fm({property: 'page', remove: true}))
   .pipe($.marked())
@@ -102,31 +107,9 @@ gulp.task('pages', () => {
 
 //the default task. This will call the first step in the build-chain of pages
 //pages and archives MUST be run in a set order.
-gulp.task('default',['articles:archives','pages','server','watch']);
+gulp.task('default',['server','watch']);
 
 //watchers
-gulp.task('watch:content',()=>{
-  gulp.watch(
-    [
-      './_source/layouts/*',
-      './_source/pages/*',
-      './_source/templates/*',
-      './_source/posts/*'
-    ],
-    [
-      'articles:archives',
-      'pages'
-    ]);
+gulp.task('watch',['pages'],()=>{
+  gulp.watch(['./_source/**/*'],['pages']);
 });
-
-gulp.task('watch:patterns',()=>{
-  gulp.watch(
-    [
-      './_source/patterns/**/*'
-    ],
-    [
-      'patterns'
-    ]);
-});
-
-gulp.task('watch',['watch:content','watch:patterns']);
