@@ -19,14 +19,14 @@ module.exports = function() {
     let replacedTags = [];
     let contents = file.contents.toString();
 
-    //loop 
+    //loop
     for(var i in tags) {
       var regexp = new RegExp('<p>\\s*\\(' + tags[i] + '([^\\)]+)?\\)\\s*<\\/p>','igm');
       let match;
       while(match = regexp.exec(contents)) {
         let tagOpts = getTagOptions(match[1]);
         if(tags[i] == 'figure' || tags[i] == 'gallery') {
-          var figure_object = {"images":[]};
+          var figure_object = {images:[],page:file.page};
           for(let i in file.page.images) {
             if(file.page.images[i].set === tagOpts.set) {
               figure_object["images"].push(file.page.images[i]);

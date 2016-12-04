@@ -4,7 +4,8 @@ const gulp = require('gulp');
 const del = require('del');
 const $ = require('gulp-load-plugins')({
   rename: {
-    'gulp-front-matter': 'fm'
+    'gulp-front-matter': 'fm',
+    'gulp-image-resize':'resize'
   }
 });
 const path = require('path');
@@ -55,7 +56,7 @@ gulp.task('clean:articles',['patterns'], () => {
   return del(site.publish_folder + '/articles');
 });
 
-gulp.task('articles:process', () => {
+gulp.task('articles:process', ['clean:articles'], () => {
   return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
     .pipe(updatePostsObject(site))
@@ -104,6 +105,20 @@ gulp.task('pages', ['articles:archives'], () => {
     })))
   .pipe(gulp.dest(site.publish_folder))
 })
+
+/*
+--. images
+*/
+gulp.task('images',() => {
+  return gulp.src(site.images_folder)
+  .pipe($.resize({
+      width : 600,
+      noProfile: true,
+      crop : false,
+      upscale : false
+    }))
+  .pipe(gulp.dest(site.publish_folder + '/images'))
+});
 
 //the default task. This will call the first step in the build-chain of pages
 //pages and archives MUST be run in a set order.
