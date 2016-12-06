@@ -12,71 +12,52 @@ module.exports = function(basename, count, site) {
 
   if (site.posts)
   {
-    var c     = 0;
-    var page  = 0;
+    var c = 1;
+    var page = 0;
     var posts = [];
 
-    var pagination = [];
-    var pageCount = 0;
+    var pagination = [{
+      page: 0,
+      url: '',
+      posts: []
+    }];
+    var paginationPage = 0;
 
-    site.posts.forEach(function (post) {
-      if(c == count || c == 0) {
-
-        let fromID = site.posts.length - (pageCount * c);
-        let toID = site.posts.length - ((pageCount * c) + (count - 1));
-        if (toID <= 0) {toID = 1;}
-
-        let url;
-        if(pageCount == 0) {
-          url = '/' + basename;
-        } else {
-          url = '/' + basename + '/page-' + pageCount;
-        }
-
+    //build pagination object
+    site.posts.forEach(function(post) {
+      pagination[paginationPage].posts.push(post);
+      if(c==count) {
+        c = 0;
+        paginationPage++;
         pagination.push({
-          page: pageCount+1,
-          items: count,
-          from: fromID,
-          to: toID,
-          url: url,
-          current: false
+          page: paginationPage,
+          url: 'page-' + paginationPage,
+          posts: []
         });
-        c=0;
-        pageCount++;
-      }
+      };
       c++;
     });
 
-
+    //console.log(pagination);
     c=0;
-    site.posts.forEach(function (post) {
+    site.posts.forEach(function(post) {
       posts.push(post);
       c++;
 
       if (c == count) {
 
-        let outputPath;
-        if(page==0) {
-          outputPath = './' + basename + '/index.html';
-        } else {
-          outputPath = './' + basename + '/page-' + page + '/index.html';
-        }
-
         var file = new gutil.File({
-          path: outputPath,
+          path: calculateFileName(basename,page),
           contents: new Buffer('')
         });
 
-        pagination[page].current = true;
         file.page = {
           posts: posts,
+          page: page,
           pagination: pagination
         };
         stream.write(file);
 
-        //console.log(pagination);
-
-        pagination[page].current = false;
         c = 0;
         posts = [];
         page++;
@@ -86,14 +67,13 @@ module.exports = function(basename, count, site) {
 
     if (posts.length != 0) {
 
-      pagination.current = page + 1;
-
       var file = new gutil.File({
-        path: './' + basename + '/page-' + page + '/index.html',
+        path: calculateFileName(basename,page),
         contents: new Buffer('')
       });
       file.page = {
         posts: posts,
+        page: page,
         pagination: pagination
         };
       stream.write(file);
@@ -105,3 +85,7 @@ module.exports = function(basename, count, site) {
 
   return stream;
 };
+
+var calculateFileName = function(basename,page) {
+  return page === 0 ? './' + basename + '/index.html' : './' + basename + '/page-' + page + '/index.html';
+}

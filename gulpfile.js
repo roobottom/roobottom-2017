@@ -56,7 +56,7 @@ gulp.task('clean:articles',['patterns'], () => {
   return del(site.publish_folder + '/articles');
 });
 
-gulp.task('articles:process', ['clean:articles'], () => {
+gulp.task('articles:process', ['patterns'], () => {
   return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
     .pipe(updatePostsObject(site))

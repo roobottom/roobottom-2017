@@ -1,3 +1,13 @@
+{% macro m_navigation(site) %}
+<nav class="m_navigation">
+  <ul>
+    {% for page in site.menu %}
+      <li><a href="{{page.url}}">{{page.title}}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endmacro %}
+
 {% macro m_figure(images,page) %}
 <figure class="m_figure">
   {% for i in images %}
@@ -7,14 +17,4 @@
     {% endif %}
   {% endfor %}
 </figure>
-{% endmacro %}
-
-{% macro m_navigation(site) %}
-<nav class="m_navigation">
-  <ul>
-    {% for page in site.menu %}
-      <li><a href="{{page.url}}">{{page.title}}</a></li>
-    {% endfor %}
-  </ul>
-</nav>
 {% endmacro %}

@@ -2,6 +2,7 @@
 
 const path = require('path');
 const through = require('through2');
+const moment = require('moment');
 
 module.exports = function(site) {
   let posts = [];
@@ -9,6 +10,7 @@ module.exports = function(site) {
     let fileobj = path.parse(file.path);
     file.page.id = fileobj.name;
     file.page.category = fileobj.dir.split('/').slice(-1)[0];
+    file.page.humanDate = moment(file.page.date).format('dddd, MMMM Do YYYY');
     posts.push(file.page);
     this.push(file);
     cb();
