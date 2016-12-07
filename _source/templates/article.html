@@ -1,7 +1,11 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-<h1>{{page.title}}</h1>
-{{content|safe}}
+{{ pattern.c_page([
+    pattern.m_pageTitle(page.title),
+    pattern.m_prose(content)
+  ])
+}}
+
 <nav class="m_prevNext">
   {% for post in site.posts -%}
     {% if post.id == page.id %}

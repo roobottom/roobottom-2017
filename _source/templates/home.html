@@ -1,6 +1,7 @@
 {% extends "layouts/default.html" %}
 {% block content %}
   {{ pattern.c_page([
+      pattern.m_pageTitle(page.title),
       pattern.m_prose(content,'introduction')
     ])
   }}

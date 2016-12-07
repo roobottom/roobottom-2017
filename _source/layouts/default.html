@@ -6,9 +6,14 @@
         <title>{{page.title}}, {{site.name}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/patterns.css" type="text/css" media="all"/>
     </head>
     <body>
       <div class="c_siteWrapper">
+        <div class="m_betaMessage">
+          <p>I'm developing my site in the open, it has minimal styling at the momemt.</p>
+          <p>Please feel free to <a href="https://github.com/roobottom/roobottom-2017">view the source on Github.</a></p>
+        </div>
         {{pattern.m_navigation(site)}}
         {% block content %}
         {% endblock %}

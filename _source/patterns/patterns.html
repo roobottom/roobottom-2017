@@ -28,7 +28,11 @@
 {% endmacro %}
 
 {% macro m_prose(content,modifier) %}
-  <div class="m_prose{% if modifier %} m_prose--{{modifier}}{% endif %}">
+  <article class="m_prose{% if modifier %} m_prose--{{modifier}}{% endif %}">
     {{content|safe}}
-  </div>
+  </article>
+{% endmacro %}
+
+{% macro m_pageTitle(title,modifier) %}
+  <h1 class="m_pageTitle{% if modifier %} m_pageTitle--{{modifier}}{% endif %}">{{title}}</h1>
 {% endmacro %}

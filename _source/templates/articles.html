@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-<h1>Articles!</h1>
+<h1>{{page.title}}</h1>
 {% for post in page.posts %}
 <h2><a href="/articles/{{post.id}}">{{post.title}}</a></h2>
 <p>{{post.humanDate}}</p>
@@ -9,8 +9,8 @@
 {% for page in page.pagination %}
 <li><a href="/articles/{{page.url}}">
   {% for post in page.posts -%}
-    {% if loop.first %}From {{post.humanDate}}{% endif %}
-    {% if loop.last %} until {{post.humanDate}}{% endif %}
+    {% if loop.first %}{{post.humanDate}}{% endif %}
+    {% if loop.last %} &rarr; {{post.humanDate}}{% endif %}
   {%- endfor %}
 </a></li>
 {% endfor %}

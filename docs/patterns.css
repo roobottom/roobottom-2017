@@ -1,0 +1,21 @@
+.c_siteWrapper {
+  padding: 30px;
+}
+@media (min-width: 800px) {
+  .c_siteWrapper {
+    margin: 30px auto;
+    max-width: 780px;
+  }
+}
+.m_betaMessage {
+  background: rgba(255, 255, 0, 0.5);
+  padding: 20px;
+  border: 1px dotted #666600;
+  color: #666600;
+}
+a {
+  color: blue;
+}
+img {
+  max-width: 100%;
+}

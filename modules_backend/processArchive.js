@@ -51,10 +51,13 @@ module.exports = function(basename, count, site) {
           contents: new Buffer('')
         });
 
+        var title = page === 0 ? 'Articles' : 'Articles, page ' + page
+
         file.page = {
           posts: posts,
           page: page,
-          pagination: pagination
+          pagination: pagination,
+          title: title
         };
         stream.write(file);
 
@@ -74,7 +77,8 @@ module.exports = function(basename, count, site) {
       file.page = {
         posts: posts,
         page: page,
-        pagination: pagination
+        pagination: pagination,
+        title: 'Articles, page ' + page
         };
       stream.write(file);
     }

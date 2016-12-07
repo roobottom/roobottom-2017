@@ -1,5 +1,5 @@
 {% macro m_prose(content,modifier) %}
-  <div class="m_prose{% if modifier %} m_prose--{{modifier}}{% endif %}">
+  <article class="m_prose{% if modifier %} m_prose--{{modifier}}{% endif %}">
     {{content|safe}}
-  </div>
+  </article>
 {% endmacro %}
