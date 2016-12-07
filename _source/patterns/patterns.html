@@ -1,11 +1,9 @@
-{% macro m_navigation(site) %}
-<nav class="m_navigation">
-  <ul>
-    {% for page in site.menu %}
-      <li><a href="{{page.url}}">{{page.title}}</a></li>
-    {% endfor %}
-  </ul>
-</nav>
+{% macro c_page(modules,modifier) %}
+  <main class="c_page{% if modifier %} c_page--{{modifier}}{% endif %}">
+    {% for module in modules -%}
+      {{module}}
+    {%- endfor %}
+  </main>
 {% endmacro %}
 
 {% macro m_figure(images,page) %}
@@ -17,4 +15,20 @@
     {% endif %}
   {% endfor %}
 </figure>
+{% endmacro %}
+
+{% macro m_navigation(site) %}
+<nav class="m_navigation">
+  <ul>
+    {% for page in site.menu %}
+      <li><a href="{{page.url}}">{{page.title}}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endmacro %}
+
+{% macro m_prose(content,modifier) %}
+  <div class="m_prose{% if modifier %} m_prose--{{modifier}}{% endif %}">
+    {{content|safe}}
+  </div>
 {% endmacro %}

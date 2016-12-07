@@ -1,0 +1,7 @@
+{% macro c_page(modules,modifier) %}
+  <main class="c_page{% if modifier %} c_page--{{modifier}}{% endif %}">
+    {% for module in modules -%}
+      {{module}}
+    {%- endfor %}
+  </main>
+{% endmacro %}

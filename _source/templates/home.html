@@ -1,5 +1,7 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-<h1>welcome home!</h1>
-{{content|safe}}
+  {{ pattern.c_page([
+      pattern.m_prose(content,'introduction')
+    ])
+  }}
 {% endblock %}
