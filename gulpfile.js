@@ -37,16 +37,16 @@ gulp.task('server',() => {
 /*
 01. Patterns
 */
-gulp.task('clean:patterns',(cb)=>{
+gulp.task('clean:patterns',()=>{
   return del('_source/patterns/patterns.html');
-    cb();
+    //cb();
 })
 
-gulp.task('patterns',['clean:patterns'],(cb) => {
+gulp.task('patterns',() => {
   return gulp.src('./_source/patterns/**/*.html')
   .pipe($.concat('patterns.html'))
-  .pipe(gulp.dest('_source/patterns/'))
-  cb();
+  .pipe(gulp.dest('_source/'))
+  //cb();
 });
 
 /*
