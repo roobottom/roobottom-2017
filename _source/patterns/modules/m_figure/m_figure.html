@@ -1,7 +1,7 @@
-{% macro m_figure(images,page) %}
+{% macro m_figure(images,path) %}
 <figure class="m_figure">
   {% for i in images %}
-    <img src="/images/articles/{{page.id}}/{{i.image}}" class="m_figure__image" alt="{{i.caption}}"/>
+    <img src="{{path}}/{{i.image}}" class="m_figure__image" alt="{{i.caption}}"/>
     {% if i.caption and loop.last %}
       <figcaption class="m_figure__caption">{{i.caption}}</figcaption>
     {% endif %}

@@ -11,10 +11,14 @@ const $ = require('gulp-load-plugins')({
 const path = require('path');
 
 
+//posts
 const updatePostsObject = require('./modules_backend/updatePostsObject');
 const renderFileWithTemplate = require('./modules_backend/renderFileWithTemplate');
 const processArchive = require('./modules_backend/processArchive');
 const renderSmartTags = require('./modules_backend/renderSmartTags');
+//patterns
+const updatePatternsObject = require('./modules_backend/updatePatternsObject');
+const renderPatternExamples = require('./modules_backend/renderPatternExamples');
 
 const site = require('./site');
 
@@ -35,28 +39,9 @@ gulp.task('server',() => {
 
 
 /*
-01. Patterns
+01. Articles
 */
-gulp.task('clean:patterns',()=>{
-  return del('_source/patterns/patterns.html');
-    //cb();
-})
-
-gulp.task('patterns',() => {
-  return gulp.src('./_source/patterns/**/*.html')
-  .pipe($.concat('patterns.html'))
-  .pipe(gulp.dest('_source/'))
-  //cb();
-});
-
-/*
-02. Articles
-*/
-gulp.task('clean:html',['patterns'], () => {
-  return del(site.publish_folder + '/**/*.html');
-});
-
-gulp.task('articles:process', ['clean:html'], () => {
+gulp.task('articles:process', () => {
   return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
     .pipe(updatePostsObject(site))
@@ -84,7 +69,7 @@ gulp.task('articles:archives', ['articles:render'], () => {
 });
 
 /*
-03. Pages
+02. Pages
 */
 gulp.task('pages', ['articles:archives'], () => {
   return gulp.src('./_source/pages/*.md')
@@ -98,16 +83,34 @@ gulp.task('pages', ['articles:archives'], () => {
       return true;
     },
     $.rename(src => {
-      src.basename = 'index',
-      src.extname = '.html'
+      src.basename = 'index';
+      src.extname = '.html';
     }),
     $.rename(src => {
       src.dirname = src.basename + '/';
-      src.basename = 'index',
-      src.extname = '.html'
+      src.basename = 'index';
+      src.extname = '.html';
     })))
   .pipe(gulp.dest(site.publish_folder))
 })
+
+/*
+--. Pattern Library
+*/
+gulp.task('pattern-library', () => {
+  return gulp.src('./_source/patterns/**/*.md')
+  .pipe($.fm({property: 'meta', remove: true}))
+  .pipe(updatePatternsObject())
+  .pipe(renderPatternExamples())
+  .pipe($.marked())
+  .pipe(renderFileWithTemplate('./_source/templates/pattern.html',site))
+  .pipe($.rename(src => {
+    src.dirname = 'patterns/' + src.basename;
+    src.basename = 'index';
+  }))
+  .pipe(gulp.dest(site.publish_folder))
+});
+
 
 /*
 --. images
@@ -132,11 +135,21 @@ gulp.task('styles',()=> {
   .pipe(gulp.dest(site.publish_folder))
 })
 
+/*
+--. static files
+*/
+gulp.task('static',() => {
+  return gulp.src('_source/static/**/*')
+  .pipe(gulp.dest(site.publish_folder))
+})
+
+
+
 //the default task. This will call the first step in the build-chain of pages
 //pages and archives MUST be run in a set order.
-gulp.task('default',['server','watch','styles']);
+gulp.task('default',['server','styles','static','pattern-library','watch']);
 
 //watchers
 gulp.task('watch',['pages'],()=>{
-  gulp.watch(['./_source/**/*'],['pages','styles']);
+  gulp.watch(['./_source/**/*'],['pages','styles','static','pattern-library']);
 });

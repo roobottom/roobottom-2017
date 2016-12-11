@@ -1,15 +1,15 @@
-{% from "patterns/modules/m_figure/m_figure.html" import m_figure %}
-{% from "patterns/modules/m_navigation/m_navigation.html" import m_navigation %}
-{% from "patterns/modules/m_pageTitle/m_pageTitle.html" import m_pageTitle %}
-{% from "patterns/modules/m_prose/m_prose.html" import m_prose %}
 
-{% from "patterns/containers/c_page/c_page.html" import c_page %}
+
+
+
+
+
 
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>{{page.title}}, {{site.name}}</title>
+        <title>Figure, Roobottom.com</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/patterns.css" type="text/css" media="all"/>
@@ -20,9 +20,39 @@
           <p>I'm developing my site in the open, it has minimal styling at the momemt.</p>
           <p>Please feel free to <a href="https://github.com/roobottom/roobottom-2017">view the source on Github.</a></p>
         </div>
-        {{m_navigation(site)}}
-        {% block content %}
-        {% endblock %}
+        
+<nav class="m_navigation">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/articles">Articles</a></li>
+    
+  </ul>
+</nav>
+
+        
+
+  <main class="c_page">
+    
+  <h1 class="m_pageTitle">Figure</h1>
+
+  </main>
+
+
+<p>This is the description of this  This <em>supports</em> markdown!</p>
+<figure class="m_figure">
+
+    <img src="/images/examples/ripples-1.jpg" class="m_figure__image" alt="This is a test"/>
+
+      <figcaption class="m_figure__caption">This is a test</figcaption>
+
+
+</figure>
+
+
+
+
       </div>
     </body>
 </html>

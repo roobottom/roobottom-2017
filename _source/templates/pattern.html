@@ -1,0 +1,11 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+{{ c_page([
+    m_pageTitle(page.title)
+  ])
+}}
+
+{{content|safe}}
+
+
+{% endblock %}
