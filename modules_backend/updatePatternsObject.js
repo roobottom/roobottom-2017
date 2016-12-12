@@ -3,6 +3,7 @@
 const path = require('path');
 const through = require('through2');
 const gutil = require('gulp-util');
+const _ = require('lodash');
 
 module.exports = function(site) {
   let patterns = [];
@@ -24,10 +25,31 @@ module.exports = function(site) {
       title: file.meta.title
     }
     this.push(file);
+    patterns.push(file.example);
     cb(err);
   },
   function(cb) {
-    //sort the types into a new unique array of `types`
+
+    //generate a new collection of patterns sorted by type
+    let types = [];
+    let obj = _.uniqBy(patterns,'type');
+    for(let i in obj) {
+      types.push({
+        name: obj[i].type,
+        patterns: []
+      });
+    }
+
+    //push matching patterns into their type arrays
+    for(let t in types) {
+      for(let r in patterns) {
+        if(patterns[r].type == types[t].name) {
+          types[t].patterns.push(patterns[r]);
+        }
+      }
+    }
+
+    site.patterns = types;
     cb();
   });
 }
