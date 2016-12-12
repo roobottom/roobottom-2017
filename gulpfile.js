@@ -69,9 +69,27 @@ gulp.task('articles:archives', ['articles:render'], () => {
 });
 
 /*
-02. Pages
+02. Pattern Library
 */
-gulp.task('pages', ['articles:archives'], () => {
+gulp.task('pattern-library', ['articles:archives'], () => {
+  return gulp.src('./_source/patterns/**/*.md')
+  .pipe($.fm({property: 'meta', remove: true}))
+  .pipe(updatePatternsObject(site))
+  .pipe(renderPatternExamples())
+  .pipe($.marked())
+  .pipe(renderFileWithTemplate('./_source/templates/pattern.html',site))
+  .pipe($.htmlmin({collapseWhitespace: true}))
+  .pipe($.rename(src => {
+    src.dirname = 'patterns/' + src.basename;
+    src.basename = 'index';
+  }))
+  .pipe(gulp.dest(site.publish_folder))
+});
+
+/*
+03. Pages
+*/
+gulp.task('pages', ['pattern-library'], () => {
   return gulp.src('./_source/pages/*.md')
   .pipe($.fm({property: 'page', remove: true}))
   .pipe($.marked())
@@ -94,23 +112,7 @@ gulp.task('pages', ['articles:archives'], () => {
   .pipe(gulp.dest(site.publish_folder))
 })
 
-/*
---. Pattern Library
-*/
-gulp.task('pattern-library', () => {
-  return gulp.src('./_source/patterns/**/*.md')
-  .pipe($.fm({property: 'meta', remove: true}))
-  .pipe(updatePatternsObject())
-  .pipe(renderPatternExamples())
-  .pipe($.marked())
-  .pipe(renderFileWithTemplate('./_source/templates/pattern.html',site))
-  .pipe($.htmlmin({collapseWhitespace: true}))
-  .pipe($.rename(src => {
-    src.dirname = 'patterns/' + src.basename;
-    src.basename = 'index';
-  }))
-  .pipe(gulp.dest(site.publish_folder))
-});
+
 
 
 /*
@@ -148,9 +150,9 @@ gulp.task('static',() => {
 
 //the default task. This will call the first step in the build-chain of pages
 //pages and archives MUST be run in a set order.
-gulp.task('default',['server','styles','static','pattern-library','watch']);
+gulp.task('default',['server','styles','static','watch']);
 
 //watchers
 gulp.task('watch',['pages'],()=>{
-  gulp.watch(['./_source/**/*'],['pages','styles','static','pattern-library']);
+  gulp.watch(['./_source/**/*'],['pages','styles','static']);
 });

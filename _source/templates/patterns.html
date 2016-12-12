@@ -1,0 +1,19 @@
+{% extends "layouts/default.html" %}
+{% block content %}
+{{ c_page([
+    m_pageTitle(page.title)
+  ])
+}}
+
+{{content|safe}}
+
+{% for collection in site.patterns %}
+    <h2>{{ collection.name }}</h2>
+    <ul>
+    {% for pattern in collection.patterns %}
+        <li><a href="/patterns/{{pattern.name}}">{{pattern.name}}</a></li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+
+{% endblock %}
