@@ -19,3 +19,7 @@ a {
 img {
   max-width: 100%;
 }
+.m_pagignation {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+}

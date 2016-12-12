@@ -10,17 +10,8 @@
 {{ 
     c_page([
         m_pageTitle(page.title),
-        call__m_teaser()
+        call__m_teaser(),
+        m_pagination(page.pagination)
     ])
 }}
-
-{% for page in page.pagination %}
-<li><a href="/articles/{{page.url}}">
-  {% for post in page.posts -%}
-    {% if loop.first %}{{post.humanDate}}{% endif %}
-    {% if loop.last %} &rarr; {{post.humanDate}}{% endif %}
-  {%- endfor %}
-</a></li>
-{% endfor %}
-</ol>
 {% endblock %}
