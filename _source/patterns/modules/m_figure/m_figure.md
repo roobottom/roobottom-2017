@@ -1,13 +1,28 @@
 ---
-title: 'Figure'
+title: 'Figure module'
 data:
+  path: '/images/examples'
   setA:
-      path: '/images/examples'
-      images:
-        -
-          image: 'ripples-1.jpg'
-          caption: 'This is a test'
----
-This is the description of this  This _supports_ markdown!
+    images:
+      -
+        image: 'ripples-1.jpg'
+        caption: 'The rippled wall in the Baribican lecture hall'
+  setB:
+    images:
+      -
+        image: 'ripples-1.jpg'
+        caption: 'Ripples, ripples, ripples!'
+      -
+        image: 'ripples-2.jpg'
+        caption: 'More ripples!'
 
-{{ m_figure(setA.images,setA.path) }}
+---
+The figure module will display one or more images in a collage.
+
+## Single Image
+
+{{ m_figure(setA.images,path) }}
+
+## More than one image
+
+{{ m_figure(setB.images,path) }}

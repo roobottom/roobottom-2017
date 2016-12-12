@@ -104,6 +104,7 @@ gulp.task('pattern-library', () => {
   .pipe(renderPatternExamples())
   .pipe($.marked())
   .pipe(renderFileWithTemplate('./_source/templates/pattern.html',site))
+  .pipe($.htmlmin({collapseWhitespace: true}))
   .pipe($.rename(src => {
     src.dirname = 'patterns/' + src.basename;
     src.basename = 'index';
