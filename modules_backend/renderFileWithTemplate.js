@@ -7,7 +7,9 @@ const fs = require('fs');
 
 const templateFile = null;
 
-nunjucks.configure('./_source',{noCache:true});
+const env = nunjucks.configure('./_source',{
+    noCache:true
+});
 
 module.exports = function(templateFile,site) {
   return through.obj(function (file, enc, cb) {
@@ -26,7 +28,7 @@ module.exports = function(templateFile,site) {
     };
     
     var wrapper = fs.readFileSync(path.join(__dirname, '../'+thisTemplate),{encoding:'utf8'});
-    file.contents = new Buffer(nunjucks.renderString(wrapper,data), 'utf8');
+    file.contents = new Buffer(env.renderString(wrapper,data), 'utf8');
     
     this.push(file);
     cb();

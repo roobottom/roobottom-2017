@@ -76,12 +76,12 @@ gulp.task('pattern-library', ['articles:archives'], () => {
   .pipe($.fm({property: 'meta', remove: true}))
   .pipe(updatePatternsObject(site))
   .pipe(renderPatternExamples())
-  .pipe($.marked())
   .pipe(renderFileWithTemplate('./_source/templates/pattern.html',site))
   .pipe($.htmlmin({collapseWhitespace: true}))
   .pipe($.rename(src => {
     src.dirname = 'patterns/' + src.basename;
     src.basename = 'index';
+    src.extname = '.html';
   }))
   .pipe(gulp.dest(site.publish_folder))
 });

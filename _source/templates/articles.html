@@ -1,12 +1,19 @@
 {% extends "layouts/default.html" %}
 {% block content %}
-<h1>{{page.title}}</h1>
-{% for post in page.posts %}
-<h2><a href="/articles/{{post.id}}">{{post.title}}</a></h2>
-<p>{{post.humanDate}}</p>
-{% endfor %}
-<hr/>
-<ol>
+
+{% macro call__m_teaser() %}
+    {% for post in page.posts %}
+        {{ m_teaser(title=post.title,url='/articles/'+post.id,date=post.date,humanDate=post.humanDate) }}
+    {% endfor %}
+{% endmacro %}
+
+{{ 
+    c_page([
+        m_pageTitle(page.title),
+        call__m_teaser()
+    ])
+}}
+
 {% for page in page.pagination %}
 <li><a href="/articles/{{page.url}}">
   {% for post in page.posts -%}

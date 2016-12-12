@@ -10,6 +10,10 @@ module.exports = {
     {
       url: '/articles',
       title: 'Articles'
+    },
+    {
+      url: '/patterns',
+      title: 'Pattern Library'
     }
   ],
   articles: {
