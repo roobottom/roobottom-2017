@@ -19,7 +19,6 @@ module.exports = function() {
 
         file.contents = new Buffer(updated, 'utf8');
 
-
         this.push(file);
         cb();
     });

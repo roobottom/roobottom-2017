@@ -23,3 +23,20 @@ img {
   margin-top: 20px;
   border-top: 1px solid #ccc;
 }
+.m_navigation {
+  border: 1px solid #ccc;
+}
+.m_navigation__items {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.m_navigation__item {
+  list-style: none;
+}
+.m_navigation__link {
+  font-size: 130%;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  display: block;
+}

@@ -1,8 +1,8 @@
 {% macro m_navigation(items) %}
 <nav class="m_navigation">
-  <ul>
+  <ul class="m_navigation__items">
     {% for item in items %}
-      <li><a href="{{item.url}}">{{item.title}}</a></li>
+      <li class="m_navigation__item"><a href="{{item.url}}" class="m_navigation__link">{{item.title}}</a></li>
     {% endfor %}
   </ul>
 </nav>
