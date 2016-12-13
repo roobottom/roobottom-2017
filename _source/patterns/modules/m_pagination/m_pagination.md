@@ -10,5 +10,6 @@ data:
         -
           humanDate: 'October, 10th 2012'
 ---
-Some explination of the `pagination` object
+Some explination of the `pagination` object.
+
 {{m_pagination(paginationA)}}

@@ -4,6 +4,7 @@ const path = require('path');
 const through = require('through2');
 const gutil = require('gulp-util');
 const _ = require('lodash');
+const fs = require('fs');
 
 module.exports = function(site) {
   let patterns = [];
@@ -13,7 +14,14 @@ module.exports = function(site) {
     let dirArray = fileobj.dir.split('/').reverse();
 
     if(!file.meta.data) {
-      var err = new gutil.PluginError('Update Patterns Object', 'No data object in '+fileobj.name);
+      try {
+        let dataFile = path.join(__dirname, '../_source/patterns/' + dirArray[1] + '/' + fileobj.name + '/' + fileobj.name + '.data')
+        file.meta.data = {fileContents: fs.readFileSync(dataFile).toString()};
+      }
+      catch (e) {
+        var err = new gutil.PluginError('Update Patterns Object', 'No data object or file in '+fileobj.name+e);
+      }
+      
     }
 
     file.example = {

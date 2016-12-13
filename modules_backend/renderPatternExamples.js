@@ -15,7 +15,6 @@ module.exports = function() {
         var patternFile = path.join(__dirname, '../_source/patterns/' + file.example.type + '/' + file.example.name + '/' + file.example.name + '.html')
         var pattern = fs.readFileSync(patternFile);
         var updated = env.renderString(pattern.toString() + file.contents.toString(),file.example.data);
-        //console.log(updated.replace(/\s+/g, ''));
         updated = marked(updated.trim());
 
         file.contents = new Buffer(updated, 'utf8');
