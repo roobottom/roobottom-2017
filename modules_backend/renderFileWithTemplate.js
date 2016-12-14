@@ -24,7 +24,7 @@ module.exports = function(templateFile,site) {
     let data = {
         site: site,
         page: file.page,
-        content: file.contents.toString()
+        contents: file.contents.toString()
     };
     
     var wrapper = fs.readFileSync(path.join(__dirname, '../'+thisTemplate),{encoding:'utf8'});

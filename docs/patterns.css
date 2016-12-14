@@ -24,19 +24,19 @@ img {
   border-top: 1px solid #ccc;
 }
 .m_navigation {
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 .m_navigation__items {
   display: flex;
   padding: 0;
   margin: 0;
+  justify-content: space-between;
 }
 .m_navigation__item {
   list-style: none;
 }
 .m_navigation__link {
-  font-size: 130%;
-  padding: 20px;
-  border-right: 1px solid #ccc;
+  font-size: 110%;
+  padding: 20px 0;
   display: block;
 }
