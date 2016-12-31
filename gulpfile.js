@@ -152,6 +152,9 @@ gulp.task('static',() => {
 //pages and archives MUST be run in a set order.
 gulp.task('default',['server','styles','static','watch']);
 
+//build task. This does everything for one build.
+gulp.task('build',['pages','styles','static']);
+
 //watchers
 gulp.task('watch',['pages'],()=>{
   gulp.watch(['./_source/**/*'],['pages','styles','static']);
