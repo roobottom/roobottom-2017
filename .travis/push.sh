@@ -11,10 +11,12 @@ commit_website_files() {
 }
 
 upload_files() {
-  git remote add master https://${4d621f9ae955e1fdc8fc402190399418b3d4ba83}@github.com/roobottom/roobottom-2017-live.git > /dev/null 2>&1
+  git remote add master https://${GH_TOKEN}@github.com/roobottom/roobottom-2017-live.git > /dev/null 2>&1
   git push --quiet
 }
 
 setup_git
 commit_website_files
 upload_files
+
+23547359ecf1a3fc33cd461c9c40f9b0cf3c1e5d
