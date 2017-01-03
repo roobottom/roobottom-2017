@@ -2,5 +2,7 @@ language: node_js
 node_js:
   - "6"
 before_script:
-  - npm install -g gulp
-script: gulp build
+  - apt-get install graphicsmagick
+script:
+  - gulp images
+  - gulp build
