@@ -2,7 +2,9 @@ language: node_js
 node_js:
   - "6"
 before_script:
-  - apt-get install graphicsmagick
+  - "npm install"
+  - "sudo apt-get update"
+  - "sudo apt-get install graphicsmagick"
 script:
-  - gulp images
-  - gulp build
+  - "gulp images"
+  - "gulp build"
