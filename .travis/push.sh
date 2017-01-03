@@ -18,5 +18,3 @@ upload_files() {
 setup_git
 commit_website_files
 upload_files
-
-23547359ecf1a3fc33cd461c9c40f9b0cf3c1e5d
