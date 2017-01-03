@@ -8,3 +8,5 @@ before_script:
 script:
   - "gulp images"
   - "gulp build"
+after_success:
+  - .travis/push.sh
