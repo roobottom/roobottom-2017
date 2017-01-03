@@ -26,7 +26,6 @@
     "marked": "^0.3.6",
     "moment": "^2.17.1",
     "nunjucks": "^3.0.0",
-    "through2": "^2.0.1",
-    "travis-encrypt": "^2.1.1"
+    "through2": "^2.0.1"
   }
 }
