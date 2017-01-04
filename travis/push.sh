@@ -6,13 +6,14 @@ setup_git() {
 }
 
 commit_website_files() {
+  cd docs
   ls
-  git add docs/.
+  git add .
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
-  git remote add master https://${GH_TOKEN}@github.com/roobottom/roobottom-2017-live.git > /dev/null 2>&1
+  git remote add master https://$GH_TOKEN@github.com/roobottom/roobottom-2017-live.git &2> /dev/null
   git push --quiet
 }
 
