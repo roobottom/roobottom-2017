@@ -9,7 +9,7 @@ script:
   - "gulp images"
   - "gulp build"
 after_success:
-  - .travis/push.sh
+  - ./travis/push.sh
 env:
   global:
     secure: dvE1z737bPJEPO9NncJAnMqeMJoOCsnoh7gmhZTQIcycLqw0W9JKaOYdwkAPT2i8KaObvq6tM20p9jgNOotjGXucEsvEw4QBnn5P3DGQ0kCNeTDC0Yor/Q/kqHWGuU5r2uREyOKntImT4+lDrmEQHNhYUPWFAztuSWjkEgmyVe+rOOyNOyY3CH8X73LQQlc9vIQxuqqjNQyOsCCUg3pevAJyPN/n2ZJXaWj+g9lrIey9yyTweOIe8xAaBgf5ZyzvoEL569iljc/qS4BIlTKnvgrN18pGKwZIuH1nYotPRbADPv76eGNcxV/+YJbEh9/A41dyR33FcD0HMpaBjn3hGG7s/WaZI4HbNtraMq7rdh0yOfswk7kTgD4dmPp748NEuQnpCm8CPEmeYjXaEA/7V1KV+pQS8Mdga+57L7WUPENeuGkPjCM4BPhok8VPO8PHwYVaOiJg5+8FUOyzUKdUSKspaI+3qCGG943OIKEMEnABfZHfuYXFj+RGrhTvQ05voPCJveu3UmAf8UIAJXc9hEDM5co+vHMCNNs4QmiLc49mtP/iGerpnYtPpTtJYmjBzFeNJ/f8Qm0Vm7pqtV1xipP2HTwdYxG8QNVy7OGIko9Y67YzBKiJtz7Al76Kh9/9CevEpHmOBsx3zu20qKzASC053fFvwdttyzjKT5AR7XI=
