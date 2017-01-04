@@ -6,9 +6,7 @@ setup_git() {
 }
 
 commit_website_files() {
-  cd docs
-  ls
-  git add .
+  git add docs/.
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
