@@ -19,8 +19,6 @@ const renderSmartTags = require('./modules_backend/renderSmartTags');
 //patterns
 const updatePatternsObject = require('./modules_backend/updatePatternsObject');
 const renderPatternExamples = require('./modules_backend/renderPatternExamples');
-//tweets
-const twitter = requite('./modules_backend/twitter');
 
 const site = require('./site');
 
@@ -146,14 +144,6 @@ gulp.task('styles',()=> {
 gulp.task('static',() => {
   return gulp.src('_source/static/**/*')
   .pipe(gulp.dest(site.publish_folder))
-})
-
-/*
---. tweets
-*/
-gulp.task('twitter',() => {
-  return gulp.src('_source/data/tweets.js')
-  .pipe(twitter())
 })
 
 
