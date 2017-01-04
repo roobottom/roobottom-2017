@@ -11,7 +11,7 @@ commit_website_files() {
 }
 
 upload_files() {
-  git remote add master https://$GH_TOKEN@github.com/roobottom/roobottom-2017-live.git &2> /dev/null
+  git remote add master https://$GH_PUSH_TOKEN@github.com/roobottom/roobottom-2017-live.git &2> /dev/null
   git push --quiet
 }
 
