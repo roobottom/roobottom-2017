@@ -5,8 +5,8 @@ before_script:
   - "npm install"
   - "sudo apt-get update"
   - "sudo apt-get install graphicsmagick"
+  - chmod 755 ./travis/push.sh
 script:
-  - "gulp images"
   - "gulp build"
 after_success:
   - ./travis/push.sh
