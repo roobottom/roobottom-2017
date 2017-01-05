@@ -6,8 +6,8 @@ setup_git() {
 }
 
 copy_generated_files() {
-  rsync -r --exclude=.git ./docs/ ~/deploy/
-  cd ~/deploy
+  rsync -r --exclude=.git ./docs/ ~/roobottom-deploy/
+  cd ~/roobottom-deploy
 }
 
 commit_website_files() {

@@ -20,5 +20,9 @@ module.exports = {
     source: './_source/posts/articles/*.md',
     page: './_source/templates/article.html',
     archives: './_source/templates/articles.html'
+  },
+  drafts: {
+    source: './_source/posts/drafts/*.md',
+    page: './_source/templates/draft.html'
   }
 }

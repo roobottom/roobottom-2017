@@ -40,3 +40,18 @@ img {
   padding: 20px 0;
   display: block;
 }
+.m_figure {
+  margin: 20px 0;
+}
+.m_figure__caption {
+  margin: 10px 0;
+  display: block;
+  color: #666;
+  font-style: italic;
+  font-size: 90%;
+  border-bottom: 1px solid #ccc;
+}
+.m_figure__captionPreface,
+.m_figure__captionPunctuation {
+  color: #ccc;
+}
