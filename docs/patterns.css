@@ -69,7 +69,7 @@ img {
 .m_prose p {
   font-size: 1.3125em;
   line-height: 1.38095238;
-  margin: 0;
+  margin: 1.52380952;
   padding: 0;
 }
 .m_prose .meta {
@@ -84,7 +84,7 @@ img {
 .m_prose > ol {
   font-size: 1.3125em;
   line-height: 1.38095238;
-  margin: 0;
+  margin: 1.52380952;
   padding: 0;
   list-style-position: inside;
 }
@@ -188,7 +188,7 @@ img {
   width: 100%;
   font-size: 1.3125em;
   line-height: 1.38095238;
-  margin: 0;
+  margin: 1.52380952;
   padding: 0;
 }
 .m_prose td,
