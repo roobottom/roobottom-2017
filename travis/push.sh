@@ -5,16 +5,23 @@ setup_git() {
   git config --global user.name "Travis CI"
 }
 
+copy_generated_files() {
+  rsync -r --exclude=.git ./docs/ ~/deploy/
+  cd ~/deploy
+}
+
 commit_website_files() {
-  git add docs/.
+  git init
+  git add .
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 
 upload_files() {
   git remote add master https://$GH_PUSH_TOKEN@github.com/roobottom/roobottom-2017-live.git &2> /dev/null
-  git push --quiet
+  git push --set-upstream master master
 }
 
 setup_git
+copy_generated_files
 commit_website_files
 upload_files
