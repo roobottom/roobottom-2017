@@ -20,6 +20,7 @@
     "gulp-less": "^3.3.0",
     "gulp-load-plugins": "^1.4.0",
     "gulp-marked": "^1.0.0",
+    "gulp-remarkable": "^1.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "lodash": "^4.17.2",
