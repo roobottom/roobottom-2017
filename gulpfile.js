@@ -155,7 +155,7 @@ gulp.task('images',() => {
 --. styles
 */
 gulp.task('styles',()=> {
-  return gulp.src('_source/patterns/patterns.less')
+  return gulp.src('_source/patterns/styles.less')
   .pipe($.less())
   .pipe(gulp.dest(site.publish_folder))
 })
