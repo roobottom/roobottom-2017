@@ -5,6 +5,7 @@ const through = require('through2');
 const gutil = require('gulp-util');
 const _ = require('lodash');
 const fs = require('fs');
+const marked = require('marked');
 
 module.exports = function(site) {
   let patterns = [];
@@ -19,8 +20,12 @@ module.exports = function(site) {
     if(file.meta.dataFile) {
       try {
         let dataFile = path.join(__dirname, '../_source/patterns/' + dirArray[1] + '/' + fileobj.name + '/' + file.meta.dataFile.name);
+        let dataFileContents = fs.readFileSync(dataFile).toString()
+        if(file.meta.dataFile.markdown) {
+          dataFileContents = marked(dataFileContents);
+        }
         file.meta.data = {};
-        file.meta.data[file.meta.dataFile.key] = fs.readFileSync(dataFile).toString();
+        file.meta.data[file.meta.dataFile.key] = dataFileContents;
       }
       catch (e) {
         var err = new gutil.PluginError('Update Patterns Object', 'Error loading data file for'+fileobj.name+'\n'+e);
