@@ -1,8 +1,22 @@
-This is the _prose_ for the **prose** component
+## Heading level 2
+### Heading level 3
 
-This is a second line of prose
+A paragraph of text usually contains both **bold** and *italic* elements, and sometimes **_bold-italic_** elements. Paragraphs also sometimes contain [links](http://roobottom.com) to other interesting content.
 
-- Hi
-- how
-- are
-- you
+**Bulleted lists** are great! Here’s one:
+
++ The first item
++ The second item
+	+ The first child of the second item
+	+ The second child of the second item
++ The third item
+
+Don’t forget about **numbered lists**, here’s one:
+
+1. The first item
+1. The second item
+	1. The first child of the second item
+	1. The second child of the second item
+1. The third item
+
+> Quotes are great! When someone else has said something, use a block quote! — [Attributed to someone.](#)

@@ -1,11 +1,15 @@
+@lower_lh: 23;
+@upper_lh: 31;
+
 #m_prose {
 
-  @lower_lh: 23;
-  @upper_lh: 31;
-
   #default {
+    .color() {
+      color: #333;
+    }
     .spacing() {
       margin: unit(@lower_lh/@base,rem) 0;
+      padding: 0;
       #breakpoint > .med({
         margin: unit(@upper_lh/@base,rem) 0;
       });
@@ -58,21 +62,18 @@
       });
     }
 
+
+
   }
 }
 
 .m_prose {
 
-  //default styling
-
+  //general styles
   h1,h2,h3,h4,h5,h6,
-  p,ul,ol,figure {
+  p,figure,blockquote {
+    #m_prose > #default > .color();
     #m_prose > #default > .spacing();
-  }
-
-  p,ul,ol {
-    #m_prose > #default > .size;
-    #m_prose > #default > .line-height();
   }
 
   //headings
@@ -88,4 +89,79 @@
   h3 {
     #m_prose > #heading > .h3();
   }
+
+  //paragraphs
+  p {
+    #m_prose > #default > .size;
+    #m_prose > #default > .line-height();
+  }
+
+  //list
+  >ul,>ol {
+    #m_prose > #default > .spacing();
+    #m_prose > #default > .size;
+    #m_prose > #default > .line-height();
+    list-style-position: inside;
+    #breakpoint > .med({
+      list-style-position: outside;
+    });
+  }
+
+  //special styles for sub lists
+  ul ul, ul ol, ol ol, ol ul {
+    padding: 0;
+    margin-left: 1em;
+  }
+  ul  {
+    list-style: disc;
+    ul {
+      list-style: circle;
+      ul {
+        list-style: square;
+      }
+    }
+  }
+  ol {
+    list-style: decimal;
+    ol {
+      list-style: lower-roman;
+      ol {
+        list-style: lower-latin;
+      }
+    }
+  }
+
+  //quotes
+  blockquote {
+    padding: unit(@lower_lh/@base,rem);
+    font-size: 117%;
+    color: #DDD;
+    #breakpoint > .med({
+      padding: unit(@upper_lh/@base,rem);
+    });
+    font-style: italic;
+    position: relative;
+
+    >* {margin: 0;}
+
+    &:before,&:after {
+      font-family: 'Abril';
+      font-size: unit(100/@base,rem);
+      position: absolute;
+    }
+    &:before {
+      content: "\201C";
+      top: 0;
+      left: unit(-50/@base,rem);
+      line-height: 1;
+    }
+    &:after {
+      content: "\201D";
+      bottom: 0;
+      right: 0;
+      line-height: 0;
+    }
+
+  }
+
 }

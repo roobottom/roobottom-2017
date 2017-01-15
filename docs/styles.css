@@ -99,10 +99,11 @@ body {
 .m_prose h5,
 .m_prose h6,
 .m_prose p,
-.m_prose ul,
-.m_prose ol,
-.m_prose figure {
+.m_prose figure,
+.m_prose blockquote {
+  color: #333;
   margin: 1.4375rem 0;
+  padding: 0;
 }
 @media screen and (min-width: 40rem) {
   .m_prose h1,
@@ -112,30 +113,9 @@ body {
   .m_prose h5,
   .m_prose h6,
   .m_prose p,
-  .m_prose ul,
-  .m_prose ol,
-  .m_prose figure {
+  .m_prose figure,
+  .m_prose blockquote {
     margin: 1.9375rem 0;
-  }
-}
-.m_prose p,
-.m_prose ul,
-.m_prose ol {
-  font-size: 1em;
-  line-height: 1.4375;
-}
-@media screen and (min-width: 40rem) {
-  .m_prose p,
-  .m_prose ul,
-  .m_prose ol {
-    font-size: 1.1875em;
-  }
-}
-@media screen and (min-width: 40rem) {
-  .m_prose p,
-  .m_prose ul,
-  .m_prose ol {
-    line-height: 1.63157895;
   }
 }
 .m_prose h1,
@@ -178,8 +158,113 @@ body {
     line-height: 1.06896552;
   }
 }
+.m_prose p {
+  font-size: 1em;
+  line-height: 1.4375;
+}
+@media screen and (min-width: 40rem) {
+  .m_prose p {
+    font-size: 1.1875em;
+  }
+}
+@media screen and (min-width: 40rem) {
+  .m_prose p {
+    line-height: 1.63157895;
+  }
+}
+.m_prose > ul,
+.m_prose > ol {
+  margin: 1.4375rem 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.4375;
+  list-style-position: inside;
+}
+@media screen and (min-width: 40rem) {
+  .m_prose > ul,
+  .m_prose > ol {
+    margin: 1.9375rem 0;
+  }
+}
+@media screen and (min-width: 40rem) {
+  .m_prose > ul,
+  .m_prose > ol {
+    font-size: 1.1875em;
+  }
+}
+@media screen and (min-width: 40rem) {
+  .m_prose > ul,
+  .m_prose > ol {
+    line-height: 1.63157895;
+  }
+}
+@media screen and (min-width: 40rem) {
+  .m_prose > ul,
+  .m_prose > ol {
+    list-style-position: outside;
+  }
+}
+.m_prose ul ul,
+.m_prose ul ol,
+.m_prose ol ol,
+.m_prose ol ul {
+  padding: 0;
+  margin-left: 1em;
+}
+.m_prose ul {
+  list-style: disc;
+}
+.m_prose ul ul {
+  list-style: circle;
+}
+.m_prose ul ul ul {
+  list-style: square;
+}
+.m_prose ol {
+  list-style: decimal;
+}
+.m_prose ol ol {
+  list-style: lower-roman;
+}
+.m_prose ol ol ol {
+  list-style: lower-latin;
+}
+.m_prose blockquote {
+  padding: 1.4375rem;
+  font-size: 117%;
+  color: #DDD;
+  font-style: italic;
+  position: relative;
+}
+@media screen and (min-width: 40rem) {
+  .m_prose blockquote {
+    padding: 1.9375rem;
+  }
+}
+.m_prose blockquote > * {
+  margin: 0;
+}
+.m_prose blockquote:before,
+.m_prose blockquote:after {
+  font-family: 'Abril';
+  font-size: 6.25rem;
+  position: absolute;
+}
+.m_prose blockquote:before {
+  content: "\201C";
+  top: 0;
+  left: -3.125rem;
+  line-height: 1;
+}
+.m_prose blockquote:after {
+  content: "\201D";
+  bottom: 0;
+  right: 0;
+  line-height: 0;
+}
 .m_pageTitle {
   margin: 1.4375rem 0;
+  padding: 0;
   font-family: 'Abril', serif;
   font-weight: bold;
   font-style: normal;
