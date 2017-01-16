@@ -25,10 +25,21 @@
       });
     }
     .line-height() {
-      line-height: @lower_lh/16;
+      line-height: @upper_lh/16;
+      #m_prose > #fontlock > .line-height();
       #breakpoint > .med({
         line-height: @upper_lh/19;
       });
+    }
+  }
+
+  #fontlock {
+    .line-height(@lh-min:@lower_lh,@lh-max:@upper_lh,@width-min:300,@width-max:640) {
+      @min: @lh-min / @base;
+      @max: @lh-max / @base;
+      @minW: @width-min / @base;
+      @maxW: @width-max / @base;
+      line-height: ~"calc(@{min}em + (@{max} - @{min}) * ((100vw - @{minW}em)/(@{maxW} - @{minW})))";
     }
   }
 
@@ -59,10 +70,10 @@
 
     .h3() {
       font-size: unit(23/@base,em);
-      line-height: @lower_lh/23;
+      line-height: @lower_lh*1.5/23;
       #breakpoint > .med({
         font-size: unit(29/@base,em);
-        line-height: @upper_lh/29;
+        line-height: @upper_lh*1.5/29;
       });
     }
 
@@ -116,6 +127,7 @@
     #m_prose > #default > .size;
     #m_prose > #default > .line-height();
     list-style-position: inside;
+    margin-left: 1em;
     #breakpoint > .med({
       list-style-position: outside;
     });
