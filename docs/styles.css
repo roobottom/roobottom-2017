@@ -257,6 +257,7 @@ body {
   left: -4.375rem;
   line-height: 1;
   color: #FF6175;
+  font-style: normal;
 }
 .m_prose code {
   color: #333;
@@ -266,6 +267,7 @@ body {
   padding: 0;
   background-color: #F5F5F5;
   padding: 1.4375rem;
+  overflow-y: auto;
   position: relative;
 }
 @media screen and (min-width: 40rem) {
