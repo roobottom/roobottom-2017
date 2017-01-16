@@ -1,7 +1,7 @@
+A paragraph of text usually contains both **bold** and *italic* elements, and sometimes **_bold-italic_** elements. Paragraphs also sometimes contain [links](http://roobottom.com) to other interesting content.
+
 ## Heading level 2
 ### Heading level 3
-
-A paragraph of text usually contains both **bold** and *italic* elements, and sometimes **_bold-italic_** elements. Paragraphs also sometimes contain [links](http://roobottom.com) to other interesting content.
 
 **Bulleted lists** are great! Here’s one:
 
@@ -19,4 +19,12 @@ Don’t forget about **numbered lists**, here’s one:
 	1. The second child of the second item
 1. The third item
 
-> Quotes are great! When someone else has said something, use a block quote! — [Attributed to someone.](#)
+> Quotes are great too! When someone else has said something, use a quote! — [Attributed to someone.](#)
+
+Sometimes its important to mention a `variable` or other `code element`, inline. Other times, its better to show a whole block of code, like this:
+
+```
+.class-name {
+  color: blue;
+}
+```

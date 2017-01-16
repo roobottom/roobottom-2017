@@ -1,6 +1,10 @@
 @lower_lh: 23;
 @upper_lh: 31;
 
+@c_red: #FF6175;
+@c_blue: #3F9BB8;
+@c_lightgrey: #F5F5F5;
+
 #m_prose {
 
   #default {
@@ -62,9 +66,14 @@
       });
     }
 
-
-
   }
+
+  #link {
+    .base() {
+      color: @c_blue;
+    }
+  }
+
 }
 
 .m_prose {
@@ -94,6 +103,11 @@
   p {
     #m_prose > #default > .size;
     #m_prose > #default > .line-height();
+  }
+
+  //links
+  a {
+    #m_prose > #link > .base();
   }
 
   //list
@@ -133,35 +147,62 @@
 
   //quotes
   blockquote {
+    font-style: italic;
+    position: relative;
+    margin-left: 2em;
+
+    &:before {
+      font-family: 'Abril';
+      font-size: unit(108/@base,rem);
+      position: absolute;
+      content: "\201C";
+      top: unit(-10/@base,rem);
+      left: unit(-70/@base,rem);
+      line-height: 1;
+      color: @c_red;
+    }
+  }
+
+  //code
+  code {
+    #m_prose > #default > .color();
+  }
+
+  //code -- blocks
+
+  pre {
+    #m_prose > #default > .spacing();
+    background-color: @c_lightgrey;
     padding: unit(@lower_lh/@base,rem);
-    font-size: 117%;
-    color: #DDD;
     #breakpoint > .med({
       padding: unit(@upper_lh/@base,rem);
     });
-    font-style: italic;
+
     position: relative;
-
-    >* {margin: 0;}
-
-    &:before,&:after {
-      font-family: 'Abril';
-      font-size: unit(100/@base,rem);
-      position: absolute;
-    }
     &:before {
-      content: "\201C";
-      top: 0;
-      left: unit(-50/@base,rem);
-      line-height: 1;
-    }
-    &:after {
-      content: "\201D";
-      bottom: 0;
-      right: 0;
-      line-height: 0;
+      content: '';
+      display: block;
+      width: 6px;
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      background-color: @c_red;
     }
 
+  }
+  pre>code {
+    #m_prose > #default > .line-height();
+    #m_prose > #default > .size();
+  }
+
+  //code -- inline
+  p>code,li>code,h2>code,h3>code {
+    background-color: @c_lightgrey;
+    border-radius: 10px;
+    padding: unit(4/@base,rem) unit(10/@base,rem);
+    #breakpoint > .med({
+      border-radius: 20px;
+      padding: unit(6/@base,rem) unit(12/@base,rem);
+    });
   }
 
 }
