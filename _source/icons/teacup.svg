@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 82" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path id="a" d="M10 3h46v46H10z"/>
+    <filter id="e" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feOffset dx="-10" in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
+      <feColorMatrix values="0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 1 0" in="shadowInnerInner1"/>
+    </filter>
+    <mask id="f" width="50" height="50" x="-2" y="-2">
+      <path fill="#fff" d="M8 1h50v50H8z"/>
+      <use xlink:href="#a"/>
+    </mask>
+    <path id="b" d="M1.204 52.596C.54 51.714.894 51 1.994 51h62.013c1.1 0 1.453.716.79 1.596l-1.365 1.808c-.665.882-2.098 1.596-3.2 1.596H5.768c-1.102 0-2.536-.716-3.2-1.596l-1.363-1.808z"/>
+    <filter id="g" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feOffset dx="-10" in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
+      <feColorMatrix values="0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 1 0" in="shadowInnerInner1"/>
+    </filter>
+    <mask id="h" width="70" height="9" x="-2" y="-2">
+      <path fill="#fff" d="M-2 49h70v9H-2z"/>
+      <use xlink:href="#b"/>
+    </mask>
+    <path id="c" d="M58 27v3h5c2.756 0 5-2.236 5-4.995V10H58v3h7v10.007C65 25.212 63.213 27 61.007 27H58z"/>
+    <filter id="i" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+      <feOffset dx="-1" in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
+      <feColorMatrix values="0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 1 0" in="shadowInnerInner1"/>
+    </filter>
+    <mask id="j" width="14" height="24" x="-2" y="-2">
+      <path fill="#fff" d="M56 8h14v24H56z"/>
+      <use xlink:href="#c"/>
+    </mask>
+    <path id="d" d="M20 12h10v12H20z"/>
+    <mask id="k" width="14" height="16" x="-2" y="-2">
+      <path fill="#fff" d="M18 10h14v16H18z"/>
+      <use xlink:href="#d"/>
+    </mask>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(7 13)">
+      <use fill="#F4F4F4" xlink:href="#a"/>
+      <use fill="#000" filter="url(#e)" xlink:href="#a"/>
+      <use stroke="#000" stroke-width="4" mask="url(#f)" xlink:href="#a"/>
+    </g>
+    <g transform="translate(7 13)">
+      <use fill="#F4F4F4" xlink:href="#b"/>
+      <use fill="#000" filter="url(#g)" xlink:href="#b"/>
+      <use stroke="#000" stroke-width="4" mask="url(#h)" xlink:href="#b"/>
+    </g>
+    <g transform="translate(7 13)">
+      <use fill="#F4F4F4" xlink:href="#c"/>
+      <use fill="#000" filter="url(#i)" xlink:href="#c"/>
+      <use stroke="#000" stroke-width="4" mask="url(#j)" xlink:href="#c"/>
+    </g>
+    <g transform="translate(7 13)">
+      <use fill="#FFCD72" xlink:href="#d"/>
+      <use stroke="#000" stroke-width="4" mask="url(#k)" xlink:href="#d"/>
+    </g>
+    <path stroke="#000" stroke-width="2" d="M32 23V13" stroke-linecap="round"/>
+  </g>
+</svg>

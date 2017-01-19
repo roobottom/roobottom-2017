@@ -5,7 +5,8 @@ const del = require('del');
 const $ = require('gulp-load-plugins')({
   rename: {
     'gulp-front-matter': 'fm',
-    'gulp-image-resize':'resize'
+    'gulp-image-resize':'resize',
+    'gulp-svg-sprite':'svgSprite'
   }
 });
 const path = require('path');
@@ -150,6 +151,25 @@ gulp.task('images',() => {
     }))
   .pipe(gulp.dest(site.publish_folder + '/images'))
 });
+
+/*
+--. icons
+*/
+
+var svgSpriteConfig = {
+  mode: {
+    symbol: {
+      dest: './',
+      sprite: 'sprites.svg'
+    }
+  }
+};
+
+gulp.task('icons',() => {
+  return gulp.src('./_source/icons')
+  .pipe($.svgSprite(svgSpriteConfig))
+  .pipe(gulp.dest('./docs/assets'))
+})
 
 /*
 --. styles
