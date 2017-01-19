@@ -1,78 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 82" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <path id="a" d="M58.503 5h15.49C77.315 5 80 7.686 80 11c0 3.307-2.69 6-6.007 6H59v26H22.002c-5.594 0-10.294-3.82-11.625-9H0V6h10V5h48.503z"/>
-    <mask id="e" width="84" height="42" x="-2" y="-2">
-      <path fill="#fff" d="M-2 3h84v42H-2z"/>
-      <use xlink:href="#a"/>
-    </mask>
-    <path id="b" d="M25.913 6c0-3.307-2.686-6-6-6H7.03C2.258.19-.052 4.93 0 7.027v9.06c0 3.315 2.687 6 6 6 3.308 0 6-2.686 6-6V12h7.914"/>
-    <mask id="f" width="29.913" height="26.088" x="-2" y="-2">
-      <path fill="#fff" d="M-2-2h29.913v26.088H-2z"/>
-      <use xlink:href="#b"/>
-    </mask>
-    <filter id="g" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
-      <feOffset dx="2" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
-      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" in="shadowOffsetOuter1" result="shadowMatrixOuter1"/>
-      <feMerge>
-        <feMergeNode in="shadowMatrixOuter1"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <rect id="c" width="28" height="12" rx="6"/>
-    <mask id="h" width="32" height="16" x="-2" y="-2">
-      <path fill="#fff" d="M-2-2h32v16H-2z"/>
-      <use xlink:href="#c"/>
-    </mask>
-    <filter id="i" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
-      <feOffset dx="2" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
-      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" in="shadowOffsetOuter1" result="shadowMatrixOuter1"/>
-      <feMerge>
-        <feMergeNode in="shadowMatrixOuter1"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <rect id="d" width="28" height="12" rx="6"/>
-    <mask id="j" width="32" height="16" x="-2" y="-2">
-      <path fill="#fff" d="M-2-2h32v16H-2z"/>
-      <use xlink:href="#d"/>
-    </mask>
-  </defs>
-  <g fill="none" fill-rule="evenodd">
-    <g transform="matrix(-1 0 0 1 83 19)">
-      <use fill="#EFC2A3" xlink:href="#a"/>
-      <use stroke="#000" stroke-width="4" mask="url(#e)" xlink:href="#a"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>hand-point-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hand-point-left">
+            <g id="Group-3" transform="translate(3.000000, 20.000000)">
+                <path d="M80,4 L6.00670248,4 C2.68475771,4 0,6.6862915 0,10 C0,13.3069658 2.6892923,16 6.00670248,16 L21,16 L21,38 L57.9975715,38 C63.224253,38 67.670634,34.6622642 69.3177471,30 L80,30 L80,4 Z" id="hand" stroke="#000000" stroke-width="2" fill="#EFC2A3"></path>
+                <g id="thumb" transform="translate(43.000000, 0.000000)">
+                    <path d="M15.4962991,12 L12,12 L12,15.4962991 C12,18.8120516 9.30696577,21.5 6,21.5 C2.6862915,21.5 0,18.8190052 0,15.4962991 L0,6.50370086 C0,4.73002349 0.770596321,3.13598864 1.99354987,2.03693354 L1.99354987,2.03693354 L1.99354987,2.03693354 C3.09268603,0.788016943 4.70407124,0 6.50370086,0 L15.4962991,0 C18.8120516,0 21.5,2.69303423 21.5,6" stroke="#000000" stroke-width="2" stroke-linecap="round" fill="#EFC2A3"></path>
+                    <rect id="Rectangle-18" fill="#D9B093" x="3" y="2" width="9" height="8" rx="4"></rect>
+                    <path d="M6.5,4 L6.5,8" id="Line" stroke="#EFC2A3" stroke-linecap="round"></path>
+                    <path d="M8.5,4 L8.5,8" id="Line" stroke="#EFC2A3" stroke-linecap="round"></path>
+                    <path d="M3,16 C3,17.6568542 4.34314575,19 6,19 C7.65685425,19 9,17.6568542 9,16 L3,16 Z" id="fingernail" fill="#FFFFFF"></path>
+                </g>
+                <rect id="Rectangle-7" stroke="#000000" stroke-width="2" fill="#EFC2A3" x="14" y="28" width="25" height="12" rx="6"></rect>
+                <path d="M34,31 C35.6568542,31 37,32.3431458 37,34 C37,35.6568542 35.6568542,37 34,37 L34,31 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                <g id="Group" transform="translate(16.000000, 30.000000)">
+                    <rect id="Rectangle-18" fill="#D9B093" transform="translate(4.500000, 4.000000) scale(-1, 1) translate(-4.500000, -4.000000) " x="0" y="0" width="9" height="8" rx="4"></rect>
+                    <path d="M5.5,2 L5.5,6" id="Line" stroke="#EFC2A3" stroke-linecap="round" transform="translate(5.500000, 4.000000) scale(-1, 1) translate(-5.500000, -4.000000) "></path>
+                    <path d="M3.5,2 L3.5,6" id="Line" stroke="#EFC2A3" stroke-linecap="round" transform="translate(3.500000, 4.000000) scale(-1, 1) translate(-3.500000, -4.000000) "></path>
+                </g>
+                <rect id="Rectangle-7" stroke="#000000" stroke-width="2" fill="#EFC2A3" x="14" y="16" width="25" height="12" rx="6"></rect>
+                <path d="M34,19 C35.6568542,19 37,20.3431458 37,22 C37,23.6568542 35.6568542,25 34,25 L34,19 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                <g id="Group-2" transform="translate(16.000000, 18.000000)">
+                    <rect id="Rectangle-18" fill="#D9B093" transform="translate(4.500000, 4.000000) scale(-1, 1) translate(-4.500000, -4.000000) " x="0" y="0" width="9" height="8" rx="4"></rect>
+                    <path d="M5.5,2 L5.5,6" id="Line" stroke="#EFC2A3" stroke-linecap="round" transform="translate(5.500000, 4.000000) scale(-1, 1) translate(-5.500000, -4.000000) "></path>
+                    <path d="M3.5,2 L3.5,6" id="Line" stroke="#EFC2A3" stroke-linecap="round" transform="translate(3.500000, 4.000000) scale(-1, 1) translate(-3.500000, -4.000000) "></path>
+                </g>
+                <path d="M17,7 L17,13" id="Line" stroke="#D9B093" stroke-width="2" stroke-linecap="round" transform="translate(17.000000, 10.000000) scale(-1, 1) translate(-17.000000, -10.000000) "></path>
+                <path d="M59,16 L59,31" id="Line" stroke="#D9B093" stroke-width="2" stroke-linecap="round"></path>
+            </g>
+        </g>
     </g>
-    <g transform="translate(50.087 19)">
-      <use fill="#EFC2A3" xlink:href="#b"/>
-      <use stroke="#000" stroke-width="4" mask="url(#f)" xlink:href="#b"/>
-    </g>
-    <g transform="translate(53 21)">
-      <rect width="9" height="8" fill="#D9B093" rx="4"/>
-      <path stroke="#EFC2A3" d="M3.5 2v4M5.5 2v4" stroke-linecap="round"/>
-    </g>
-    <path fill="#FFF" d="M53 36c0 1.657 1.343 3 3 3s3-1.343 3-3h-6z"/>
-    <g filter="url(#g)" transform="matrix(-1 0 0 1 45 52)">
-      <g transform="matrix(-1 0 0 1 28 0)">
-        <use fill="#EFC2A3" xlink:href="#c"/>
-        <use stroke="#000" stroke-width="4" mask="url(#h)" xlink:href="#c"/>
-      </g>
-      <path fill="#FFF" d="M5 3C3.343 3 2 4.343 2 6s1.343 3 3 3V3z"/>
-      <g transform="translate(17 2)">
-        <rect width="9" height="8" fill="#D9B093" rx="4"/>
-        <path stroke="#EFC2A3" d="M3.5 2v4M5.5 2v4" stroke-linecap="round"/>
-      </g>
-    </g>
-    <g filter="url(#i)" transform="matrix(-1 0 0 1 45 38)">
-      <g transform="matrix(-1 0 0 1 28 0)">
-        <use fill="#EFC2A3" xlink:href="#d"/>
-        <use stroke="#000" stroke-width="4" mask="url(#j)" xlink:href="#d"/>
-      </g>
-      <path fill="#FFF" d="M5 3C3.343 3 2 4.343 2 6s1.343 3 3 3V3z"/>
-      <g transform="translate(17 2)">
-        <rect width="9" height="8" fill="#D9B093" rx="4"/>
-        <path stroke="#EFC2A3" d="M3.5 2v4M5.5 2v4" stroke-linecap="round"/>
-      </g>
-    </g>
-    <path stroke="#D9B093" stroke-width="2" d="M20 27v6" stroke-linecap="round"/>
-  </g>
 </svg>

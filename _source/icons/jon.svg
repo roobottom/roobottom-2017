@@ -1,86 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 82" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <rect id="a" width="11" height="11" x="50" y="27" rx="3"/>
-    <mask id="i" width="11" height="11" x="0" y="0" fill="#fff">
-      <use xlink:href="#a"/>
-    </mask>
-    <rect id="b" width="11" height="11" x="7" y="27" rx="3"/>
-    <mask id="j" width="11" height="11" x="0" y="0" fill="#fff">
-      <use xlink:href="#b"/>
-    </mask>
-    <path id="c" d="M67.59 75.743c.27-1.22.41-2.47.41-3.743 0-13.255-15.222-24-34-24S0 58.745 0 72c0 1.1.105 2.185.308 3.247 1.49.49 3.08.753 4.733.753h59.757c.954 0 1.887-.088 2.792-.257z"/>
-    <filter id="k" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
-      <feOffset dx="-19" in="SourceAlpha" result="shadowOffsetInner1"/>
-      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
-      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" in="shadowInnerInner1"/>
-    </filter>
-    <mask id="l" width="68" height="28" x="0" y="0" fill="#fff">
-      <use xlink:href="#c"/>
-    </mask>
-    <rect id="d" width="40" height="52" x="14" y="3" rx="20"/>
-    <mask id="m" width="44" height="56" x="-2" y="-2">
-      <path fill="#fff" d="M12 1h44v56H12z"/>
-      <use xlink:href="#d"/>
-    </mask>
-    <mask id="n" width="40" height="52" x="0" y="0" fill="#fff">
-      <use xlink:href="#d"/>
-    </mask>
-    <circle id="e" cx="34" cy="52" r="13"/>
-    <mask id="o" width="26" height="26" x="0" y="0" fill="#fff">
-      <use xlink:href="#e"/>
-    </mask>
-    <rect id="f" width="40" height="52" x="14" y="3" rx="20"/>
-    <mask id="p" width="44" height="56" x="-2" y="-2">
-      <path fill="#fff" d="M12 1h44v56H12z"/>
-      <use xlink:href="#f"/>
-    </mask>
-    <mask id="q" width="40" height="52" x="0" y="0" fill="#fff">
-      <use xlink:href="#f"/>
-    </mask>
-    <rect id="g" width="40" height="52" x="14" y="5" rx="20"/>
-    <mask id="r" width="44" height="56" x="-2" y="-2">
-      <path fill="#fff" d="M12 3h44v56H12z"/>
-      <use xlink:href="#g"/>
-    </mask>
-    <mask id="s" width="40" height="52" x="0" y="0" fill="#fff">
-      <use xlink:href="#g"/>
-    </mask>
-    <path id="h" d="M12.35 12.092C11.495 10.72 11 9.105 11 7.38c0-2.993 1.483-5.643 3.76-7.28C18.376.914 22.552 1.38 27 1.38c4.626 0 8.96-.504 12.676-1.38 1.293.894 2.342 2.11 3.024 3.53 1.168-.815 2.594-1.294 4.133-1.294C50.79 2.236 54 5.402 54 9.306c0 1.194-.3 2.317-.827 3.303C55.58 15.91 57 19.974 57 24.37v1.987c-1.064-.084-2.076-.433-3-.998v-.99c0-3.517-.91-6.822-2.505-9.694-1.253 1.06-2.88 1.7-4.662 1.7-2.347 0-4.43-1.112-5.737-2.833-1.665 1.745-4.025 2.834-6.638 2.834h-14.34c-1.445 0-2.81-.333-4.024-.925C14.754 18.14 14 21.168 14 24.372v4.97c-2.803-.413-5-4.268-5-8.963 0-3.724 1.38-6.92 3.35-8.288z"/>
-    <mask id="t" width="52" height="33.342" x="-2" y="-2">
-      <path fill="#fff" d="M7-2h52v33.342H7z"/>
-      <use xlink:href="#h"/>
-    </mask>
-  </defs>
-  <g fill="none" fill-rule="evenodd">
-    <g transform="translate(7 4)">
-      <use fill="#D9B093" stroke="#000" stroke-width="4" mask="url(#i)" xlink:href="#a"/>
-      <use fill="#D9B093" stroke="#000" stroke-width="4" mask="url(#j)" xlink:href="#b"/>
-      <use fill="#3F9BB8" xlink:href="#c"/>
-      <use fill="#000" filter="url(#k)" xlink:href="#c"/>
-      <use stroke="#000" stroke-width="4" mask="url(#l)" xlink:href="#c"/>
-      <use fill="#F4F4F4" xlink:href="#d"/>
-      <use stroke="#000" stroke-width="4" mask="url(#m)" xlink:href="#d"/>
-      <use stroke="#E3E3E3" stroke-width="4" mask="url(#n)" xlink:href="#d"/>
-      <use fill="#D9B093" stroke="#000" stroke-width="4" mask="url(#o)" xlink:href="#e"/>
-      <use fill="#F4F4F4" xlink:href="#f"/>
-      <use stroke="#000" stroke-width="4" mask="url(#p)" xlink:href="#f"/>
-      <use stroke="#E3E3E3" stroke-width="4" mask="url(#q)" xlink:href="#f"/>
-      <g>
-        <use fill="#EFC2A3" xlink:href="#g"/>
-        <use stroke="#000" stroke-width="4" mask="url(#r)" xlink:href="#g"/>
-        <use stroke="#D9B093" stroke-width="4" mask="url(#s)" xlink:href="#g"/>
-      </g>
-      <g>
-        <use fill="#FFCD72" xlink:href="#h"/>
-        <use stroke="#000" stroke-width="4" mask="url(#t)" xlink:href="#h"/>
-      </g>
-      <path fill="#D9B093" d="M52.198 45.526c-3.2 6.78-10.1 11.474-18.1 11.474C26.1 57 19.2 52.306 16 45.526 20.68 43.343 27.063 42 34.098 42c7.036 0 13.42 1.343 18.1 3.526z"/>
-      <g fill="#000" transform="translate(27 30)">
-        <ellipse cx="1.5" cy="3" rx="1.5" ry="3"/>
-        <ellipse cx="12.5" cy="3" rx="1.5" ry="3"/>
-      </g>
-      <path stroke="#000" stroke-width="2" d="M29 49s2.62 1 5.108 1C36.598 50 39 49 39 49" stroke-linecap="round"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>jon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="jon">
+            <rect id="Rectangle-36" stroke="#000000" stroke-width="2" fill="#D9B093" x="57" y="31" width="9" height="9" rx="3"></rect>
+            <rect id="Rectangle-36" stroke="#000000" stroke-width="2" fill="#D9B093" x="15" y="31" width="9" height="9" rx="3"></rect>
+            <path d="M74.588928,79.7430971 C74.8595286,78.5234242 75,77.2732917 75,76 C75,62.745166 59.7776815,52 41,52 C22.2223185,52 7,62.745166 7,76 C7,77.1010881 7.10504524,78.1848577 7.30844764,79.2465876 C8.7974663,79.7355261 10.3883674,80 12.0410822,80 L71.7967556,80 C72.7505478,80 73.6838502,79.9117954 74.588928,79.7430971 L74.588928,79.7430971 Z" id="Combined-Shape" stroke="#000000" stroke-width="2" fill="#3F9BB8"></path>
+            <circle id="Oval-27" stroke="#000000" stroke-width="2" fill="#D9B093" cx="41" cy="56" r="13"></circle>
+            <rect id="Rectangle-14" stroke="#000000" stroke-width="2" fill="#EFC2A3" x="21" y="9" width="40" height="52" rx="20"></rect>
+            <path d="M58.4461546,48.5427284 C55.528824,55.2837869 48.8163456,60 41,60 C33.3066716,60 26.6805253,55.4274457 23.6926268,48.853593 C28.3974624,47.0804971 34.6447477,46 41.5,46 C47.9449203,46 53.8524772,46.9550186 58.4461546,48.5427284 L58.4461546,48.5427284 Z" id="Combined-Shape" fill="#D6AE92"></path>
+            <path d="M18,11.3788787 C18,8.3872499 19.4825874,5.73654059 21.7586305,4.10008015 C25.3767577,4.9143902 29.55277,5.37887869 34,5.37887869 C38.6263358,5.37887869 42.9591681,4.87622362 46.6757806,4 C47.969439,4.89374284 49.0175535,6.11022091 49.7001307,7.52982317 C50.8680844,6.71486514 52.2940358,6.23602155 53.8333333,6.23602155 C57.791374,6.23602155 61,9.40200796 61,13.3074501 C61,14.4997965 60.7009226,15.6232179 60.1727509,16.6086613 C62.5797429,19.9097413 65,25.9754446 65,30.3718817 C65,30.3718817 61.923781,29.9272712 61,29.3618196 C61,29.3618196 59.0911752,21.5497601 57.4954377,18.6782551 C56.2421798,19.7384091 55.6135587,20.3788787 53.8333333,20.3788787 C51.4863609,20.3788787 49.4028866,19.2657009 48.0956292,17.5452504 C46.4312548,19.289656 44.0707283,20.3788787 41.4582761,20.3788787 L27.1174814,20.3788787 C25.6731937,20.3788787 24.3073413,20.0465524 23.0937488,19.4554892 C21.7537499,22.1398393 21,25.1678435 21,28.3718817 L21,33.3421889 C18.19675,32.9288199 16,29.0736408 16,24.3788787 C16,20.6559432 17.381416,17.4609755 19.3512334,16.0916358 C18.494364,14.7198697 18,13.1051379 18,11.3788787 Z" id="Combined-Shape" stroke="#000000" stroke-width="2" stroke-linejoin="round" fill="#FFCD72"></path>
+            <ellipse id="Oval-20" fill="#000000" cx="35.5" cy="37" rx="1.5" ry="3"></ellipse>
+            <ellipse id="Oval-20" fill="#000000" cx="46.5" cy="37" rx="1.5" ry="3"></ellipse>
+            <path d="M36,53 C36,53 38.6193369,54 41.1084888,54 C43.5976408,54 46,53 46,53" id="Line" stroke="#000000" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M44,42 L49,42" id="Line" stroke="#D9B093" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M33,42 L38,42" id="Line" stroke="#D9B093" stroke-width="2" stroke-linecap="round"></path>
+        </g>
     </g>
-    <path stroke="#D9B093" stroke-width="2" d="M44 42h5M33 42h5" stroke-linecap="round"/>
-  </g>
 </svg>

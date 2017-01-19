@@ -1,61 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 82" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <path id="a" d="M10 3h46v46H10z"/>
-    <filter id="e" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
-      <feOffset dx="-10" in="SourceAlpha" result="shadowOffsetInner1"/>
-      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
-      <feColorMatrix values="0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 1 0" in="shadowInnerInner1"/>
-    </filter>
-    <mask id="f" width="50" height="50" x="-2" y="-2">
-      <path fill="#fff" d="M8 1h50v50H8z"/>
-      <use xlink:href="#a"/>
-    </mask>
-    <path id="b" d="M1.204 52.596C.54 51.714.894 51 1.994 51h62.013c1.1 0 1.453.716.79 1.596l-1.365 1.808c-.665.882-2.098 1.596-3.2 1.596H5.768c-1.102 0-2.536-.716-3.2-1.596l-1.363-1.808z"/>
-    <filter id="g" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
-      <feOffset dx="-10" in="SourceAlpha" result="shadowOffsetInner1"/>
-      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
-      <feColorMatrix values="0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 1 0" in="shadowInnerInner1"/>
-    </filter>
-    <mask id="h" width="70" height="9" x="-2" y="-2">
-      <path fill="#fff" d="M-2 49h70v9H-2z"/>
-      <use xlink:href="#b"/>
-    </mask>
-    <path id="c" d="M58 27v3h5c2.756 0 5-2.236 5-4.995V10H58v3h7v10.007C65 25.212 63.213 27 61.007 27H58z"/>
-    <filter id="i" width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
-      <feOffset dx="-1" in="SourceAlpha" result="shadowOffsetInner1"/>
-      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
-      <feColorMatrix values="0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 0 0.890196078 0 0 0 1 0" in="shadowInnerInner1"/>
-    </filter>
-    <mask id="j" width="14" height="24" x="-2" y="-2">
-      <path fill="#fff" d="M56 8h14v24H56z"/>
-      <use xlink:href="#c"/>
-    </mask>
-    <path id="d" d="M20 12h10v12H20z"/>
-    <mask id="k" width="14" height="16" x="-2" y="-2">
-      <path fill="#fff" d="M18 10h14v16H18z"/>
-      <use xlink:href="#d"/>
-    </mask>
-  </defs>
-  <g fill="none" fill-rule="evenodd">
-    <g transform="translate(7 13)">
-      <use fill="#F4F4F4" xlink:href="#a"/>
-      <use fill="#000" filter="url(#e)" xlink:href="#a"/>
-      <use stroke="#000" stroke-width="4" mask="url(#f)" xlink:href="#a"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>teacup</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="teacup">
+            <path d="M16,20.0017284 L16,46.0082757 C16,55.3908792 23.6082963,63 32.9917243,63 L47.0082757,63 C56.3908792,63 64,55.3917037 64,46.0082757 L64,20.0017284 C64,17.237618 61.7614166,15 58.9982716,15 L21.0017284,15 C18.237618,15 16,17.2385834 16,20.0017284 Z" id="Path" fill="#000000"></path>
+            <path d="M18,20.0017284 C18,18.3429598 19.3423807,17 21.0017284,17 L58.9982716,17 C60.6570402,17 62,18.3423807 62,20.0017284 L62,46.0082757 C62,54.2870857 55.2863582,61 47.0082757,61 L32.9917243,61 C24.7129143,61 18,54.2863582 18,46.0082757 L18,20.0017284 Z" id="Rectangle-3" fill="#F4F4F4"></path>
+            <path d="M35,17 L58.9982716,17 C60.6570402,17 62,18.3423807 62,20.0017284 L62,46.0082757 C62,54.2870857 55.2863582,61 47.0082757,61 L35,61 L37.0082757,61 C45.2863582,61 52,54.2870857 52,46.0082757 L52,20.0017284 C52,18.3423807 50.6570402,17 48.9982716,17 L35,17 Z" id="Combined-Shape" fill="#DBDBDB"></path>
+            <path d="M7.87203013,63.7953562 C7.39042119,62.8038083 7.897203,62 8.99828427,62 L73.0017157,62 C74.1053377,62 74.6060333,62.811108 74.1279699,63.7953562 L71.9863158,68.2046438 C71.5047069,69.1961917 70.2161468,70 69.1103734,70 L12.8896266,70 C11.7828964,70 10.4917475,69.188892 10.0136842,68.2046438 L7.87203013,63.7953562 Z" id="Rectangle-25" stroke="#000000" stroke-width="2" fill="#F4F4F4"></path>
+            <path d="M63,41 L63,45 L68,45 C70.7558048,45 73,42.7649426 73,40.0078595 L73,23 L63,23 L63,27 L69,27 L69,37.9966488 C69,39.6553538 67.6576211,41 65.9966488,41 L63,41 Z" id="Combined-Shape" stroke="#000000" stroke-width="2" fill="#F4F4F4"></path>
+            <rect id="Rectangle-32" stroke="#000000" stroke-width="2" fill="#FFCD72" x="27" y="26" width="10" height="12"></rect>
+            <path d="M32,25 L32,14" id="Line" stroke="#000000" stroke-width="2" stroke-linecap="round"></path>
+        </g>
     </g>
-    <g transform="translate(7 13)">
-      <use fill="#F4F4F4" xlink:href="#b"/>
-      <use fill="#000" filter="url(#g)" xlink:href="#b"/>
-      <use stroke="#000" stroke-width="4" mask="url(#h)" xlink:href="#b"/>
-    </g>
-    <g transform="translate(7 13)">
-      <use fill="#F4F4F4" xlink:href="#c"/>
-      <use fill="#000" filter="url(#i)" xlink:href="#c"/>
-      <use stroke="#000" stroke-width="4" mask="url(#j)" xlink:href="#c"/>
-    </g>
-    <g transform="translate(7 13)">
-      <use fill="#FFCD72" xlink:href="#d"/>
-      <use stroke="#000" stroke-width="4" mask="url(#k)" xlink:href="#d"/>
-    </g>
-    <path stroke="#000" stroke-width="2" d="M32 23V13" stroke-linecap="round"/>
-  </g>
 </svg>

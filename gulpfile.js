@@ -166,7 +166,7 @@ var svgSpriteConfig = {
 };
 
 gulp.task('icons',() => {
-  return gulp.src('./_source/icons')
+  return gulp.src('./_source/icons/**/*')
   .pipe($.svgSprite(svgSpriteConfig))
   .pipe(gulp.dest('./docs/assets'))
 })
@@ -192,12 +192,12 @@ gulp.task('static',() => {
 
 //the default task. This will call the first step in the build-chain of pages
 //pages and archives MUST be run in a set order.
-gulp.task('default',['server','styles','static','drafts','watch']);
+gulp.task('default',['server','styles','static','drafts','icons','watch']);
 
 //build task. This does everything for one build.
-gulp.task('build',['pages','styles','static','drafts']);
+gulp.task('build',['pages','styles','static','drafts','icons']);
 
 //watchers
 gulp.task('watch',['pages'],()=>{
-  gulp.watch(['./_source/**/*'],['pages','styles','static','drafts']);
+  gulp.watch(['./_source/**/*'],['pages','styles','static','drafts','icons']);
 });
