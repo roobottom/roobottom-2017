@@ -12,18 +12,9 @@
 //shared styles
 @import '_shared/fonts';
 @import '_shared/utils';
+@import '_shared/layout';
 
-//beta styling
-.c_siteWrapper {
-  padding: 0 30px;
-  #breakpoint > .med({padding:0;});
-  @media (min-width: 640px) {
-    margin: 0 auto;
-    max-width: 600px;
-  }
-}
-
-.m_betaMessage {
+.temp_betaMessage {
   background: fade(yellow,50%);
   padding: 10px;
   margin-bottom: 30px;
@@ -31,7 +22,15 @@
   color: darken(yellow,30%);
   border-top: none;
   >p {
-    margin: 0;
+    #layout > .centre;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.temp_menu {
+  >ul {
+    #layout > .centre();
   }
 }
 
@@ -47,6 +46,9 @@ body {
   font-family: 'Halis',sans-serif;
   margin: 0;
 }
+.page-type-pattern {
+  background: #F1F1F1;
+}
 
 //modules
 @import 'modules/m_pagination/m_pagination';
@@ -55,3 +57,8 @@ body {
 @import 'modules/m_prose/m_prose';
 @import 'modules/m_pageTitle/m_pageTitle';
 @import 'modules/m_icon/m_icon';
+@import 'modules/m_siteHeader/m_siteHeader';
+
+//containers
+@import 'containers/c_page/c_page';
+@import 'containers/c_header/c_header';

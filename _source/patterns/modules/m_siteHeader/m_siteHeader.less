@@ -1,0 +1,26 @@
+.m_siteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: @c_darkblue;
+  padding: unit(36/@base,rem) 0;
+
+  &__titleLink,
+  &__menuLink {
+    text-decoration: none;
+    color: white;
+  }
+
+  &__intro {
+    display: block;
+    font-size: unit(14/@base,rem);
+    line-height: 1;
+  }
+
+  &__name {
+    font-family: 'Abril',serif;
+    font-size: unit(28/@base,rem);
+    text-shadow: 1px 1px 0 fade(black,40%);
+  }
+
+}

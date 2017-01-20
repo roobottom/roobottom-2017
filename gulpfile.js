@@ -51,13 +51,7 @@ gulp.task('articles:process', () => {
 gulp.task('articles:render', ['articles:process'], () => {
   return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
-    .pipe($.remarkable({
-      remarkableOptions: {
-        typographer: true,
-        linkify: true,
-        breaks: true
-      }
-    }))
+    .pipe($.marked())
     .pipe(renderSmartTags())
     .pipe(renderFileWithTemplate(site.articles.page,site))
     .pipe($.htmlmin({collapseWhitespace: true}))

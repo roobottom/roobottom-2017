@@ -33,21 +33,7 @@
   font-style: bold;
   font-weight: normal;
 }
-.c_siteWrapper {
-  padding: 0 30px;
-}
-@media screen and (min-width: 40rem) {
-  .c_siteWrapper {
-    padding: 0;
-  }
-}
-@media (min-width: 640px) {
-  .c_siteWrapper {
-    margin: 0 auto;
-    max-width: 600px;
-  }
-}
-.m_betaMessage {
+.temp_betaMessage {
   background: rgba(255, 255, 0, 0.5);
   padding: 10px;
   margin-bottom: 30px;
@@ -55,8 +41,35 @@
   color: #666600;
   border-top: none;
 }
-.m_betaMessage > p {
-  margin: 0;
+.temp_betaMessage > p {
+  padding: 0 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 40rem) {
+  .temp_betaMessage > p {
+    padding: 0;
+  }
+}
+@media (min-width: 640px) {
+  .temp_betaMessage > p {
+    margin: 0 auto;
+    max-width: 640px;
+  }
+}
+.temp_menu > ul {
+  padding: 0 30px;
+}
+@media screen and (min-width: 40rem) {
+  .temp_menu > ul {
+    padding: 0;
+  }
+}
+@media (min-width: 640px) {
+  .temp_menu > ul {
+    margin: 0 auto;
+    max-width: 640px;
+  }
 }
 a {
   color: blue;
@@ -67,6 +80,9 @@ img {
 body {
   font-family: 'Halis', sans-serif;
   margin: 0;
+}
+.page-type-pattern {
+  background: #F1F1F1;
 }
 .m_pagignation {
   margin-top: 20px;
@@ -377,4 +393,61 @@ body {
 .m_icon {
   width: 5.25rem;
   height: 5.25rem;
+}
+.m_icon--small {
+  width: 2.125rem;
+  height: 2.125rem;
+}
+.m_siteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #326A8A;
+  padding: 2.25rem 0;
+}
+.m_siteHeader__titleLink,
+.m_siteHeader__menuLink {
+  text-decoration: none;
+  color: white;
+}
+.m_siteHeader__intro {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+.m_siteHeader__name {
+  font-family: 'Abril', serif;
+  font-size: 1.75rem;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+.c_page__content {
+  padding: 0 30px;
+}
+@media screen and (min-width: 40rem) {
+  .c_page__content {
+    padding: 0;
+  }
+}
+@media (min-width: 640px) {
+  .c_page__content {
+    margin: 0 auto;
+    max-width: 640px;
+  }
+}
+.c_header {
+  background-color: #326A8A;
+}
+.c_header__content {
+  padding: 0 30px;
+}
+@media screen and (min-width: 40rem) {
+  .c_header__content {
+    padding: 0;
+  }
+}
+@media (min-width: 640px) {
+  .c_header__content {
+    margin: 0 auto;
+    max-width: 640px;
+  }
 }

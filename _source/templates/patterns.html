@@ -1,19 +1,23 @@
 {% extends "layouts/default.html" %}
+{% macro c(contents) %}
+  {{contents|safe}}
+{% endmacro %}
+{% macro patternListing() %}
+  {% for collection in site.patterns %}
+      <h2>{{ collection.name }}</h2>
+      <ul>
+      {% for pattern in collection.patterns %}
+          <li><a href="/patterns/{{pattern.name}}">{{pattern.name}}</a></li>
+      {% endfor %}
+      </ul>
+  {% endfor %}
+{% endmacro %}
 {% block content %}
 {{ c_page([
-    m_pageTitle(page.title)
+    m_pageTitle(page.title),
+    c(contents),
+    patternListing()
   ])
 }}
-
-{{contents|safe}}
-
-{% for collection in site.patterns %}
-    <h2>{{ collection.name }}</h2>
-    <ul>
-    {% for pattern in collection.patterns %}
-        <li><a href="/patterns/{{pattern.name}}">{{pattern.name}}</a></li>
-    {% endfor %}
-    </ul>
-{% endfor %}
 
 {% endblock %}

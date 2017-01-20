@@ -1,0 +1,9 @@
+{% macro c_header(modules,modifier) %}
+  <header class="c_header{% if modifier %} c_header--{{modifier}}{% endif %}">
+    <div class="c_header__content">
+    {% for module in modules -%}
+      {{module}}
+    {%- endfor %}
+    </div>
+  </header>
+{% endmacro %}

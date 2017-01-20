@@ -1,5 +1,5 @@
-{% macro m_icon(name,classes) %}
-  <svg aria-hidden="true" class="m_icon m_icon--{{name}}{% if classes %} {{classes}}{% endif %}">
+{% macro m_icon(name,classes,modifier,data) %}
+  <svg aria-hidden="true" class="m_icon m_icon--{{name}}{% if classes %} {{classes}}{% endif %}{% if modifier %} m_icon--{{modifier}}{% endif %}"{% if data %} data-{{data.attr}}={{data.value}}{% endif %}>
     <use xlink:href="/assets/sprites.svg#{{name}}"></use>
   </svg>
 {% endmacro %}

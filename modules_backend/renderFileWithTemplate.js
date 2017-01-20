@@ -18,6 +18,8 @@ module.exports = function(templateFile,site) {
     if(!templateFile) { thisTemplate = './_source/templates/' + file.page.template; }
     else { thisTemplate = templateFile;}
 
+    file.page.type = thisTemplate.split('/').pop().split('.').shift();
+
     let fileobj = path.parse(file.path);
     file.page.id = fileobj.name;
 

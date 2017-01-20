@@ -1,4 +1,6 @@
 ---
 title: Page container
-data: '<div class="test">Container contents</div>'
+data:
+  dummyDiv: '<div class="test">Container contents</div>'
 ---
+{{c_page(dummyDiv)}}

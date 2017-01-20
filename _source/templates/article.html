@@ -1,11 +1,6 @@
 {% extends "layouts/default.html" %}
-{% block content %}
-{{ c_page([
-    m_pageTitle(page.title),
-    m_prose(contents)
-  ])
-}}
-<hr/>
+
+{% macro prevNext() %}
 <nav class="m_prevNext">
   {% for post in site.posts -%}
     {% if post.id == page.id %}
@@ -24,4 +19,13 @@
     {% endif %}
   {%- endfor %}
 </nav>
+{% endmacro %}
+
+{% block content %}
+{{ c_page([
+    m_pageTitle(page.title),
+    m_prose(contents),
+    prevNext()
+  ])
+}}
 {% endblock %}
