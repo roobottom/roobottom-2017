@@ -28,7 +28,10 @@
     "marked": "^0.3.6",
     "moment": "^2.17.1",
     "nunjucks": "^3.0.0",
-    "through2": "^2.0.1",
-    "twitter": "^1.7.0"
+    "through2": "^2.0.1"
+  },
+  "dependencies": {
+    "webpack": "^1.14.0",
+    "webpack-stream": "^3.2.0"
   }
 }

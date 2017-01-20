@@ -7,10 +7,15 @@
   right: 0;
   background: @c_darkblue;
 
-  display: none;
+  visibility: hidden;
+  opacity: 0.95;
 
   &__content {
     #layout > .centre();
+  }
+
+  &:target {
+    visibility: visible;
   }
 
 }

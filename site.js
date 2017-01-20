@@ -15,7 +15,7 @@ module.exports = {
     },
     {
       url: '/patterns',
-      title: 'Pattern Library',
+      title: 'Pattern library',
       icon: 'clipboard'
     }
   ],

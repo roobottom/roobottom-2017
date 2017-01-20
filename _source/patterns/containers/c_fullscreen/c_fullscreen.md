@@ -1,6 +1,9 @@
 ---
 title: Fullscreen module
 data:
-  dummyDiv: '<div class="test">Container contents</div>'
+  dummyDiv: '<div class="test">Container contents. <a href="#">Close fullscreen</a></div>'
 ---
-{{c_fullscreen(dummyDiv)}}
+
+[Launch fullscreen module](#fullscreen-example)
+
+{{c_fullscreen(dummyDiv,id='fullscreen-example')}}

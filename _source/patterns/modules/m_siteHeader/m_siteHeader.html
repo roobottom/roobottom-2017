@@ -1,11 +1,11 @@
 {% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
-{% macro m_siteHeader(icon='menu') %}
+{% macro m_siteHeader(icon='menu',menuLink='#main-menu') %}
   <div class="m_siteHeader">
     <a href="/" class="m_siteHeader__titleLink" title="Go to the homepage">
       <span class="m_siteHeader__intro">The personal website of</span>
       <span class="m_siteHeader__name">Jon Roobottom</span>
     </a>
-    <a href="#" class="m_siteHeader__menuLink" title="Toggle the main menu">
+    <a href="{{menuLink}}" class="m_siteHeader__menuLink" title="Toggle the main menu">
       {{m_icon(icon,classes='m_siteHeader__menuIcon',modifier='small',data={attr:'alt-icon',value:'menu-close'})}}
     </a>
   </div>
