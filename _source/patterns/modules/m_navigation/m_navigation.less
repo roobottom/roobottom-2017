@@ -1,22 +1,35 @@
 .m_navigation {
 
-    border-bottom: 1px solid #ccc;
+  &__items {
+    padding: 0;
+  }
 
-    &__items {
-        display: flex;
-        padding: 0;
-        margin: 0;
-        justify-content: space-between;
-    }
+  &__item {
+    margin-bottom: 1rem;
+    display: block;
+    padding: 0;
+    list-style: none;
+    #breakpoint > .med({
+        margin-bottom: unit(@base*2/@base,rem);
+    })
+  }
 
-    &__item {
-        list-style: none;
-    }
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
 
-    &__link {
-        font-size: 110%;
-        padding: 20px 0;
-        display: block;
-    }
+  &__title {
+    font-size: unit(26/@base,rem);
+    margin-left: unit(@base*2/@base,rem);
+    line-height: 1;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 0 fade(black,7%);
+    #breakpoint > .med({
+      font-size: unit(46/@base,rem);
+    });
+  }
 
 }

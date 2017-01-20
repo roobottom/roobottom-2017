@@ -1,9 +1,17 @@
+{% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
 {% macro m_navigation(items) %}
 <nav class="m_navigation">
   <ul class="m_navigation__items">
-    {% for item in items %}
-      <li class="m_navigation__item"><a href="{{item.url}}" class="m_navigation__link">{{item.title}}</a></li>
-    {% endfor %}
+    {% for item in items -%}
+      <li class="m_navigation__item">
+        <a href="{{item.url}}" class="m_navigation__link">
+          {% if item.icon %}
+            {{m_icon(item.icon,'m_navigation__icon')}}
+          {% endif %}
+          <span class="m_navigation__title">{{item.title}}</span>
+        </a>
+      </li>
+    {%- endfor %}
   </ul>
 </nav>
 {% endmacro %}

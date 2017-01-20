@@ -1,9 +1,10 @@
 {% from "patterns/modules/m_figure/m_figure.html" import m_figure %}
-{% from "patterns/modules/m_navigation/m_navigation.html" import m_navigation %}
 {% from "patterns/modules/m_pageTitle/m_pageTitle.html" import m_pageTitle %}
 {% from "patterns/modules/m_prose/m_prose.html" import m_prose %}
 {% from "patterns/modules/m_teaser/m_teaser.html" import m_teaser %}
 {% from "patterns/modules/m_pagination/m_pagination.html" import m_pagination %}
+{% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
+{% from "patterns/modules/m_navigation/m_navigation.html" import m_navigation %}
 
 {% from "patterns/containers/c_page/c_page.html" import c_page %}
 
@@ -25,7 +26,11 @@
           <span>The personal website of</span>
           <a href="/">Jon Roobottom</a>
         </div>
-        {{m_navigation(site.menu)}}
+        <ul>
+        {% for item in site.menu %}
+          <li><a href="{{item.url}}">{{item.title}}</a></li>
+        {% endfor %}
+        </ul>
         {% block content %}
         {% endblock %}
       </div>

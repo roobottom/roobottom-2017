@@ -3,11 +3,21 @@ title: 'Navigation module'
 data:
   menuA:
     -
-      title: 'Rebel Scum'
+      title: 'Home'
       url: '#'
+      icon: 'house'
     -
-      title: 'Vadar'
+      title: 'Articles'
       url: '#'
+      icon: 'teacup'
+    -
+      title: 'About'
+      url: '#'
+      icon: 'jon'
+    -
+      title: 'Pattern library'
+      url: '#'
+      icon: 'clipboard'
 ---
 Navigation blah
 

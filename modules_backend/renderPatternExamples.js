@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
 
-const env = nunjucks.configure('',{autoescape:false});
+const env = nunjucks.configure('./_source',{autoescape:false});
 
 
 module.exports = function() {

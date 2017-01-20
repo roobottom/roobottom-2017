@@ -72,22 +72,37 @@ body {
   margin-top: 20px;
   border-top: 1px solid #ccc;
 }
-.m_navigation {
-  border-bottom: 1px solid #ccc;
-}
 .m_navigation__items {
-  display: flex;
   padding: 0;
-  margin: 0;
-  justify-content: space-between;
 }
 .m_navigation__item {
+  margin-bottom: 1rem;
+  display: block;
+  padding: 0;
   list-style: none;
 }
+@media screen and (min-width: 40rem) {
+  .m_navigation__item {
+    margin-bottom: 2rem;
+  }
+}
 .m_navigation__link {
-  font-size: 110%;
-  padding: 20px 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.m_navigation__title {
+  font-size: 1.625rem;
+  margin-left: 2rem;
+  line-height: 1;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.07);
+}
+@media screen and (min-width: 40rem) {
+  .m_navigation__title {
+    font-size: 2.875rem;
+  }
 }
 .m_figure {
   margin: 20px 0;

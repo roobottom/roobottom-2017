@@ -1,5 +1,5 @@
-{% macro m_icon(name) %}
-  <svg aria-hidden="true" class="m_icon m_icon--{{name}}">
+{% macro m_icon(name,classes) %}
+  <svg aria-hidden="true" class="m_icon m_icon--{{name}}{% if classes %} {{classes}}{% endif %}">
     <use xlink:href="/assets/sprites.svg#{{name}}"></use>
   </svg>
 {% endmacro %}
