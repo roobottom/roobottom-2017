@@ -436,6 +436,7 @@ body {
 }
 .c_header {
   background-color: #326A8A;
+  border-bottom: 2px solid #244d65;
 }
 .c_header__content {
   padding: 0 30px;
@@ -447,6 +448,30 @@ body {
 }
 @media (min-width: 640px) {
   .c_header__content {
+    margin: 0 auto;
+    max-width: 640px;
+  }
+}
+.c_fullscreen {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #326A8A;
+  display: none;
+}
+.c_fullscreen__content {
+  padding: 0 30px;
+}
+@media screen and (min-width: 40rem) {
+  .c_fullscreen__content {
+    padding: 0;
+  }
+}
+@media (min-width: 640px) {
+  .c_fullscreen__content {
     margin: 0 auto;
     max-width: 640px;
   }

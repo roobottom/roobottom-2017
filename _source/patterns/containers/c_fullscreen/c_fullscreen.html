@@ -1,0 +1,9 @@
+{% macro c_fullscreen(modules,modifier) %}
+  <div class="c_fullscreen{% if modifier %} c_fullscreen--{{modifier}}{% endif %}">
+    <div class="c_fullscreen__content">
+    {% for module in modules -%}
+      {{module}}
+    {%- endfor %}
+    </div>
+  </div>
+{% endmacro %}
