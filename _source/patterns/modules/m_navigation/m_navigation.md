@@ -1,7 +1,17 @@
 ---
 title: 'Navigation module'
 data:
-  menuA:
+  standardMenu:
+    -
+      title: 'Twitter'
+      url: '#'
+    -
+      title: 'Github'
+      url: '#'
+    -
+      title: 'Flickr'
+      url: '#'
+  mainMenu:
     -
       title: 'Home'
       url: '#'
@@ -19,8 +29,18 @@ data:
       url: '#'
       icon: 'clipboard'
 ---
-Navigation blah
+## Standard navigation module
 
-## Site navigation
+{{ m_navigation(standardMenu) }}
 
-{{ m_navigation(menuA) }}
+## Inline navigation module
+
+Using the modifier `inline`
+
+{{ m_navigation(standardMenu,'inline') }}
+
+## Site navigation module
+
+Using the modifier `main`
+
+{{ m_navigation(mainMenu,'main') }}

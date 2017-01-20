@@ -1,6 +1,6 @@
 {% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
-{% macro m_navigation(items) %}
-<nav class="m_navigation">
+{% macro m_navigation(items,modifier) %}
+<nav class="m_navigation{% if modifier %} m_navigation--{{modifier}}{% endif %}">
   <ul class="m_navigation__items">
     {% for item in items -%}
       <li class="m_navigation__item">
