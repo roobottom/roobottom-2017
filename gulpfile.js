@@ -10,6 +10,7 @@ const $ = require('gulp-load-plugins')({
   }
 });
 const path = require('path');
+const webpack = require('webpack-stream');
 
 
 //posts
@@ -166,6 +167,20 @@ gulp.task('icons',() => {
 })
 
 /*
+--. js
+*/
+gulp.task('js',() => {
+  return gulp.src('./_source/front-end.js')
+  .pipe(webpack({
+    output: {
+        filename: 'functionality.js'
+      }
+  }))
+  .pipe($.uglify())
+  .pipe(gulp.dest('./docs'))
+});
+
+/*
 --. styles
 */
 gulp.task('styles',()=> {
@@ -186,12 +201,12 @@ gulp.task('static',() => {
 
 //the default task. This will call the first step in the build-chain of pages
 //pages and archives MUST be run in a set order.
-gulp.task('default',['server','styles','static','drafts','icons','watch']);
+gulp.task('default',['server','styles','static','drafts','icons','js','watch']);
 
 //build task. This does everything for one build.
-gulp.task('build',['pages','styles','static','drafts','icons']);
+gulp.task('build',['pages','styles','static','drafts','icons','js']);
 
 //watchers
 gulp.task('watch',['pages'],()=>{
-  gulp.watch(['./_source/**/*'],['pages','styles','static','drafts','icons']);
+  gulp.watch(['./_source/**/*'],['pages','styles','static','drafts','icons','js']);
 });
