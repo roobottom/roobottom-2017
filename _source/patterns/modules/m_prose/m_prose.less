@@ -41,7 +41,7 @@
 
   #heading {
     .base() {
-      font-family: 'Abril',serif;
+      font-family: 'Raleway',serif;
       font-weight: bold;
       font-style: normal;
     }
@@ -90,6 +90,23 @@
   p,figure,blockquote {
     #m_prose > #default > .color();
     #m_prose > #default > .spacing();
+  }
+
+  //bold / italic
+  strong, b {
+    font-weight: bold;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  strong>em, em>strong,
+  strong>i, i>strong,
+  b>em, em>b,
+  b>i, i>b {
+    font-style: italic;
+    font-weight: bold;
   }
 
   //headings
@@ -156,19 +173,32 @@
   //quotes
   blockquote {
     font-style: italic;
+    background-color: @c_red;
     position: relative;
-    margin-left: 2em;
-
+    border-radius: 9px;
+    padding: unit(@lower_lh/@base,rem);
+    #breakpoint > .med({
+      padding: unit(@upper_lh/@base,rem);
+    });
+    >* {
+      margin: 0;
+    }
+    p,a {
+      color: white;
+    }
     &:before {
-      font-family: 'Abril';
-      font-size: unit(108/@base,rem);
-      position: absolute;
-      content: "\201C";
-      top: unit(-10/@base,rem);
-      left: unit(-70/@base,rem);
-      line-height: 1;
-      color: @c_red;
-      font-style: normal;
+      content: "";
+      display: block;
+      transform: rotate(45deg);
+      background-color:@c_red;
+      width:20px;
+      height:20px;
+      position:absolute;
+      z-index: -1;
+      top:50%;
+      margin-top: -10px;
+      left:-10px;
+      border-radius: 0 0 0 9px;
     }
   }
 

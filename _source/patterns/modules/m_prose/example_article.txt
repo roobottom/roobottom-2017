@@ -1,7 +1,7 @@
 A paragraph of text usually contains both **bold** and *italic* elements, and sometimes **_bold-italic_** elements. Paragraphs also sometimes contain [links](http://roobottom.com) to other interesting content.
 
-## Heading level 2
-### Heading level 3
+## h2. Expect skilled signwriters to use many jazzy, quaint old alphabets effectively. 09.12" fl fi ffi ffl
+### h3. The wizard quickly jinxed the gnomes before they vaporized. 10.54" fl fi ffi ffl
 
 **Bulleted lists** are great! Here’s one:
 

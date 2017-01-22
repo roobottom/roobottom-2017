@@ -10,7 +10,8 @@ const $ = require('gulp-load-plugins')({
   }
 });
 const path = require('path');
-const webpack = require('webpack-stream');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
 
 
 //posts
@@ -52,7 +53,7 @@ gulp.task('articles:process', () => {
 gulp.task('articles:render', ['articles:process'], () => {
   return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
-    .pipe($.marked())
+    .pipe($.remarkable({preset: 'commonmark'}))
     .pipe(renderSmartTags())
     .pipe(renderFileWithTemplate(site.articles.page,site))
     .pipe($.htmlmin({collapseWhitespace: true}))
@@ -94,7 +95,7 @@ gulp.task('pattern-library', ['articles:archives'], () => {
 gulp.task('pages', ['pattern-library'], () => {
   return gulp.src('./_source/pages/*.md')
   .pipe($.fm({property: 'page', remove: true}))
-  .pipe($.marked())
+  .pipe($.remarkable({preset: 'commonmark'}))
   .pipe(renderFileWithTemplate(null,site))
   .pipe($.htmlmin({collapseWhitespace: true}))
   .pipe($.if(src => {
@@ -121,7 +122,7 @@ gulp.task('pages', ['pattern-library'], () => {
 gulp.task('drafts',()=>{
   return gulp.src(site.drafts.source)
     .pipe($.fm({property: 'page', remove: true}))
-    .pipe($.marked())
+    .pipe($.remarkable({preset: 'commonmark'}))
     .pipe(renderSmartTags())
     .pipe(renderFileWithTemplate(site.drafts.page,site))
     .pipe($.htmlmin({collapseWhitespace: true}))
@@ -171,11 +172,11 @@ gulp.task('icons',() => {
 */
 gulp.task('js',() => {
   return gulp.src('./_source/front-end.js')
-  .pipe(webpack({
+  .pipe(webpackStream({
     output: {
         filename: 'functionality.js'
       }
-  }))
+  }, webpack))
   .pipe($.uglify())
   .pipe(gulp.dest('./docs'))
 });

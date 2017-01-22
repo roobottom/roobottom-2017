@@ -2,21 +2,17 @@
   font-family: 'Halis';
   src: url('/assets/fonts/halis-book.woff2') format('woff2'), url('/assets/fonts/halis-book.woff') format('woff');
   font-variant-ligatures: common-ligatures;
-  font-style: normal;
-  font-weight: normal;
 }
 @font-face {
   font-family: 'Halis';
   src: url('/assets/fonts/halis-book-italic.woff2') format('woff2'), url('/assets/fonts/halis-book-italic.woff') format('woff');
   font-variant-ligatures: common-ligatures;
   font-style: italic;
-  font-weight: normal;
 }
 @font-face {
   font-family: 'Halis';
   src: url('/assets/fonts/halis-black.woff2') format('woff2'), url('/assets/fonts/halis-black.woff') format('woff');
   font-variant-ligatures: common-ligatures;
-  font-style: normal;
   font-weight: bold;
 }
 @font-face {
@@ -27,11 +23,10 @@
   font-weight: bold;
 }
 @font-face {
-  font-family: 'Abril';
-  src: url('/assets/fonts/abril.woff2') format('woff2'), url('/assets/fonts/abril.woff') format('woff');
-  font-variant-ligatures: common-ligatures;
-  font-style: bold;
-  font-weight: normal;
+  font-family: 'Raleway';
+  src: url('/assets/fonts/raleway-black.woff2') format('woff2'), url('/assets/fonts/raleway-black.woff') format('woff');
+  -webkit-font-feature-settings: "lnum" 1, "dlig" 1;
+  font-feature-settings: "lnum" 1, "dlig" 1;
 }
 .temp_betaMessage {
   background: rgba(255, 255, 0, 0.5);
@@ -113,7 +108,7 @@ body {
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.07);
   font-size: 1.625rem;
   margin-left: 2rem;
-  font-family: 'Abril', serif;
+  font-family: 'Raleway', serif;
 }
 @media screen and (min-width: 40rem) {
   .m_navigation--main .m_navigation__title {
@@ -160,13 +155,32 @@ body {
     margin: 1.9375rem 0;
   }
 }
+.m_prose strong,
+.m_prose b {
+  font-weight: bold;
+}
+.m_prose em,
+.m_prose i {
+  font-style: italic;
+}
+.m_prose strong > em,
+.m_prose em > strong,
+.m_prose strong > i,
+.m_prose i > strong,
+.m_prose b > em,
+.m_prose em > b,
+.m_prose b > i,
+.m_prose i > b {
+  font-style: italic;
+  font-weight: bold;
+}
 .m_prose h1,
 .m_prose h2,
 .m_prose h3,
 .m_prose h4,
 .m_prose h5,
 .m_prose h6 {
-  font-family: 'Abril', serif;
+  font-family: 'Raleway', serif;
   font-weight: bold;
   font-style: normal;
 }
@@ -279,19 +293,36 @@ body {
 }
 .m_prose blockquote {
   font-style: italic;
+  background-color: #FF6175;
   position: relative;
-  margin-left: 2em;
+  border-radius: 9px;
+  padding: 1.4375rem;
+}
+@media screen and (min-width: 40rem) {
+  .m_prose blockquote {
+    padding: 1.9375rem;
+  }
+}
+.m_prose blockquote > * {
+  margin: 0;
+}
+.m_prose blockquote p,
+.m_prose blockquote a {
+  color: white;
 }
 .m_prose blockquote:before {
-  font-family: 'Abril';
-  font-size: 6.75rem;
+  content: "";
+  display: block;
+  transform: rotate(45deg);
+  background-color: #FF6175;
+  width: 20px;
+  height: 20px;
   position: absolute;
-  content: "\201C";
-  top: -0.625rem;
-  left: -4.375rem;
-  line-height: 1;
-  color: #FF6175;
-  font-style: normal;
+  z-index: -1;
+  top: 50%;
+  margin-top: -10px;
+  left: -10px;
+  border-radius: 0 0 0 9px;
 }
 .m_prose code {
   color: #333;
@@ -359,7 +390,7 @@ body {
 .m_pageTitle {
   margin: 1.4375rem 0;
   padding: 0;
-  font-family: 'Abril', serif;
+  font-family: 'Raleway', serif;
   font-weight: bold;
   font-style: normal;
   font-size: 2.5em;
@@ -402,7 +433,7 @@ body {
   line-height: 1;
 }
 .m_siteHeader__name {
-  font-family: 'Abril', serif;
+  font-family: 'Raleway', serif;
   font-size: 1.75rem;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
 }
@@ -446,7 +477,7 @@ body {
   bottom: 0;
   right: 0;
   background: #326A8A;
-  visibility: hidden;
+  display: none;
   opacity: 0.95;
 }
 .c_fullscreen__content {
@@ -464,5 +495,5 @@ body {
   }
 }
 .c_fullscreen:target {
-  visibility: visible;
+  display: block;
 }
