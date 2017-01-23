@@ -197,6 +197,7 @@ body {
 .m_prose h2 {
   font-size: 1.625em;
   line-height: 1.32692308;
+  display: block;
 }
 @media screen and (min-width: 40rem) {
   .m_prose h2 {
@@ -207,6 +208,7 @@ body {
 .m_prose h3 {
   font-size: 1.4375em;
   line-height: 1.5;
+  display: block;
 }
 @media screen and (min-width: 40rem) {
   .m_prose h3 {
