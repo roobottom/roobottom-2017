@@ -1,8 +1,7 @@
 {% extends "layouts/default.html" %}
 {% block content %}
   {{ c_page([
-      m_pageTitle(page.title),
-      m_prose(contents,'introduction')
+      m_introduction(contents)
     ])
   }}
 {% endblock %}

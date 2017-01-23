@@ -1,12 +1,15 @@
 //settings
 @base: 16;
 
+//sizes
+@bp_min: 300;
+@bp_med: 704;
+@bp_max: 1200;
+
+@c_primary: #7A75FF;
+@c_primary-dark: darken(@c_primary,3%);
 
 @c_red: #FF6175;
-
-@c_blue: #3F9BB8;
-@c_darkblue: #326A8A;
-
 @c_lightgrey: #F5F5F5;
 
 //shared styles
@@ -37,12 +40,18 @@ img {
 }
 
 body {
-  font-family: 'Halis',sans-serif;
+  font-family: 'Halis', sans-serif;
   margin: 0;
 }
 
+
+//should these styles live somewhere else?
 .patternExample {
   outline: 1px dashed @c_red;
+}
+
+.page-type-home {
+  background-color: @c_primary;
 }
 
 //modules
@@ -53,6 +62,7 @@ body {
 @import 'modules/m_pageTitle/m_pageTitle';
 @import 'modules/m_icon/m_icon';
 @import 'modules/m_siteHeader/m_siteHeader';
+@import 'modules/m_introduction/m_introduction';
 
 //containers
 @import 'containers/c_page/c_page';

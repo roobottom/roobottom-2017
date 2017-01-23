@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: @c_darkblue;
   padding: unit(36/@base,rem) 0;
 
   &__titleLink,
@@ -20,7 +19,8 @@
   &__name {
     font-family: 'Raleway',serif;
     font-size: unit(28/@base,rem);
-    text-shadow: 1px 1px 0 fade(black,40%);
+    text-shadow: 1px 1px 0 darken(@c_primary-dark,10%);
+    font-weight: bold;
   }
 
 }

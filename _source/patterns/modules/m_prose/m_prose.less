@@ -30,12 +30,19 @@
   }
 
   #fontlock {
-    .line-height(@lh-min:@lower_lh,@lh-max:@upper_lh,@width-min:300,@width-max:640) {
+    .line-height(@lh-min:@lower_lh,@lh-max:@upper_lh,@width-min:@bp_min,@width-max:@bp_med) {
       @min: @lh-min / @base;
       @max: @lh-max / @base;
       @minW: @width-min / @base;
       @maxW: @width-max / @base;
       line-height: ~"calc(@{min}em + (@{max} - @{min}) * ((100vw - @{minW}em)/(@{maxW} - @{minW})))";
+    }
+    .font-size(@minSize,@maxSize,@width-min,@width-min:@bp_min,@width-max:@bp_med) {
+      @min: @minSize / @base;
+      @max: @maxSize / @base;
+      @minW: @width-min / @base;
+      @maxW: @width-max / @base;
+      font-size: ~"calc(@{min}em + (@{max} - @{min}) * ((100vw - @{minW}em)/(@{maxW} - @{minW})))";
     }
   }
 
@@ -79,7 +86,7 @@
 
   #link {
     .base() {
-      color: @c_blue;
+      color: @c_primary;
     }
   }
 

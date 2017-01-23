@@ -1,0 +1,35 @@
+.m_introduction {
+
+  background: @c_primary;
+
+  p {
+    color: white;
+    #m_prose > #default > .spacing();
+    font-size: unit(17/@base,em);
+    line-height: 21/17;
+    #breakpoint > .min({
+      #m_prose > #fontlock > .font-size(17,27,@bp_min,@bp_med);
+      #m_prose > #fontlock > .line-height(21,37,@bp_min,@bp_med);
+    });
+    #breakpoint > .med({
+      font-size: unit(27/@base,em);
+      line-height: 37/27;
+    });
+  }
+
+  >p:first-child {
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: unit(34/@base,rem);
+    line-height: 45/34;
+    #breakpoint > .med({
+      font-size: unit(59/@base,rem);
+      line-height: 72/59;
+    });
+  }
+
+  a {
+    color: white;
+  }
+
+}
