@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 var Remarkable = require('remarkable');
-var md = new Remarkable({
+const md = new Remarkable({
   html: true
 });
 
@@ -34,14 +34,13 @@ module.exports = function() {
         });
 
         //now replace <!--placeholder--> with nunjucksHTML
-        var placeholders = markdownHTML.match(/<!--placeholder-->/g);
-        for(let i=0;i<placeholders.length;i++) {
-          markdownHTML.replace(/<!--placeholder-->/,nunjucksHTML[i]);
-          console.log('done');
+        for(let i=0;i<nunjucksHTML.length;i++) {
+          var wrapper = ['<div class="patternExample patternExample--'+file.example.name+'">',nunjucksHTML[i],'</div>']
+          markdownHTML = markdownHTML.replace(/<!--placeholder-->/,wrapper.join(' '));
         }
-        console.log(markdownHTML);
 
-        file.contents = new Buffer(file.contents, 'utf8');
+        //feed this back into the file object
+        file.contents = new Buffer(markdownHTML, 'utf8');
 
         this.push(file);
         cb();

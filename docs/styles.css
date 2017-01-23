@@ -62,8 +62,8 @@ body {
   font-family: 'Halis', sans-serif;
   margin: 0;
 }
-.page-type-pattern {
-  background: #F1F1F1;
+.patternExample {
+  outline: 1px dashed #FF6175;
 }
 .m_pagignation {
   margin-top: 20px;
