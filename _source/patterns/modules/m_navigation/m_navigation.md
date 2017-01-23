@@ -31,6 +31,16 @@ data:
 ---
 ## Standard navigation module
 
+This is some test markdown to see how my pattern parser handles this.
+
+> A quote!
+
+* bulleted list
+* bulleted list
+
+1. number list
+1. number list
+
 {{ m_navigation(standardMenu) }}
 
 ## Inline navigation module
