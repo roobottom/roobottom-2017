@@ -2,7 +2,7 @@
 title: Home
 template: home.html
 ---
-Hello, my name is [Jon Roobottom](http://roobottom.com), and I help make web-based tools that are a joy to use.
+Hello, my name is [Jon](http://roobottom.com), and I love making things for the web.
 
 I’m the Head of Design for [Firefly Learning](http://fireflylearning.com), where I lead a small team of incredibly talented people.
 

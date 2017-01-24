@@ -532,6 +532,7 @@ body {
     max-width: 42rem;
   }
 }
-.c_fullscreen:target {
+.c_fullscreen:target,
+.c_fullscreen--is-open {
   display: block;
 }

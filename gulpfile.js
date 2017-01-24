@@ -177,7 +177,7 @@ gulp.task('js',() => {
         filename: 'functionality.js'
       }
   }, webpack))
-  .pipe($.uglify())
+  //.pipe($.uglify())
   .pipe(gulp.dest('./docs'))
 });
 
