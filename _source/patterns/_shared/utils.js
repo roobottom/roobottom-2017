@@ -1,8 +1,9 @@
-module.exports = function hasClass(ele,cls) {
+var hasClass = function(ele,cls) {
   return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
 };
+module.exports.hasClass = hasClass;
 
-module.exports = function addClass(ele,cls) {
+module.exports.addClass = function(ele,cls) {
 	if (!hasClass(ele,cls)) {
     var classNames = ele.className.split(/\s+/);
     classNames.push(cls);
@@ -10,8 +11,8 @@ module.exports = function addClass(ele,cls) {
   }
 };
 
-module.exports = function removeClass(el,cls) {
-	if (hasClass(el,cls)) {
+module.exports.removeClass = function(ele,cls) {
+	if (hasClass(ele,cls)) {
 		var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
 		ele.className=ele.className.replace(reg,' ');
 	}

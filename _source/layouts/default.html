@@ -22,7 +22,7 @@
     <body class="page-type-{{page.type}}">
 
       {{c_header([
-        m_siteHeader()
+        m_siteHeader(icon='menu',menuLink='#main-menu',menuData=[{a: 'fullscreen-trigger', v: '#main-menu'}])
       ])}}
 
         <!-- <div class="temp_betaMessage">
@@ -34,7 +34,7 @@
 
         {{
           c_fullscreen([
-            m_siteHeader('menu-close',menuLink='#'),
+            m_siteHeader(icon='menu-close',menuLink='#',menuData=[{a:'fullscreen-close',v:'#main-menu'}]),
             m_navigation(site.menu,'main')
           ],id='main-menu')
         }}

@@ -74,21 +74,36 @@ const util = __webpack_require__(1);
 
 module.exports = function(w,d) {
   console.log('c fullscreen loaded');
-  var triggers = d.querySelectorAll('[data-fullscreen-trigger]');
 
-  Array.prototype.forEach.call(triggers, function(el, i){
+  var OpenTriggers = d.querySelectorAll('[data-fullscreen-trigger]');
+  var openClass = 'c_fullscreen--is-open';
+  var closedClass = 'c_fullscreen--is-closed';
+  var activeClass = 'c_fullscreen--is-active';
+
+  //attach open triggers
+  Array.prototype.forEach.call(OpenTriggers, function(el, i){
+
     var targetId = el.getAttribute('data-fullscreen-trigger');
+    var fullscreen = d.querySelector(targetId);
+    var body = d.querySelector('body');
+    util.addClass(fullscreen,activeClass);
+    util.addClass(fullscreen,closedClass);
+
+
     el.addEventListener('click', function(event) {
-      //event.preventDefault();
-
-      var fullscreen = d.querySelector(targetId);
-      var openClass = 'c_fullscreen--is-open'
-
-      console.log();
-      util.addClass(fullscreen,openClass)
-
-
+      event.preventDefault();
+      util.addClass(fullscreen,openClass);
+      util.removeClass(fullscreen,closedClass);
     });
+
+    var close = d.querySelector('[data-fullscreen-close="'+targetId+'"]');
+
+    close.addEventListener('click', function(event) {
+      event.preventDefault();
+      util.removeClass(fullscreen,openClass);
+      util.addClass(fullscreen,closedClass);
+    });
+
   });
 }
 
@@ -97,11 +112,12 @@ module.exports = function(w,d) {
 /* 1 */
 /***/ (function(module, exports) {
 
-module.exports = function hasClass(ele,cls) {
+var hasClass = function(ele,cls) {
   return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
 };
+module.exports.hasClass = hasClass;
 
-module.exports = function addClass(ele,cls) {
+module.exports.addClass = function(ele,cls) {
 	if (!hasClass(ele,cls)) {
     var classNames = ele.className.split(/\s+/);
     classNames.push(cls);
@@ -109,8 +125,8 @@ module.exports = function addClass(ele,cls) {
   }
 };
 
-module.exports = function removeClass(el,cls) {
-	if (hasClass(el,cls)) {
+module.exports.removeClass = function(ele,cls) {
+	if (hasClass(ele,cls)) {
 		var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
 		ele.className=ele.className.replace(reg,' ');
 	}

@@ -6,16 +6,37 @@
   bottom: 0;
   right: 0;
   background: @c_primary;
+  overflow-y: auto;
 
   display: none;
   opacity: 0.99;
+
+  transition: visibility 300ms, opacity 300ms;
+  //transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
 
   &__content {
     #layout > .centre();
   }
 
-  &:target, &--is-open {
+  &:target {
+    display: block;
+    transform: translateX(0);
+  }
+
+  &--is-active {
     display: block;
   }
+
+  &--is-closed {
+    visibility:hidden;
+    opacity:0;
+  }
+
+  &--is-open {
+    visibility: visible;
+    opacity:0.99;
+  }
+
+
 
 }

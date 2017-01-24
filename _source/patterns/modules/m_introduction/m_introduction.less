@@ -1,6 +1,7 @@
 .m_introduction {
 
   background: @c_primary;
+  font-family: 'Raleway';
 
   p {
     color: white;
@@ -18,7 +19,6 @@
   }
 
   >p:first-child {
-    font-family: 'Raleway';
     font-weight: bold;
     font-size: unit(34/@base,rem);
     line-height: 45/34;
@@ -26,10 +26,24 @@
       font-size: unit(59/@base,rem);
       line-height: 72/59;
     });
+    a {
+      border-width: 3px;
+    }
   }
 
   a {
     color: white;
+    text-decoration: none;
+    border-bottom: 1px solid lighten(@c_primary,10%);
+
+    &:hover {
+      border-color: white;
+    }
+
+    &:focus {
+      background-color: darken(@c_primary,10%);
+    }
+
   }
 
 }
