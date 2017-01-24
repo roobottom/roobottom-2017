@@ -1,7 +1,10 @@
 .m_introduction {
 
   background: @c_primary;
-  font-family: 'Raleway';
+  font-family: 'Raleway',sans-serif;
+  #breakpoint > .med({
+    font-weight: 300;
+  });
 
   p {
     color: white;
@@ -22,6 +25,9 @@
     font-weight: bold;
     font-size: unit(34/@base,rem);
     line-height: 45/34;
+    #breakpoint > .min({
+      #m_prose > #fontlock > .font-size(34,59,@bp_min,@bp_med);
+    });
     #breakpoint > .med({
       font-size: unit(59/@base,rem);
       line-height: 72/59;

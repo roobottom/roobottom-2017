@@ -9,10 +9,11 @@
   overflow-y: auto;
 
   display: none;
-  opacity: 0.99;
+  opacity: 1;
 
-  transition: visibility 300ms, opacity 300ms;
-  //transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+  transition:
+        visibility 500ms cubic-bezier(1.000, 0.005, 0.845, 0.960),
+        opacity 500ms cubic-bezier(1.000, 0.005, 0.845, 0.960);
 
   &__content {
     #layout > .centre();
@@ -20,7 +21,6 @@
 
   &:target {
     display: block;
-    transform: translateX(0);
   }
 
   &--is-active {
@@ -34,7 +34,7 @@
 
   &--is-open {
     visibility: visible;
-    opacity:0.99;
+    opacity:1;
   }
 
 

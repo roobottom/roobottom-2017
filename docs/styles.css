@@ -24,17 +24,45 @@
 }
 @font-face {
   font-family: 'Raleway';
-  src: url('/assets/fonts/raleway-black.woff2') format('woff2'), url('/assets/fonts/raleway-black.woff') format('woff');
-  -webkit-font-feature-settings: "lnum" 1, "dlig" 1;
+  src: url('/assets/fonts/raleway-extralight.woff2') format('woff2'), url('/assets/fonts/raleway-extralight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
   font-feature-settings: "lnum" 1, "dlig" 1;
-  font-weight: bold;
 }
 @font-face {
   font-family: 'Raleway';
-  src: url('/assets/fonts/raleway-extralight.woff2') format('woff2'), url('/assets/fonts/raleway-extralight.woff') format('woff');
-  -webkit-font-feature-settings: "lnum" 1, "dlig" 1;
+  src: url('/assets/fonts/raleway-extralightitalic.woff2') format('woff2'), url('/assets/fonts/raleway-extralightitalic.woff') format('woff');
   font-feature-settings: "lnum" 1, "dlig" 1;
-  font-weight: lighter;
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('/assets/fonts/raleway-black.woff2') format('woff2'), url('/assets/fonts/raleway-black.woff') format('woff');
+  font-feature-settings: "lnum" 1, "dlig" 1;
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('/assets/fonts/raleway-blackitalic.woff2') format('woff2'), url('/assets/fonts/raleway-blackitalic.woff') format('woff');
+  font-feature-settings: "lnum" 1, "dlig" 1;
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('/assets/fonts/raleway-regular.woff2') format('woff2'), url('/assets/fonts/raleway-regular.woff') format('woff');
+  font-feature-settings: "lnum" 1, "dlig" 1;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('/assets/fonts/raleway-italic.woff2') format('woff2'), url('/assets/fonts/raleway-italic.woff') format('woff');
+  font-feature-settings: "lnum" 1, "dlig" 1;
+  font-weight: normal;
+  font-style: italic;
 }
 .temp_betaMessage {
   background: rgba(255, 255, 0, 0.5);
@@ -115,7 +143,8 @@ body {
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.07);
   font-size: 1.625rem;
   margin-left: 2rem;
-  font-family: 'Raleway', serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
 }
 @media screen and (min-width: 44rem) {
   .m_navigation--main .m_navigation__title {
@@ -187,9 +216,9 @@ body {
 .m_prose h4,
 .m_prose h5,
 .m_prose h6 {
-  font-family: 'Raleway', serif;
   font-weight: bold;
   font-style: normal;
+  font-family: 'Raleway', sans-serif;
 }
 .m_prose h1 {
   font-size: 2.5em;
@@ -399,9 +428,9 @@ body {
 .m_pageTitle {
   margin: 1.4375rem 0;
   padding: 0;
-  font-family: 'Raleway', serif;
   font-weight: bold;
   font-style: normal;
+  font-family: 'Raleway', sans-serif;
   font-size: 2.5em;
   line-height: 1.15;
 }
@@ -441,14 +470,19 @@ body {
   line-height: 1;
 }
 .m_siteHeader__name {
-  font-family: 'Raleway', serif;
   font-size: 1.75rem;
   text-shadow: 1px 1px 0 #3a33ff;
   font-weight: bold;
+  font-family: 'Raleway', sans-serif;
 }
 .m_introduction {
   background: #7A75FF;
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
+}
+@media screen and (min-width: 44rem) {
+  .m_introduction {
+    font-weight: 300;
+  }
 }
 .m_introduction p {
   color: white;
@@ -478,6 +512,11 @@ body {
   font-weight: bold;
   font-size: 2.125rem;
   line-height: 1.32352941;
+}
+@media screen and (min-width: 18.75rem) {
+  .m_introduction > p:first-child {
+    font-size: calc(2.125em + (3.6875 - 2.125) * ((100vw - 18.75em)/(44 - 18.75)));
+  }
 }
 @media screen and (min-width: 44rem) {
   .m_introduction > p:first-child {
@@ -532,8 +571,8 @@ body {
   background: #7A75FF;
   overflow-y: auto;
   display: none;
-  opacity: 0.99;
-  transition: visibility 300ms, opacity 300ms;
+  opacity: 1;
+  transition: visibility 500ms cubic-bezier(1, 0.005, 0.845, 0.96), opacity 500ms cubic-bezier(1, 0.005, 0.845, 0.96);
 }
 .c_fullscreen__content {
   padding: 0 2rem;
@@ -547,7 +586,6 @@ body {
 }
 .c_fullscreen:target {
   display: block;
-  transform: translateX(0);
 }
 .c_fullscreen--is-active {
   display: block;
@@ -558,5 +596,5 @@ body {
 }
 .c_fullscreen--is-open {
   visibility: visible;
-  opacity: 0.99;
+  opacity: 1;
 }
