@@ -14,10 +14,12 @@
   }
 
   //--- inline menu --//
-  [class*="inline"] &__items {
+  &--inline &__items,
+  &--inline-bleached &__items {
     display: flex;
   }
-  [class*="inline"] &__item {
+  &--inline &__item,
+  &--inline-bleached &__item {
     display: flex;
     align-items: center;
     margin-right: 1rem;
@@ -25,11 +27,17 @@
       margin-right: 0;
     }
   }
+  &--inline &__icon,
+  &--inline-bleached &__icon {
+    margin-right: .5rem;
+  }
   &--inline-bleached &__link {
     color: white;
     text-decoration: none;
     border-bottom: 1px solid fade(white,50%);
-    margin-left: .5rem;
+    &:hover {
+      border-color: white;
+    }
   }
 
 
