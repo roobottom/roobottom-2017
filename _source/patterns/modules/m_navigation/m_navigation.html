@@ -4,11 +4,18 @@
   <ul class="m_navigation__items">
     {% for item in items -%}
       <li class="m_navigation__item">
-        <a href="{{item.url}}" class="m_navigation__link">
-          {% if item.icon %}
+        {% if item.icon %}
+          {% if modifier == 'inline' or modifier == 'inline-bleached' %}
+            {{m_icon(item.icon,'m_navigation__icon','x-small')}}
+          {% else %}
             {{m_icon(item.icon,'m_navigation__icon')}}
           {% endif %}
+        {% endif %}
+        <a href="{{item.url}}" class="m_navigation__link" title="{% if item.prompt %}{{item.prompt}}{% else %}{{item.title}}{% endif %}">
           <span class="m_navigation__title">{{item.title}}</span>
+          {% if item.prompt %}
+          <span class="m_navigation__prompt">{{item.prompt}}</span>
+          {% endif %}
         </a>
       </li>
     {%- endfor %}

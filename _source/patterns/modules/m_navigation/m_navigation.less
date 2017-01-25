@@ -4,52 +4,68 @@
   &__items {
     padding: 0;
   }
-  &--inline &__items {
-    display: flex;
-  }
-
   &__item {
     display: block;
     padding: 0;
     list-style: none;
   }
-  &--main &__item {
-    margin-bottom: 1rem;
-    #breakpoint > .med({
-        margin-bottom: unit(@base*2/@base,rem);
-    });
+  &__link {
+    color: @c_primary;
   }
-  &--inline &__item {
+
+  //--- inline menu --//
+  [class*="inline"] &__items {
+    display: flex;
+  }
+  [class*="inline"] &__item {
+    display: flex;
+    align-items: center;
     margin-right: 1rem;
     &:last-child {
       margin-right: 0;
     }
   }
-
-  &__link {
-    color: ;
+  &--inline-bleached &__link {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid fade(white,50%);
+    margin-left: .5rem;
   }
 
-  &--main &__link {
+
+  // --- main menu --- //
+  &--main {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid mix(white,@c_primary,50%);
+  }
+  &--main &__item {
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
+    #breakpoint > .med({
+        margin-bottom: unit(@base*2/@base,rem);
+    });
+  }
+  &--main &__link {
+    margin-left: unit(@base*2/@base,rem);
     text-decoration: none;
     color: white;
-  }
-
-  &__title {
-
+    font-family: 'Raleway',sans-serif;
   }
   &--main &__title {
     line-height: 1;
     text-shadow: 2px 2px 0 fade(black,7%);
     font-size: unit(26/@base,rem);
-    margin-left: unit(@base*2/@base,rem);
-    font-family: 'Raleway',sans-serif;
     font-weight: 300;
     #breakpoint > .med({
       font-size: unit(46/@base,rem);
     });
+  }
+  &--main &__prompt {
+    display: block;
+    color: mix(white,@c_primary,50%);
+    text-shadow: 1px 1px 0 fade(black,7%);
   }
 
 }

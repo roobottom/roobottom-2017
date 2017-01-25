@@ -107,15 +107,39 @@ body {
 .m_navigation__items {
   padding: 0;
 }
-.m_navigation--inline .m_navigation__items {
-  display: flex;
-}
 .m_navigation__item {
   display: block;
   padding: 0;
   list-style: none;
 }
+.m_navigation__link {
+  color: #7A75FF;
+}
+[class*="inline"] .m_navigation__items {
+  display: flex;
+}
+[class*="inline"] .m_navigation__item {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+[class*="inline"] .m_navigation__item:last-child {
+  margin-right: 0;
+}
+.m_navigation--inline-bleached .m_navigation__link {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin-left: .5rem;
+}
+.m_navigation--main {
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #bdbaff;
+}
 .m_navigation--main .m_navigation__item {
+  display: flex;
+  align-items: center;
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 44rem) {
@@ -123,33 +147,27 @@ body {
     margin-bottom: 2rem;
   }
 }
-.m_navigation--inline .m_navigation__item {
-  margin-right: 1rem;
-}
-.m_navigation--inline .m_navigation__item:last-child {
-  margin-right: 0;
-}
-.m_navigation__link {
-  color: ;
-}
 .m_navigation--main .m_navigation__link {
-  display: flex;
-  align-items: center;
+  margin-left: 2rem;
   text-decoration: none;
   color: white;
+  font-family: 'Raleway', sans-serif;
 }
 .m_navigation--main .m_navigation__title {
   line-height: 1;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.07);
   font-size: 1.625rem;
-  margin-left: 2rem;
-  font-family: 'Raleway', sans-serif;
   font-weight: 300;
 }
 @media screen and (min-width: 44rem) {
   .m_navigation--main .m_navigation__title {
     font-size: 2.875rem;
   }
+}
+.m_navigation--main .m_navigation__prompt {
+  display: block;
+  color: #bdbaff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.07);
 }
 .m_figure {
   margin: 20px 0;
@@ -453,6 +471,10 @@ body {
   width: 2.125rem;
   height: 2.125rem;
 }
+.m_icon--x-small {
+  width: 1rem;
+  height: 1rem;
+}
 .m_siteHeader {
   display: flex;
   align-items: center;
@@ -572,7 +594,7 @@ body {
   overflow-y: auto;
   display: none;
   opacity: 1;
-  transition: visibility 500ms cubic-bezier(1, 0.005, 0.845, 0.96), opacity 500ms cubic-bezier(1, 0.005, 0.845, 0.96);
+  transition: visibility 300ms cubic-bezier(1, 0.005, 0.845, 0.96), opacity 300ms cubic-bezier(1, 0.005, 0.845, 0.96);
 }
 .c_fullscreen__content {
   padding: 0 2rem;
