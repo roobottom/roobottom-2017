@@ -12,7 +12,13 @@
   &--style-a,
   &--style-d {
     flex-flow: column;
-    padding-top: 50%;
+    background-position: 80% center;
+  }
+
+  &--style-a&--has-cover,
+  &--style-d&--has-cover {
+    padding-top: unit(320/@base,rem);
+    padding-top: 40vh;
   }
 
   &--style-c {
@@ -70,6 +76,9 @@
     padding: @content_padding;
     position: relative;
     z-index: 2;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
   }
 
   &--style-a &__content {
@@ -77,14 +86,28 @@
   }
   &--style-b &__content {
     background-color: @c_3;
-    width: ~"calc(50% - @{content_padding})";
+  }
+  &--style-b&--has-cover &__content {
+    width: 50%;
   }
   &--style-c &__content {
     background-color: @c_4;
-    width: ~"calc(50% - @{content_padding})";
+  }
+  &--style-c&--has-cover &__content {
+    width: 50%;
   }
   &--style-d &__content {
     background-color: @c_5;
+  }
+
+  //link (move this into its own button pattern)
+  &__link {
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20), inset 0 1px 2px 0 rgba(255,255,255,0.50);
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    padding: unit(15/@base,rem) unit(31/@base,rem);
   }
 
 }
