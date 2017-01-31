@@ -64,26 +64,6 @@
   font-weight: normal;
   font-style: italic;
 }
-.temp_betaMessage {
-  background: rgba(255, 255, 0, 0.5);
-  padding: 10px;
-  margin-bottom: 30px;
-  border: 1px dotted #666600;
-  color: #666600;
-  border-top: none;
-}
-.temp_betaMessage > p {
-  padding: 0 2rem;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-@media screen and (min-width: 44rem) {
-  .temp_betaMessage > p {
-    padding: 0;
-    margin: 0 auto;
-    max-width: 42rem;
-  }
-}
 a {
   color: blue;
 }
