@@ -3,11 +3,11 @@
 
 {% macro call__m_teaser() %}
     {% for post in page.posts %}
-        {{ m_teaser(title=post.title,url='/articles/'+post.id,date=post.date,humanDate=post.humanDate) }}
+        {{ m_teaser(title=post.title,url='/articles/'+post.id,date=post.date,humanDate=post.humanDate,intro=post.intro) }}
     {% endfor %}
 {% endmacro %}
 
-{{ 
+{{
     c_page([
         m_pageTitle(page.title),
         call__m_teaser(),

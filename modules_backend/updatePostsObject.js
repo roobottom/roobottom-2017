@@ -4,13 +4,29 @@ const path = require('path');
 const through = require('through2');
 const moment = require('moment');
 
+const marked = require('marked');
+const introMaxLength = 34;
+
 module.exports = function(site) {
   let posts = [];
   return through.obj(function (file, enc, cb) {
+
+    //extract the first real paragraph from the file contents
+    var lexer = new marked.Lexer();
+    var tokens = lexer.lex(file.contents.toString());
+    var intro;
+    for(let i in tokens) {
+      if(tokens[i].type === 'paragraph' && !tokens[i].text.startsWith('[!') && !tokens[i].text.startsWith('(')) {
+        intro = marked(tokens[i].text);
+        break;
+      }
+    }
+
     let fileobj = path.parse(file.path);
     file.page.id = fileobj.name;
     file.page.category = fileobj.dir.split('/').slice(-1)[0];
     file.page.humanDate = moment(file.page.date).format('dddd, MMMM Do YYYY');
+    file.page.intro = intro;
     posts.push(file.page);
     this.push(file);
     cb();
