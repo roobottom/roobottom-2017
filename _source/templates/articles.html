@@ -2,9 +2,10 @@
 {% block content %}
 
 {% macro call__m_teaser() %}
-    {% for post in page.posts %}
-        {{ m_teaser(title=post.title,url='/articles/'+post.id,date=post.date,humanDate=post.humanDate,intro=post.intro,cover=post.id+'/'+post.cover) }}
-    {% endfor %}
+  {% set style = cycler("style-a","style-b", "style-c","style-d") %}
+  {% for post in page.posts %}
+      {{ m_teaser(title=post.title,url='/articles/'+post.id,date=post.date,day=post.humanDateDay,month=post.humanDateMonth,year=post.humanDateYear,intro=post.intro,cover=post.cover,modifier=style.next()) }}
+  {% endfor %}
 {% endmacro %}
 
 {{

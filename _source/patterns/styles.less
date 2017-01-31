@@ -6,10 +6,12 @@
 @bp_med: 704;
 @bp_max: 1200;
 
-@c_primary: #7A75FF;
-@c_primary-dark: darken(@c_primary,3%);
+@c_1: #7A75FF; //purple
+@c_2: #FF6175; //red
+@c_3: #00B7D9; //blue
+@c_4: #FFA000; //yellow
+@c_5: #716767; //grey
 
-@c_red: #FF6175;
 @c_lightgrey: #F5F5F5;
 
 //shared styles
@@ -47,11 +49,11 @@ body {
 
 //should these styles live somewhere else?
 .patternExample {
-  outline: 1px dashed @c_red;
+  outline: 1px dashed @c_2;
 }
 
 .page-type-home {
-  background-color: @c_primary;
+  background-color: @c_1;
 }
 
 //modules
@@ -63,6 +65,7 @@ body {
 @import 'modules/m_icon/m_icon';
 @import 'modules/m_siteHeader/m_siteHeader';
 @import 'modules/m_introduction/m_introduction';
+@import 'modules/m_teaser/m_teaser';
 
 //containers
 @import 'containers/c_page/c_page';

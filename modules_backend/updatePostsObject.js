@@ -22,15 +22,21 @@ module.exports = function(site) {
       }
     }
 
-    //extract the first image as the cover
-    if(file.page.images) {
-      file.page.cover = file.page.images[0].image;
-    }
-
+    //extract the id from the file path
     let fileobj = path.parse(file.path);
     file.page.id = fileobj.name;
+
+    //extract the first image as the cover
+    if(file.page.images) {
+      file.page.cover = '/images/articles/' + file.page.id + '/' + file.page.images[0].image;
+    }
+
+
     file.page.category = fileobj.dir.split('/').slice(-1)[0];
     file.page.humanDate = moment(file.page.date).format('dddd, MMMM Do YYYY');
+    file.page.humanDateDay = moment(file.page.date).format('Do');
+    file.page.humanDateMonth = moment(file.page.date).format('MMM');
+    file.page.humanDateYear = moment(file.page.date).format('YYYY');
     file.page.intro = intro;
     posts.push(file.page);
     this.push(file);
