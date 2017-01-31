@@ -22,6 +22,11 @@ module.exports = function(site) {
       }
     }
 
+    //extract the first image as the cover
+    if(file.page.images) {
+      file.page.cover = file.page.images[0].image;
+    }
+
     let fileobj = path.parse(file.path);
     file.page.id = fileobj.name;
     file.page.category = fileobj.dir.split('/').slice(-1)[0];

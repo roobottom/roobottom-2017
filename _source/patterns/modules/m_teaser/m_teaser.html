@@ -1,5 +1,5 @@
-{% macro m_teaser(title,url,date,humanDate,intro,modifier) %}
-<article class="m_teaser{% if modifier %} m_teaser--{{modifier}}{% endif %}">
+{% macro m_teaser(title,url,date,humanDate,intro,cover,modifier) %}
+<article class="m_teaser{% if modifier %} m_teaser--{{modifier}}{% endif %}"{% if cover %} data-style="background-image:url(/images/articles/{{cover}})"{% endif %}>
     <h2 class="m_teaser__title"><a href="{{url}}" class="m_teaser__link">{{title}}</a></h2>
     {% if date %}
     <time datetime="{{date}}" class="m_teaser__date">{% if humanDate %}{{humanDate}}{% else %}{{date}}{% endif %}</time>
