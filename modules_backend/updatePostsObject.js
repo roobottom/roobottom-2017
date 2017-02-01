@@ -3,9 +3,7 @@
 const path = require('path');
 const through = require('through2');
 const moment = require('moment');
-
 const marked = require('marked');
-const introMaxLength = 34;
 
 module.exports = function(site) {
   let posts = [];

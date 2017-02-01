@@ -1,0 +1,21 @@
+.c_grid {
+
+  @w_middle_column: unit((@bp_med / 2)/@base,rem);
+  margin-left: ~"calc(-50vw + @{w_middle_column})";
+  margin-right: ~"calc(-50vw + @{w_middle_column})";
+
+  @supports (display:grid) {
+    display: grid;
+    grid-gap: 31px;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    >*:nth-child(4n-2) {
+      grid-column: span 2;
+    }
+
+    >*:nth-child(4n-1) {
+      grid-column: span 2;
+    }
+
+  }
+}

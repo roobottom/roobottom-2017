@@ -1,28 +1,37 @@
 .m_teaser {
 
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   justify-content: flex-end;
   position: relative;
 
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: center top;
 
-  &--style-a,
-  &--style-d {
-    flex-flow: column;
-    background-position: 80% center;
+  &--has-cover {
+    padding-top: unit(160/@base,rem);
+    padding-top: 20vh;
+    #breakpoint > .med({
+      padding-top: unit(320/@base,rem);
+      padding-top: 40vh;
+      background-size: cover;
+    })
   }
 
-  &--style-a&--has-cover,
-  &--style-d&--has-cover {
-    padding-top: unit(320/@base,rem);
-    padding-top: 40vh;
-  }
 
+
+  &--style-b {
+    flex-flow: row;
+    #breakpoint > .med({
+      padding-top: 0;
+    });
+  }
   &--style-c {
     flex-flow: row-reverse;
+    #breakpoint > .med({
+      padding-top: 0;
+    });
   }
 
 
@@ -61,7 +70,8 @@
 
   &__title {
     #m_prose > #default > .spacing();
-    #m_prose > #heading > .h2();
+    font-size: unit(29/@base,rem);
+    line-height: 31/29;
   }
 
   &__intro > p {
@@ -74,11 +84,11 @@
 
   &__content {
     padding: @content_padding;
-    position: relative;
     z-index: 2;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
 
   &--style-a &__content {
@@ -87,27 +97,63 @@
   &--style-b &__content {
     background-color: @c_3;
   }
-  &--style-b&--has-cover &__content {
-    width: 50%;
-  }
   &--style-c &__content {
     background-color: @c_4;
   }
-  &--style-c&--has-cover &__content {
-    width: 50%;
-  }
+
   &--style-d &__content {
     background-color: @c_5;
   }
 
+  #breakpoint > .med({
+    &--style-b&--has-cover &__content,
+    &--style-c&--has-cover &__content {
+      width: 50%;
+    }
+  });
+
+  &__meta {
+    max-width: unit(610/@base,rem);
+  }
+
   //link (move this into its own button pattern)
   &__link {
-    margin: 0 auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20), inset 0 1px 2px 0 rgba(255,255,255,0.50);
     border-radius: 100px;
     color: white;
     text-decoration: none;
     padding: unit(15/@base,rem) unit(31/@base,rem);
+    text-align: center;
+    white-space: nowrap;
+    align-self: center;
   }
+
+  //date (move this into it's own pattern)
+  &__date {
+    background-color: fade(black,40%);
+    padding: unit(7/@base,rem) unit(14/@base,rem);
+    text-align: center;
+    color: white;
+    align-self: flex-start;
+  }
+
+  &__month,
+  &__year {
+    text-transform: uppercase;
+    font-size: unit(12/@base,rem);
+    display: block;
+  }
+
+  &__day {
+    font-family: 'raleway', serif;
+    font-weight: bold;
+    background-color: fade(black,40%);
+    padding: unit(4/@base,rem) unit(14/@base,rem);
+    border-radius: 18px;
+    margin: unit(7/@base,rem) 0;
+    display: block;
+  }
+
+
 
 }

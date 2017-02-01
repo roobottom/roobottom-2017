@@ -11,7 +11,9 @@
 {{
     c_page([
         m_pageTitle(page.title),
-        call__m_teaser(),
+        c_grid([
+          call__m_teaser()
+        ]),
         m_pagination(page.pagination)
     ])
 }}

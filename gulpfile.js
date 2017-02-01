@@ -187,6 +187,10 @@ gulp.task('js',() => {
 gulp.task('styles',()=> {
   return gulp.src('_source/patterns/styles.less')
   .pipe($.less())
+  .pipe($.autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+  }))
   .pipe(gulp.dest(site.publish_folder))
 })
 
