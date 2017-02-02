@@ -8,31 +8,22 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center top;
+  margin-bottom: unit(31/@base,rem);
+
+  &--style-b,
+  &--style-d {
+    flex-flow: row;
+  }
 
   &--has-cover {
-    padding-top: unit(160/@base,rem);
-    padding-top: 20vh;
+    padding-top: 30vh;
     #breakpoint > .med({
-      padding-top: unit(320/@base,rem);
-      padding-top: 40vh;
+      padding-top: 0;
       background-size: cover;
-    })
-  }
-
-
-
-  &--style-b {
-    flex-flow: row;
-    #breakpoint > .med({
-      padding-top: 0;
     });
   }
-  &--style-c {
-    flex-flow: row-reverse;
-    #breakpoint > .med({
-      padding-top: 0;
-    });
-  }
+
+
 
 
   //colour cover
@@ -47,15 +38,19 @@
     position: absolute;
   }
 
+  &--style-a,
   &--style-a:after {
     background-color: @c_2;
   }
+  &--style-b,
   &--style-b:after {
     background-color: @c_3;
   }
+  &--style-c,
   &--style-c:after {
     background-color: @c_4;
   }
+  &--style-d,
   &--style-d:after {
     background-color: @c_5;
   }
@@ -106,9 +101,25 @@
   }
 
   #breakpoint > .med({
-    &--style-b&--has-cover &__content,
-    &--style-c&--has-cover &__content {
-      width: 50%;
+    @fade: 85%;
+    &--style-a &__content {
+      background-color: fade(@c_2, @fade);
+    }
+    &--style-b &__content {
+      background-color: fade(@c_3, @fade);
+    }
+    &--style-c &__content {
+      background-color: fade(@c_4, @fade);
+    }
+
+    &--style-d &__content {
+      background-color: fade(@c_5, @fade);
+    }
+  });
+
+  #breakpoint > .med({
+    &--has-cover &__content {
+      width: 70%;
     }
   });
 
@@ -130,30 +141,33 @@
 
   //date (move this into it's own pattern)
   &__date {
-    background-color: fade(black,40%);
-    padding: unit(7/@base,rem) unit(14/@base,rem);
-    text-align: center;
     color: white;
-    align-self: flex-start;
   }
+  #breakpoint > .med({
+    &__date {
+      background-color: fade(black,14%);
+      padding: unit(7/@base,rem) unit(14/@base,rem);
+      text-align: center;
+      align-self: flex-start;
+    }
 
-  &__month,
-  &__year {
-    text-transform: uppercase;
-    font-size: unit(12/@base,rem);
-    display: block;
-  }
+    &__month,
+    &__year {
+      text-transform: uppercase;
+      font-size: unit(12/@base,rem);
+      display: block;
+    }
 
-  &__day {
-    font-family: 'raleway', serif;
-    font-weight: bold;
-    background-color: fade(black,40%);
-    padding: unit(4/@base,rem) unit(14/@base,rem);
-    border-radius: 18px;
-    margin: unit(7/@base,rem) 0;
-    display: block;
-  }
-
+    &__day {
+      font-family: 'raleway', serif;
+      font-weight: bold;
+      background-color: fade(black,40%);
+      padding: unit(4/@base,rem) unit(14/@base,rem);
+      border-radius: 18px;
+      margin: unit(7/@base,rem) 0;
+      display: block;
+    }
+  });
 
 
 }
