@@ -55,21 +55,13 @@
     background-color: @c_5;
   }
 
-  &__title,
-  &__intro {
-    &, a {
-      color: white;
-      text-decoration: none;
-    }
-  }
-
   &__title {
     #m_prose > #default > .spacing();
     font-size: unit(29/@base,rem);
     line-height: 31/29;
   }
 
-  &__intro > p {
+  &__meta > p {
     #m_prose > #default > .spacing();
     #m_prose > #default > .size;
     #m_prose > #default > .line-height();
@@ -77,66 +69,56 @@
 
   @content_padding: unit(31/@base,rem);
 
-  &__content {
+  &__link {
     padding: @content_padding;
     z-index: 2;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-decoration: none;
+    color: white;
   }
 
-  &--style-a &__content {
+  &--style-a &__link {
     background-color: @c_2;
   }
-  &--style-b &__content {
+  &--style-b &__link {
     background-color: @c_3;
   }
-  &--style-c &__content {
+  &--style-c &__link {
     background-color: @c_4;
   }
 
-  &--style-d &__content {
+  &--style-d &__link {
     background-color: @c_5;
   }
 
   #breakpoint > .med({
-    @fade: 85%;
-    &--style-a &__content {
+    @fade: 100%;
+    &--style-a &__link {
       background-color: fade(@c_2, @fade);
     }
-    &--style-b &__content {
+    &--style-b &__link {
       background-color: fade(@c_3, @fade);
     }
-    &--style-c &__content {
+    &--style-c &__link {
       background-color: fade(@c_4, @fade);
     }
 
-    &--style-d &__content {
+    &--style-d &__link {
       background-color: fade(@c_5, @fade);
     }
   });
 
   #breakpoint > .med({
-    &--has-cover &__content {
+    &--has-cover &__link {
       width: 70%;
     }
   });
 
   &__meta {
     max-width: unit(610/@base,rem);
-  }
-
-  //link (move this into its own button pattern)
-  &__link {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20), inset 0 1px 2px 0 rgba(255,255,255,0.50);
-    border-radius: 100px;
-    color: white;
-    text-decoration: none;
-    padding: unit(15/@base,rem) unit(31/@base,rem);
-    text-align: center;
-    white-space: nowrap;
-    align-self: center;
   }
 
   //date (move this into it's own pattern)

@@ -5,6 +5,12 @@ const through = require('through2');
 const moment = require('moment');
 const marked = require('marked');
 
+//remove any unwanted tags during md>html conversion with marked.
+var renderer = new marked.Renderer();
+renderer.link = function(href, title, text) {
+  return text;
+}
+
 module.exports = function(site) {
   let posts = [];
   return through.obj(function (file, enc, cb) {
@@ -15,7 +21,10 @@ module.exports = function(site) {
     var intro;
     for(let i in tokens) {
       if(tokens[i].type === 'paragraph' && !tokens[i].text.startsWith('[!') && !tokens[i].text.startsWith('(')) {
-        intro = marked(tokens[i].text);
+        intro = marked(tokens[i].text, {
+          renderer: renderer,
+          smartypants: true
+        });
         break;
       }
     }
