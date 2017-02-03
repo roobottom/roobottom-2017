@@ -10,7 +10,8 @@ const md = new Remarkable({
   html: true
 });
 
-const env = nunjucks.configure('./_source',{autoescape:false});
+const env = nunjucks.configure('./_source',{autoescape:false})
+.addFilter('removeWidows', require('./nunjucks_filters/removeWidows.filter.js'));
 
 
 module.exports = function() {

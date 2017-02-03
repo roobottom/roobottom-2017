@@ -618,11 +618,10 @@ body {
   flex-flow: row;
 }
 .m_teaser--has-cover {
-  padding-top: 30vh;
+  padding-top: 20vh;
 }
 @media screen and (min-width: 44rem) {
   .m_teaser--has-cover {
-    padding-top: 0;
     background-size: cover;
   }
 }
@@ -657,6 +656,7 @@ body {
   padding: 0;
   font-size: 1.8125rem;
   line-height: 1.06896552;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__title {
@@ -686,7 +686,7 @@ body {
   }
 }
 .m_teaser__link {
-  padding: 1.9375rem;
+  padding: 0 1.9375rem;
   z-index: 2;
   box-sizing: border-box;
   display: -ms-flexbox;
@@ -733,30 +733,39 @@ body {
   max-width: 38.125rem;
 }
 .m_teaser__date {
-  color: white;
+  margin-top: 1.9375rem;
+}
+.m_teaser--has-cover .m_teaser__date {
+  background-color: rgba(0, 0, 0, 0.24);
+  padding: 0.4375rem 0.875rem;
+  text-align: center;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  position: absolute;
+  left: 1.9375rem;
+  top: 1.9375rem;
+  margin: 0;
+}
+.m_teaser--has-cover .m_teaser__month,
+.m_teaser--has-cover .m_teaser__year {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  display: block;
+}
+.m_teaser--has-cover .m_teaser__day {
+  font-family: 'raleway', serif;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0.25rem 0.875rem;
+  border-radius: 18px;
+  margin: 0.4375rem 0;
+  display: block;
 }
 @media screen and (min-width: 44rem) {
-  .m_teaser__date {
-    background-color: rgba(0, 0, 0, 0.14);
-    padding: 0.4375rem 0.875rem;
-    text-align: center;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-  }
-  .m_teaser__month,
-  .m_teaser__year {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    display: block;
-  }
-  .m_teaser__day {
-    font-family: 'raleway', serif;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 0.25rem 0.875rem;
-    border-radius: 18px;
-    margin: 0.4375rem 0;
-    display: block;
+  .m_teaser--style-a.m_teaser--has-cover .m_teaser__date,
+  .m_teaser--style-c.m_teaser--has-cover .m_teaser__date {
+    left: auto;
+    right: 1.9375rem;
   }
 }
 .c_page__content {

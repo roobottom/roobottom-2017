@@ -1,5 +1,7 @@
 .m_teaser {
 
+  @spacing: unit(31/@base,rem);
+
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
@@ -8,7 +10,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center top;
-  margin-bottom: unit(31/@base,rem);
+  margin-bottom: @spacing;
 
   &--style-b,
   &--style-d {
@@ -16,9 +18,9 @@
   }
 
   &--has-cover {
-    padding-top: 30vh;
+    padding-top: 20vh;
     #breakpoint > .med({
-      padding-top: 0;
+      //padding-top: 0;
       background-size: cover;
     });
   }
@@ -59,6 +61,7 @@
     #m_prose > #default > .spacing();
     font-size: unit(29/@base,rem);
     line-height: 31/29;
+    text-shadow: 2px 2px 0 fade(black,20%);
   }
 
   &__meta > p {
@@ -67,10 +70,8 @@
     #m_prose > #default > .line-height();
   }
 
-  @content_padding: unit(31/@base,rem);
-
   &__link {
-    padding: @content_padding;
+    padding: 0 @spacing;
     z-index: 2;
     box-sizing: border-box;
     display: flex;
@@ -121,35 +122,45 @@
     max-width: unit(610/@base,rem);
   }
 
-  //date (move this into it's own pattern)
   &__date {
-    color: white;
+    margin-top: @spacing;
   }
+
+  //date (move this into it's own pattern)
+  &--has-cover &__date {
+    background-color: fade(black,24%);
+    padding: unit(7/@base,rem) unit(14/@base,rem);
+    text-align: center;
+    align-self: flex-start;
+    position: absolute;
+    left: @spacing;
+    top: @spacing;
+    margin: 0;
+  }
+
+  &--has-cover &__month,
+  &--has-cover &__year {
+    text-transform: uppercase;
+    font-size: unit(12/@base,rem);
+    display: block;
+  }
+
+  &--has-cover &__day {
+    font-family: 'raleway', serif;
+    font-weight: bold;
+    background-color: fade(black,40%);
+    padding: unit(4/@base,rem) unit(14/@base,rem);
+    border-radius: 18px;
+    margin: unit(7/@base,rem) 0;
+    display: block;
+  }
+
   #breakpoint > .med({
-    &__date {
-      background-color: fade(black,14%);
-      padding: unit(7/@base,rem) unit(14/@base,rem);
-      text-align: center;
-      align-self: flex-start;
-    }
-
-    &__month,
-    &__year {
-      text-transform: uppercase;
-      font-size: unit(12/@base,rem);
-      display: block;
-    }
-
-    &__day {
-      font-family: 'raleway', serif;
-      font-weight: bold;
-      background-color: fade(black,40%);
-      padding: unit(4/@base,rem) unit(14/@base,rem);
-      border-radius: 18px;
-      margin: unit(7/@base,rem) 0;
-      display: block;
+    &--style-a&--has-cover &__date,
+    &--style-c&--has-cover &__date {
+      left: auto;
+      right: @spacing;
     }
   });
-
 
 }
