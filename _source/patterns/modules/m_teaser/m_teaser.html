@@ -1,18 +1,17 @@
 {% macro m_teaser(title,url,date,day,month,year,intro,cover,modifier) %}
-<article class="m_teaser{% if modifier %} m_teaser--{{modifier}}{% endif %}{% if cover %} m_teaser--has-cover{% endif %}" {% if cover %}style="background-image:url({{cover}});"{% endif %}>
-  <a href="{{url}}" class="m_teaser__link">
+<a href="{{url}}" class="m_teaser{% if modifier %} m_teaser--{{modifier}}{% endif %}{% if cover %} m_teaser--has-cover{% endif %}" {% if cover %}style="background-image:url({{cover}});"{% endif %}>
 
     {% if date %}
     <time datetime="{{date}}" class="m_teaser__date">{% if day %}<span class="m_teaser__month">{{ month }}</span> <span class="m_teaser__day">{{ day }}</span> <span class="m_teaser__year">{{ year }}</span>{% else %}{{date}}{% endif %}</time>
     {% endif %}
 
     <div class="m_teaser__meta">
-      <h2 class="m_teaser__title">{{title | removeWidows | safe}}&nbsp;&rarr;</h2>
+      <h2 class="m_teaser__title">{{title | removeWidows | safe}}</h2>
       {% if intro %}
         {{ intro|safe }}
       {% endif %}
+      <p>Read the rest of this article &rarr;</p>
     </div>
 
-  </a>
-</article>
+</a>
 {% endmacro %}

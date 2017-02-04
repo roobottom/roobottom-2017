@@ -4,29 +4,21 @@
 
   display: flex;
   flex-flow: column;
-  justify-content: flex-end;
+  align-items: flex-start;
   position: relative;
 
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center top;
   margin-bottom: @spacing;
+  overflow: hidden; //yuk, find some other way to fix this!
 
-  &--style-b,
-  &--style-d {
+  color: white;
+  text-decoration: none;
+
+  #breakpoint > .med ({
     flex-flow: row;
-  }
-
-  &--has-cover {
-    padding-top: 20vh;
-    #breakpoint > .med({
-      //padding-top: 0;
-      background-size: cover;
-    });
-  }
-
-
-
+  });
 
   //colour cover
   &:after {
@@ -40,127 +32,101 @@
     position: absolute;
   }
 
+  //colours
   &--style-a,
-  &--style-a:after {
+  &--style-a:after,
+  &--style-a &__meta,
+  &--style-a &__month {
     background-color: @c_2;
   }
   &--style-b,
-  &--style-b:after {
+  &--style-b:after,
+  &--style-b &__meta,
+  &--style-b &__month {
     background-color: @c_3;
   }
   &--style-c,
-  &--style-c:after {
+  &--style-c:after,
+  &--style-c &__meta,
+  &--style-c &__month {
     background-color: @c_4;
   }
   &--style-d,
-  &--style-d:after {
+  &--style-d:after,
+  &--style-d &__meta,
+  &--style-d &__month {
     background-color: @c_5;
+  }
+
+  &--style-a &__day {color: @c_2;}
+  &--style-b &__day {color: @c_3;}
+  &--style-c &__day {color: @c_4;}
+  &--style-d &__day {color: @c_5;}
+
+  &__date,
+  &__meta {
+    z-index: 2;
+  }
+
+  &__meta {
+    padding: 0 @spacing;
+    > p {
+      #m_prose > #default > .spacing();
+      #m_prose > #default > .size;
+      #m_prose > #default > .line-height();
+    }
   }
 
   &__title {
     #m_prose > #default > .spacing();
-    font-size: unit(29/@base,rem);
-    line-height: 31/29;
+    #m_prose > #heading > .base();
+    #m_prose > #heading > .h3();
     text-shadow: 2px 2px 0 fade(black,20%);
-  }
-
-  &__meta > p {
-    #m_prose > #default > .spacing();
-    #m_prose > #default > .size;
-    #m_prose > #default > .line-height();
-  }
-
-  &__link {
-    padding: 0 @spacing;
-    z-index: 2;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-decoration: none;
     color: white;
   }
 
-  &--style-a &__link {
-    background-color: @c_2;
-  }
-  &--style-b &__link {
-    background-color: @c_3;
-  }
-  &--style-c &__link {
-    background-color: @c_4;
-  }
-
-  &--style-d &__link {
-    background-color: @c_5;
-  }
-
-  #breakpoint > .med({
-    @fade: 100%;
-    &--style-a &__link {
-      background-color: fade(@c_2, @fade);
-    }
-    &--style-b &__link {
-      background-color: fade(@c_3, @fade);
-    }
-    &--style-c &__link {
-      background-color: fade(@c_4, @fade);
-    }
-
-    &--style-d &__link {
-      background-color: fade(@c_5, @fade);
-    }
-  });
-
-  #breakpoint > .med({
-    &--has-cover &__link {
-      width: 70%;
-    }
-  });
-
-  &__meta {
-    max-width: unit(610/@base,rem);
-  }
-
   &__date {
-    margin-top: @spacing;
+    display: flex;
+    flex-flow: column;
+    border: 2px solid black;
+    background-color: white;
+    position: relative;
+    min-width: unit(50/@base,rem);
+    #breakpoint > .med({
+      min-width: unit(80/@base,rem);
+    });
+    margin: @spacing @spacing 0 @spacing;
   }
-
-  //date (move this into it's own pattern)
   &--has-cover &__date {
-    background-color: fade(black,24%);
-    padding: unit(7/@base,rem) unit(14/@base,rem);
-    text-align: center;
-    align-self: flex-start;
-    position: absolute;
-    left: @spacing;
-    top: @spacing;
-    margin: 0;
+    margin-bottom: @spacing;
   }
 
-  &--has-cover &__month,
-  &--has-cover &__year {
-    text-transform: uppercase;
-    font-size: unit(12/@base,rem);
-    display: block;
+  &__month {
+    border-bottom: 2px solid black;
   }
 
-  &--has-cover &__day {
-    font-family: 'raleway', serif;
-    font-weight: bold;
-    background-color: fade(black,40%);
+  &__day,
+  &__month,
+  &__year {
+    font-size: unit(14/@base,rem);
     padding: unit(4/@base,rem) unit(14/@base,rem);
-    border-radius: 18px;
-    margin: unit(7/@base,rem) 0;
-    display: block;
+    text-align: center;
   }
 
-  #breakpoint > .med({
-    &--style-a&--has-cover &__date,
-    &--style-c&--has-cover &__date {
-      left: auto;
-      right: @spacing;
-    }
-  });
+  &__year {
+    color: #ddd;
+  }
+
+  &__day {
+    font-family: 'Raleway',sans-serif;
+    font-weight: bold;
+    font-size: unit(18/@base,rem);
+    #breakpoint > .med({
+      font-size: unit(22/@base,rem);
+    });
+    padding-bottom: 0;
+    text-shadow: 1px 1px 0 white, 2px 2px 0 #ddd;
+  }
+
 
 }

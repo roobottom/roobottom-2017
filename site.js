@@ -6,20 +6,17 @@ module.exports = {
     {
       url: '/',
       title: 'Home',
-      icon: 'house',
-      prompt: 'Go to the homepage'
+      icon: 'house'
     },
     {
       url: '/articles',
       title: 'Articles',
-      icon: 'teacup',
-      prompt: 'Read things I\'ve written'
+      icon: 'teacup'
     },
     {
       url: '/patterns',
       title: 'Pattern library',
-      icon: 'clipboard',
-      prompt: 'See how this site is built'
+      icon: 'clipboard'
     }
   ],
   social: [
