@@ -1,3 +1,4 @@
+{% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
 {% macro m_teaser(title,url,date,day,month,year,intro,cover,modifier) %}
 <a href="{{url}}" class="m_teaser{% if modifier %} m_teaser--{{modifier}}{% endif %}{% if cover %} m_teaser--has-cover{% endif %}" {% if cover %}style="background-image:url({{cover}});"{% endif %}>
 
@@ -10,7 +11,9 @@
       {% if intro %}
         {{ intro|safe }}
       {% endif %}
-      <p>Read the rest of this article &rarr;</p>
+      <div class="m_teaser__prompt">
+      {{m_icon('arm','m_teaser__arm')}}{{m_icon('hand-point-right','m_teaser__hand')}}
+      </div>
     </div>
 
 </a>

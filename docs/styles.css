@@ -608,7 +608,7 @@ body {
   align-items: flex-start;
   position: relative;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center top;
   margin-bottom: 1.9375rem;
   overflow: hidden;
@@ -619,6 +619,7 @@ body {
   .m_teaser {
     -ms-flex-flow: row;
     flex-flow: row;
+    background-size: cover;
   }
 }
 .m_teaser:after {
@@ -763,6 +764,19 @@ body {
   .m_teaser__day {
     font-size: 1.375rem;
   }
+}
+.m_teaser__prompt {
+  position: relative;
+  left: 0;
+  margin-left: -100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.m_teaser__arm {
+  transform: scaleX(10);
+  transform-origin: right;
 }
 .c_page__content {
   padding: 0 2rem;
