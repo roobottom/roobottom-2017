@@ -191,7 +191,7 @@ gulp.task('js',() => {
 */
 gulp.task('styles',()=> {
   return gulp.src('_source/patterns/styles.less')
-  //.pipe($.sourcemaps.init())
+  .pipe($.sourcemaps.init())
   .pipe($.less())
   .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
@@ -204,7 +204,7 @@ gulp.task('styles',()=> {
       }
     }
   }))
-  //.pipe($.sourcemaps.write())
+  .pipe($.sourcemaps.write('./'))
   .pipe(gulp.dest(site.publish_folder))
 })
 
