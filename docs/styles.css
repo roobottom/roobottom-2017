@@ -697,6 +697,9 @@ body {
     line-height: 1.63157895;
   }
 }
+.m_teaser__meta > p:last-of-type {
+  margin-bottom: 0;
+}
 .m_teaser__title {
   margin: 1.4375rem 0;
   padding: 0;
@@ -766,17 +769,59 @@ body {
   }
 }
 .m_teaser__prompt {
-  position: relative;
-  left: 0;
-  margin-left: -100%;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin-left: -10.5rem;
+}
+@media screen and (min-width: 44rem) {
+  .m_teaser__prompt {
+    margin-left: 0;
+  }
+}
+.m_teaser__promptIcons {
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (min-width: 44rem) {
+  .m_teaser__promptIcons {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
 }
 .m_teaser__arm {
-  transform: scaleX(10);
   transform-origin: right;
+}
+.m_teaser__promptText {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  font-size: 1em;
+  line-height: 1.9375;
+  line-height: calc(1.4375em + (1.9375 - 1.4375) * ((100vw - 18.75em)/(44 - 18.75)));
+  margin: 1.4375rem 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media screen and (min-width: 44rem) {
+  .m_teaser__promptText {
+    font-size: 1.1875em;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_teaser__promptText {
+    line-height: 1.63157895;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_teaser__promptText {
+    margin: 1.9375rem 0;
+  }
+}
+.m_teaser:hover .m_teaser__promptText {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .c_page__content {
   padding: 0 2rem;
