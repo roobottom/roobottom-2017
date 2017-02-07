@@ -21,10 +21,11 @@
     display: flex;
     flex-direction: row;
     position: absolute;
-    right: 100%;
+    right: ~"calc(100% + .25rem)";
     top: unit(-16/@base,rem);
     #breakpoint > .med({
-      top: unit(-19/@base,rem);
+      top: unit(-17/@base,rem);
+      right: ~"calc(100% + 1rem)";
     });
   }
   &__arm {
