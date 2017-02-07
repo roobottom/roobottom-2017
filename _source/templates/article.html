@@ -23,6 +23,12 @@
 
 {% block content %}
 {{ c_page([
+    m_breadcrumbs([
+      {title: 'Home',
+      url: '/'},
+      {title: 'Articles',
+      url: '/articles'}
+    ]),
     m_pageTitle(page.title),
     m_prose(contents),
     prevNext()

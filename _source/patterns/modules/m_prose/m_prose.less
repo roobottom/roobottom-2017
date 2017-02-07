@@ -88,6 +88,18 @@
   #link {
     .base() {
       color: @c_1;
+      text-decoration: none;
+      border-bottom: 1px solid fade(@c_1,20%);
+
+      &:hover {
+        background-color: fade(@c_1,20%);
+      }
+
+      &:active {
+        outline: 1px solid @c_1;
+        background-color: fade(@c_1,20%);
+      }
+
     }
   }
 

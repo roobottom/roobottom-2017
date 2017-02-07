@@ -158,16 +158,18 @@
     transform-origin: right;
   }
 
-  &__promptText {
+  &__link {
     align-self: center;
+    text-decoration: none;
     #m_prose > #default > .size;
     #m_prose > #default > .line-height();
     #m_prose > #default > .spacing();
     border-bottom: 1px solid fade(white,20%);
+    color: white;
+    &:hover {
+      background-color: fade(white,20%);
+    }
   }
 
-  &:hover &__promptText {
-    background-color: fade(white,20%);
-  }
 
 }

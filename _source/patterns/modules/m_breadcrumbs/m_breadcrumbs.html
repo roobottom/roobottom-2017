@@ -1,3 +1,15 @@
-{% macro m_breadscrumbs(tree,child) %}
-
+{% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
+{% macro m_breadcrumbs(tree) %}
+  <nav class="m_breadcrumbs" role="navigation" aria-label="breadcrumbs">
+    <div class="m_breadcrumbs__icons" aria-hidden="true">
+      {{m_icon('arm','m_breadcrumbs__arm')}}{{m_icon('hand-point-right','m_breadcrumbs__hand')}}
+    </div>
+    {% set rnd = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] | random %}
+    <p class="m_breadcrumbs__label" id="m_breadcrumbs__label_{{ rnd }}">You're here:</p>
+    <ol class="m_breadcrumbs__items" aria-labeledby="m_breadcrumbs__label_{{ rnd }}">
+      {% for item in tree -%}
+      <li class="m_breadcrumbs__item"><a href="{{item.url}}" class="m_breadcrumbs__link">{{item.title}}</a><span class="m_breadcrumbs__seperator" aria-hidden="true">/</span></li>
+      {%- endfor %}
+    </ol>
+  </nav>
 {% endmacro %}

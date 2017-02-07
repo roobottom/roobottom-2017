@@ -1,6 +1,6 @@
 {% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
 {% macro m_teaser(title,url,date,day,month,year,intro,cover,modifier) %}
-<a href="{{url}}" class="m_teaser{% if modifier %} m_teaser--{{modifier}}{% endif %}{% if cover %} m_teaser--has-cover{% endif %}" {% if cover %}style="background-image:url({{cover}});"{% endif %}>
+<div class="m_teaser{% if modifier %} m_teaser--{{modifier}}{% endif %}{% if cover %} m_teaser--has-cover{% endif %}" {% if cover %}style="background-image:url({{cover}});"{% endif %}>
 
     {% if date %}
     <time datetime="{{date}}" class="m_teaser__date">{% if day %}<span class="m_teaser__month">{{ month }}</span> <span class="m_teaser__day">{{ day }}</span> <span class="m_teaser__year">{{ year }}</span>{% else %}{{date}}{% endif %}</time>
@@ -15,9 +15,9 @@
         <div class="m_teaser__promptIcons">
           {{m_icon('arm','m_teaser__arm')}}{{m_icon('hand-point-right','m_teaser__hand')}}
         </div>
-      <p class="m_teaser__promptText">Read this article</p>
+      <a href="{{url}}" class="m_teaser__link">Read this article</a>
       </div>
     </div>
 
-</a>
+</div>
 {% endmacro %}
