@@ -5,12 +5,26 @@
   top: 0;
   bottom: 0;
   right: 0;
-  background: @c_1;
+  background-color: @c_1;
   overflow-y: auto;
   z-index: 100;
 
   display: none;
   opacity: 1;
+
+  @keyframes colourpulse {
+    0% {background-color: @c_1;}
+    20% {background-color: @c_2;}
+    40% {background-color: @c_3;}
+    60% {background-color: @c_4;}
+    80% {background-color: @c_5;}
+    100% {background-color: @c_1;}
+  }
+
+  animation-name: colourpulse;
+  animation-duration: 120s;
+  animation-iteration-count: infinite;
+
 
   transition:
         visibility 300ms cubic-bezier(1.000, 0.005, 0.845, 0.960),

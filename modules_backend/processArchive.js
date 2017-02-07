@@ -51,7 +51,7 @@ module.exports = function(basename, count, site) {
           contents: new Buffer('')
         });
 
-        var title = page === 0 ? 'Articles' : 'Articles, page ' + page
+        var title = page === 0 ? 'Articles' : 'Articles, page ' + (page+1)
 
         file.page = {
           posts: posts,

@@ -43,9 +43,8 @@
 
   // --- main menu --- //
   &--main {
-    padding-bottom: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid mix(white,@c_1,50%);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid fade(white,20%);
   }
   &--main &__item {
     display: flex;
@@ -60,12 +59,20 @@
     text-decoration: none;
     color: white;
     font-family: 'Raleway',sans-serif;
+    border-bottom: 1px solid fade(white,20%);
+    padding: .5rem;
+    &:hover {
+      background-color: fade(white,20%);
+    }
+    &:active {
+      outline: 1px solid fade(white,50%);
+    }
   }
   &--main &__title {
     line-height: 1;
     text-shadow: 2px 2px 0 fade(black,7%);
     font-size: unit(26/@base,rem);
-    font-weight: 300;
+    font-weight: bold;
     #breakpoint > .med({
       font-size: unit(46/@base,rem);
     });
