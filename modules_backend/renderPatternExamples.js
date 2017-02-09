@@ -6,8 +6,10 @@ const fs = require('fs');
 const path = require('path');
 
 var Remarkable = require('remarkable');
-const md = new Remarkable({
-  html: true
+const md = new Remarkable('full',{
+  html: true,
+  typographer: true,
+  enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
 });
 
 const env = nunjucks.configure('./_source',{autoescape:false})

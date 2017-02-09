@@ -39,7 +39,12 @@ gulp.task('server',() => {
   })
 });
 
-
+var mdOptions = {
+  preset: 'full',
+  html: true,
+  typographer: true,
+  enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
+}
 
 /*
 01. Articles
@@ -53,7 +58,7 @@ gulp.task('articles:process', () => {
 gulp.task('articles:render', ['articles:process'], () => {
   return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
-    .pipe($.remarkable({preset: 'commonmark'}))
+    .pipe($.remarkable(mdOptions))
     .pipe(renderSmartTags())
     .pipe(renderFileWithTemplate(site.articles.page,site))
     .pipe($.htmlmin({collapseWhitespace: true}))
@@ -88,11 +93,6 @@ gulp.task('pattern-library', ['articles:archives'], () => {
   }))
   .pipe(gulp.dest(site.publish_folder))
 });
-
-var mdOptions = {
-  preset: 'full',
-  enable: ['sup','sub','abbr']
-}
 
 /*
 03. Pages

@@ -5,7 +5,13 @@ const through = require('through2');
 const gutil = require('gulp-util');
 const _ = require('lodash');
 const fs = require('fs');
-const marked = require('marked');
+
+var Remarkable = require('remarkable');
+const md = new Remarkable('full',{
+  html: true,
+  typographer: true,
+  enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
+});
 
 module.exports = function(site) {
   let patterns = [];
@@ -22,7 +28,7 @@ module.exports = function(site) {
         let dataFile = path.join(__dirname, '../_source/patterns/' + dirArray[1] + '/' + fileobj.name + '/' + file.meta.dataFile.name);
         let dataFileContents = fs.readFileSync(dataFile).toString()
         if(file.meta.dataFile.markdown) {
-          dataFileContents = marked(dataFileContents);
+          dataFileContents = md.render(dataFileContents);
         }
         file.meta.data = {};
         file.meta.data[file.meta.dataFile.key] = dataFileContents;

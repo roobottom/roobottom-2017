@@ -1,5 +1,5 @@
 @lower_lh: 23;
-@upper_lh: 31;
+@upper_lh: 33;
 
 #m_prose {
 
@@ -17,14 +17,14 @@
     .size() {
       font-size: unit(16/@base,em);
       #breakpoint > .med({
-        font-size: unit(19/@base,em);
+        font-size: unit(21/@base,em);
       });
     }
     .line-height() {
       line-height: @upper_lh/16;
       #m_prose > #fontlock > .line-height();
       #breakpoint > .med({
-        line-height: @upper_lh/19;
+        line-height: @upper_lh/21;
       });
     }
   }
@@ -75,7 +75,6 @@
     .h3() {
       font-size: unit(21/@base,em);
       line-height: @lower_lh*1.5/21;
-      //color: @c_4;
       #breakpoint > .med({
         font-size: unit(24/@base,em);
         line-height: @upper_lh/24;
@@ -294,6 +293,33 @@
   th {
       font-weight: bold;
       border-bottom: 2px solid darken(@c_lightgrey,10%);
+  }
+
+  //abbr
+  abbr {
+    border-bottom: 1px dotted @c_2;
+    cursor: help;
+  }
+
+  //sub and sup
+  sub {
+    vertical-align: sub;
+    font-size: 70%;
+  }
+  sup {
+    vertical-align: super;
+    font-size: 70%;
+  }
+
+  //del
+  del {
+    text-decoration: line-through;
+  }
+
+  mark {
+    color: darken(@c_2,30%);
+    background-color: lighten(@c_2,27%);
+    padding: 0 unit(3/@base,rem);
   }
 
 }

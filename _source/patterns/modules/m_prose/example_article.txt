@@ -28,3 +28,20 @@ Sometimes its important to mention a `variable` or other `code element`, inline.
   color: blue;
 }
 ```
+
+If you have tabular data, you might just want to use a table element to represent said data, much like this:
+
+Place | Size | Price
+--- | --- | ---
+Moon base Alpha6 | 3 Million m^3^ | €1,986
+Brian's hotel and spa | 1,872 m^3^ | €2,872,972
+
+Sometimes you might wish to abbreviate something, like CSS.
+
+*[CSS]: Cascading Style Sheets
+
+Other times you may need to use superscript, like m^2^, or subscript, like m~2~.
+
+You may wish to redact ~~something you’ve previously said.~~
+
+You can also ==mark out some text== that may be of particular importance. 
