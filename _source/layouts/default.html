@@ -25,9 +25,13 @@
     </head>
     <body class="page-type-{{page.type}}">
 
+      {% if page.type == 'home' %}
+      {% set headerModifier = 'transparent' %}
+      {% endif %}
+
       {{c_header([
         m_siteHeader(icon='menu',menuLink='#main-menu',menuData=[{a: 'fullscreen-trigger', v: '#main-menu'}])
-      ])}}
+      ], headerModifier)}}
 
         {% block content %}
         {% endblock %}
@@ -39,6 +43,7 @@
             m_navigation(site.social,'inline-bleached')
           ],id='main-menu')
         }}
+
         <script src="/functionality.js"></script>
     </body>
 </html>

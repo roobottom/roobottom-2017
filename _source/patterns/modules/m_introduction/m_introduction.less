@@ -1,55 +1,54 @@
+#m_introduction {
+
+  .text(@size; @lh:@size*1.5) {
+    font-size: unit(@size/2/@base,rem);
+    line-height: (@lh/2)/(@size/2);
+    #breakpoint > .min({
+      @vw_base: @bp_med/100;
+      font-size: unit(@size/@vw_base,vw);
+      line-height: unit(@lh/@vw_base,vw)
+    });
+    #breakpoint > .med({
+      font-size: unit(@size/@base,rem);
+      line-height: @lh/@size;
+    });
+  }
+
+}
+
 .m_introduction {
 
-  background: @c_1;
-  font-family: 'Raleway',sans-serif;
-  #breakpoint > .med({
-    font-weight: 300;
-  });
 
   p {
-    color: white;
-    #m_prose > #default > .spacing();
-    font-size: unit(17/@base,em);
-    line-height: 21/17;
-    #breakpoint > .min({
-      #m_prose > #fontlock > .font-size(17,27,@bp_min,@bp_med);
-      #m_prose > #fontlock > .line-height(21,37,@bp_min,@bp_med);
-    });
+    #m_introduction > .text(31);
+    margin: unit(@lower_lh/@base,rem) 0;
     #breakpoint > .med({
-      font-size: unit(27/@base,em);
-      line-height: 37/27;
+      margin: unit(@upper_lh/@base,rem) 0;
+      font-weight: 300;
     });
-  }
 
-  >p:first-child {
-    font-weight: bold;
-    font-size: unit(34/@base,rem);
-    line-height: 45/34;
-    #breakpoint > .min({
-      #m_prose > #fontlock > .font-size(34,59,@bp_min,@bp_med);
-    });
-    #breakpoint > .med({
-      font-size: unit(59/@base,rem);
-      line-height: 72/59;
-    });
+
+    &, a {
+      color: white;
+      text-decoration: none;
+    }
+
     a {
-      border-width: 3px;
+      border-bottom: 1px solid fade(white,20%);
+      &:hover {
+        background-color: fade(white,15%);
+      }
+      &:active {
+        outline: 1px solid fade(white,80%);
+      }
     }
+
   }
 
-  a {
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid lighten(@c_1,10%);
-
-    &:hover {
-      border-color: white;
-    }
-
-    &:focus {
-      background-color: darken(@c_1,10%);
-    }
-
+  p:first-child {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    #m_introduction > .text(58,73);
   }
 
 }

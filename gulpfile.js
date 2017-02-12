@@ -182,7 +182,7 @@ gulp.task('js',() => {
         filename: 'functionality.js'
       }
   }, webpack))
-  //.pipe($.uglify())
+  .pipe($.uglify())
   .pipe(gulp.dest('./docs'))
 });
 
@@ -193,16 +193,16 @@ gulp.task('styles',()=> {
   return gulp.src('_source/patterns/styles.less')
   .pipe($.sourcemaps.init())
   .pipe($.less())
+  // .pipe($.cleanCss({
+  //   level: {
+  //     2: {
+  //       all: true
+  //     }
+  //   }
+  // }))
   .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
-  }))
-  .pipe($.cleanCss({
-    level: {
-      2: {
-        all: true
-      }
-    }
   }))
   .pipe($.sourcemaps.write('./'))
   .pipe(gulp.dest(site.publish_folder))

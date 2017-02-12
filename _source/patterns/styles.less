@@ -2,9 +2,12 @@
 @base: 16;
 
 //sizes
-@bp_min: 300;
+@bp_min: 304;
 @bp_med: 704;
 @bp_max: 1200;
+
+@lower_lh: 23;
+@upper_lh: 33;
 
 @c_1: #7A75FF; //purple
 @c_2: #FF6175; //red
@@ -42,7 +45,13 @@ body {
 
 .page-type-home {
   background-color: @c_1;
+  height: 100vh;
+  background-image:  radial-gradient(ellipse farthest-corner at 0% 100%, darken(@c_1,10%) 20%, darken(@c_2,0%) 100%);
+  animation-name: colourpulse;
+  animation-duration: 120s;
+  animation-iteration-count: infinite;
 }
+
 
 //modules
 @import 'modules/m_pagination/m_pagination';
