@@ -1,28 +1,4 @@
 @font-face {
-  font-family: 'Halis';
-  src: url('/assets/fonts/halis-book.woff2') format('woff2'), url('/assets/fonts/halis-book.woff') format('woff');
-  font-variant-ligatures: common-ligatures;
-}
-@font-face {
-  font-family: 'Halis';
-  src: url('/assets/fonts/halis-book-italic.woff2') format('woff2'), url('/assets/fonts/halis-book-italic.woff') format('woff');
-  font-variant-ligatures: common-ligatures;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Halis';
-  src: url('/assets/fonts/halis-black.woff2') format('woff2'), url('/assets/fonts/halis-black.woff') format('woff');
-  font-variant-ligatures: common-ligatures;
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'Halis';
-  src: url('/assets/fonts/halis-black-italic.woff2') format('woff2'), url('/assets/fonts/halis-black-italic.woff') format('woff');
-  font-variant-ligatures: common-ligatures;
-  font-style: italic;
-  font-weight: bold;
-}
-@font-face {
   font-family: 'Opensans';
   src: url('/assets/fonts/opensans-regular.woff2') format('woff2'), url('/assets/fonts/opensans-regular.woff') format('woff');
   font-variant-ligatures: common-ligatures;
@@ -119,9 +95,6 @@ body {
   background-color: #7A75FF;
   height: 100vh;
   background-image: radial-gradient(ellipse farthest-corner at 0% 100%, #4942ff 20%, #ff6175 100%);
-  animation-name: colourpulse;
-  animation-duration: 120s;
-  animation-iteration-count: infinite;
 }
 .m_pagignation {
   margin-top: 20px;
