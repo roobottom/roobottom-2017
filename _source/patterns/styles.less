@@ -50,6 +50,24 @@ body {
 }
 
 
+//move this to its own module
+.u_widow {
+  &:after {
+    content: ' ';
+  }
+  &__nbsp {
+    display: none;
+  }
+  #breakpoint > .med({
+    &:after {
+      content: none;
+    }
+    &__nbsp {
+      display: inline;
+    }
+  });
+}
+
 //modules
 @import 'modules/m_pagination/m_pagination';
 @import 'modules/m_navigation/m_navigation';

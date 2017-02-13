@@ -43,7 +43,11 @@ var mdOptions = {
   preset: 'full',
   html: true,
   typographer: true,
-  enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
+  enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup'],
+  remarkableOptions: {
+    typographer: true,
+    enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
+  }
 }
 
 /*

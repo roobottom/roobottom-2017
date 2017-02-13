@@ -96,6 +96,20 @@ body {
   height: 100vh;
   background-image: radial-gradient(ellipse farthest-corner at 0% 100%, #4942ff 20%, #ff6175 100%);
 }
+.u_widow:after {
+  content: ' ';
+}
+.u_widow__nbsp {
+  display: none;
+}
+@media screen and (min-width: 44rem) {
+  .u_widow:after {
+    content: none;
+  }
+  .u_widow__nbsp {
+    display: inline;
+  }
+}
 .m_pagignation {
   margin-top: 20px;
   border-top: 1px solid #ccc;
