@@ -13,6 +13,7 @@ const $ = require('gulp-load-plugins')({
 const path = require('path');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
+const parallel = require('concurrent-transform');
 
 //posts
 const updatePostsObject = require('./modules_backend/updatePostsObject');
@@ -146,16 +147,19 @@ gulp.task('drafts',()=>{
 /*
 --. images
 */
-gulp.task('images',() => {
+gulp.task('images:fullsize',() => {
   return gulp.src(site.images_folder)
-  .pipe($.resize({
-      width : 600,
-      noProfile: true,
-      crop : false,
-      upscale : false
-    }))
+  .pipe(parallel(
+    $.resize({
+        width : 680,
+        noProfile: true,
+        crop : false,
+        upscale : false
+      })
+  ))
   .pipe(gulp.dest(site.publish_folder + '/images'))
 });
+gulp.task('images',['images:fullsize'])
 
 /*
 --. icons
