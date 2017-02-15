@@ -35,7 +35,9 @@ module.exports = function(site) {
 
     //extract the first image as the cover
     if(file.page.images) {
-      file.page.cover = '/images/articles/' + file.page.id + '/' + file.page.images[0].image;
+      var fullImage = file.page.images[0].image;
+      var smallImage = fullImage.split('.jpg');
+      file.page.cover = '/images/articles/' + file.page.id + '/' + smallImage[0] + '-small.jpg';
     }
 
 

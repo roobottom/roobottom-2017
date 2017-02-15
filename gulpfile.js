@@ -159,7 +159,25 @@ gulp.task('images:fullsize',() => {
   ))
   .pipe(gulp.dest(site.publish_folder + '/images'))
 });
-gulp.task('images',['images:fullsize'])
+gulp.task('images:small',()=> {
+  return gulp.src(site.images_folder)
+  .pipe(parallel(
+    $.resize({
+      width: 1000,
+      noProfile: true,
+      upscale: false,
+      quality: 0.1,
+      filter: 'Catrom'
+    })
+  ))
+  .pipe($.rename((src)=> {
+    if(src.extname == '.jpg') {
+      src.basename = src.basename + '-small';
+    }
+  }))
+  .pipe(gulp.dest(site.publish_folder + '/images'))
+});
+gulp.task('images',['images:fullsize','images:small'])
 
 /*
 --. icons

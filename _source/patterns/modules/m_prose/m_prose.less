@@ -4,13 +4,14 @@
     .color() {
       color: #333;
     }
-    .spacing() {
-      margin: unit(@lower_lh/@base,rem) 0;
+    .spacing(@top: 1; @bottom: 1;) {
+      margin: unit(@lower_lh*@top/@base,rem) 0 unit(@lower_lh*@bottom/@base,rem) 0;
       padding: 0;
       #breakpoint > .med({
-        margin: unit(@upper_lh/@base,rem) 0;
+        margin: unit(@upper_lh*@top/@base,rem) 0 unit(@upper_lh*@bottom/@base,rem) 0;
       });
     }
+
     .size() {
       font-size: unit(16/@base,em);
       #breakpoint > .med({
@@ -136,9 +137,11 @@
   }
   h2 {
     #m_prose > #heading > .h2();
+    #m_prose > #default > .spacing(@top: 2;)
   }
   h3 {
     #m_prose > #heading > .h3();
+    #m_prose > #default > .spacing(@top: 2;)
   }
 
   //paragraphs

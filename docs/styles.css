@@ -223,7 +223,7 @@ body {
 .m_prose figure,
 .m_prose blockquote {
   color: #333;
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
 }
 @media screen and (min-width: 44rem) {
@@ -236,7 +236,7 @@ body {
   .m_prose p,
   .m_prose figure,
   .m_prose blockquote {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 .m_prose strong,
@@ -282,6 +282,8 @@ body {
   font-size: 1.625em;
   line-height: 1.32692308;
   display: block;
+  margin: 2.875rem 0 1.4375rem 0;
+  padding: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h2 {
@@ -289,15 +291,27 @@ body {
     line-height: 1.20731707;
   }
 }
+@media screen and (min-width: 44rem) {
+  .m_prose h2 {
+    margin: 4.125rem 0 2.0625rem 0;
+  }
+}
 .m_prose h3 {
   font-size: 1.3125em;
   line-height: 1.64285714;
   display: block;
+  margin: 2.875rem 0 1.4375rem 0;
+  padding: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h3 {
     font-size: 1.5em;
     line-height: 1.375;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_prose h3 {
+    margin: 4.125rem 0 2.0625rem 0;
   }
 }
 .m_prose p {
@@ -329,7 +343,7 @@ body {
 }
 .m_prose > ul,
 .m_prose > ol {
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
   font-size: 1em;
   line-height: 2.0625;
@@ -340,7 +354,7 @@ body {
 @media screen and (min-width: 44rem) {
   .m_prose > ul,
   .m_prose > ol {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -444,7 +458,7 @@ body {
   color: #333;
 }
 .m_prose pre {
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
   background-color: #F5F5F5;
   padding: 1.4375rem;
@@ -453,7 +467,7 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_prose pre {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -508,7 +522,7 @@ body {
   width: 100%;
   background-color: #F5F5F5;
   color: #333;
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
   font-size: 1em;
   line-height: 2.0625;
@@ -517,7 +531,7 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_prose table {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -565,7 +579,7 @@ body {
   padding: 0 0.1875rem;
 }
 .m_pageTitle {
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
   font-weight: bold;
   font-style: normal;
@@ -575,7 +589,7 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -685,7 +699,7 @@ body {
   align-items: flex-start;
   position: relative;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100%;
   background-position: center top;
   margin-bottom: 1.9375rem;
   overflow: hidden;
@@ -753,7 +767,7 @@ body {
   padding: 0 1.9375rem;
 }
 .m_teaser__meta > p {
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
   font-size: 1em;
   line-height: 2.0625;
@@ -761,7 +775,7 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__meta > p {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -778,7 +792,7 @@ body {
   margin-bottom: 0;
 }
 .m_teaser__title {
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
   font-weight: bold;
   font-style: normal;
@@ -791,7 +805,7 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__title {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -878,7 +892,7 @@ body {
   font-size: 1em;
   line-height: 2.0625;
   line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
@@ -895,7 +909,7 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__link {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 .m_teaser__link:hover {
@@ -903,12 +917,12 @@ body {
 }
 .m_breadcrumbs {
   position: relative;
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_breadcrumbs {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 .m_breadcrumbs__item,
@@ -991,13 +1005,13 @@ body {
 }
 .m_prevNext__item {
   position: relative;
-  margin: 1.4375rem 0;
+  margin: 1.4375rem 0 1.4375rem 0;
   padding: 0;
   max-width: 70%;
 }
 @media screen and (min-width: 44rem) {
   .m_prevNext__item {
-    margin: 2.0625rem 0;
+    margin: 2.0625rem 0 2.0625rem 0;
   }
 }
 .m_prevNext__item--next {
