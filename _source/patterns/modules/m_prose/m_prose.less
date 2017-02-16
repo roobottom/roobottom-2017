@@ -12,30 +12,29 @@
       });
     }
 
-    .size() {
-      font-size: unit(16/@base,em);
+    .size(@min: 16; @max: 21;) {
+      font-size: unit(@min/@base,em);
+      line-height: @lower_lh/@min;
+      #breakpoint > .min({
+        #m_prose > #fontlock > .line-height();
+      });
       #breakpoint > .med({
-        font-size: unit(21/@base,em);
+        font-size: unit(@max/@base,em);
+        line-height: @upper_lh/@max;
       });
     }
-    .line-height() {
-      line-height: @upper_lh/16;
-      #m_prose > #fontlock > .line-height();
-      #breakpoint > .med({
-        line-height: @upper_lh/21;
-      });
-    }
+
   }
 
   #fontlock {
-    .line-height(@lh-min:@lower_lh,@lh-max:@upper_lh,@width-min:@bp_min,@width-max:@bp_med) {
-      @min: @lh-min / @base;
-      @max: @lh-max / @base;
+    .line-height( @lh-min:@lower_lh; @lh-max:@upper_lh; @width-min:@bp_min; @width-max:@bp_med) {
+      @internal_min: @lh-min / @base;
+      @internal_max: @lh-max / @base;
       @minW: @width-min / @base;
       @maxW: @width-max / @base;
-      line-height: ~"calc(@{min}em + (@{max} - @{min}) * ((100vw - @{minW}em)/(@{maxW} - @{minW})))";
+      line-height: ~"calc(@{internal_min}em + (@{internal_max} - @{internal_min}) * ((100vw - @{minW}em)/(@{maxW} - @{minW})))";
     }
-    .font-size(@minSize,@maxSize,@width-min,@width-min:@bp_min,@width-max:@bp_med) {
+    .font-size(@minSize; @maxSize; @width-min:@bp_min; @width-max:@bp_med;) {
       @min: @minSize / @base;
       @max: @maxSize / @base;
       @minW: @width-min / @base;
@@ -147,7 +146,6 @@
   //paragraphs
   p {
     #m_prose > #default > .size;
-    #m_prose > #default > .line-height();
   }
 
   //links
@@ -159,7 +157,6 @@
   >ul,>ol {
     #m_prose > #default > .spacing();
     #m_prose > #default > .size;
-    #m_prose > #default > .line-height();
     list-style-position: inside;
     margin-left: 1em;
     #breakpoint > .med({
@@ -274,7 +271,6 @@
 
   }
   pre>code {
-    #m_prose > #default > .line-height();
     #m_prose > #default > .size();
   }
 
@@ -298,7 +294,6 @@
       #m_prose > #default > .color();
       #m_prose > #default > .spacing();
       #m_prose > #default > .size;
-      #m_prose > #default > .line-height();
       border-left: 6px solid @c_2;
   }
 

@@ -10,8 +10,11 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center top;
-  margin-bottom: @spacing;
-  overflow: hidden; //yuk, find some other way to fix this!
+    margin-bottom: @spacing;
+  #breakpoint > .med({
+      margin-bottom: @spacing * 2;
+  });
+  overflow: hidden;
 
   color: white;
   text-decoration: none;
@@ -25,12 +28,29 @@
   &:after {
     content: "";
     background-color: @c_2;
-    opacity: 0.6;
+    opacity: 0.85;
     width: 100%;
     top: 0;
     left: 0;
     bottom: 0;
     position: absolute;
+  }
+
+  //shadows
+  @shadowWidth: 10px;
+  @shadowDisconnect: 3px;
+  @shadowFade: 20%;
+  &--style-a {
+    box-shadow: @shadowDisconnect @shadowDisconnect 0px white, @shadowWidth @shadowWidth 0 fade(@c_2,@shadowFade);
+  }
+  &--style-b {
+    box-shadow: @shadowDisconnect @shadowDisconnect 0px white, @shadowWidth @shadowWidth 0 fade(@c_3,@shadowFade);
+  }
+  &--style-c {
+    box-shadow: @shadowDisconnect @shadowDisconnect 0px white, @shadowWidth @shadowWidth 0 fade(@c_4,@shadowFade);
+  }
+  &--style-d {
+    box-shadow: @shadowDisconnect @shadowDisconnect 0px white, @shadowWidth @shadowWidth 0 fade(@c_5,@shadowFade);
   }
 
   //colours
@@ -73,8 +93,7 @@
     padding: 0 @spacing;
     > p {
       #m_prose > #default > .spacing();
-      #m_prose > #default > .size;
-      #m_prose > #default > .line-height();
+      #m_prose > #default > .size(@max: 17;);
     }
     > p:last-of-type {
       margin-bottom: 0;
@@ -84,9 +103,12 @@
   &__title {
     #m_prose > #default > .spacing();
     #m_prose > #heading > .base();
-    #m_prose > #heading > .h3();
+    #m_prose > #heading > .h2();
     text-shadow: 2px 2px 0 fade(black,20%);
+  }
+  &__titlelink {
     color: white;
+    text-decoration: none;
   }
 
   &__date {
@@ -162,7 +184,6 @@
     align-self: center;
     text-decoration: none;
     #m_prose > #default > .size;
-    #m_prose > #default > .line-height();
     #m_prose > #default > .spacing();
     border-bottom: 1px solid fade(white,20%);
     color: white;

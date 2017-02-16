@@ -7,7 +7,7 @@
     {% endif %}
 
     <div class="m_teaser__meta">
-      <h2 class="m_teaser__title">{{title | removeWidows | safe}}</h2>
+      <h2 class="m_teaser__title"><a href="{{url}}" class="m_teaser__titlelink">{{title | removeWidows | safe}}</a></h2>
       {% if intro %}
         {{ intro|safe }}
       {% endif %}
