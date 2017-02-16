@@ -448,6 +448,7 @@ body {
   background-color: #FF6175;
   position: relative;
   border-radius: 9px;
+  margin: 0;
   padding: 0.71875rem 1.4375rem;
 }
 @media screen and (min-width: 44rem) {
