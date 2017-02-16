@@ -243,6 +243,10 @@ body {
 }
 .m_figure__image {
   width: 100%;
+  display: block;
+}
+.m_figure__image + .m_figure__image {
+  margin-top: 1px;
 }
 .m_prose h1,
 .m_prose h2,
