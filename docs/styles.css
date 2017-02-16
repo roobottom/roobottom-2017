@@ -211,6 +211,11 @@ body {
     margin-bottom: 2.0625rem;
   }
 }
+@media screen and (min-width: 44rem) {
+  .m_figure {
+    margin-left: 0;
+  }
+}
 .m_figure__caption {
   display: block;
   color: #666;
@@ -220,7 +225,6 @@ body {
   margin-top: 0.359375rem;
   margin-bottom: 1.4375rem;
   margin-left: 2.0625rem;
-  margin-right: 2.0625rem;
 }
 @media screen and (min-width: 19rem) {
   .m_figure__caption {
@@ -237,6 +241,11 @@ body {
   .m_figure__caption {
     margin-top: 0.515625rem;
     margin-bottom: 2.0625rem;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_figure__caption {
+    margin-left: 0;
   }
 }
 .m_figure__image {

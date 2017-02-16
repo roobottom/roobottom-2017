@@ -3,6 +3,9 @@
   #m_prose > #default > .spacing();
   margin-left: unit(-1 * @gutter / @base, rem);
   margin-right: unit(-1 * @gutter / @base, rem);
+  #breakpoint > .med({
+    margin-left: 0;
+  });
 
   &__caption {
     display: block;
@@ -11,7 +14,9 @@
     #m_prose > #default > .size(@max: 17; @min: 15;);
     #m_prose > #default > .spacing(@top: .25; );
     margin-left: unit(@gutter / @base, rem);
-    margin-right: unit(@gutter / @base, rem);
+    #breakpoint > .med({
+      margin-left: 0;
+    });
   }
 
   &__image {
