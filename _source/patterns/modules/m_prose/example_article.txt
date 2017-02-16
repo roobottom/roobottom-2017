@@ -1,4 +1,6 @@
-A paragraph of text usually contains both **bold** and *italic* elements, and sometimes **_bold-italic_** elements. Paragraphs also sometimes contain [links](http://roobottom.com) to other interesting content.
+A paragraph of text usually contains both **bold** and *italic* elements, and sometimes **_bold-italic_** elements. Paragraphs also sometimes contain [links](http://roobottom.com) to other interesting content. 
+
+09.12" fl fi ffi ffl. _09.12" fl fi ffi ffl_ **09.12" fl fi ffi ffl** **_09.12" fl fi ffi ffl_**
 
 ## h2. Expect skilled signwriters to use many jazzy, quaint old alphabets effectively. 09.12" fl fi ffi ffl
 ### h3. The wizard quickly jinxed the gnomes before they vaporized. 10.54" fl fi ffi ffl
@@ -8,6 +10,7 @@ A paragraph of text usually contains both **bold** and *italic* elements, and so
 + The first item
 + The second item
 	+ The first child of the second item
+		+ The first child of the first child of the second item
 	+ The second child of the second item
 + The third item
 
@@ -16,10 +19,17 @@ Don’t forget about **numbered lists**, here’s one:
 1. The first item
 1. The second item
 	1. The first child of the second item
+		1. The first child of the first child of the second item
 	1. The second child of the second item
 1. The third item
 
 > Quotes are great too! When someone else has said something, use a quote! — [Attributed to someone.](#)
+
+> There are 4 styles of quote! Defined by source-order.
+
+> There are 4 styles of quote! Defined by source-order.
+
+> There are 4 styles of quote! Defined by source-order.
 
 Sometimes its important to mention a `variable` or other `code element`, inline. Other times, its better to show a whole block of code, like this:
 

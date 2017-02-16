@@ -7,7 +7,6 @@
     .spacing(@top: 1; @bottom: 1;) {
       margin-top: unit(@lower_lh*@top/@base,rem);
       margin-bottom: unit(@lower_lh*@bottom/@base,rem);
-      padding: 0;
       #breakpoint > .med({
         margin-top: unit(@upper_lh*@top/@base,rem);
         margin-bottom: unit(@upper_lh*@bottom/@base,rem);
@@ -161,8 +160,9 @@
     #m_prose > #default > .size;
     list-style-position: inside;
     margin-left: 1em;
+    padding: 0;
     #breakpoint > .med({
-      list-style-position: outside;
+      margin-left: 0;
     });
   }
 
@@ -195,17 +195,32 @@
     font-style: italic;
     background-color: @c_2;
     position: relative;
+    display: block;
     border-radius: 9px;
     margin: 0;
-    padding: unit(@lower_lh/2/@base,rem) unit(@lower_lh/@base,rem);
+    padding: unit(@lower_lh/@base,rem);
     #breakpoint > .med({
-      padding: unit(@upper_lh/2/@base,rem) unit(@upper_lh/@base,rem);
+      padding: unit(@upper_lh/@base,rem);
     });
+
+    + blockquote {
+      #m_prose > #default > .spacing(@bottom: 0;);
+    }
+
     >* {
       margin: 0;
     }
     p,a {
       color: white;
+    }
+    a {
+      border-color: fade(white,50%);
+      &:hover {
+        background-color: fade(white,10%);
+      }
+      &:active {
+        outline-color: white;
+      }
     }
     &:before {
       content: "";
@@ -219,6 +234,7 @@
       top:50%;
       margin-top: -10px;
       left:-10px;
+      border-radius: 0 0 0 5px;
     }
 
     &:nth-of-type(4n-2) {
@@ -227,6 +243,7 @@
         background-color: @c_3;
         left: auto;
         right: -10px;
+        border-radius: 0 5px 0 0;
       }
     }
     &:nth-of-type(4n-1) {
@@ -241,6 +258,7 @@
         background-color: @c_5;
         left: auto;
         right: -10px;
+        border-radius: 0 5px 0 0;
       }
     }
 

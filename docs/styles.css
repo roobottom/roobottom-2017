@@ -202,7 +202,6 @@ body {
 .m_figure {
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   margin-left: -2.0625rem;
   margin-right: -2.0625rem;
 }
@@ -220,7 +219,6 @@ body {
   line-height: 1.53333333;
   margin-top: 0.359375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   margin-left: 2.0625rem;
   margin-right: 2.0625rem;
 }
@@ -260,7 +258,6 @@ body {
   color: #333;
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h1,
@@ -321,7 +318,6 @@ body {
   display: block;
   margin-top: 2.875rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h2 {
@@ -341,7 +337,6 @@ body {
   display: block;
   margin-top: 2.875rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h3 {
@@ -386,11 +381,11 @@ body {
 .m_prose > ol {
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   font-size: 1em;
   line-height: 1.4375;
   list-style-position: inside;
   margin-left: 1em;
+  padding: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_prose > ul,
@@ -415,7 +410,7 @@ body {
 @media screen and (min-width: 44rem) {
   .m_prose > ul,
   .m_prose > ol {
-    list-style-position: outside;
+    margin-left: 0;
   }
 }
 .m_prose ul ul,
@@ -447,13 +442,24 @@ body {
   font-style: italic;
   background-color: #FF6175;
   position: relative;
+  display: block;
   border-radius: 9px;
   margin: 0;
-  padding: 0.71875rem 1.4375rem;
+  padding: 1.4375rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose blockquote {
-    padding: 1.03125rem 2.0625rem;
+    padding: 2.0625rem;
+  }
+}
+.m_prose blockquote + blockquote {
+  margin-top: 1.4375rem;
+  margin-bottom: 0rem;
+}
+@media screen and (min-width: 44rem) {
+  .m_prose blockquote + blockquote {
+    margin-top: 2.0625rem;
+    margin-bottom: 0rem;
   }
 }
 .m_prose blockquote > * {
@@ -462,6 +468,15 @@ body {
 .m_prose blockquote p,
 .m_prose blockquote a {
   color: white;
+}
+.m_prose blockquote a {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.m_prose blockquote a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.m_prose blockquote a:active {
+  outline-color: white;
 }
 .m_prose blockquote:before {
   content: "";
@@ -475,6 +490,7 @@ body {
   top: 50%;
   margin-top: -10px;
   left: -10px;
+  border-radius: 0 0 0 5px;
 }
 .m_prose blockquote:nth-of-type(4n-2) {
   background-color: #00B7D9;
@@ -483,6 +499,7 @@ body {
   background-color: #00B7D9;
   left: auto;
   right: -10px;
+  border-radius: 0 5px 0 0;
 }
 .m_prose blockquote:nth-of-type(4n-1) {
   background-color: #FFA000;
@@ -497,6 +514,7 @@ body {
   background-color: #2EB19F;
   left: auto;
   right: -10px;
+  border-radius: 0 5px 0 0;
 }
 .m_prose code {
   color: #333;
@@ -504,7 +522,6 @@ body {
 .m_prose pre {
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   background-color: #F5F5F5;
   padding: 1.4375rem;
   overflow-y: auto;
@@ -570,7 +587,6 @@ body {
   color: #333;
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   font-size: 1em;
   line-height: 1.4375;
   border-left: 6px solid #FF6175;
@@ -629,7 +645,6 @@ body {
 .m_pageTitle {
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   font-weight: bold;
   font-style: normal;
   font-family: 'Raleway', sans-serif;
@@ -836,7 +851,6 @@ body {
 .m_teaser__meta > p {
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   font-size: 1em;
   line-height: 1.4375;
 }
@@ -863,7 +877,6 @@ body {
 .m_teaser__title {
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   font-weight: bold;
   font-style: normal;
   font-family: 'Raleway', sans-serif;
@@ -967,7 +980,6 @@ body {
   line-height: 1.4375;
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
 }
@@ -995,7 +1007,6 @@ body {
   position: relative;
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_breadcrumbs {
@@ -1085,7 +1096,6 @@ body {
   position: relative;
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  padding: 0;
   max-width: 70%;
 }
 @media screen and (min-width: 44rem) {
