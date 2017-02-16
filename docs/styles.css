@@ -793,18 +793,6 @@ body {
   bottom: 0;
   position: absolute;
 }
-.m_teaser--style-a {
-  box-shadow: 3px 3px 0px white, 10px 10px 0 rgba(255, 97, 117, 0.2);
-}
-.m_teaser--style-b {
-  box-shadow: 3px 3px 0px white, 10px 10px 0 rgba(0, 183, 217, 0.2);
-}
-.m_teaser--style-c {
-  box-shadow: 3px 3px 0px white, 10px 10px 0 rgba(255, 160, 0, 0.2);
-}
-.m_teaser--style-d {
-  box-shadow: 3px 3px 0px white, 10px 10px 0 rgba(46, 177, 159, 0.2);
-}
 .m_teaser--style-a,
 .m_teaser--style-a:after,
 .m_teaser--style-a .m_teaser__meta,
