@@ -1,18 +1,10 @@
 {% macro m_figure(images,path) %}
 <figure class="m_figure">
   {% for i in images %}
-    <img src="{{path}}/{{i.image}}" class="m_figure__image"{% if i.caption %} alt="{{i.caption}}" aria-labelledby="m_figure__caption-{{i.caption | length}}-{{loop.index}}-{{i.image}}"{% endif %}/>
-  {% endfor %}
-  {% for i in images %}
-    {% if i.caption -%}
-        {% if loop.first %}<figcaption class="m_figure__caption">{% endif %}
-        {% if loop.first and loop.length > 1 %}<span class="m_figure__captionPreface">From first to last: </span>{% endif %}
-        <span class="m_figure__captionTitle" id="m_figure__caption-{{i.caption | length}}-{{loop.index}}-{{i.image}}">{{i.caption}}</span>
-        {% if not loop.last and loop.length > 1 %}
-        <span class="m_figure__captionPunctuation">{% if not loop.revindex == 1 %}, {% else %} and {% endif %}</span>
-        {% endif %}
-        {% if loop.last %}</figcaption>{% endif %}
-    {%- endif %}
+    <img src="{{path}}/{{i.image}}" class="m_figure__image"{% if i.caption %} alt="{{i.caption}}"{% endif %}/>
+    {% if i.caption %}
+      <figcaption class="m_figure__caption">{{i.caption}}</figcaption>
+    {% endif %}
   {% endfor %}
 </figure>
 {% endmacro %}

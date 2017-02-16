@@ -1,17 +1,21 @@
 .m_figure {
-  margin: 20px 0;
+
+  #m_prose > #default > .spacing();
+  margin-left: unit(-1 * @gutter / @base, rem);
+  margin-right: unit(-1 * @gutter / @base, rem);
 
   &__caption {
-    margin: 10px 0;
     display: block;
     color: #666;
     font-style: italic;
-    font-size: 90%;
+    #m_prose > #default > .size(@max: 17; @min: 15;);
+    #m_prose > #default > .spacing(@top: .25; );
+    margin-left: unit(@gutter / @base, rem);
+    margin-right: unit(@gutter / @base, rem);
   }
 
-  &__captionPreface,
-  &__captionPunctuation {
-    color: #ccc;
+  &__image {
+    width: 100%;
   }
 
 }

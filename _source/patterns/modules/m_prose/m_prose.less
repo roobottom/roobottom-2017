@@ -5,10 +5,12 @@
       color: #333;
     }
     .spacing(@top: 1; @bottom: 1;) {
-      margin: unit(@lower_lh*@top/@base,rem) 0 unit(@lower_lh*@bottom/@base,rem) 0;
+      margin-top: unit(@lower_lh*@top/@base,rem);
+      margin-bottom: unit(@lower_lh*@bottom/@base,rem);
       padding: 0;
       #breakpoint > .med({
-        margin: unit(@upper_lh*@top/@base,rem) 0 unit(@upper_lh*@bottom/@base,rem) 0;
+        margin-top: unit(@upper_lh*@top/@base,rem);
+        margin-bottom: unit(@upper_lh*@bottom/@base,rem);
       });
     }
 
