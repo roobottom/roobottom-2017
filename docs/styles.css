@@ -1066,6 +1066,7 @@ body {
 }
 .m_breadcrumbs__item {
   list-style: none;
+  color: #ccc;
 }
 .m_breadcrumbs__seperator {
   color: rgba(122, 117, 255, 0.2);

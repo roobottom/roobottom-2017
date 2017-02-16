@@ -10,11 +10,16 @@
 
 {{
     c_page([
-        m_pageTitle(page.title),
-        c_grid([
-          call__m_teaser()
-        ]),
-        m_pagination(page.pagination)
+      m_breadcrumbs([
+        {title: 'Home',
+        url: '/'},
+        {title: page.title}
+      ]),
+      m_pageTitle(page.title),
+      c_grid([
+        call__m_teaser()
+      ]),
+      m_pagination(page.pagination)
     ])
 }}
 {% endblock %}

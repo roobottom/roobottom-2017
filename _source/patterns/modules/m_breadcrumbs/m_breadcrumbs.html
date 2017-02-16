@@ -8,7 +8,12 @@
     <p class="m_breadcrumbs__label" id="m_breadcrumbs__label_{{ rnd }}">You're here:</p>
     <ol class="m_breadcrumbs__items" aria-labeledby="m_breadcrumbs__label_{{ rnd }}">
       {% for item in tree -%}
-      <li class="m_breadcrumbs__item"><a href="{{item.url}}" class="m_breadcrumbs__link">{{item.title}}</a><span class="m_breadcrumbs__seperator" aria-hidden="true">/</span></li>
+      <li class="m_breadcrumbs__item">
+        {% if item.url -%}<a href="{{item.url}}" class="m_breadcrumbs__link">{%- endif %}{{item.title}}{% if item.url -%}</a>{%- endif %}
+        {% if not loop.last %}
+        <span class="m_breadcrumbs__seperator" aria-hidden="true">/</span>
+        {% endif %}
+      </li>
       {%- endfor %}
     </ol>
   </nav>

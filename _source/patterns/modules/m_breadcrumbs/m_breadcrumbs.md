@@ -8,5 +8,7 @@ data:
     -
       title: 'Articles'
       url: '/articles'
+    -
+      title: 'Brian'
 ---
 {{m_breadcrumbs(treeA)}}
