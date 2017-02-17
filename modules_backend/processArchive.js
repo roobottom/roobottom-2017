@@ -10,79 +10,41 @@ module.exports = function(basename, count, site) {
 		cb();
 	});
 
-  if (site.posts)
-  {
-    var c = 1;
-    var page = 0;
-    var posts = [];
+  if (site.posts) {
 
-    var pagination = [{
-      page: 0,
-      url: '',
-      posts: []
-    }];
-    var paginationPage = 0;
-
-    //build pagination object
-    site.posts.forEach(function(post) {
-      pagination[paginationPage].posts.push(post);
-      if(c==count) {
-        c = 0;
-        paginationPage++;
+    //create pagination object
+    var pagination = [];
+    site.posts.forEach((post, index) => {
+      if(index%10 == 0) {
+        var url = pagination.length === 0 ? '' : 'page-' + pagination.length;
         pagination.push({
-          page: paginationPage,
-          url: 'page-' + paginationPage,
-          posts: []
+          posts: [],
+          url: url
         });
       };
-      c++;
+      pagination[pagination.length-1].posts.push(post);
     });
 
-    //console.log(pagination);
-    c=0;
-    site.posts.forEach(function(post) {
-      posts.push(post);
-      c++;
-
-      if (c == count) {
-
-        var file = new gutil.File({
-          path: calculateFileName(basename,page),
-          contents: new Buffer('')
-        });
-
-        var title = page === 0 ? 'Articles' : 'Articles, page ' + (page+1)
-
-        file.page = {
-          posts: posts,
-          page: page,
-          pagination: pagination,
-          title: title
-        };
-        stream.write(file);
-
-        c = 0;
-        posts = [];
-        page++;
-
-      }
-    });
-
-    if (posts.length != 0) {
-
+    //for each page in pagination, create a archive page
+    pagination.forEach((page, index) => {
       var file = new gutil.File({
-        path: calculateFileName(basename,page),
+        path: calculateFileName(basename,index),
         contents: new Buffer('')
       });
+
+      //var title = index === 0 ? 'Articles' : 'Articles, page ' + (index+1);
+
       file.page = {
-        posts: posts,
-        page: page,
+        posts: pagination[index].posts,
         pagination: pagination,
-        title: 'Articles, page ' + page
-        };
+        title: 'Articles',
+        pageNumber: index + 1
+      };
       stream.write(file);
-    }
-  }
+
+    });
+
+  };
 
   stream.end();
   stream.emit("end");
@@ -90,6 +52,6 @@ module.exports = function(basename, count, site) {
   return stream;
 };
 
-var calculateFileName = function(basename,page) {
-  return page === 0 ? './' + basename + '/index.html' : './' + basename + '/page-' + page + '/index.html';
+var calculateFileName = function(basename,index) {
+  return index === 0 ? './' + basename + '/index.html' : './' + basename + '/page-' + index + '/index.html';
 }
