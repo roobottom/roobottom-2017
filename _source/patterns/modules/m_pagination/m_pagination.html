@@ -5,10 +5,7 @@
         {% for item in pagination -%}
         <li class="m_pagination__item">
             <a href="/{{type}}/{{item.url}}" class="m_pagination__link">
-            {% for post in item.posts | reverse -%}
-                {% if loop.first %}<span class="m_pagination__from"><strong>{{loop.length}}</strong> {{type}} written <em>between</em> {{post.humanDate}}</span>{% endif %}
-                {% if loop.last %}<span class="m_pagination__from"><em>and</em> {{post.humanDate}}</span>{% endif %}
-            {%- endfor %}
+            {{ item.dateRange.start }} to {{ item.dateRange.end }}
             </a>
         </li>
         {%- endfor %}

@@ -111,8 +111,14 @@ body {
   }
 }
 .m_pagignation {
-  margin-top: 20px;
-  border-top: 1px solid #ccc;
+  margin-top: 1.4375rem;
+  margin-bottom: 1.4375rem;
+}
+@media screen and (min-width: 44rem) {
+  .m_pagignation {
+    margin-top: 2.0625rem;
+    margin-bottom: 2.0625rem;
+  }
 }
 .m_navigation__items {
   padding: 0;

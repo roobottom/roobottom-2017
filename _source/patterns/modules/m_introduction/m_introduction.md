@@ -1,7 +1,7 @@
 ---
 title: Introduction module
 dataFile:
-  name: exampleIntroduction.markdown
+  name: exampleintroduction.markdown
   markdown: true
   key: copy
 ---

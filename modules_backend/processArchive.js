@@ -2,6 +2,7 @@
 
 const through = require('through2');
 const gutil = require('gulp-util');
+const moment = require('moment');
 
 module.exports = function(basename, count, site) {
 
@@ -14,14 +15,22 @@ module.exports = function(basename, count, site) {
 
     //create pagination object
     var pagination = [];
+    var dateRange = {};
     site.posts.forEach((post, index) => {
       if(index%10 == 0) {
         var url = pagination.length === 0 ? '' : 'page-' + pagination.length;
+        dateRange.start = moment(post.date).format('MMMM YYYY');
         pagination.push({
           posts: [],
           url: url
         });
       };
+      if(index%10 == 9 || index == site.posts.length - 1) {
+        dateRange.end = moment(post.date).format('MMMM YYYY');
+        pagination[pagination.length-1].dateRange = dateRange;
+        dateRange = {};
+      }
+      console.log(dateRange);
       pagination[pagination.length-1].posts.push(post);
     });
 
