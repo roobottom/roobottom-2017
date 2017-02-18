@@ -19,18 +19,17 @@ module.exports = function(basename, count, site) {
     site.posts.forEach((post, index) => {
       if(index%10 == 0) {
         var url = pagination.length === 0 ? '' : 'page-' + pagination.length;
-        dateRange.start = moment(post.date).format('MMMM YYYY');
+        dateRange.start = moment(post.date).format('YYYY');
         pagination.push({
           posts: [],
           url: url
         });
       };
       if(index%10 == 9 || index == site.posts.length - 1) {
-        dateRange.end = moment(post.date).format('MMMM YYYY');
+        dateRange.end = moment(post.date).format('YYYY');
         pagination[pagination.length-1].dateRange = dateRange;
         dateRange = {};
       }
-      console.log(dateRange);
       pagination[pagination.length-1].posts.push(post);
     });
 
@@ -46,6 +45,7 @@ module.exports = function(basename, count, site) {
       file.page = {
         posts: pagination[index].posts,
         pagination: pagination,
+        paginationCurrent: index,
         title: 'Articles',
         pageNumber: index + 1
       };

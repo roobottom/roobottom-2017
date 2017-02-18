@@ -1,3 +1,66 @@
-.m_pagignation {
+.m_pagination {
   #m_prose > #default > .spacing;
+
+  &__items {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+  }
+
+  &__item {
+    @itemsPerRow: 5;
+    @gapSize: 31px;
+    list-style: none;
+    flex-basis: ~"calc( (100% / @{itemsPerRow}) - ((@{gapSize} * (@{itemsPerRow} - 1))/@{itemsPerRow}) )";
+    box-sizing: border-box;
+    margin: 0 @gapSize @gapSize 0;
+    border: 2px solid black;
+    flex-grow: 0;
+    &:nth-of-type(@{itemsPerRow}n) {
+      margin-right: 0;
+    }
+  }
+
+  &__item--current {
+    box-shadow: 0 6px 0 fade(black,10%);
+    transform: translateY(-6px);
+  }
+
+  &__link {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    height: 100%;
+    color: #ccc;
+  }
+
+  &__number {
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding: unit(6/@base,rem);
+    //font-size: unit(14/@base,rem);
+    color: white;
+  }
+  &__item:nth-of-type(4n-3) &__number {
+    background-color: @c_2;
+  }
+  &__item:nth-of-type(4n-2) &__number {
+    background-color: @c_3;
+  }
+  &__item:nth-of-type(4n-1) &__number {
+    background-color: @c_4;
+  }
+  &__item:nth-of-type(4n) &__number {
+    background-color: @c_5;
+  }
+
+  &__range {
+    padding: unit(6/@base,rem);
+    text-align: center;
+  }
+
+
 }
