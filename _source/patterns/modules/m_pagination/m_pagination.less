@@ -1,6 +1,12 @@
 .m_pagination {
   #m_prose > #default > .spacing;
 
+  &__intro {
+    #m_prose > #default > .spacing;
+    #m_prose > #heading > .base;
+    #m_prose > #heading > .h3;
+  }
+
   &__items {
     display: flex;
     margin: 0;
@@ -10,57 +16,53 @@
   }
 
   &__item {
-    @itemsPerRow: 5;
-    @gapSize: 31px;
+    @itemsPerRow: 4;
+    @gapSize: unit(20/@base,rem);
     list-style: none;
     flex-basis: ~"calc( (100% / @{itemsPerRow}) - ((@{gapSize} * (@{itemsPerRow} - 1))/@{itemsPerRow}) )";
-    box-sizing: border-box;
     margin: 0 @gapSize @gapSize 0;
-    border: 2px solid black;
+    box-sizing: border-box;
+    border: 2px solid @c_1;
     flex-grow: 0;
     &:nth-of-type(@{itemsPerRow}n) {
       margin-right: 0;
     }
-  }
-
-  &__item--current {
-    box-shadow: 0 6px 0 fade(black,10%);
-    transform: translateY(-6px);
+    #breakpoint > .med({
+      @itemsPerRow: 7;
+      @gapSize: unit(20/@base,rem);
+      flex-basis: ~"calc( (100% / @{itemsPerRow}) - ((@{gapSize} * (@{itemsPerRow} - 1))/@{itemsPerRow}) )";
+      margin: 0 @gapSize @gapSize 0;
+      &:nth-of-type(n) {
+        margin-right: @gapSize;
+      }
+      &:nth-of-type(@{itemsPerRow}n) {
+        margin-right: 0;
+      }
+    });
   }
 
   &__link {
     display: block;
-    display: flex;
-    flex-direction: column;
+    text-align: center;
+    padding: unit(10/@base,rem) unit(6/@base,rem);
     text-decoration: none;
-    height: 100%;
-    color: #ccc;
+    color: @c_1;
   }
 
-  &__number {
-    text-align: center;
-    border-bottom: 2px solid black;
-    padding: unit(6/@base,rem);
-    //font-size: unit(14/@base,rem);
+  &__link--current {
+    background-color: @c_1;
     color: white;
   }
-  &__item:nth-of-type(4n-3) &__number {
-    background-color: @c_2;
-  }
-  &__item:nth-of-type(4n-2) &__number {
-    background-color: @c_3;
-  }
-  &__item:nth-of-type(4n-1) &__number {
-    background-color: @c_4;
-  }
-  &__item:nth-of-type(4n) &__number {
-    background-color: @c_5;
+
+  &__linkLabel,
+  &__linkNumber {
+    display: block;
   }
 
-  &__range {
-    padding: unit(6/@base,rem);
-    text-align: center;
+  &__linkNumber {
+    font-size: unit(23/@base,rem);
+    font-family: 'Raleway';
+    font-weight: bold;
   }
-
 
 }
