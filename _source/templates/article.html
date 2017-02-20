@@ -1,7 +1,6 @@
 {% extends "layouts/default.html" %}
 
 {% macro call__prevNext() %}
-<nav class="m_prevNext">
   {% for post in site.posts -%}
     {% if post.id == page.id %}
       {% if post.prev %}
@@ -13,12 +12,9 @@
       {{ m_prevNext(prev,next) }}
     {% endif %}
   {%- endfor %}
-</nav>
 {% endmacro %}
 
 {% block content %}
-
-
 
 {{ c_page([
     m_breadcrumbs([
@@ -28,7 +24,7 @@
       url: '/articles'},
       {title: page.title}
     ]),
-    m_pageTitle(page.title),
+    m_pageTitle(page.title,date=page.date,humanDate=page.humanDate),
     m_prose(contents),
     call__prevNext()
   ])

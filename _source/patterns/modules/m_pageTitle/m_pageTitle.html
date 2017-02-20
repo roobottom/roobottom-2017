@@ -1,3 +1,13 @@
-{% macro m_pageTitle(title,modifier) %}
-  <h1 class="m_pageTitle{% if modifier %} m_pageTitle--{{modifier}}{% endif %}">{{title | removeWidows | safe}}</h1>
+{% macro m_pageTitle(title,meta,date,humanDate,modifier) %}
+  <div class="m_pageTitle{% if modifier %} m_pageTitle--{{modifier}}{% endif %}">
+  <h1 class="m_pageTitle__title">
+    {{title | removeWidows | safe}}
+    {% if meta %}
+    <span class="m_pageTitle__meta">{{meta}}</span>
+    {% endif %}
+  </h1>
+  {% if date %}
+  <time datetime="{{date}}" class="m_pageTitle__date">{% if humanDate %}{{humanDate}}{% else %}{{date}}{% endif %}</time>
+  {% endif %}
+  </div>
 {% endmacro %}

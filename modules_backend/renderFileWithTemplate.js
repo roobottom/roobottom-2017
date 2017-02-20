@@ -4,6 +4,7 @@ const through = require('through2');
 const nunjucks = require('nunjucks');
 const path = require('path');
 const fs = require('fs');
+const moment = require('moment');
 
 const templateFile = null;
 
@@ -23,6 +24,9 @@ module.exports = function(templateFile,site) {
 
     let fileobj = path.parse(file.path);
     file.page.id = fileobj.name;
+    if(file.page.date) {
+      file.page.humanDate = moment(file.page.date).format('dddd, MMMM Do YYYY');
+    }
 
     let data = {
         site: site,

@@ -738,11 +738,7 @@ body {
 .m_pageTitle {
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  font-weight: bold;
-  font-style: normal;
-  font-family: 'Raleway', sans-serif;
-  font-size: 2.5em;
-  line-height: 1.15;
+  color: #333;
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle {
@@ -750,10 +746,47 @@ body {
     margin-bottom: 2.0625rem;
   }
 }
+.m_pageTitle__title {
+  font-weight: bold;
+  font-style: normal;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.5em;
+  line-height: 1.15;
+  margin: 0;
+}
 @media screen and (min-width: 44rem) {
-  .m_pageTitle {
+  .m_pageTitle__title {
     font-size: 3.8125em;
     line-height: 1.08196721;
+  }
+}
+.m_pageTitle__meta {
+  color: #ccc;
+  font-size: 80%;
+}
+.m_pageTitle__date {
+  font-size: 1em;
+  line-height: 1.4375;
+  margin-top: 0.71875rem;
+  margin-bottom: 0rem;
+  display: block;
+  color: #ccc;
+}
+@media screen and (min-width: 19rem) {
+  .m_pageTitle__date {
+    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_pageTitle__date {
+    font-size: 1.3125em;
+    line-height: 1.57142857;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_pageTitle__date {
+    margin-top: 1.03125rem;
+    margin-bottom: 0rem;
   }
 }
 .m_icon {

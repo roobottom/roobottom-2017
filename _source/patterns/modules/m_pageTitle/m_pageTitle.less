@@ -1,5 +1,25 @@
 .m_pageTitle {
+
   #m_prose > #default > .spacing();
-  #m_prose > #heading > .base();
-  #m_prose > #heading > .h1();
+  #m_prose > #default > .color();
+
+  &__title {
+    #m_prose > #heading > .base();
+    #m_prose > #heading > .h1();
+    margin: 0;
+  }
+
+
+  &__meta {
+    color: @c_grey;
+    font-size: 80%;
+  }
+
+  &__date {
+    #m_prose > #default > .size;
+    #m_prose > #default > .spacing(@top: .5; @bottom:0;);
+    display: block;
+    color: @c_grey;
+  }
+
 }
