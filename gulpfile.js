@@ -19,6 +19,7 @@ const parallel = require('concurrent-transform');
 const updatePostsObject = require('./modules_backend/updatePostsObject');
 const renderFileWithTemplate = require('./modules_backend/renderFileWithTemplate');
 const processArchive = require('./modules_backend/processArchive');
+const processTags = require('./modules_backend/processTags');
 const renderSmartTags = require('./modules_backend/renderSmartTags');
 //patterns
 const updatePatternsObject = require('./modules_backend/updatePatternsObject');
@@ -81,10 +82,17 @@ gulp.task('articles:archives', ['articles:render'], () => {
   .pipe(gulp.dest(site.publish_folder))
 });
 
+gulp.task('articles:tags', ['articles:archives'], () => {
+  return processTags('articles',10,site)
+  .pipe(renderFileWithTemplate('./_source/templates/tag.html',site))
+  .pipe($.htmlmin({collapseWhitespace: true}))
+  .pipe(gulp.dest(site.publish_folder))
+});
+
 /*
 02. Pattern Library
 */
-gulp.task('pattern-library', ['articles:archives'], () => {
+gulp.task('pattern-library', ['articles:tags'], () => {
   return gulp.src('./_source/patterns/**/*.md')
   .pipe($.fm({property: 'meta', remove: true}))
   .pipe(updatePatternsObject(site))

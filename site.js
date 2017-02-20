@@ -36,6 +36,10 @@ module.exports = {
     page: './_source/templates/article.html',
     archives: './_source/templates/articles.html'
   },
+  tags: {
+    page: './_source/templates/tag.html',
+    archives: './_source/templates/tags.html'
+  },
   drafts: {
     source: './_source/posts/drafts/*.md',
     page: './_source/templates/draft.html'

@@ -1,0 +1,9 @@
+{% extends "layouts/default.html" %}
+
+{% block content %}
+<ul>
+  {% for tag, count in site.tags %}
+  <li><a href="/tags/{{tag | replace(" ", "-")}}">{{tag | capitalize}} ({{count}})</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

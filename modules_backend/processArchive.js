@@ -11,6 +11,9 @@ module.exports = function(basename, count, site) {
 		cb();
 	});
 
+  //---------------
+  // pagination
+  //---------------
   if (site.posts) {
 
     //create pagination object
@@ -36,12 +39,9 @@ module.exports = function(basename, count, site) {
     //for each page in pagination, create a archive page
     pagination.forEach((page, index) => {
       var file = new gutil.File({
-        path: calculateFileName(basename,index),
+        path: calculatePaginationFileName(basename,index),
         contents: new Buffer('')
       });
-
-      //var title = index === 0 ? 'Articles' : 'Articles, page ' + (index+1);
-
       file.page = {
         posts: pagination[index].posts,
         pagination: pagination,
@@ -61,6 +61,6 @@ module.exports = function(basename, count, site) {
   return stream;
 };
 
-var calculateFileName = function(basename,index) {
+var calculatePaginationFileName = function(basename,index) {
   return index === 0 ? './' + basename + '/index.html' : './' + basename + '/page-' + index + '/index.html';
 }

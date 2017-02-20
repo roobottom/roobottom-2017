@@ -4,6 +4,7 @@ const path = require('path');
 const through = require('through2');
 const moment = require('moment');
 const marked = require('marked');
+const _ = require('lodash');
 
 //remove any unwanted tags during md>html conversion with marked.
 var renderer = new marked.Renderer();
@@ -55,10 +56,12 @@ module.exports = function(site) {
     posts.sort((a,b) => {
         return b.date - a.date;
     });
+    let tags = [];
     for (let key in posts) {
+
+      //add prev / next to posts object
       let next = parseInt(key)-1;
       let prev = parseInt(key)+1;
-      //console.log(posts[key].title);
       if(next in posts) {
         posts[key].next = {};
         posts[key].next.title = posts[next].title;
@@ -73,7 +76,28 @@ module.exports = function(site) {
         posts[key].prev.date = posts[prev].date;
         posts[key].prev.category = posts[prev].category;
       }
+
+      //push raw tags into tags array
+      if(posts[key].tags) {
+        tags.push(posts[key].tags);
+      }
     };
+
+    //clean the tags array:
+    tags = _.flatten(tags);
+    for(let i in tags) {
+      tags[i] = tags[i].toLowerCase();
+    }
+    //count instance of each tag:
+    var tagsObject = {};
+    tags.forEach(function(x) { tagsObject[x] = (tagsObject[x] || 0)+1; });
+    //convert this to an array for sorting
+    var tagsArray = [];
+    for(let tag in tagsObject) {tagsArray.push([tag, tagsObject[tag]]);};
+    tagsArray.sort(function(a, b) {return b[1] - a[1]});
+
+    //update site object
+    site.tags = tagsArray;
     site.posts = posts;
     cb();
   });
