@@ -8,14 +8,18 @@
   {% endfor %}
 {% endmacro %}
 
+{% set currentPage = page.paginationCurrent+1 %}
+
 {{
     c_page([
       m_breadcrumbs([
         {title: 'Home',
         url: '/'},
-        {title: page.title}
+        {title: page.title,
+        url: '/articles'},
+        {title: 'Page ' + currentPage}
       ]),
-      m_pageTitle(page.title),
+      m_pageTitle(page.title,meta='Page ' + currentPage),
       call__m_teaser(),
       m_pagination(pagination=page.pagination,current=page.paginationCurrent)
     ])
