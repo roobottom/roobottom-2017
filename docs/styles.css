@@ -762,7 +762,7 @@ body {
 }
 .m_pageTitle__meta {
   color: #ccc;
-  font-size: 80%;
+  font-size: 60%;
 }
 .m_pageTitle__date {
   font-size: 1em;
@@ -1286,6 +1286,55 @@ body {
 }
 .m_prevNext__arm--next {
   transform-origin: right;
+}
+.m_cloud {
+  margin: 0;
+  padding: 0;
+  margin-top: 1.4375rem;
+  margin-bottom: 1.4375rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 44rem) {
+  .m_cloud {
+    margin-top: 2.0625rem;
+    margin-bottom: 2.0625rem;
+  }
+}
+.m_cloud__item {
+  list-style: none;
+  font-size: 0.9375em;
+  line-height: 1.53333333;
+  margin-right: 1.25rem;
+}
+@media screen and (min-width: 19rem) {
+  .m_cloud__item {
+    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_cloud__item {
+    font-size: 1.1875em;
+    line-height: 1.73684211;
+  }
+}
+.m_cloud__link {
+  color: #4942ff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(122, 117, 255, 0.2);
+}
+.m_cloud__link:hover {
+  background-color: rgba(122, 117, 255, 0.1);
+}
+.m_cloud__link:active {
+  outline: 1px solid #7A75FF;
+  background-color: rgba(122, 117, 255, 0.1);
+}
+.m_cloud__count {
+  color: #ccc;
+  font-size: 80%;
 }
 .c_page__content {
   padding: 0 2.0625rem;

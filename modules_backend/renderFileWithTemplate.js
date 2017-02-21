@@ -12,6 +12,7 @@ const env = nunjucks.configure('./_source',{
     noCache:true
 })
 .addFilter('removeWidows', require('./nunjucks_filters/removeWidows.filter.js'))
+.addFilter('limitTo', require('./nunjucks_filters/limitTo.filter.js'))
 
 module.exports = function(templateFile,site) {
   return through.obj(function (file, enc, cb) {
@@ -28,11 +29,19 @@ module.exports = function(templateFile,site) {
       file.page.humanDate = moment(file.page.date).format('dddd, MMMM Do YYYY');
     }
 
+    //render nunjucks tags for this page, behind a yaml switch
+    if(file.page.nunjucks) {
+      file.contents = new Buffer(env.renderString(file.contents.toString(), {site: site}), 'utf8');
+    }
+
     let data = {
         site: site,
         page: file.page,
         contents: file.contents.toString()
     };
+
+
+
 
     var wrapper = fs.readFileSync(path.join(__dirname, '../'+thisTemplate),{encoding:'utf8'});
     file.contents = new Buffer(env.renderString(wrapper,data), 'utf8');

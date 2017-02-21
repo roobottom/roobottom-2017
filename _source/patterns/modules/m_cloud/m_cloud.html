@@ -1,0 +1,7 @@
+{% macro m_cloud(tags) %}
+<ol class="m_cloud">
+  {% for tag, count in tags %}
+    <li class="m_cloud__item"><a href="/tags/{{tag|replace(' ','-')}}" class="m_cloud__link">{{tag|title}}</a> <span class="m_cloud__count">{{count}}</span></li>
+  {% endfor %}
+</ol>
+{% endmacro %}

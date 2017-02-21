@@ -1,3 +1,8 @@
+/*
+This file does the heavy lifting work of creating the site object.
+It should be called `updateSiteObject`, but I haven't changed it yet.
+All other pipes rely on this object.
+*/
 'use strict';
 
 const path = require('path');

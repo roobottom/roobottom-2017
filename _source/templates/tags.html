@@ -1,9 +1,12 @@
 {% extends "layouts/default.html" %}
-
 {% block content %}
-<ul>
-  {% for tag, count in site.tags %}
-  <li><a href="/tags/{{tag | replace(" ", "-")}}">{{tag | capitalize}} ({{count}})</a></li>
-  {% endfor %}
-</ul>
+{{c_page([
+  m_breadcrumbs([
+    {title: 'Home',
+    url: '/'},
+    {title: 'Tags'}
+  ]),
+  m_pageTitle(page.title),
+  m_cloud(site.tags)
+])}}
 {% endblock %}

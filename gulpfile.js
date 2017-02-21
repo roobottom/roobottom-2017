@@ -42,11 +42,9 @@ gulp.task('server',() => {
 });
 
 var mdOptions = {
-  preset: 'full',
-  html: true,
-  typographer: true,
-  enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup'],
   remarkableOptions: {
+    preset: 'full',
+    html: true,
     typographer: true,
     enable: ['abbr','footnote','deflist','footnote_inline','ins','mark','sub','sup']
   }
