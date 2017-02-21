@@ -166,6 +166,13 @@
     });
   }
 
+  li {
+    #m_prose > #default > .spacing(@top:0; @bottom: .5);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   //special styles for sub lists
   ul ul, ul ol, ol ol, ol ul {
     padding: 0;

@@ -506,6 +506,19 @@ body {
     margin-left: 0;
   }
 }
+.m_prose li {
+  margin-top: 0rem;
+  margin-bottom: 0.71875rem;
+}
+@media screen and (min-width: 44rem) {
+  .m_prose li {
+    margin-top: 0rem;
+    margin-bottom: 1.03125rem;
+  }
+}
+.m_prose li:last-child {
+  margin-bottom: 0;
+}
 .m_prose ul ul,
 .m_prose ul ol,
 .m_prose ol ol,
