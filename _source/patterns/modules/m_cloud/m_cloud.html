@@ -1,7 +1,9 @@
+{% from "patterns/modules/m_tag/m_tag.html" import m_tag %}
 {% macro m_cloud(tags) %}
 <ol class="m_cloud">
   {% for tag, count in tags %}
-    <li class="m_cloud__item"><a href="/tags/{{tag|replace(' ','-')}}" class="m_cloud__link">{{tag|title}}</a> <span class="m_cloud__count">{{count}}</span></li>
+    {% set url = '/tags/' + tag|replace(' ','-') %}
+    <li class="m_cloud__item">{{m_tag(tag,count,url)}}</li>
   {% endfor %}
 </ol>
 {% endmacro %}
