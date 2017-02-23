@@ -149,27 +149,48 @@ body {
   padding: 0;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+@media screen and (min-width: 19rem) {
+  .m_pagination__items {
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
 }
 .m_pagination__item {
   list-style: none;
-  -ms-flex-preferred-size: calc( (100% / 4) - ((1.25rem * (4 - 1))/4) );
-  flex-basis: calc( (100% / 4) - ((1.25rem * (4 - 1))/4) );
-  margin: 0 1.25rem 1.25rem 0;
   box-sizing: border-box;
-  border: 2px solid #7A75FF;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
+  margin-bottom: 1.25rem;
 }
-.m_pagination__item:nth-of-type(4n) {
-  margin-right: 0;
+@media screen and (min-width: 19rem) {
+  .m_pagination__item {
+    -ms-flex: 0 0 calc(33.333333333333336% - 0.8333333333333334rem);
+    flex: 0 0 calc(33.333333333333336% - 0.8333333333333334rem);
+  }
+  .m_pagination__item:nth-of-type(n) {
+    margin-right: 1.25rem;
+  }
+  .m_pagination__item:nth-of-type(3n) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 603px) {
+  .m_pagination__item {
+    -ms-flex: 0 0 calc(25% - 0.9375rem);
+    flex: 0 0 calc(25% - 0.9375rem);
+  }
+  .m_pagination__item:nth-of-type(n) {
+    margin-right: 1.25rem;
+  }
+  .m_pagination__item:nth-of-type(4n) {
+    margin-right: 0;
+  }
 }
 @media screen and (min-width: 44rem) {
   .m_pagination__item {
-    -ms-flex-preferred-size: calc( (100% / 7) - ((1.25rem * (7 - 1))/7) );
-    flex-basis: calc( (100% / 7) - ((1.25rem * (7 - 1))/7) );
-    margin: 0 1.25rem 1.25rem 0;
+    -ms-flex: 0 0 calc(14.285714285714286% - 1.0714285714285714rem);
+    flex: 0 0 calc(14.285714285714286% - 1.0714285714285714rem);
   }
   .m_pagination__item:nth-of-type(n) {
     margin-right: 1.25rem;
@@ -184,8 +205,20 @@ body {
   padding: 0.625rem 0.375rem;
   text-decoration: none;
   color: #7A75FF;
+  transition: background 650ms;
+  border: 2px solid #7A75FF;
+}
+.m_pagination__link:hover:not(.m_pagination__link--current) {
+  background-color: rgba(122, 117, 255, 0.2);
 }
 .m_pagination__link--current {
+  background-color: #7A75FF;
+  color: white;
+}
+.m_pagination__link:active {
+  border-color: #180fff;
+}
+.m_pagination--current {
   background-color: #7A75FF;
   color: white;
 }
@@ -775,7 +808,8 @@ body {
 }
 .m_pageTitle__meta {
   color: #ccc;
-  font-size: 60%;
+  font-size: 40%;
+  display: block;
 }
 .m_pageTitle__date {
   font-size: 1em;

@@ -9,6 +9,7 @@
 {% endmacro %}
 
 {% set currentPage = page.paginationCurrent+1 %}
+{% set totalPages = page.pagination | length %}
 
 {{
     c_page([
@@ -19,7 +20,7 @@
         url: '/articles'},
         {title: 'Page ' + currentPage}
       ]),
-      m_pageTitle(page.title,meta='Page ' + currentPage),
+      m_pageTitle(page.title,meta='Page ' + currentPage + ' of ' + totalPages),
       call__m_teaser(),
       m_pagination(pagination=page.pagination,current=page.paginationCurrent)
     ])
