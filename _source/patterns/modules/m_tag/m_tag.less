@@ -1,29 +1,24 @@
 .m_tag {
-  #m_prose > #default > .size(15,17);
+  #m_prose > #default > .size(15;17;);
   text-decoration: none;
-  background-color: @c_1;
+  background-color: @c_2;
   display: flex;
   color: white;
-  border: 2px solid black;
+  border-radius: unit(20/@base,rem);
   justify-content: space-between;
+  overflow: hidden;
 
   &__name,
   &__count {
-    padding: unit(12/@base,rem);
+    padding: unit(9/@base,rem) unit(22/@base,rem) ;
     display: flex;
     align-items: center;
   }
 
-  &__name {
-    font-family: 'Raleway';
-    font-weight: bold;
-  }
-
 
   &__count {
-    border-left: 2px solid black;
-    background-color: lighten(@c_1,20%);
-    color: lighten(@c_1,8%);
+    background-color: lighten(@c_2,20%);
+    color: darken(@c_2,18%);
 
   }
 

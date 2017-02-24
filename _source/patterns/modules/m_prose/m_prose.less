@@ -14,14 +14,18 @@
     }
 
     .size(@min: 16; @max: 21;) {
+
+      @lh_min: (@lower_lh - 16) + @min; //should be == @lower_lh at default size;
+      @lh_max: (@upper_lh - 21) + @max; //should be == @lh_max at default size;
+
       font-size: unit(@min/@base,em);
-      line-height: @lower_lh/@min;
+      line-height: @lh_min/@min;
       #breakpoint > .min({
-        #m_prose > #fontlock > .line-height();
+        #m_prose > #fontlock > .line-height(@lh_min;@lh_max;);
       });
       #breakpoint > .med({
         font-size: unit(@max/@base,em);
-        line-height: @upper_lh/@max;
+        line-height: @lh_max/@max;
       });
     }
 
