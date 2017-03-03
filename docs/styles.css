@@ -126,7 +126,7 @@ body {
   font-weight: bold;
   font-style: normal;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.3125em;
+  font-size: 0.125em;
   line-height: 1.64285714;
   display: block;
 }
@@ -138,8 +138,8 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_pagination__intro {
-    font-size: 1.5em;
-    line-height: 1.375;
+    font-size: 1.75em;
+    line-height: 1.17857143;
   }
 }
 .m_pagination__items {
@@ -319,18 +319,12 @@ body {
 .m_figure {
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  margin-left: -2.0625rem;
-  margin-right: -2.0625rem;
+  margin: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_figure {
     margin-top: 2.0625rem;
     margin-bottom: 2.0625rem;
-  }
-}
-@media screen and (min-width: 44rem) {
-  .m_figure {
-    margin-left: 0;
   }
 }
 .m_figure__caption {
@@ -341,7 +335,6 @@ body {
   line-height: 1.46666667;
   margin-top: 0.359375rem;
   margin-bottom: 1.4375rem;
-  margin-left: 2.0625rem;
 }
 @media screen and (min-width: 19rem) {
   .m_figure__caption {
@@ -358,11 +351,6 @@ body {
   .m_figure__caption {
     margin-top: 0.515625rem;
     margin-bottom: 2.0625rem;
-  }
-}
-@media screen and (min-width: 44rem) {
-  .m_figure__caption {
-    margin-left: 0;
   }
 }
 .m_figure__image {
@@ -434,46 +422,46 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_prose h1 {
-    font-size: 3.8125em;
-    line-height: 1.08196721;
+    font-size: 5.0625em;
+    line-height: 1.01851852;
   }
 }
 .m_prose h2 {
   font-size: 1.625em;
   line-height: 1.32692308;
   display: block;
-  margin-top: 2.875rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 2.515625rem;
+  margin-bottom: 0rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h2 {
-    font-size: 2.5625em;
-    line-height: 1.20731707;
+    font-size: 3.5625em;
+    line-height: 1.15789474;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose h2 {
-    margin-top: 4.125rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 3.609375rem;
+    margin-bottom: 0rem;
   }
 }
 .m_prose h3 {
-  font-size: 1.3125em;
+  font-size: 0.125em;
   line-height: 1.64285714;
   display: block;
-  margin-top: 2.875rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 2.515625rem;
+  margin-bottom: 0rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h3 {
-    font-size: 1.5em;
-    line-height: 1.375;
+    font-size: 1.75em;
+    line-height: 1.17857143;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose h3 {
-    margin-top: 4.125rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 3.609375rem;
+    margin-bottom: 0rem;
   }
 }
 .m_prose p {
@@ -489,6 +477,18 @@ body {
   .m_prose p {
     font-size: 1.3125em;
     line-height: 1.57142857;
+  }
+}
+.m_prose h2 + p,
+.m_prose h3 + p {
+  margin-top: 0.359375rem;
+  margin-bottom: 1.4375rem;
+}
+@media screen and (min-width: 44rem) {
+  .m_prose h2 + p,
+  .m_prose h3 + p {
+    margin-top: 0.515625rem;
+    margin-bottom: 2.0625rem;
   }
 }
 .m_prose a {
@@ -664,6 +664,7 @@ body {
   background-color: #F5F5F5;
   padding: 1.4375rem;
   overflow-y: auto;
+  margin-left: -6px;
   position: relative;
 }
 @media screen and (min-width: 44rem) {
@@ -729,6 +730,7 @@ body {
   font-size: 1em;
   line-height: 1.4375;
   border-left: 6px solid #FF6175;
+  margin-left: -6px;
 }
 @media screen and (min-width: 44rem) {
   .m_prose table {
@@ -802,8 +804,8 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle__title {
-    font-size: 3.8125em;
-    line-height: 1.08196721;
+    font-size: 5.0625em;
+    line-height: 1.01851852;
   }
 }
 .m_pageTitle__meta {
@@ -812,27 +814,28 @@ body {
   display: block;
 }
 .m_pageTitle__date {
-  font-size: 1em;
-  line-height: 1.4375;
-  margin-top: 0.71875rem;
+  font-size: 0.8125em;
+  line-height: 1.53846154;
+  color: #716767;
+  margin-top: 0.359375rem;
   margin-bottom: 0rem;
   display: block;
-  color: #716767;
+  text-transform: uppercase;
 }
 @media screen and (min-width: 19rem) {
   .m_pageTitle__date {
-    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.25em + (1.625 - 1.25) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle__date {
-    font-size: 1.3125em;
-    line-height: 1.57142857;
+    font-size: 0.875em;
+    line-height: 1.85714286;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle__date {
-    margin-top: 1.03125rem;
+    margin-top: 0.515625rem;
     margin-bottom: 0rem;
   }
 }
@@ -1054,8 +1057,8 @@ body {
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__title {
-    font-size: 2.5625em;
-    line-height: 1.20731707;
+    font-size: 3.5625em;
+    line-height: 1.15789474;
   }
 }
 .m_teaser__titlelink {

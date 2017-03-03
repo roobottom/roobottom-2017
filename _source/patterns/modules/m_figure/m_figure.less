@@ -1,22 +1,18 @@
 .m_figure {
 
   #m_prose > #default > .spacing();
-  margin-left: unit(-1 * @gutter / @base, rem);
-  margin-right: unit(-1 * @gutter / @base, rem);
-  #breakpoint > .med({
-    margin-left: 0;
-  });
+  margin: 0;//reset the browser
+  //@size: unit(((@bp_med - @gutter)/2)/@base,rem);
+  //margin-left: ~"calc(-25vw + @{size})";
 
   &__caption {
     display: block;
     color: #666;
     font-style: italic;
+    
     #m_prose > #default > .size(@max: 17; @min: 15;);
     #m_prose > #default > .spacing(@top: .25; );
-    margin-left: unit(@gutter / @base, rem);
-    #breakpoint > .med({
-      margin-left: 0;
-    });
+    //margin-left: unit(@gutter * 3 / @base, rem);
   }
 
   &__image {

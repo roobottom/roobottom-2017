@@ -54,13 +54,14 @@
       font-style: normal;
       font-family: 'Raleway',sans-serif;
     }
+    
 
     .h1() {
       font-size: unit(40/@base,em);
       line-height: @lower_lh*2/40;
       #breakpoint > .med({
-        font-size: unit(61/@base,em);
-        line-height: @upper_lh*2/61;
+        font-size: unit(81/@base,em);
+        line-height: @upper_lh*2.5/81;
       });
     }
 
@@ -68,18 +69,18 @@
       font-size: unit(26/@base,em);
       line-height: @lower_lh*1.5/26;
       #breakpoint > .med({
-        font-size: unit(41/@base,em);
-        line-height: @upper_lh*1.5/41;
+        font-size: unit(57/@base,em);
+        line-height: @upper_lh*2/57;
       });
       display: block;
     }
 
     .h3() {
-      font-size: unit(21/@base,em);
+      font-size: unit(2/@base,em);
       line-height: @lower_lh*1.5/21;
       #breakpoint > .med({
-        font-size: unit(24/@base,em);
-        line-height: @upper_lh/24;
+        font-size: unit(28/@base,em);
+        line-height: @upper_lh/28;
       });
       display: block;
     }
@@ -141,17 +142,23 @@
   }
   h2 {
     #m_prose > #heading > .h2();
-    #m_prose > #default > .spacing(@top: 2;)
+    #m_prose > #default > .spacing(@bottom: 0; @top: 1.75);
   }
+  
   h3 {
     #m_prose > #heading > .h3();
-    #m_prose > #default > .spacing(@top: 2;)
+    #m_prose > #default > .spacing(@bottom: 0; @top: 1.75;);
   }
 
   //paragraphs
   p {
     #m_prose > #default > .size;
   }
+  h2 + p,
+  h3 + p {
+    #m_prose > #default > .spacing(@top: 0.25;)
+  }
+  
 
   //links
   a {
@@ -281,7 +288,6 @@
   }
 
   //code -- blocks
-
   pre {
     #m_prose > #default > .spacing();
     background-color: @c_lightgrey;
@@ -290,7 +296,7 @@
       padding: unit(@upper_lh/@base,rem);
     });
     overflow-y: auto;
-
+    margin-left: -6px;
     position: relative;
     &:before {
       content: '';
@@ -327,6 +333,7 @@
       #m_prose > #default > .spacing();
       #m_prose > #default > .size;
       border-left: 6px solid @c_2;
+      margin-left: -6px;
   }
 
   td, th {

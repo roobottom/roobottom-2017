@@ -4,7 +4,7 @@
     {% if meta %}
     <span class="m_pageTitle__meta">{{meta}}</span>
     {% endif %}
-    {{title | removeWidows | safe}}
+    {{title}}
   </h1>
   {% if date %}
   <time datetime="{{date}}" class="m_pageTitle__date">{% if humanDate %}{{humanDate}}{% else %}{{date}}{% endif %}</time>

@@ -5,6 +5,7 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const fs = require('fs');
 const moment = require('moment');
+const less = require('less');
 
 const templateFile = null;
 
@@ -27,6 +28,12 @@ module.exports = function(templateFile,site) {
     file.page.id = fileobj.name;
     if(file.page.date) {
       file.page.humanDate = moment(file.page.date).format('dddd, MMMM Do YYYY');
+    }
+    
+    //render any less files for this post / page, etc.
+    if(file.page.css) {
+      if(typeof(file.page.css) == 'object') {
+      }
     }
 
     //render nunjucks tags for this page, behind a yaml switch
