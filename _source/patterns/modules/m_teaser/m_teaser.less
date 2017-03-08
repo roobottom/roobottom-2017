@@ -1,3 +1,15 @@
+#m_teaser {
+
+  .color(@bg) {
+    color: contrast(@bg,white,darken(@bg,45%),50%);
+  }
+
+  .negative(@c) {
+    color: contrast(white,@c_2,darken(@c_2,40%));
+  }
+
+}
+
 .m_teaser {
 
   @spacing: unit(31/@base,rem);
@@ -15,7 +27,6 @@
       margin-bottom: @spacing * 2;
   });
   overflow: hidden;
-  color: white;
   text-decoration: none;
 
   #breakpoint > .med ({
@@ -61,10 +72,26 @@
     background-color: @c_5;
   }
 
-  &--style-a &__day {color: @c_2;}
-  &--style-b &__day {color: @c_3;}
-  &--style-c &__day {color: @c_4;}
-  &--style-d &__day {color: @c_5;}
+  //text colour
+  &--style-a &__meta > p,
+  &--style-a &__titlelink,
+  &--style-a &__link,
+  &--style-a &__month {#m_teaser > .color(@c_2);}
+
+  &--style-b &__meta > p,
+  &--style-b &__titlelink,
+  &--style-b &__link,
+  &--style-b &__month {#m_teaser > .color(@c_3);}
+
+  &--style-c &__meta > p,
+  &--style-c &__titlelink,
+  &--style-c &__link,
+  &--style-c &__month {#m_teaser > .color(@c_4);}
+
+  &--style-d &__meta > p,
+  &--style-d &__titlelink,
+  &--style-d &__link,
+  &--style-d &__month {#m_teaser > .color(@c_5);}
 
   &__date,
   &__meta {
@@ -75,7 +102,7 @@
     padding: 0 @spacing;
     > p {
       #m_prose > #default > .spacing();
-      #m_prose > #default > .size(@max: 17;);
+      #m_prose > #default > .size();
     }
     > p:last-of-type {
       margin-bottom: 0;
@@ -86,10 +113,8 @@
     #m_prose > #default > .spacing();
     #m_prose > #heading > .base();
     #m_prose > #heading > .h2();
-    text-shadow: 2px 2px 0 fade(black,20%);
   }
   &__titlelink {
-    color: white;
     text-decoration: none;
   }
 
@@ -110,7 +135,7 @@
   }
 
   &__month {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid @c_bg;
   }
 
   &__day,
@@ -122,10 +147,11 @@
   }
 
   &__year {
-    color: #ddd;
+    color: @c_bg;
   }
 
   &__day {
+    color: @c_bg;
     font-family: 'Raleway',sans-serif;
     font-weight: bold;
     font-size: unit(18/@base,rem);
@@ -167,10 +193,9 @@
     text-decoration: none;
     #m_prose > #default > .size;
     #m_prose > #default > .spacing();
-    border-bottom: 1px solid fade(white,20%);
-    color: white;
-    &:hover {
-      background-color: fade(white,20%);
+    border-bottom: 2px solid;
+    &:active {
+      outline: 1px solid;
     }
   }
 

@@ -1,4 +1,4 @@
-A paragraph of text usually contains both **bold** and *italic* elements, and sometimes **_bold-italic_** elements. Paragraphs also sometimes contain [links](http://roobottom.com) to other interesting content. 
+A paragraph of text usually contains both **bold** and *italic* elements, and sometimes **_bold-italic_** elements. Paragraphs also sometimes contain [links](http://roobottom.com) to other interesting content.
 
 09.12" fl fi ffi ffl. _09.12" fl fi ffi ffl_ **09.12" fl fi ffi ffl** **_09.12" fl fi ffi ffl_**
 
@@ -25,11 +25,11 @@ Don’t forget about **numbered lists**, here’s one:
 
 > Quotes are great too! When someone else has said something, use a quote! — [Attributed to someone.](#)
 
-> There are 4 styles of quote! Defined by source-order.
+> There are 4 styles of quote! Defined by source-order. [link](#)
 
-> There are 4 styles of quote! Defined by source-order.
+> There are 4 styles of quote! Defined by source-order. [link](#)
 
-> There are 4 styles of quote! Defined by source-order.
+> There are 4 styles of quote! Defined by source-order. [link](#)
 
 Sometimes its important to mention a `variable` or other `code element`, inline. Other times, its better to show a whole block of code, like this:
 
@@ -54,4 +54,4 @@ Other times you may need to use superscript, like m^2^, or subscript, like m~2~.
 
 You may wish to redact ~~something you’ve previously said.~~
 
-You can also ==mark out some text== that may be of particular importance. 
+You can also ==mark out some text== that may be of particular importance.

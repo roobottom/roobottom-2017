@@ -1,6 +1,7 @@
 .m_breadcrumbs {
   position: relative;
   #m_prose > #default > .spacing();
+  color: @c_text;
 
   &__item,
   &__label {
@@ -42,11 +43,11 @@
 
   &__item {
     list-style: none;
-    color: @c_grey;
+    color: contrast(@c_bg, @c_grey, @c_lightgrey);
   }
 
   &__seperator {
-    color: fade(@c_1,20%);
+    color: contrast(@c_bg, @c_grey, @c_lightgrey);
     margin: 0 unit(6/@base,rem);
   }
 

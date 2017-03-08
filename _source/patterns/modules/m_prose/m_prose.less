@@ -1,9 +1,11 @@
 #m_prose {
 
   #default {
-    .color() {
-      color: #333;
+
+    .contrast(@bg: @c_bg; @color: @c_text;) {
+      color: contrast(@bg, mix(@c_text,black,20%), mix(@c_text,white,30%));
     }
+
     .spacing(@top: 1; @bottom: 1;) {
       margin-top: unit(@lower_lh*@top/@base,rem);
       margin-bottom: unit(@lower_lh*@bottom/@base,rem);
@@ -11,6 +13,10 @@
         margin-top: unit(@upper_lh*@top/@base,rem);
         margin-bottom: unit(@upper_lh*@bottom/@base,rem);
       });
+    }
+
+    .background(@color: @c_1; @foreground: @c_text;) {
+      background-color: contrast(@foreground, @color, darken(@color, 30%));
     }
 
     .size(@min: 16; @max: 21;) {
@@ -54,7 +60,7 @@
       font-style: normal;
       font-family: 'Raleway',sans-serif;
     }
-    
+
 
     .h1() {
       font-size: unit(40/@base,em);
@@ -76,7 +82,7 @@
     }
 
     .h3() {
-      font-size: unit(2/@base,em);
+      font-size: unit(21/@base,em);
       line-height: @lower_lh*1.5/21;
       #breakpoint > .med({
         font-size: unit(28/@base,em);
@@ -112,7 +118,7 @@
   //general styles
   h1,h2,h3,h4,h5,h6,
   p,figure,blockquote {
-    #m_prose > #default > .color();
+    color: @c_text;
     #m_prose > #default > .spacing();
   }
 
@@ -144,7 +150,7 @@
     #m_prose > #heading > .h2();
     #m_prose > #default > .spacing(@bottom: 0; @top: 1.75);
   }
-  
+
   h3 {
     #m_prose > #heading > .h3();
     #m_prose > #default > .spacing(@bottom: 0; @top: 1.75;);
@@ -158,7 +164,7 @@
   h3 + p {
     #m_prose > #default > .spacing(@top: 0.25;)
   }
-  
+
 
   //links
   a {
@@ -169,6 +175,7 @@
   >ul,>ol {
     #m_prose > #default > .spacing();
     #m_prose > #default > .size;
+    #m_prose > #default > .contrast();
     list-style-position: inside;
     margin-left: 1em;
     padding: 0;
@@ -209,9 +216,28 @@
   }
 
   //quotes
+  .bq(@bg; @c: @c_text;) {
+    background-color: @bg;
+    p, a {
+      color: contrast(@bg, darken(@bg,50%), white);
+    }
+    a {
+      border-color: darken(@bg,20%);
+      &:hover {
+        border-width: 4px;
+        background-color: transparent;
+      }
+      &:active {
+        outline-color: darken(@bg,20%);
+      }
+    }
+    &:before {
+      background-color: @bg;
+    }
+  }
+
   blockquote {
     font-style: italic;
-    background-color: @c_2;
     position: relative;
     display: block;
     border-radius: 9px;
@@ -228,18 +254,7 @@
     >* {
       margin: 0;
     }
-    p,a {
-      color: white;
-    }
-    a {
-      border-color: fade(white,50%);
-      &:hover {
-        background-color: fade(white,10%);
-      }
-      &:active {
-        outline-color: white;
-      }
-    }
+
     &:before {
       content: "";
       display: block;
@@ -255,25 +270,24 @@
       border-radius: 0 0 0 5px;
     }
 
+    .bq(@c_2);
+
     &:nth-of-type(4n-2) {
-      background-color: @c_3;
+      .bq(@c_3);
+
       &:before {
-        background-color: @c_3;
+
         left: auto;
         right: -10px;
         border-radius: 0 5px 0 0;
       }
     }
     &:nth-of-type(4n-1) {
-      background-color: @c_4;
-      &:before {
-        background-color: @c_4;
-      }
+      .bq(@c_4);
     }
     &:nth-of-type(4n) {
-      background-color: @c_5;
+      .bq(@c_5);
       &:before {
-        background-color: @c_5;
         left: auto;
         right: -10px;
         border-radius: 0 5px 0 0;
@@ -284,7 +298,7 @@
 
   //code
   code {
-    #m_prose > #default > .color();
+    #m_prose > #default > .contrast();
   }
 
   //code -- blocks
@@ -328,8 +342,9 @@
   table {
       border-collapse: collapse;
       width: 100%;
+      box-sizing: border-box;
       background-color: @c_lightgrey;
-      #m_prose > #default > .color();
+      #m_prose > #default > .contrast();
       #m_prose > #default > .spacing();
       #m_prose > #default > .size;
       border-left: 6px solid @c_2;
@@ -338,7 +353,7 @@
 
   td, th {
       text-align: left;
-      border-bottom: 1px solid darken(@c_lightgrey,10%);
+      border-bottom: 1px solid lighten(@c_grey,14%);
       padding: .5em 1em;
       vertical-align: top;
   }
@@ -349,7 +364,7 @@
 
   th {
       font-weight: bold;
-      border-bottom: 2px solid darken(@c_lightgrey,10%);
+      border-bottom: 2px solid lighten(@c_grey,14%);
   }
 
   //abbr
@@ -374,9 +389,9 @@
   }
 
   mark {
-    color: darken(@c_2,30%);
-    background-color: lighten(@c_2,27%);
-    padding: 0 unit(3/@base,rem);
+    color: contrast(@c_3,white,darken(@c_3,50%));
+    background-color: @c_3;
+    padding: 0 .2em;
   }
 
 }

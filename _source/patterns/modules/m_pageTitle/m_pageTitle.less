@@ -1,7 +1,7 @@
 .m_pageTitle {
 
   #m_prose > #default > .spacing();
-  #m_prose > #default > .color();
+  color: @c_text;
 
   &__title {
     #m_prose > #heading > .base();
@@ -11,14 +11,14 @@
 
 
   &__meta {
-    color: @c_grey;
+    color: contrast(@c_bg, @c_grey, @c_lightgrey);
     font-size: 40%;
     display: block;
   }
 
   &__date {
     #m_prose > #default > .size(13,14);
-    color: @c_grey;
+    color: contrast(@c_bg, @c_grey, @c_lightgrey);
     #m_prose > #default > .spacing(@top: .25; @bottom:0;);
     display: block;
     text-transform: uppercase;

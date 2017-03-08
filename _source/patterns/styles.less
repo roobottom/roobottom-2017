@@ -1,93 +1,37 @@
-//settings
-@base: 16;
+@import '_base';
 
-//sizes
-@bp_min: 304;
-@bp_med: 704;
-@bp_max: 1200;
+@c_bg: white;
+@c_text: mix(#292929, @c_1, 85%);
 
-@lower_lh: 23;
-@upper_lh: 33;
+@c_header: darken(@c_1,10%);
 
-@gutter: @upper_lh; //size of the site gutter.
-
-@c_1: #7A75FF; //purple
+@c_1: #7A75FF; //purple (site header)
 @c_2: #FF6175; //red
 @c_3: #00B7D9; //blue
 @c_4: #FFA000; //yellow
 @c_5: #2EB19F; //sea green
 
-@c_grey: #716767;
-@c_lightgrey: #F5F5F5;
+@c_grey: lighten(mix(#292929, @c_1, 95%),60%);
+@c_lightgrey: lighten(mix(#292929, @c_1, 95%),70%);
 
-//shared styles
-@import '_shared/fonts';
-@import '_shared/utils';
-@import '_shared/layout';
+@c_home_1: @c_1;
+@c_home_2: @c_2;
 
-html, body {
-  overflow-x: hidden;
-  position: relative;//fix the overflow in iOS.
-  width: 100%;//fix the overflow in iOS.
-}
+//-- dark scheme --//
 
-img {
-  max-width: 100%;
-}
+@c_bg: #05131F;
+@c_text: mix(white,@c_bg,80%);
 
-body {
-  font-family: 'Opensans', sans-serif;
-  margin: 0;
-}
+@c_header: mix(@c_bg, @c_1, 90%);
 
+@c_1: #26A2FF; //electric blue
+@c_2: #8D007C; //ruby red
+@c_3: #C808E4; //jealous green
+@c_4: #FC1054; //supernova yellow
+@c_5: #0064AF; //dance floor purple
 
-//should these styles live somewhere else?
-.patternExample {
-  outline: 1px dashed @c_2;
-}
+@c_grey: mix(white,@c_bg,60%);
+@c_lightgrey: mix(white,@c_bg,20%);
 
-.page-type-home {
-  background-color: @c_1;
-  height: 100vh;
-  background-image:  radial-gradient(ellipse farthest-corner at 0% 100%, darken(@c_1,10%) 20%, darken(@c_2,0%) 100%);
-}
-
-
-//move this to its own module
-.u_widow {
-  &:after {
-    content: ' ';
-  }
-  &__nbsp {
-    display: none;
-  }
-  #breakpoint > .med({
-    &:after {
-      content: none;
-    }
-    &__nbsp {
-      display: inline;
-    }
-  });
-}
-
-//modules
-@import 'modules/m_pagination/m_pagination';
-@import 'modules/m_navigation/m_navigation';
-@import 'modules/m_figure/m_figure';
-@import 'modules/m_prose/m_prose';
-@import 'modules/m_pageTitle/m_pageTitle';
-@import 'modules/m_icon/m_icon';
-@import 'modules/m_siteHeader/m_siteHeader';
-@import 'modules/m_introduction/m_introduction';
-@import 'modules/m_teaser/m_teaser';
-@import 'modules/m_breadcrumbs/m_breadcrumbs';
-@import 'modules/m_prevNext/m_prevNext';
-@import 'modules/m_tag/m_tag';
-@import 'modules/m_cloud/m_cloud';
-
-//containers
-@import 'containers/c_page/c_page';
-@import 'containers/c_header/c_header';
-@import 'containers/c_fullscreen/c_fullscreen';
-@import 'containers/c_grid/c_grid';
+@c_home_1: @c_bg;
+@c_home_2: mix(@c_bg, @c_1, 60%);
