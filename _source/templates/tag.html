@@ -17,8 +17,12 @@
         url: '/tags'},
         {title: page.tag | capitalize}
       ]),
-      m_pageTitle(page.tag | capitalize,meta='Articles tagged:'),
-      call__m_teaser()
+      m_pageTitle(page.tag | capitalize,meta='Articles tagged:')
     ])
+}}
+{{
+  c_grid([
+    call__m_teaser()
+  ])
 }}
 {% endblock %}
