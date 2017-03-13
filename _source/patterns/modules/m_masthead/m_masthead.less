@@ -1,0 +1,52 @@
+.m_masthead {
+  #breakpoint > .med({
+    @w_middle_column: unit((@bp_med / 2)/@base,rem);
+    @reducer: @w_middle_column + unit(@gutter/@base,rem);
+    margin-left: ~"calc(-50vw + @{reducer})";
+    margin-right: ~"calc(-50vw + @{reducer})";
+  });
+
+  >svg {
+    width: 100%;
+  }
+
+  //SOHN specific styling. This should be moved to only render when needed. Somehow?
+
+  @items: 20;
+  @time: 3000;
+  @c_on: @c_text;
+  @c_off: lighten(@c_bg,10%);
+
+  .sohn-nth(@count) when (@count > 0) {
+    .sohn-nth(@count - 1);
+    @reducer: @items - @count;
+    >path:nth-of-type(@{items}n-@{reducer}) {
+
+      @eachDelay: @time / @items;
+      animation-delay: unit(@count * @eachDelay,ms);
+    }
+  }
+
+  #SOHN {
+    filter: drop-shadow(0 0 15px fade(white,30%));
+    stroke: @c_1;
+    .sohn-nth(20);
+    > path {
+      animation-name: pulse;
+      animation-fill-mode: both;
+      animation-duration: unit(@time,ms);
+      animation-iteration-count: infinite;
+    }
+  }
+
+
+  @keyframes pulse {
+    from {opacity: .2}
+    20% {opacity: .2}
+    50% {opacity: 1}
+    80% {opacity: .2}
+    to {opacity: .2}
+  }
+
+
+}

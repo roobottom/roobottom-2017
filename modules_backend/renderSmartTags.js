@@ -3,12 +3,13 @@
 const through = require('through2');
 const _ = require('lodash');
 const path = require('path');
+const fs = require('fs');
 const nunjucks = require('nunjucks');
 const nunjucks_env = new nunjucks.Environment(new nunjucks.FileSystemLoader('./_source'));
 
 module.exports = function() {
 
-  var tags = ['gallery','figure']
+  var tags = ['gallery','figure','masthead']
 
   return through.obj(function (file, enc, cb) {
 
@@ -25,6 +26,8 @@ module.exports = function() {
       let match;
       while(match = regexp.exec(contents)) {
         let tagOpts = getTagOptions(match[1]);
+
+        //figures and images
         if(tags[i] == 'figure' || tags[i] == 'gallery') {
           var figure_object = {images:[],page:file.page};
           for(let i in file.page.images) {
@@ -32,14 +35,23 @@ module.exports = function() {
               figure_object["images"].push(file.page.images[i]);
             }
           };
-
           let renderedTag = nunjucks_env.render(path.join(__dirname, '../_source/patterns/modules/m_figure/m_figure.smartTag'),figure_object);
           replacedTags.push({
             old: match[0],
             new: renderedTag
           });
-
         }
+
+        //masthead
+        if(tags[i] === 'masthead') {
+          let svgFile = fs.readFileSync(path.join(__dirname, '../_source/mastheads/' + tagOpts.svg),{encoding:'utf8'});
+          let renderedTag = nunjucks_env.renderString('<div class="m_masthead">'+ svgFile +'</div>');
+          replacedTags.push({
+            old: match[0],
+            new: renderedTag
+          });
+        }
+
       }
     }
 

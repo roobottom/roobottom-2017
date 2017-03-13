@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2130 380" fill="none" fill-rule="evenodd" stroke="#FFF" stroke-width="12" stroke-linecap="round" id="SOHN">
+  <path d="M44.5 340V40"/>
+  <path d="M144.5 340V40"/>
+  <path d="M243.5 340V40"/>
+  <path d="M343.5 340V40"/>
+
+  <path d="M506 340l90-300"/>
+  <path d="M606 340l90-300"/>
+  <path d="M705 340l90-300"/>
+  <path d="M805 340l90-300"/>
+  <path d="M786 340L696 40"/>
+  <path d="M886 340L796 40"/>
+  <path d="M985 340L895 40"/>
+  <path d="M1085 340L995 40"/>
+
+  <path d="M1547 35h-300"/>
+  <path d="M1547 135h-300"/>
+  <path d="M1547 234h-300"/>
+  <path d="M1547 334h-300"/>
+  
+  <path d="M1709 340l90-300"/>
+  <path d="M1809 340l90-300"/>
+  <path d="M1908 340l90-300"/>
+  <path d="M2008 340l90-300"/>
+</svg>
