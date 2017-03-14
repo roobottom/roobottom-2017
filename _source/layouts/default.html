@@ -7,10 +7,10 @@
 {% from "patterns/modules/m_navigation/m_navigation.html" import m_navigation %}
 {% from "patterns/modules/m_siteHeader/m_siteHeader.html" import m_siteHeader %}
 {% from "patterns/modules/m_introduction/m_introduction.html" import m_introduction %}
-{% from "patterns/modules/m_breadcrumbs/m_breadcrumbs.html" import m_breadcrumbs %}
 {% from "patterns/modules/m_prevNext/m_prevNext.html" import m_prevNext %}
 {% from "patterns/modules/m_tag/m_tag.html" import m_tag %}
 {% from "patterns/modules/m_cloud/m_cloud.html" import m_cloud %}
+{% from "patterns/modules/m_menuControl/m_menuControl.html" import m_menuControl %}
 
 {% from "patterns/containers/c_page/c_page.html" import c_page %}
 {% from "patterns/containers/c_header/c_header.html" import c_header %}
@@ -27,24 +27,28 @@
     </head>
     <body class="page-type-{{page.type}}">
 
-      {% if page.type == 'home' %}
-      {% set headerModifier = 'transparent' %}
-      {% endif %}
+      {{
+        c_header([
+          m_siteHeader(),
+          m_navigation(site.menu,'main'),
+          m_menuControl(state='closed',target='#main-menu')
+        ])
+      }}
 
-      {{c_header([
-        m_siteHeader(icon='menu',menuLink='#main-menu',menuData=[{a: 'fullscreen-trigger', v: '#main-menu'}])
-      ], headerModifier)}}
+      {% block content %}
+      {% endblock %}
 
-        {% block content %}
-        {% endblock %}
-
-        {{
-          c_fullscreen([
-            m_siteHeader(icon='menu-close',menuLink='#',menuData=[{a:'fullscreen-close',v:'#main-menu'}]),
-            m_navigation(site.menu,'main'),
-            m_navigation(site.social,'inline-bleached')
-          ],id='main-menu')
-        }}
+      {{
+        c_fullscreen([
+          c_header([
+            m_siteHeader(),
+            m_menuControl(state='open',target='#main-menu')
+          ]),
+          c_page([
+            m_navigation(site.menu,'chunky')
+          ])
+        ],id='main-menu')
+      }}
 
         <script src="/functionality.js"></script>
     </body>

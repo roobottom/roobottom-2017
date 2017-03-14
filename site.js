@@ -5,18 +5,15 @@ module.exports = {
   menu: [
     {
       url: '/',
-      title: 'Home',
-      icon: 'house'
+      title: 'Home'
     },
     {
       url: '/articles',
-      title: 'Articles',
-      icon: 'teacup'
+      title: 'Articles'
     },
     {
       url: '/patterns',
-      title: 'Pattern library',
-      icon: 'clipboard'
+      title: 'Pattern library'
     }
   ],
   social: [

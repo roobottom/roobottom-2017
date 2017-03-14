@@ -1,7 +1,6 @@
 const util = require('../../_shared/utils.js');
 
 module.exports = function(w,d) {
-  console.log('c fullscreen loaded');
 
   var OpenTriggers = d.querySelectorAll('[data-fullscreen-trigger]');
   var openClass = 'c_fullscreen--is-open';
@@ -26,11 +25,14 @@ module.exports = function(w,d) {
 
     var close = d.querySelector('[data-fullscreen-close="'+targetId+'"]');
 
-    close.addEventListener('click', function(event) {
-      event.preventDefault();
-      util.removeClass(fullscreen,openClass);
-      util.addClass(fullscreen,closedClass);
-    });
+    if(close) {
+      close.addEventListener('click', function(event) {
+        event.preventDefault();
+        util.removeClass(fullscreen,openClass);
+        util.addClass(fullscreen,closedClass);
+      });
+    };
+
 
   });
 }

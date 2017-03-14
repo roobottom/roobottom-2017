@@ -5,7 +5,7 @@
   top: 0;
   bottom: 0;
   right: 0;
-  background-color: @c_1;
+  background-color: @c_bg;
   overflow-y: auto;
   z-index: 100;
 
@@ -16,10 +16,6 @@
   transition:
         visibility 300ms cubic-bezier(1.000, 0.005, 0.845, 0.960),
         opacity 300ms cubic-bezier(1.000, 0.005, 0.845, 0.960);
-
-  &__content {
-    #layout > .centre();
-  }
 
   &:target {
     display: block;

@@ -10,13 +10,6 @@
 
 {{
     c_page([
-      m_breadcrumbs([
-        {title: 'Home',
-        url: '/'},
-        {title: 'Tags',
-        url: '/tags'},
-        {title: page.tag | capitalize}
-      ]),
       m_pageTitle(page.tag | capitalize,meta='Articles tagged:')
     ])
 }}

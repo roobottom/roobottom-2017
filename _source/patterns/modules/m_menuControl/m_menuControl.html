@@ -1,0 +1,18 @@
+{% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
+{% macro m_menuControl(state='closed',target='#') %}
+
+  {% if state == 'closed' %}
+    {% set data='data-fullscreen-trigger' %}
+    {% set icon = 'menu' %}
+    {% set label = 'Menu' %}
+  {% else %}
+    {% set data='data-fullscreen-close' %}
+    {% set icon = 'menu-close' %}
+    {% set label = 'Close' %}
+  {% endif %}
+
+  <a class="m_menuControl m_menuControl--{{state}}" href="{{target}}" {{data}}="{{target}}">
+    <span class="m_menuControl__icon">{{m_icon(icon,modifier='small')}}</span>
+    <span class="m_menuControl__label">{{label}}</span>
+  </a>
+{% endmacro %}

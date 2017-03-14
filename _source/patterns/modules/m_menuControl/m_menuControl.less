@@ -1,0 +1,23 @@
+.m_menuControl {
+
+  @c: contrast(@c_bg,@c_text,mix(@c_text,black,50%));
+  color: @c;
+  text-decoration: none;
+  svg {
+    fill: @c;
+  }
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  
+  #breakpoint > .med({
+    &--closed {
+      display: none;
+    }
+  });
+
+  &__label {
+    font-size: unit(13/@base,rem);
+  }
+}

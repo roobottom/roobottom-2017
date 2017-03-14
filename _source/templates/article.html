@@ -17,13 +17,6 @@
 {% block content %}
 
 {{ c_page([
-    m_breadcrumbs([
-      {title: 'Home',
-      url: '/'},
-      {title: 'Articles',
-      url: '/articles'},
-      {title: page.id}
-    ]),
     m_pageTitle(page.title,date=page.date,humanDate=page.humanDate),
     m_prose(contents),
     call__prevNext()

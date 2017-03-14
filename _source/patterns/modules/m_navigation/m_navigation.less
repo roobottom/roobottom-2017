@@ -43,43 +43,38 @@
 
   // --- main menu --- //
   &--main {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid fade(white,20%);
+
+  }
+  &--main &__items {
+    display: flex;
   }
   &--main &__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    #breakpoint > .med({
-        margin-bottom: unit(@base*2/@base,rem);
-    });
+    margin-left: 1em;
   }
   &--main &__link {
-    margin-left: unit(@base*2/@base,rem);
+    #m_prose > #default > .contrast(@c_bg,@c_text);
+    #m_prose > #default > .size(@max:19;);
     text-decoration: none;
-    color: white;
-    font-family: 'Raleway',sans-serif;
-    border-bottom: 1px solid fade(white,20%);
-    &:hover {
-      background-color: fade(white,10%);
-    }
-    &:active {
-      outline: 1px solid fade(white,50%);
-    }
-  }
-  &--main &__title {
-    line-height: 1;
-    text-shadow: 2px 2px 0 fade(black,7%);
-    font-size: unit(26/@base,rem);
-    font-weight: bold;
+    display: none;
     #breakpoint > .med({
-      font-size: unit(46/@base,rem);
+      display: block;
     });
   }
-  &--main &__prompt {
-    display: block;
-    color: mix(white,@c_1,50%);
-    text-shadow: 1px 1px 0 fade(black,7%);
+
+  // --- chunky menu --- //
+  &--chunky {
+    font-family: 'Raleway';
+    font-weight: bold;
+    #m_prose > #heading > .h1;
+  }
+
+  &--chunky &__item {
+    #m_prose > #default > .spacing;
+  }
+
+  &--chunky &__link {
+    #m_prose > #default > .contrast(@c_bg,@c_text);
+    text-decoration: none;
   }
 
 }

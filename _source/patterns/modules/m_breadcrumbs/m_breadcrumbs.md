@@ -1,5 +1,5 @@
 ---
-title: Breadcrumbs module
+title: Breadcrumbs module (depreciated)
 data:
   treeA:
     -

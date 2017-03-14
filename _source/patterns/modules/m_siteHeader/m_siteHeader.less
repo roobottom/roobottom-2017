@@ -3,11 +3,11 @@
   align-items: center;
   justify-content: space-between;
   padding: unit(36/@base,rem) 0;
+  #m_prose > #default > .contrast;
 
-  &__titleLink,
-  &__menuLink {
+  &__titleLink {
     text-decoration: none;
-    color: white;
+    #m_prose > #default > .contrast;
   }
 
   &__intro {
@@ -18,7 +18,7 @@
 
   &__name {
     font-size: unit(28/@base,rem);
-    text-shadow: 3px 3px 0 fade(black,10%);
+    text-shadow: 1px 1px 0 @c_bg, 3px 3px 0 contrast(@c_bg,fade(white,10%),fade(black,10%));
     font-weight: bold;
     font-family: 'Raleway',sans-serif;
   }

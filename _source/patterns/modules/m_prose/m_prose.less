@@ -3,7 +3,7 @@
   #default {
 
     .contrast(@bg: @c_bg; @color: @c_text;) {
-      color: contrast(@bg, mix(@c_text,black,20%), mix(@c_text,white,30%));
+      color: contrast(@bg, @c_text, mix(@c_text,white,50%));
     }
 
     .spacing(@top: 1; @bottom: 1;) {
@@ -114,6 +114,8 @@
 }
 
 .m_prose {
+
+  #layout > .med();
 
   //general styles
   h1,h2,h3,h4,h5,h6,

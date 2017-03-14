@@ -1,11 +1,19 @@
 .c_header {
-  background-color: @c_header;
+  //background-color: @c_header;
 
   &--transparent {
     background-color: transparent;
   }
 
   &__content {
-    #layout > .centre();
+    #layout > .max();
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    >*:first-child {
+      margin-right: auto;
+    }
+
   }
 }

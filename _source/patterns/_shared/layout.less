@@ -1,19 +1,18 @@
 #layout {
-  .centre() {
-    padding: 0 unit(@gutter/@base,rem);
+  .med() { //designed to fit in the max() layout
     #breakpoint > .med({
       padding:0;
       margin: 0 auto;
-      max-width: unit((@bp_med - @gutter) /@base,rem);
+      max-width: unit(@bp_med/@base,rem);
     });
   }
 
-  .wide() {
+  .max() {
     padding: 0 unit(@gutter/@base,rem);
     #breakpoint > .max({
       padding:0;
       margin: 0 auto;
-      max-width: unit((@bp_max - @gutter) /@base,rem);
+      max-width: unit((@bp_max - @gutter)/@base,rem);
     });
   }
 

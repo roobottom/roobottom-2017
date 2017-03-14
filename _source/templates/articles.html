@@ -13,23 +13,10 @@
 
 {{
   c_page([
-    m_breadcrumbs([
-      {title: 'Home',
-      url: '/'},
-      {title: page.title,
-      url: '/articles'},
-      {title: 'Page ' + currentPage}
+    m_pageTitle(page.title),
+    c_grid([
+      call__m_teaser()
     ]),
-    m_pageTitle(page.title,meta='Page ' + currentPage + ' of ' + totalPages)
-  ])
-}}
-{{
-  c_grid([
-    call__m_teaser()
-  ])
-}}
-{{
-  c_page([
     m_pagination(pagination=page.pagination,current=page.paginationCurrent)
   ])
 }}

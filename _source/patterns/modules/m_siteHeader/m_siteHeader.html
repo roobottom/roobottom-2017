@@ -5,10 +5,5 @@
       <span class="m_siteHeader__intro">The personal website of</span>
       <span class="m_siteHeader__name">Jon Roobottom</span>
     </a>
-    <a href="{{menuLink}}" class="m_siteHeader__menuLink" title="Toggle the main menu"{% if menuData %}{% for item in menuData -%}
-      data-{{item.a}}="{{item.v}}"
-    {%- endfor %}{% endif %}>
-      {{m_icon(icon,classes='m_siteHeader__menuIcon',modifier='small',data={attr:'alt-icon',value:'menu-close'})}}
-    </a>
   </div>
 {% endmacro %}
