@@ -332,12 +332,18 @@ body {
 .m_figure {
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  margin: 0;
+  margin-left: -2.0625rem;
+  margin-right: -2.0625rem;
 }
 @media screen and (min-width: 44rem) {
   .m_figure {
     margin-top: 2.0625rem;
     margin-bottom: 2.0625rem;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_figure {
+    margin: 0;
   }
 }
 .m_figure__caption {
@@ -348,6 +354,8 @@ body {
   line-height: 1.46666667;
   margin-top: 0.359375rem;
   margin-bottom: 1.4375rem;
+  margin-left: 2.0625rem;
+  margin-right: 2.0625rem;
 }
 @media screen and (min-width: 19rem) {
   .m_figure__caption {
@@ -364,6 +372,12 @@ body {
   .m_figure__caption {
     margin-top: 0.515625rem;
     margin-bottom: 2.0625rem;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_figure__caption {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 .m_figure__image {
@@ -856,10 +870,14 @@ body {
   padding: 0 .2em;
 }
 .m_pageTitle {
-  text-align: center;
   margin-top: 0rem;
   margin-bottom: 1.4375rem;
   color: #cdd0d2;
+}
+@media screen and (min-width: 44rem) {
+  .m_pageTitle {
+    text-align: center;
+  }
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle {
@@ -1442,9 +1460,6 @@ body {
   flex-flow: column;
   -ms-flex-align: center;
   align-items: center;
-}
-.m_menuControl svg {
-  fill: #cdd0d2;
 }
 @media screen and (min-width: 44rem) {
   .m_menuControl--closed {

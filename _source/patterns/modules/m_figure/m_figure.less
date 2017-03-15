@@ -1,15 +1,25 @@
 .m_figure {
 
   #m_prose > #default > .spacing();
-  margin: 0;//reset the browser
+  margin-left: unit(-1 * @gutter/@base,rem);
+  margin-right: unit(-1 * @gutter/@base,rem);
+  #breakpoint > .med({
+    margin: 0;//reset the browser
+  });
 
   &__caption {
     display: block;
     color: @c_grey;
     font-style: italic;
-
     #m_prose > #default > .size(@max: 17; @min: 15;);
     #m_prose > #default > .spacing(@top: .25; );
+
+    margin-left: unit(@gutter/@base,rem);
+    margin-right: unit(@gutter/@base,rem);
+    #breakpoint > .med({
+      margin-left: 0;
+      margin-right: 0;
+    });
   }
 
   &__image {

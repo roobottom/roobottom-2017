@@ -2,15 +2,11 @@
 
   @c: contrast(@c_bg,@c_text,mix(@c_text,black,50%));
   color: @c;
-  text-decoration: none;
-  svg {
-    fill: @c;
-  }
-
+  text-decoration: none; 
   display: flex;
   flex-flow: column;
   align-items: center;
-  
+
   #breakpoint > .med({
     &--closed {
       display: none;
