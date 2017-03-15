@@ -6,6 +6,7 @@ const path = require('path');
 const fs = require('fs');
 const moment = require('moment');
 const less = require('less');
+const pluralize = require('pluralize');
 
 const templateFile = null;
 
@@ -22,17 +23,18 @@ module.exports = function(templateFile,site) {
     if(!templateFile) { thisTemplate = './_source/templates/' + file.page.template; }
     else { thisTemplate = templateFile;}
 
-    file.page.type = thisTemplate.split('/').pop().split('.').shift();
+    file.page.type = pluralize.singular(thisTemplate.split('/').pop().split('.').shift());
 
     let fileobj = path.parse(file.path);
     file.page.id = fileobj.name;
     if(file.page.date) {
       file.page.humanDate = moment(file.page.date).format('dddd, MMMM Do YYYY');
     }
-    
-    //render any less files for this post / page, etc.
-    if(file.page.css) {
-      if(typeof(file.page.css) == 'object') {
+
+    //set the active state in navigation
+    for(let i in site.menu) {
+      if(file.page.type == site.menu[i].type) {
+        site.menu.active = file.page.type;
       }
     }
 
@@ -42,13 +44,10 @@ module.exports = function(templateFile,site) {
     }
 
     let data = {
-        site: site,
-        page: file.page,
-        contents: file.contents.toString()
+      site: site,
+      page: file.page,
+      contents: file.contents.toString()
     };
-
-
-
 
     var wrapper = fs.readFileSync(path.join(__dirname, '../'+thisTemplate),{encoding:'utf8'});
     file.contents = new Buffer(env.renderString(wrapper,data), 'utf8');

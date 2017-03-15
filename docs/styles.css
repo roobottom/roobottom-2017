@@ -286,6 +286,7 @@ body {
   line-height: 1.4375;
   text-decoration: none;
   display: none;
+  border-bottom: 3px solid transparent;
 }
 @media screen and (min-width: 19rem) {
   .m_navigation--main .m_navigation__link {
@@ -302,6 +303,9 @@ body {
   .m_navigation--main .m_navigation__link {
     display: block;
   }
+}
+.m_navigation--main .m_navigation__link--current {
+  border-color: #C808E4;
 }
 .m_navigation--chunky {
   font-family: 'Raleway';

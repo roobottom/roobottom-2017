@@ -56,9 +56,14 @@
     #m_prose > #default > .size(@max:19;);
     text-decoration: none;
     display: none;
+    border-bottom: 3px solid transparent;
     #breakpoint > .med({
       display: block;
     });
+  }
+
+  &--main &__link--current {
+    border-color: @c_3;
   }
 
   // --- chunky menu --- //
