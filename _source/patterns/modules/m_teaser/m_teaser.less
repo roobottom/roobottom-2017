@@ -27,39 +27,23 @@
   overflow: hidden;
   text-decoration: none;
 
-  //colour cover
-  &:after {
-    content: "";
-    background-color: @c_2;
-    opacity: 0.65;
-    width: 100%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    position: absolute;
-  }
-
   //colours
   &--style-a,
-  &--style-a:after,
   &--style-a &__meta,
   &--style-a &__month {
     background-color: @c_2;
   }
   &--style-b,
-  &--style-b:after,
   &--style-b &__meta,
   &--style-b &__month {
     background-color: @c_3;
   }
   &--style-c,
-  &--style-c:after,
   &--style-c &__meta,
   &--style-c &__month {
     background-color: @c_4;
   }
   &--style-d,
-  &--style-d:after,
   &--style-d &__meta,
   &--style-d &__month {
     background-color: @c_5;
@@ -89,10 +73,6 @@
   &__date,
   &__meta {
     z-index: 2;
-  }
-
-  &--has-cover &__meta {
-    box-shadow: 2px 2px 0 fade(black,20%);
   }
 
   &__meta {

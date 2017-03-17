@@ -1047,36 +1047,22 @@ body {
   overflow: hidden;
   text-decoration: none;
 }
-.m_teaser:after {
-  content: "";
-  background-color: #8D007C;
-  opacity: 0.65;
-  width: 100%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  position: absolute;
-}
 .m_teaser--style-a,
-.m_teaser--style-a:after,
 .m_teaser--style-a .m_teaser__meta,
 .m_teaser--style-a .m_teaser__month {
   background-color: #8D007C;
 }
 .m_teaser--style-b,
-.m_teaser--style-b:after,
 .m_teaser--style-b .m_teaser__meta,
 .m_teaser--style-b .m_teaser__month {
   background-color: #C808E4;
 }
 .m_teaser--style-c,
-.m_teaser--style-c:after,
 .m_teaser--style-c .m_teaser__meta,
 .m_teaser--style-c .m_teaser__month {
   background-color: #FC1054;
 }
 .m_teaser--style-d,
-.m_teaser--style-d:after,
 .m_teaser--style-d .m_teaser__meta,
 .m_teaser--style-d .m_teaser__month {
   background-color: #0064AF;
@@ -1108,9 +1094,6 @@ body {
 .m_teaser__date,
 .m_teaser__meta {
   z-index: 2;
-}
-.m_teaser--has-cover .m_teaser__meta {
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 .m_teaser__meta {
   padding: 0 1.9375rem;
