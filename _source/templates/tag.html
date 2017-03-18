@@ -9,13 +9,11 @@
 {% endmacro %}
 
 {{
-    c_page([
-      m_pageTitle(page.tag | capitalize,meta='Articles tagged:')
+  c_page([
+    m_pageTitle(page.title | title),
+    c_grid([
+      call__m_teaser()
     ])
-}}
-{{
-  c_grid([
-    call__m_teaser()
   ])
 }}
 {% endblock %}

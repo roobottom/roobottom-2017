@@ -18,9 +18,10 @@
 
 .m_introduction {
 
-  #layout > .med();
+  #layout > .med;
 
   p {
+    #layout > .med;
     #m_introduction > .text(31);
     margin: unit(@lower_lh/@base,rem) 0;
     #breakpoint > .med({
@@ -28,22 +29,21 @@
       font-weight: 300;
     });
 
+  }
 
-    &, a {
-      color: white;
-      text-decoration: none;
+  p, a {
+    color: @c_text;
+    text-decoration: none;
+  }
+
+  a {
+    border-bottom: 3px solid fade(@c_text,25%);
+    &:hover {
+      background-color: fade(@c_text,15%);
     }
-
-    a {
-      border-bottom: 1px solid @c_1;
-      &:hover {
-        background-color: fade(white,15%);
-      }
-      &:active {
-        outline: 1px solid fade(white,80%);
-      }
+    &:active {
+      outline: 1px solid fade(@c_text,80%);
     }
-
   }
 
   p:first-child {
@@ -51,5 +51,7 @@
     font-weight: bold;
     #m_introduction > .text(58,73);
   }
+
+
 
 }

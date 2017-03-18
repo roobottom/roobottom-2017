@@ -983,6 +983,13 @@ body {
   line-height: 1.5;
   margin: 1.4375rem 0;
 }
+@media screen and (min-width: 44rem) {
+  .m_introduction p {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 44rem;
+  }
+}
 @media screen and (min-width: 19rem) {
   .m_introduction p {
     font-size: 4.40340909vw;
@@ -1002,18 +1009,18 @@ body {
   }
 }
 .m_introduction p,
-.m_introduction p a {
-  color: white;
+.m_introduction a {
+  color: #cdd0d2;
   text-decoration: none;
 }
-.m_introduction p a {
-  border-bottom: 1px solid #26A2FF;
+.m_introduction a {
+  border-bottom: 3px solid rgba(205, 208, 210, 0.25);
 }
-.m_introduction p a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+.m_introduction a:hover {
+  background-color: rgba(205, 208, 210, 0.15);
 }
-.m_introduction p a:active {
-  outline: 1px solid rgba(255, 255, 255, 0.8);
+.m_introduction a:active {
+  outline: 1px solid rgba(205, 208, 210, 0.8);
 }
 .m_introduction p:first-child {
   font-family: 'Raleway', sans-serif;
