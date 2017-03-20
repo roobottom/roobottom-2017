@@ -1,18 +1,20 @@
 {% from "patterns/modules/m_tag/m_tag.html" import m_tag %}
 {% macro m_cloud(tags,title,modifier) %}
-{% if tags | length > 0 %}
-<div class="m_cloud{% if modifier %} m_cloud--{{modifier}}{% endif %}">
-  {% if title %}
-  <h2 class="m_cloud__title">{{title}}</h2>
+  {% if tags | length > 0 %}
+    <div class="m_cloud{% if modifier %} m_cloud--{{modifier}}{% endif %}">
+      {% if title %}
+        <h2 class="m_cloud__title">{{title}}</h2>
+      {% endif %}
+      <ol class="m_cloud__items">
+      {% for tag in tags -%}
+
+        {% if tag.name %}{% set tagName = tag.name %}{% else %}{% set tagName = tag %}{% endif %}
+        {% if tag.count %}{% set tagCount = tag.count %}{% endif %}
+        {% set tagUrl = '/tags/' + tagName|replace(' ','-') %}
+        <li class="m_cloud__item">{{m_tag(tagName,tagCount,tagUrl)}}</li>
+
+      {%- endfor %}
+      </ol>
+    </div>
   {% endif %}
-  <ol class="m_cloud__items">
-  {% for tag in tags -%}
-    {% if tag.name %}{% set tagName = tag.name %}{% else %}{% set tagName = tag %}{% endif %}
-    {% if tag.count %}{% set tagCount = tag.count %}{% endif %}
-    {% set tagUrl = '/tags/' + tagName|replace(' ','-') %}
-    <li class="m_cloud__item">{{m_tag(tagName,tagCount,tagUrl)}}</li>
-  {%- endfor %}
-  </ol>
-</div>
-{% endif %}
 {% endmacro %}
