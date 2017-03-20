@@ -100,9 +100,17 @@ module.exports = function(site) {
     var tagsArray = [];
     for(let tag in tagsObject) {tagsArray.push([tag, tagsObject[tag]]);};
     tagsArray.sort(function(a, b) {return b[1] - a[1]});
+    //convert back to a collection:
+    let returnTags = []
+    for(let tag in tagsArray) {
+      returnTags.push({
+        name: tagsArray[tag][0],
+        count: tagsArray[tag][1]
+      });
+    }
 
     //update site object
-    site.tags = tagsArray;
+    site.tags = returnTags;
     site.posts = posts;
     cb();
   });

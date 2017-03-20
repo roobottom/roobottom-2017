@@ -14,6 +14,11 @@ module.exports = {
       type: 'article'
     },
     {
+      url: '/tags',
+      title: 'Tags',
+      type: 'tag'
+    },
+    {
       url: '/patterns',
       title: 'Pattern library',
       type: 'pattern'

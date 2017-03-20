@@ -14,7 +14,7 @@ const env = nunjucks.configure('./_source',{
     noCache:true
 })
 .addFilter('removeWidows', require('./nunjucks_filters/removeWidows.filter.js'))
-.addFilter('limitTo', require('./nunjucks_filters/limitTo.filter.js'))
+.addFilter('limitTo', require('./nunjucks_filters/limitTo.filter.js'));
 
 module.exports = function(templateFile,site) {
   return through.obj(function (file, enc, cb) {

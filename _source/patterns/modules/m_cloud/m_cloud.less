@@ -1,12 +1,29 @@
 .m_cloud {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+  }
 
   &__item {
     list-style: none;
     margin: 0 unit(12/@base,rem) unit(12/@base,rem) 0;
+    flex: 1 1 auto;
+  }
+
+  &__title {
+    #m_prose > #heading > .base;
+    #m_prose > #heading > .h3;
+  }
+
+  &--article &__items {
+    align-content: flex-start;
+  }
+  &--article &__item {
+    flex: 0 1 auto;
   }
 
 }

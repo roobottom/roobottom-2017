@@ -19,13 +19,13 @@ module.exports = function(basename, count, site) {
     var postsWithTag = [];
     site.tags.forEach((tag, index) => {
       postsWithTag.push({
-        name: tag[0],
+        name: tag.name,
         posts: []
       })
       site.posts.forEach((post) => {
         if(post.tags) {
           post.tags.forEach((postTag) => {
-            if(postTag.toLowerCase() == tag[0]) {
+            if(postTag.toLowerCase() == tag.name) {
               postsWithTag[index].posts.push(post);
             }
           });

@@ -2,4 +2,4 @@
 title: Tags
 template: tags.html
 ---
-tags page.
+tags page. This content isn't used.
