@@ -1,5 +1,6 @@
 {% from "patterns/modules/m_tag/m_tag.html" import m_tag %}
 {% macro m_cloud(tags,title,modifier) %}
+{% if tags | length > 0 %}
 <div class="m_cloud{% if modifier %} m_cloud--{{modifier}}{% endif %}">
   {% if title %}
   <h2 class="m_cloud__title">{{title}}</h2>
@@ -13,4 +14,5 @@
   {%- endfor %}
   </ol>
 </div>
+{% endif %}
 {% endmacro %}
