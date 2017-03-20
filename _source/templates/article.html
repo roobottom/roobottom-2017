@@ -17,9 +17,11 @@
 {% block content %}
 {{ c_page([
     m_pageTitle(page.title,date=page.date,humanDate=page.humanDate),
-    m_prose(contents),
-    m_cloud(page.tags,'Tags','article'),
-    call__prevNext()
+    c_grid([
+      m_prose(contents),
+      m_cloud(page.tags,'Tagged:','article'),
+      call__prevNext()
+    ],'single')
   ])
 }}
 {% endblock %}

@@ -391,11 +391,19 @@ body {
 .m_figure__image + .m_figure__image {
   margin-top: 1px;
 }
+.m_prose:after {
+  font-size: 2.5rem;
+  color: #cdd0d2;
+  content: "\0000B7\0000a0\0000B7\0000a0\0000B7";
+  text-align: center;
+  display: block;
+  margin-top: 2.875rem;
+  margin-bottom: 2.875rem;
+}
 @media screen and (min-width: 44rem) {
-  .m_prose {
-    padding: 0;
-    margin: 0 auto;
-    max-width: 44rem;
+  .m_prose:after {
+    margin-top: 4.125rem;
+    margin-bottom: 4.125rem;
   }
 }
 .m_prose h1,
@@ -1354,17 +1362,28 @@ body {
   flex: 1 1 auto;
 }
 .m_cloud__title {
+  font-size: 1em;
+  line-height: 1.4375;
+  margin-top: 0rem;
+  margin-bottom: 0.359375rem;
+  font-family: 'Raleway';
   font-weight: bold;
-  font-style: normal;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.3125em;
-  line-height: 1.64285714;
-  display: block;
+}
+@media screen and (min-width: 19rem) {
+  .m_cloud__title {
+    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+  }
 }
 @media screen and (min-width: 44rem) {
   .m_cloud__title {
-    font-size: 1.75em;
-    line-height: 1.17857143;
+    font-size: 1.3125em;
+    line-height: 1.57142857;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_cloud__title {
+    margin-top: 0rem;
+    margin-bottom: 0.515625rem;
   }
 }
 .m_cloud--article .m_cloud__items {
@@ -1563,38 +1582,45 @@ body {
   opacity: 1;
 }
 @supports (display:flex) {
-  .c_grid > * {
+  .c_grid--double > * {
     margin-bottom: 1.25rem;
   }
   @media screen and (min-width: 44rem) {
-    .c_grid {
+    .c_grid--double {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
     }
-    .c_grid > * {
+    .c_grid--double > * {
       -ms-flex-preferred-size: 33.33333333%;
       flex-basis: 33.33333333%;
       -ms-flex-positive: 2;
       flex-grow: 2;
     }
-    .c_grid > *:nth-child(4n-2) {
+    .c_grid--double > *:nth-child(4n-2) {
       margin-left: 1.25rem;
     }
-    .c_grid > *:nth-child(4n) {
+    .c_grid--double > *:nth-child(4n) {
       margin-left: 1.25rem;
     }
   }
   @media screen and (min-width: 75.25rem) {
-    .c_grid > *:nth-child(4n-2) {
+    .c_grid--double > *:nth-child(4n-2) {
       -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
     }
-    .c_grid > *:nth-child(4n-1) {
+    .c_grid--double > *:nth-child(4n-1) {
       -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
     }
+  }
+}
+@media screen and (min-width: 44rem) {
+  .c_grid--single {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 44rem;
   }
 }
 

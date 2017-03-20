@@ -1,5 +1,5 @@
 {% macro c_grid(modules,modifier) %}
-  <div class="c_grid{% if modifier %} c_page--{{modifier}}{% endif %}">
+  <div class="c_grid{% if modifier %} c_grid--{{modifier}}{% endif %}">
     {% for module in modules -%}
       {{module}}
     {%- endfor %}

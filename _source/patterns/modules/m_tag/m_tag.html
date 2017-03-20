@@ -1,6 +1,6 @@
 {% macro m_tag(name, count, url) %}
   <a class="m_tag" href="{{url}}" title="View all content tagged {{name}}">
-    <span class="m_tag__name">{{name | title}}</span>
+    <span class="m_tag__name">{{name}}</span>
     {% if count %}
     <span class="m_tag__count">{{count}}</span>
     {% endif %}

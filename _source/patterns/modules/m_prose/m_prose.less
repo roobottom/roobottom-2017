@@ -115,7 +115,14 @@
 
 .m_prose {
 
-  #layout > .med();
+  &:after {
+      font-size: unit(40/@base,rem);
+      color: @c_text;
+      content: "\0000B7\0000a0\0000B7\0000a0\0000B7";
+      text-align: center;
+      display: block;
+      #m_prose > #default > .spacing(@top: 2; @bottom: 2;)
+    }
 
   //general styles
   h1,h2,h3,h4,h5,h6,

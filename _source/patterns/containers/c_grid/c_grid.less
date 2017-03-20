@@ -1,44 +1,48 @@
 .c_grid {
 
-  @spacing: 20;
-
-  @supports (display:flex) {
-
-    >* {
-      margin-bottom: unit(@spacing/@base,rem);
-    }
-
-    #breakpoint > .med({
-
-      display: flex;
-      flex-wrap: wrap;
+  &--double {
+    @spacing: 20;
+    @supports (display:flex) {
 
       >* {
-        flex-basis: unit(100/3,%);
-        flex-grow: 2;
+        margin-bottom: unit(@spacing/@base,rem);
       }
 
-      >*:nth-child(4n-2) {
-        margin-left: unit(@spacing/@base,rem);
-      }
-      >*:nth-child(4n) {
-        margin-left: unit(@spacing/@base,rem);
-      }
+      #breakpoint > .med({
 
-    });
+        display: flex;
+        flex-wrap: wrap;
 
-    #breakpoint > .max({
-      >*:nth-child(4n-2) {
-        flex-basis: unit(100/2,%);
+        >* {
+          flex-basis: unit(100/3,%);
+          flex-grow: 2;
+        }
 
-      }
-      >*:nth-child(4n-1) {
-        flex-basis: unit(100/2,%);
-      }
-    })
+        >*:nth-child(4n-2) {
+          margin-left: unit(@spacing/@base,rem);
+        }
+        >*:nth-child(4n) {
+          margin-left: unit(@spacing/@base,rem);
+        }
 
+      });
+
+      #breakpoint > .max({
+        >*:nth-child(4n-2) {
+          flex-basis: unit(100/2,%);
+
+        }
+        >*:nth-child(4n-1) {
+          flex-basis: unit(100/2,%);
+        }
+      })
+
+    }
   }
 
+  &--single {
+    #layout > .med;
+  }
 
 
 }
