@@ -19,6 +19,7 @@
     m_pageTitle(page.title,date=page.date,humanDate=page.humanDate),
     c_grid([
       m_prose(contents),
+      m_pointer('Meta'),
       m_cloud(page.tags,'Tagged:'),
       call__prevNext()
     ],'single')

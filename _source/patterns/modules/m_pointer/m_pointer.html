@@ -1,0 +1,6 @@
+{% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
+{% macro m_pointer(title) %}
+  <div class="m_pointer">
+    {{m_icon('arm','m_pointer__arm')}}{{m_icon('hand-point-right','m_pointer__hand')}}
+  </div>
+{% endmacro %}

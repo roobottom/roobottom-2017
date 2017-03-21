@@ -1,18 +1,13 @@
 .m_prevNext {
 
   display: flex;
-  flex-flow: column;
-  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
+  position: relative;
+  #m_prose > #default > .spacing();
 
-  &__item {
-    position: relative;
-    #m_prose > #default > .spacing();
-    max-width: 70%;
-  }
-  &__item--next {
-    align-self: flex-end;
-  }
+  &__item--next {margin-right: unit(5/@base,rem);}
+  &__item--prev {margin-left: unit(5/@base,rem);}
 
 
   &__label,
@@ -31,34 +26,5 @@
     #m_prose > #link > .base();
   }
 
-  &__icons {
-    display: flex;
-    position: absolute;
-    top: unit(-16/@base,rem);
-    #breakpoint > .med({
-      top: unit(-17/@base,rem);
-    });
-  }
-
-  &__icons--prev {
-    left: 100%;
-    left: ~"calc(100% + 1rem)";
-  }
-  &__icons--next {
-    right: 100%;
-    right: ~"calc(100% + 1rem)";
-  }
-
-  &__arm--prev,
-  &__arm--next {
-    transform: scaleX(20);
-  }
-
-  &__arm--prev {
-    transform-origin: left;
-  }
-  &__arm--next {
-    transform-origin: right;
-  }
 
 }

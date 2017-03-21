@@ -1,23 +1,19 @@
-{% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
 {% macro m_prevNext(prev,next) %}
 <nav class="m_prevNext">
-  {% if next %}
-  <div class="m_prevNext__item m_prevNext__item--next">
-    <div class="m_prevNext__icons m_prevNext__icons--next" aria-hidden="true">
-      {{m_icon('arm','m_prevNext__arm--next')}}{{m_icon('hand-point-right','m_prevNext__hand--next')}}
-    </div>
-    <p class="m_prevNext__label">Next article:</p>
-    <a class="m_prevNext__link" href="{{next.url}}">{{next.title}}</a>
-  </div>
-  {% endif %}
+
   {% if prev %}
   <div class="m_prevNext__item m_prevNext__item--prev">
-    <div class="m_prevNext__icons m_prevNext__icons--prev" aria-hidden="true">
-      {{m_icon('hand-point-left','m_prevNext__hand--prev')}}{{m_icon('arm','m_prevNext__arm--prev')}}
-    </div>
     <p class="m_prevNext__label">Previous article:</p>
     <a class="m_prevNext__link" href="{{prev.url}}">{{prev.title}}</a>
   </div>
   {% endif %}
+
+  {% if next %}
+  <div class="m_prevNext__item m_prevNext__item--next">
+    <p class="m_prevNext__label">Next article:</p>
+    <a class="m_prevNext__link" href="{{next.url}}">{{next.title}}</a>
+  </div>
+  {% endif %}
+
 </nav>
 {% endmacro %}

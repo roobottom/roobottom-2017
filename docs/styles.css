@@ -391,21 +391,6 @@ body {
 .m_figure__image + .m_figure__image {
   margin-top: 1px;
 }
-.m_prose:after {
-  font-size: 2.5rem;
-  color: #cdd0d2;
-  content: "\0000B7\0000a0\0000B7\0000a0\0000B7";
-  text-align: center;
-  display: block;
-  margin-top: 2.875rem;
-  margin-bottom: 2.875rem;
-}
-@media screen and (min-width: 44rem) {
-  .m_prose:after {
-    margin-top: 4.125rem;
-    margin-bottom: 4.125rem;
-  }
-}
 .m_prose h1,
 .m_prose h2,
 .m_prose h3,
@@ -1222,27 +1207,24 @@ body {
 .m_prevNext {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: column;
-  flex-flow: column;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 100%;
-}
-.m_prevNext__item {
   position: relative;
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
-  max-width: 70%;
 }
 @media screen and (min-width: 44rem) {
-  .m_prevNext__item {
+  .m_prevNext {
     margin-top: 2.0625rem;
     margin-bottom: 2.0625rem;
   }
 }
 .m_prevNext__item--next {
-  -ms-flex-item-align: end;
-  align-self: flex-end;
+  margin-right: 0.3125rem;
+}
+.m_prevNext__item--prev {
+  margin-left: 0.3125rem;
 }
 .m_prevNext__label,
 .m_prevNext__link {
@@ -1279,35 +1261,6 @@ body {
 .m_prevNext__link:active {
   outline: 1px solid #26A2FF;
   background-color: rgba(38, 162, 255, 0.1);
-}
-.m_prevNext__icons {
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  top: -1rem;
-}
-@media screen and (min-width: 44rem) {
-  .m_prevNext__icons {
-    top: -1.0625rem;
-  }
-}
-.m_prevNext__icons--prev {
-  left: 100%;
-  left: calc(100% + 1rem);
-}
-.m_prevNext__icons--next {
-  right: 100%;
-  right: calc(100% + 1rem);
-}
-.m_prevNext__arm--prev,
-.m_prevNext__arm--next {
-  transform: scaleX(20);
-}
-.m_prevNext__arm--prev {
-  transform-origin: left;
-}
-.m_prevNext__arm--next {
-  transform-origin: right;
 }
 .m_tag {
   font-size: 0.9375em;
@@ -1512,6 +1465,21 @@ body {
 .m_fairground__circle,
 .m_fairground__square {
   stroke: rgba(205, 208, 210, 0.1);
+}
+.m_pointer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+@media screen and (min-width: 44rem) {
+  .m_pointer {
+    margin-right: -2.0625rem;
+  }
+}
+.m_pointer__arm {
+  transform: scaleX(20);
+  transform-origin: right;
 }
 .c_page__content {
   padding: 0 2.0625rem;
