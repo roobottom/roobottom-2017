@@ -2,12 +2,13 @@
 
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  position: relative;
   #m_prose > #default > .spacing();
 
-  &__item--next {margin-right: unit(5/@base,rem);}
-  &__item--prev {margin-left: unit(5/@base,rem);}
+  &__item--next {
+    margin-left: unit(5/@base,rem);
+    text-align: right;
+  }
+  &__item--prev {margin-right: unit(5/@base,rem);}
 
 
   &__label,

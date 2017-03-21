@@ -1209,8 +1209,6 @@ body {
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  width: 100%;
-  position: relative;
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
 }
@@ -1221,10 +1219,11 @@ body {
   }
 }
 .m_prevNext__item--next {
-  margin-right: 0.3125rem;
+  margin-left: 0.3125rem;
+  text-align: right;
 }
 .m_prevNext__item--prev {
-  margin-left: 0.3125rem;
+  margin-right: 0.3125rem;
 }
 .m_prevNext__label,
 .m_prevNext__link {
@@ -1465,6 +1464,31 @@ body {
 .m_fairground__circle,
 .m_fairground__square {
   stroke: rgba(205, 208, 210, 0.1);
+}
+.m_fairground__triangle {
+  animation: 10s ease-in-out infinite float;
+}
+.m_fairground__circle {
+  animation: 10s ease-in-out 3s infinite throb;
+  transform-origin: center;
+}
+.m_fairground__square {
+  animation: 10s ease-in-out 6s infinite skid;
+}
+@keyframes float {
+  50% {
+    transform: translateY(-5em);
+  }
+}
+@keyframes throb {
+  50% {
+    transform: scale(1.4);
+  }
+}
+@keyframes skid {
+  50% {
+    transform: translateX(5em);
+  }
 }
 .m_pointer {
   display: -ms-flexbox;

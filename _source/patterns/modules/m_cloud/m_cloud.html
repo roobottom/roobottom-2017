@@ -3,7 +3,7 @@
   {% if tags | length > 0 %}
     <div class="m_cloud{% if modifier %} m_cloud--{{modifier}}{% endif %}">
       {% if title %}
-        <h2 class="m_cloud__title">{{title}}</h2>
+        <p class="m_cloud__title">{{title}}</p>
       {% endif %}
       <ol class="m_cloud__items">
       {% for tag in tags -%}
