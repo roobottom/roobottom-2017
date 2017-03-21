@@ -1358,8 +1358,8 @@ body {
 .m_cloud__item {
   list-style: none;
   margin: 0 0.75rem 0.75rem 0;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 .m_cloud__title {
   font-size: 1em;
@@ -1385,14 +1385,6 @@ body {
     margin-top: 0rem;
     margin-bottom: 0.515625rem;
   }
-}
-.m_cloud--article .m_cloud__items {
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-}
-.m_cloud--article .m_cloud__item {
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
 }
 @media screen and (min-width: 44rem) {
   .m_masthead {
