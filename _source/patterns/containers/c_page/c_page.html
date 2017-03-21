@@ -1,9 +1,9 @@
 {% macro c_page(modules,modifier) %}
-  <section class="c_page{% if modifier %} c_page--{{modifier}}{% endif %}">
+  <main class="c_page{% if modifier %} c_page--{{modifier}}{% endif %}">
     <div class="c_page__content">
     {% for module in modules -%}
       {{module}}
     {%- endfor %}
     </div>
-  </section>
+  </main>
 {% endmacro %}
