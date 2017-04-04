@@ -1,0 +1,94 @@
+.m_switcher {
+
+  display: none; //hide the whole contol at small widths
+
+  //logic
+  &--is-active &__items {
+    display: block;
+  }
+  &__items {
+    display: none;
+    &:target {
+      display: block;
+    }
+  }
+  #styleSwitch & { //specificly hide this switch if js doesn't load
+    display: none;
+  }
+
+  //styling
+  &__items {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #333;
+  }
+
+  &__itemIcon {
+    margin-right: 10px;
+  }
+
+  &__trigger {
+    color: @c_text;
+  }
+
+  &__icon {
+    fill: currentColor;
+  }
+
+
+  #breakpoint > .med({
+    display: block;
+    position: relative;
+
+    &__items {
+
+      @arrow: 8px;
+
+      position: absolute;
+      background: white;
+      border: 1px solid @c_grey;
+      border-radius: 3px;
+      right: 100%;
+      margin-right: -3 * @arrow;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        right: @arrow;
+        top: -1 * @arrow;
+        width: 0;
+        height: 0;
+        border-left: @arrow solid transparent;
+        border-right: @arrow solid transparent;
+        border-bottom: @arrow solid @c_grey;
+      }
+
+    }
+
+    &__item {
+      padding: unit(10/@base,rem);
+      background-color: attr(data-colour-1);
+
+      &:hover {
+        background-color: @c_grey
+      }
+
+    }
+
+  });
+
+
+
+  &__item {
+    cursor: pointer;
+  }
+
+}

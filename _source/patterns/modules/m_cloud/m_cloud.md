@@ -1,11 +1,15 @@
 ---
 title: Cloud module
 data:
-  tags: [
-    ['Rebel Scum',287],
-    ['The Death Star',19],
-    ['Jabba',11],
-    ['Sometimes we need to shoot at the bad guys',9]
-  ]
+  tags:
+    -
+      name: 'Rebel Scum'
+      count: 298
+    -
+      name: 'Its a trap!'
+      count: 3
+    -
+      name: 'Get that Wookie a bib before he makes any more mess!'
+      count: 7
 ---
 {{m_cloud(tags)}}

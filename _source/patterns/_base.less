@@ -20,17 +20,13 @@ html, body {
   overflow-x: hidden;
   position: relative;//fix the overflow in iOS.
   width: 100%;//fix the overflow in iOS.
+  //transition: all 1s;
 }
 
+//responsive images
 img {
   max-width: 100%;
-}
-
-body {
-  font-family: 'Opensans', sans-serif;
-  margin: 0;
-  background-color: @c_bg;
-  color: @c_text;
+  display: block;
 }
 
 
@@ -39,29 +35,18 @@ body {
   outline: 1px dashed @c_2;
 }
 
-.page-type-home {
-  background-color: @c_home_1;
-  min-height: 100vh;
-  background-image:  radial-gradient(ellipse farthest-corner at 0% 100%, darken(@c_home_1,10%) 20%, darken(@c_home_2,0%) 100%);
-}
+body {
+  font-family: 'Opensans', sans-serif;
+  background-color: @c_bg;
+  color: @c_text;
+  margin: 0;
 
+  &.page-type-home {
+    min-height: 100vh;
+    background-color: @c_home_1;
+    background-image:  radial-gradient(ellipse farthest-corner at 0% 100%, darken(@c_home_1,10%) 20%, darken(@c_home_2,0%) 100%);
+  }
 
-//move this to its own module
-.u_widow {
-  &:after {
-    content: ' ';
-  }
-  &__nbsp {
-    display: none;
-  }
-  #breakpoint > .med({
-    &:after {
-      content: none;
-    }
-    &__nbsp {
-      display: inline;
-    }
-  });
 }
 
 //modules
@@ -81,6 +66,7 @@ body {
 @import 'modules/m_menuControl/m_menuControl';
 @import 'modules/m_fairground/m_fairground';
 @import 'modules/m_pointer/m_pointer';
+@import 'modules/m_switcher/m_switcher';
 
 //containers
 @import 'containers/c_page/c_page';

@@ -14,6 +14,7 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const parallel = require('concurrent-transform');
+const _ = require('lodash');
 
 //posts
 const updatePostsObject = require('./modules_backend/updatePostsObject');
@@ -207,22 +208,28 @@ gulp.task('icons',() => {
 /*
 --. js
 */
-gulp.task('js',() => {
-  return gulp.src('./_source/front-end.js')
+gulp.task('js', () => {
+  return gulp.src('./_source/load-early.js')
   .pipe(webpackStream({
+    entry: {
+      loadearly: './_source/load-early.js',
+      loadlater: './_source/load-later.js'
+    },
     output: {
-        filename: 'functionality.js'
-      }
+      filename: '[name].js',
+    }
   }, webpack))
-  .pipe($.uglify())
+  //.pipe($.uglify())
   .pipe(gulp.dest('./docs'))
 });
 
 /*
 --. styles
 */
+
+
 gulp.task('styles',()=> {
-  return gulp.src('_source/patterns/styles.less')
+  return gulp.src(site.styles)
   .pipe($.sourcemaps.init())
   .pipe($.less())
   // .pipe($.cleanCss({

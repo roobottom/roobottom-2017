@@ -3,34 +3,12 @@
   top: 0; bottom: 0;
   left: 0; right: 0;
   z-index: -1;
+  display: block !important;
 
   &__triangle,
   &__circle,
   &__square {
-    stroke: fade(@c_text,10%);
+    stroke: @c_fairground;
   }
 
-  &__triangle {
-    animation: 10s ease-in-out infinite float;
-  }
-  &__circle {
-    animation: 10s ease-in-out 3s infinite throb;
-    transform-origin: center;
-  }
-  &__square {
-    animation: 10s ease-in-out 6s infinite skid;
-  }
-
-}
-
-@keyframes float {
-  50% { transform: translateY(-5em); }
-}
-
-@keyframes throb {
-  50% { transform: scale(1.4); }
-}
-
-@keyframes skid {
-  50% { transform: translateX(5em); }
 }

@@ -1,0 +1,22 @@
+{% from "patterns/modules/m_icon/m_icon.html" import m_icon %}
+{% macro m_switcher(items,uid='styleSwitch') %}
+  <nav class="m_switcher" data-switch="switch">
+    <a href="#{{uid}}" class="m_switcher__trigger" data-switch="trigger">
+      {{m_icon('colours','m_switcher__icon',modifier='x-small')}}
+    </a>
+    <ul class="m_switcher__items" id="{{uid}}" data-switch="target">
+    {% for item in items %}
+      <li class="m_switcher__item"
+        {% if item.data %}
+          {% for d in item.data %}
+            {{d.attr}}="{{d.value}}"
+          {% endfor %}
+        {% endif %}
+        {% if item.colour_1 %}data-colour-1={{item.colour_1}}{% endif %}
+      >
+      {{m_icon('colours','m_switcher__itemIcon',modifier='x-small')}} {{item.name}}
+      </li>
+    {% endfor %}
+    </ul>
+  </nav>
+{% endmacro %}

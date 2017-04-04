@@ -48,5 +48,31 @@ module.exports = {
   drafts: {
     source: './_source/posts/drafts/*.md',
     page: './_source/templates/draft.html'
-  }
+  },
+  styles: ['_source/patterns/styles.default.less','_source/patterns/styles.dark.less'],
+  styleStack: [
+    {
+      name: 'Orrignal',
+      default: true,
+      colour_1: '#7A75FF',
+      colour_2: '#FF6175',
+      data: [
+        {
+          attr: 'data-style',
+          value: 'styles.default.css'
+        }
+      ]
+    },
+    {
+      name: 'Dark',
+      colour_1: '#05131F',
+      colour_2: '#26A2FF',
+      data: [
+        {
+          attr: 'data-style',
+          value: 'styles.dark.css'
+        }
+      ]
+    }
+  ]
 }

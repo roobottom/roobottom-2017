@@ -3,17 +3,38 @@ var hasClass = function(ele,cls) {
 };
 module.exports.hasClass = hasClass;
 
-module.exports.addClass = function(ele,cls) {
+var addClass = function(ele,cls) {
 	if (!hasClass(ele,cls)) {
     var classNames = ele.className.split(/\s+/);
     classNames.push(cls);
     ele.className = classNames.join(' ');
   }
 };
+module.exports.addClass = addClass;
 
-module.exports.removeClass = function(ele,cls) {
+var removeClass = function(ele,cls) {
 	if (hasClass(ele,cls)) {
-		var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
-		ele.className=ele.className.replace(reg,' ');
+		var regex = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+		ele.className=ele.className.replace(regex,' ');
 	}
 };
+module.exports.removeClass = removeClass;
+
+module.exports.toggleClass = function(ele,cls) {
+  if (!hasClass(ele,cls)) {
+    addClass(ele,cls);
+  }
+  else {
+    removeClass(ele,cls);
+  }
+}
+
+module.exports.loadStylesheet = function(stylesheet,d) {
+  d = document || d;
+  var link = document.createElement('link');
+  link.href = stylesheet;
+  link.type = 'text/css';
+  link.media = 'all';
+  link.rel = 'stylesheet';
+  d.head.appendChild(link);
+}
