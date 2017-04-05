@@ -948,7 +948,6 @@ body.page-type-home {
   font-size: 1.75rem;
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
-  text-shadow: 1px 1px 0 #05131F, 3px 3px 0 rgba(255, 255, 255, 0.1);
 }
 @media screen and (min-width: 44rem) {
   .m_introduction {
@@ -984,7 +983,6 @@ body.page-type-home {
 @media screen and (min-width: 44rem) {
   .m_introduction p {
     margin: 2.0625rem 0;
-    font-weight: 300;
   }
 }
 .m_introduction p,
