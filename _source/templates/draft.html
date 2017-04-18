@@ -2,7 +2,9 @@
 {% block content %}
 {{ c_page([
     m_pageTitle(page.title),
-    m_prose(contents)
+    c_grid([
+      m_prose(contents)
+    ],'single')
   ])
 }}
 {% endblock %}
