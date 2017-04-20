@@ -100,35 +100,35 @@ body.page-type-home {
   background-image: radial-gradient(ellipse farthest-corner at 0% 100%, #e6e6e6 20%, #aba8ff 100%);
 }
 .m_pagination {
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
 }
 @media screen and (min-width: 44rem) {
   .m_pagination {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 .m_pagination__intro {
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
   font-weight: bold;
   font-style: normal;
   font-family: 'Raleway', sans-serif;
   font-size: 1.3125em;
-  line-height: 1.64285714;
+  line-height: 1.85714286;
   display: block;
 }
 @media screen and (min-width: 44rem) {
   .m_pagination__intro {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_pagination__intro {
     font-size: 1.75em;
-    line-height: 1.17857143;
+    line-height: 1.28571429;
   }
 }
 .m_pagination__items {
@@ -269,21 +269,21 @@ body.page-type-home {
 }
 .m_navigation--main .m_navigation__link {
   color: #353449;
-  font-size: 1em;
-  line-height: 1.4375;
+  font-size: 1.0625em;
+  line-height: 1.52941176;
   text-decoration: none;
   display: none;
   border-bottom: 3px solid transparent;
 }
 @media screen and (min-width: 19rem) {
   .m_navigation--main .m_navigation__link {
-    line-height: calc(1.4375em + (1.9375 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_navigation--main .m_navigation__link {
     font-size: 1.1875em;
-    line-height: 1.63157895;
+    line-height: 1.89473684;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -298,22 +298,22 @@ body.page-type-home {
   font-family: 'Raleway';
   font-weight: bold;
   font-size: 2.5em;
-  line-height: 1.15;
+  line-height: 1.3;
 }
 @media screen and (min-width: 44rem) {
   .m_navigation--chunky {
     font-size: 5.0625em;
-    line-height: 1.01851852;
+    line-height: 1.11111111;
   }
 }
 .m_navigation--chunky .m_navigation__item {
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
 }
 @media screen and (min-width: 44rem) {
   .m_navigation--chunky .m_navigation__item {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 .m_navigation--chunky .m_navigation__link {
@@ -321,15 +321,15 @@ body.page-type-home {
   text-decoration: none;
 }
 .m_figure {
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
-  margin-left: -2.0625rem;
-  margin-right: -2.0625rem;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
 }
 @media screen and (min-width: 44rem) {
   .m_figure {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -342,27 +342,27 @@ body.page-type-home {
   color: #c6c5cd;
   font-style: italic;
   font-size: 0.9375em;
-  line-height: 1.46666667;
-  margin-top: 0.359375rem;
-  margin-bottom: 1.4375rem;
-  margin-left: 2.0625rem;
-  margin-right: 2.0625rem;
+  line-height: 1.6;
+  margin-top: 0.40625rem;
+  margin-bottom: 1.625rem;
+  margin-left: 2.25rem;
+  margin-right: 2.25rem;
 }
 @media screen and (min-width: 19rem) {
   .m_figure__caption {
-    line-height: calc(1.375em + (1.8125 - 1.375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.5em + (2.125 - 1.5) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_figure__caption {
     font-size: 1.0625em;
-    line-height: 1.70588235;
+    line-height: 2;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_figure__caption {
-    margin-top: 0.515625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 0.5625rem;
+    margin-bottom: 2.25rem;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -389,8 +389,8 @@ body.page-type-home {
 .m_prose blockquote,
 .m_prose li {
   color: #353449;
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h1,
@@ -403,8 +403,8 @@ body.page-type-home {
   .m_prose figure,
   .m_prose blockquote,
   .m_prose li {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 .m_prose--bg-light h1,
@@ -450,77 +450,77 @@ body.page-type-home {
 }
 .m_prose h1 {
   font-size: 2.5em;
-  line-height: 1.15;
+  line-height: 1.3;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h1 {
     font-size: 5.0625em;
-    line-height: 1.01851852;
+    line-height: 1.11111111;
   }
 }
 .m_prose h2 {
   font-size: 1.625em;
-  line-height: 1.32692308;
+  line-height: 1.5;
   display: block;
-  margin-top: 2.515625rem;
+  margin-top: 2.84375rem;
   margin-bottom: 0rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h2 {
     font-size: 3.5625em;
-    line-height: 1.15789474;
+    line-height: 1.26315789;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose h2 {
-    margin-top: 3.609375rem;
+    margin-top: 3.9375rem;
     margin-bottom: 0rem;
   }
 }
 .m_prose h3 {
   font-size: 1.3125em;
-  line-height: 1.64285714;
+  line-height: 1.85714286;
   display: block;
-  margin-top: 2.515625rem;
+  margin-top: 2.84375rem;
   margin-bottom: 0rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h3 {
     font-size: 1.75em;
-    line-height: 1.17857143;
+    line-height: 1.28571429;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose h3 {
-    margin-top: 3.609375rem;
+    margin-top: 3.9375rem;
     margin-bottom: 0rem;
   }
 }
 .m_prose p {
-  font-size: 1em;
-  line-height: 1.4375;
+  font-size: 1.0625em;
+  line-height: 1.52941176;
 }
 @media screen and (min-width: 19rem) {
   .m_prose p {
-    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose p {
-    font-size: 1.3125em;
-    line-height: 1.57142857;
+    font-size: 1.1875em;
+    line-height: 1.89473684;
   }
 }
 .m_prose h2 + p,
 .m_prose h3 + p {
-  margin-top: 0.359375rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 0.40625rem;
+  margin-bottom: 1.625rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose h2 + p,
   .m_prose h3 + p {
-    margin-top: 0.515625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 0.5625rem;
+    margin-bottom: 2.25rem;
   }
 }
 .m_prose a {
@@ -537,10 +537,10 @@ body.page-type-home {
 }
 .m_prose > ul,
 .m_prose > ol {
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
-  font-size: 1em;
-  line-height: 1.4375;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
+  font-size: 1.0625em;
+  line-height: 1.52941176;
   color: #353449;
   list-style-position: inside;
   margin-left: 1em;
@@ -549,21 +549,21 @@ body.page-type-home {
 @media screen and (min-width: 44rem) {
   .m_prose > ul,
   .m_prose > ol {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 @media screen and (min-width: 19rem) {
   .m_prose > ul,
   .m_prose > ol {
-    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose > ul,
   .m_prose > ol {
-    font-size: 1.3125em;
-    line-height: 1.57142857;
+    font-size: 1.1875em;
+    line-height: 1.89473684;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -574,12 +574,12 @@ body.page-type-home {
 }
 .m_prose li {
   margin-top: 0rem;
-  margin-bottom: 0.71875rem;
+  margin-bottom: 0.8125rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose li {
     margin-top: 0rem;
-    margin-bottom: 1.03125rem;
+    margin-bottom: 1.125rem;
   }
 }
 .m_prose li:last-child {
@@ -616,21 +616,21 @@ body.page-type-home {
   display: block;
   border-radius: 9px;
   margin: 0;
-  padding: 1.4375rem;
+  padding: 1.625rem;
   background-color: #FF6175;
 }
 @media screen and (min-width: 44rem) {
   .m_prose blockquote {
-    padding: 2.0625rem;
+    padding: 2.25rem;
   }
 }
 .m_prose blockquote + blockquote {
-  margin-top: 1.4375rem;
+  margin-top: 1.625rem;
   margin-bottom: 0rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose blockquote + blockquote {
-    margin-top: 2.0625rem;
+    margin-top: 2.25rem;
     margin-bottom: 0rem;
   }
 }
@@ -741,23 +741,23 @@ body.page-type-home {
   color: #353449;
 }
 .m_prose pre {
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
   background-color: #e1e1e5;
-  padding: 1.4375rem;
+  padding: 1.625rem;
   overflow-y: auto;
   margin-left: -6px;
   position: relative;
 }
 @media screen and (min-width: 44rem) {
   .m_prose pre {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose pre {
-    padding: 2.0625rem;
+    padding: 2.25rem;
   }
 }
 .m_prose pre:before {
@@ -771,18 +771,18 @@ body.page-type-home {
   background-color: #FF6175;
 }
 .m_prose pre > code {
-  font-size: 1em;
-  line-height: 1.4375;
+  font-size: 1.0625em;
+  line-height: 1.52941176;
 }
 @media screen and (min-width: 19rem) {
   .m_prose pre > code {
-    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose pre > code {
-    font-size: 1.3125em;
-    line-height: 1.57142857;
+    font-size: 1.1875em;
+    line-height: 1.89473684;
   }
 }
 .m_prose p > code,
@@ -808,28 +808,28 @@ body.page-type-home {
   box-sizing: border-box;
   background-color: #e1e1e5;
   color: #353449;
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
-  font-size: 1em;
-  line-height: 1.4375;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
+  font-size: 1.0625em;
+  line-height: 1.52941176;
   border-left: 6px solid #FF6175;
   margin-left: -6px;
 }
 @media screen and (min-width: 44rem) {
   .m_prose table {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 @media screen and (min-width: 19rem) {
   .m_prose table {
-    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose table {
-    font-size: 1.3125em;
-    line-height: 1.57142857;
+    font-size: 1.1875em;
+    line-height: 1.89473684;
   }
 }
 .m_prose td,
@@ -868,7 +868,7 @@ body.page-type-home {
 }
 .m_pageTitle {
   margin-top: 0rem;
-  margin-bottom: 1.4375rem;
+  margin-bottom: 1.625rem;
   color: #353449;
 }
 @media screen and (min-width: 44rem) {
@@ -879,7 +879,7 @@ body.page-type-home {
 @media screen and (min-width: 44rem) {
   .m_pageTitle {
     margin-top: 0rem;
-    margin-bottom: 2.0625rem;
+    margin-bottom: 2.25rem;
   }
 }
 .m_pageTitle--bg-light {
@@ -890,13 +890,13 @@ body.page-type-home {
   font-style: normal;
   font-family: 'Raleway', sans-serif;
   font-size: 2.5em;
-  line-height: 1.15;
+  line-height: 1.3;
   margin: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle__title {
     font-size: 5.0625em;
-    line-height: 1.01851852;
+    line-height: 1.11111111;
   }
 }
 .m_pageTitle__meta {
@@ -906,27 +906,27 @@ body.page-type-home {
 }
 .m_pageTitle__date {
   font-size: 0.8125em;
-  line-height: 1.53846154;
+  line-height: 1.69230769;
   color: #c6c5cd;
-  margin-top: 0.359375rem;
+  margin-top: 0.40625rem;
   margin-bottom: 0rem;
   display: block;
   text-transform: uppercase;
 }
 @media screen and (min-width: 19rem) {
   .m_pageTitle__date {
-    line-height: calc(1.25em + (1.625 - 1.25) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.375em + (1.9375 - 1.375) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle__date {
     font-size: 0.875em;
-    line-height: 1.85714286;
+    line-height: 2.21428571;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle__date {
-    margin-top: 0.515625rem;
+    margin-top: 0.5625rem;
     margin-bottom: 0rem;
   }
 }
@@ -975,7 +975,7 @@ body.page-type-home {
 .m_introduction p {
   font-size: 0.96875rem;
   line-height: 1.5;
-  margin: 1.4375rem 0;
+  margin: 1.625rem 0;
 }
 @media screen and (min-width: 44rem) {
   .m_introduction p {
@@ -998,7 +998,7 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_introduction p {
-    margin: 2.0625rem 0;
+    margin: 2.25rem 0;
   }
 }
 .m_introduction p,
@@ -1100,53 +1100,53 @@ body.page-type-home {
   max-width: 33.75rem;
 }
 .m_teaser__meta > p {
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
-  font-size: 1em;
-  line-height: 1.4375;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
+  font-size: 1.0625em;
+  line-height: 1.52941176;
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__meta > p {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 @media screen and (min-width: 19rem) {
   .m_teaser__meta > p {
-    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__meta > p {
-    font-size: 1.3125em;
-    line-height: 1.57142857;
+    font-size: 1.1875em;
+    line-height: 1.89473684;
   }
 }
 .m_teaser__title {
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
   font-weight: bold;
   font-style: normal;
   font-family: 'Raleway', sans-serif;
   font-size: 1.6875em;
-  line-height: 1.22222222;
+  line-height: 1.33333333;
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__title {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__title {
     font-size: 2.3125em;
-    line-height: 1.15945946;
+    line-height: 1.26486486;
   }
 }
 @media screen and (min-width: 75.25rem) {
   .m_teaser__title {
     font-size: 3.5625em;
-    line-height: 1.15789474;
+    line-height: 1.26315789;
   }
 }
 .m_teaser__titlelink {
@@ -1209,13 +1209,13 @@ body.page-type-home {
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: 1.4375rem;
-  margin-bottom: 1.4375rem;
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prevNext {
-    margin-top: 2.0625rem;
-    margin-bottom: 2.0625rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
   }
 }
 .m_prevNext__item--next {
@@ -1227,21 +1227,21 @@ body.page-type-home {
 }
 .m_prevNext__label,
 .m_prevNext__link {
-  font-size: 1em;
-  line-height: 1.4375;
+  font-size: 1.0625em;
+  line-height: 1.52941176;
   margin: 0;
 }
 @media screen and (min-width: 19rem) {
   .m_prevNext__label,
   .m_prevNext__link {
-    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prevNext__label,
   .m_prevNext__link {
-    font-size: 1.3125em;
-    line-height: 1.57142857;
+    font-size: 1.1875em;
+    line-height: 1.89473684;
   }
 }
 .m_prevNext__label {
@@ -1263,7 +1263,7 @@ body.page-type-home {
 }
 .m_tag {
   font-size: 0.9375em;
-  line-height: 1.46666667;
+  line-height: 1.6;
   text-decoration: none;
   background-color: #FF6175;
   display: -ms-flexbox;
@@ -1276,13 +1276,13 @@ body.page-type-home {
 }
 @media screen and (min-width: 19rem) {
   .m_tag {
-    line-height: calc(1.375em + (1.8125 - 1.375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.5em + (2.125 - 1.5) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_tag {
     font-size: 1.0625em;
-    line-height: 1.70588235;
+    line-height: 2;
   }
 }
 .m_tag__name,
@@ -1314,34 +1314,34 @@ body.page-type-home {
   flex: 0 1 auto;
 }
 .m_cloud__title {
-  font-size: 1em;
-  line-height: 1.4375;
+  font-size: 1.0625em;
+  line-height: 1.52941176;
   margin-top: 0rem;
-  margin-bottom: 0.359375rem;
+  margin-bottom: 0.40625rem;
   font-family: 'Raleway';
   font-weight: bold;
 }
 @media screen and (min-width: 19rem) {
   .m_cloud__title {
-    line-height: calc(1.4375em + (2.0625 - 1.4375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_cloud__title {
-    font-size: 1.3125em;
-    line-height: 1.57142857;
+    font-size: 1.1875em;
+    line-height: 1.89473684;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_cloud__title {
     margin-top: 0rem;
-    margin-bottom: 0.515625rem;
+    margin-bottom: 0.5625rem;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_masthead {
-    margin-left: calc(-50vw + 24.0625rem);
-    margin-right: calc(-50vw + 24.0625rem);
+    margin-left: calc(-50vw + 24.25rem);
+    margin-right: calc(-50vw + 24.25rem);
   }
 }
 .m_masthead > svg {
@@ -1474,7 +1474,7 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_pointer {
-    margin-right: -2.0625rem;
+    margin-right: -2.25rem;
   }
 }
 .m_pointer__arm {
@@ -1556,17 +1556,17 @@ body.page-type-home {
   cursor: pointer;
 }
 .c_page__content {
-  padding-left: 2.0625rem;
-  padding-right: 2.0625rem;
-  padding-top: 2.0625rem;
-  padding-bottom: 2.0625rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 @media screen and (min-width: 75.25rem) {
   .c_page__content {
     padding-left: 0;
     padding-right: 0;
     margin: 0 auto;
-    max-width: 73.1875rem;
+    max-width: 73rem;
   }
 }
 .c_page--prose {
@@ -1576,8 +1576,8 @@ body.page-type-home {
   background-color: transparent;
 }
 .c_header__content {
-  padding-left: 2.0625rem;
-  padding-right: 2.0625rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
@@ -1590,7 +1590,7 @@ body.page-type-home {
     padding-left: 0;
     padding-right: 0;
     margin: 0 auto;
-    max-width: 73.1875rem;
+    max-width: 73rem;
   }
 }
 .c_header__content > *:first-child {
@@ -1667,17 +1667,17 @@ body.page-type-home {
   }
 }
 .c_aside__content {
-  padding-left: 2.0625rem;
-  padding-right: 2.0625rem;
-  padding-top: 2.0625rem;
-  padding-bottom: 2.0625rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 @media screen and (min-width: 75.25rem) {
   .c_aside__content {
     padding-left: 0;
     padding-right: 0;
     margin: 0 auto;
-    max-width: 73.1875rem;
+    max-width: 73rem;
   }
 }
 

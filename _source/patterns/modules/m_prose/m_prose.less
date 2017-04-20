@@ -19,10 +19,10 @@
       background-color: contrast(@foreground, @color, darken(@color, 30%));
     }
 
-    .size(@min: 16; @max: 21;) {
+    .size(@min: 17; @max: 19;) {
 
-      @lh_min: (@lower_lh - 16) + @min; //should be == @lower_lh at default size;
-      @lh_max: (@upper_lh - 21) + @max; //should be == @lh_max at default size;
+      @lh_min: (@lower_lh - 17) + @min; //should be == @lower_lh at default size;
+      @lh_max: (@upper_lh - 19) + @max; //should be == @lh_max at default size;
 
       font-size: unit(@min/@base,em);
       line-height: @lh_min/@min;
