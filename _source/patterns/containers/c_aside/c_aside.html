@@ -1,0 +1,9 @@
+{% macro c_aside(modules,modifier) %}
+<section class="c_aside{% if modifier %} c_aside--{{modifier}}{% endif %}" role="complementary">
+  <div class="c_aside__content">
+    {% for module in modules -%}
+      {{module}}
+    {%- endfor %}
+  </div>
+</section>
+{% endmacro %}

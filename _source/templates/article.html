@@ -14,15 +14,22 @@
   {%- endfor %}
 {% endmacro %}
 
+{% set pageModifier -%}{% if page.modifier and page.modifier != '' %}prose-{{page.modifier}}{% else %}prose{% endif %}{%- endset %}
+{% set textModifier %}{% if page.modifier and page.modifier != '' %}bg-{{page.modifier}}{% else %}bg-light{% endif %}{% endset %}
+
 {% block content %}
 {{ c_page([
-    m_pageTitle(page.title,date=page.date,humanDate=page.humanDate),
+    m_pageTitle(page.title,date=page.date,humanDate=page.humanDate,modifier=textModifier),
     c_grid([
-      m_prose(contents),
-      m_pointer('Meta'),
-      m_cloud(page.tags,'Tagged:'),
-      call__prevNext()
+      m_prose(contents,textModifier)
     ],'single')
-  ])
+  ],pageModifier)
 }}
+{{ c_aside([
+  c_grid([
+    m_cloud(page.tags,'Tagged:'),
+    call__prevNext()
+  ],'single')
+])}}
+
 {% endblock %}

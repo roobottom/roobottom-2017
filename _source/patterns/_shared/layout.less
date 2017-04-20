@@ -8,9 +8,11 @@
   }
 
   .max() {
-    padding: 0 unit(@gutter/@base,rem);
+    padding-left: unit(@gutter/@base,rem);
+    padding-right: unit(@gutter/@base,rem);
     #breakpoint > .max({
-      padding:0;
+      padding-left: 0;
+      padding-right: 0;
       margin: 0 auto;
       max-width: unit((@bp_max - @gutter)/@base,rem);
     });

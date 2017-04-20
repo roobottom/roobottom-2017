@@ -386,7 +386,8 @@ body.page-type-home {
 .m_prose h6,
 .m_prose p,
 .m_prose figure,
-.m_prose blockquote {
+.m_prose blockquote,
+.m_prose li {
   color: #353449;
   margin-top: 1.4375rem;
   margin-bottom: 1.4375rem;
@@ -400,10 +401,23 @@ body.page-type-home {
   .m_prose h6,
   .m_prose p,
   .m_prose figure,
-  .m_prose blockquote {
+  .m_prose blockquote,
+  .m_prose li {
     margin-top: 2.0625rem;
     margin-bottom: 2.0625rem;
   }
+}
+.m_prose--bg-light h1,
+.m_prose--bg-light h2,
+.m_prose--bg-light h3,
+.m_prose--bg-light h4,
+.m_prose--bg-light h5,
+.m_prose--bg-light h6,
+.m_prose--bg-light p,
+.m_prose--bg-light figure,
+.m_prose--bg-light blockquote,
+.m_prose--bg-light li {
+  color: #999999;
 }
 .m_prose strong,
 .m_prose b {
@@ -631,7 +645,6 @@ body.page-type-home {
   width: 20px;
   height: 20px;
   position: absolute;
-  z-index: -1;
   top: 50%;
   margin-top: -10px;
   left: -10px;
@@ -868,6 +881,9 @@ body.page-type-home {
     margin-top: 0rem;
     margin-bottom: 2.0625rem;
   }
+}
+.m_pageTitle--bg-light {
+  color: #999999;
 }
 .m_pageTitle__title {
   font-weight: bold;
@@ -1540,20 +1556,28 @@ body.page-type-home {
   cursor: pointer;
 }
 .c_page__content {
-  padding: 0 2.0625rem;
+  padding-left: 2.0625rem;
+  padding-right: 2.0625rem;
+  padding-top: 2.0625rem;
+  padding-bottom: 2.0625rem;
 }
 @media screen and (min-width: 75.25rem) {
   .c_page__content {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     margin: 0 auto;
     max-width: 73.1875rem;
   }
+}
+.c_page--prose {
+  background-color: white;
 }
 .c_header--transparent {
   background-color: transparent;
 }
 .c_header__content {
-  padding: 0 2.0625rem;
+  padding-left: 2.0625rem;
+  padding-right: 2.0625rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
@@ -1563,7 +1587,8 @@ body.page-type-home {
 }
 @media screen and (min-width: 75.25rem) {
   .c_header__content {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     margin: 0 auto;
     max-width: 73.1875rem;
   }
@@ -1639,6 +1664,20 @@ body.page-type-home {
     padding: 0;
     margin: 0 auto;
     max-width: 44rem;
+  }
+}
+.c_aside__content {
+  padding-left: 2.0625rem;
+  padding-right: 2.0625rem;
+  padding-top: 2.0625rem;
+  padding-bottom: 2.0625rem;
+}
+@media screen and (min-width: 75.25rem) {
+  .c_aside__content {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    max-width: 73.1875rem;
   }
 }
 
