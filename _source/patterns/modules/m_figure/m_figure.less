@@ -11,7 +11,7 @@
     display: block;
     color: @c_grey;
     font-style: italic;
-    #m_prose > #default > .size(@max: 17; @min: 15;);
+    #m_prose > #default > .size(@max: 14; @min: 12;);
     #m_prose > #default > .spacing(@top: .25; );
 
     margin-left: unit(@gutter/@base,rem);
@@ -29,6 +29,21 @@
 
   &__image + &__image {
     margin-top: 1px;
+  }
+
+  &--pull-both {
+    #breakpoint > .med({
+      margin-left: unit(-1 * @gutter/@base,rem);
+      margin-right: unit(-1 * @gutter/@base,rem);
+    });
+  }
+
+  &--pull-both &__caption {
+    #breakpoint > .med({
+      margin-left: unit(@gutter/@base,rem);
+      margin-right: unit(@gutter/@base,rem);
+    });
+
   }
 
 }

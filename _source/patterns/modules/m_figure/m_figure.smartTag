@@ -1,2 +1,2 @@
 {% from "./m_figure.html" import m_figure %}
-{{ m_figure(images,'/images/articles/'+page.id) }}
+{{ m_figure(images,'/images/articles/'+page.id,class) }}

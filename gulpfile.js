@@ -156,35 +156,24 @@ gulp.task('drafts',()=>{
 */
 gulp.task('images:fullsize',() => {
   return gulp.src(site.images_folder)
-  .pipe(parallel(
-    $.resize({
-        width : 680,
-        noProfile: true,
-        crop : false,
-        upscale : false
-      })
+  .pipe($.if(src => {
+    let filename = path.parse(src.path);
+    if (filename.ext == '.jpg' || filename.ext == '.jpeg')
+      return true;
+    },
+    parallel(
+      $.resize({
+          width : 680,
+          noProfile: true,
+          crop : false,
+          upscale : false
+        })
+    )
   ))
   .pipe(gulp.dest(site.publish_folder + '/images'))
 });
-gulp.task('images:small',()=> {
-  return gulp.src(site.images_folder)
-  .pipe(parallel(
-    $.resize({
-      width: 1000,
-      noProfile: true,
-      upscale: false,
-      quality: 0.1,
-      filter: 'Catrom'
-    })
-  ))
-  .pipe($.rename((src)=> {
-    if(src.extname == '.jpg') {
-      src.basename = src.basename + '-small';
-    }
-  }))
-  .pipe(gulp.dest(site.publish_folder + '/images'))
-});
-gulp.task('images',['images:fullsize','images:small'])
+
+gulp.task('images',['images:fullsize'])
 
 /*
 --. icons

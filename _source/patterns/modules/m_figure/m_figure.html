@@ -1,7 +1,9 @@
-{% macro m_figure(images,path) %}
-<figure class="m_figure">
+{% macro m_figure(images,path,modifier) %}
+<figure class="m_figure{% if modifier %} m_figure--{{modifier}}{% endif %}">
   {% for i in images %}
-    <img src="{{path}}/{{i.image}}" class="m_figure__image"{% if i.caption %} alt="{{i.caption}}"{% endif %}/>
+    <a href="{{path}}/{{i.image}}" class="m_figure__link">
+      <img src="{{path}}/{{i.image}}" class="m_figure__image"{% if i.caption %} alt="{{i.caption}}"{% endif %}/>
+    </a>
     {% if i.caption %}
       <figcaption class="m_figure__caption">{{i.caption}}</figcaption>
     {% endif %}

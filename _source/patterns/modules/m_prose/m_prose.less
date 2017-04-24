@@ -75,8 +75,8 @@
       font-size: unit(26/@base,em);
       line-height: @lower_lh*1.5/26;
       #breakpoint > .med({
-        font-size: unit(57/@base,em);
-        line-height: @upper_lh*2/57;
+        font-size: unit(43/@base,em);
+        line-height: @upper_lh*2/43;
       });
       display: block;
     }
@@ -168,6 +168,17 @@
   p {
     #m_prose > #default > .size;
   }
+
+  p:first-child::first-letter {
+    @supports (inital-letter: 2) or (-webkit-initial-letter: 2) {
+      font-family: 'Raleway', sans-serif;
+      font-weight: bold;
+      -webkit-initial-letter: 2;
+      inital-letter: 2;
+      margin-right: .5em;
+    }
+  }
+
   h2 + p,
   h3 + p {
     #m_prose > #default > .spacing(@top: 0.25;)
@@ -184,7 +195,7 @@
     #m_prose > #default > .spacing();
     #m_prose > #default > .size;
     #m_prose > #default > .contrast();
-    list-style-position: inside;
+    //list-style-position: inside;
     margin-left: 1em;
     padding: 0;
     #breakpoint > .med({
@@ -193,7 +204,7 @@
   }
 
   li {
-    #m_prose > #default > .spacing(@top:0; @bottom: .5);
+    #m_prose > #default > .spacing(@top:0; @bottom: .25);
     &:last-child {
       margin-bottom: 0;
     }
@@ -400,6 +411,19 @@
     color: contrast(@c_3,white,darken(@c_3,50%));
     background-color: @c_3;
     padding: 0 .2em;
+  }
+
+  //hrs
+  hr {
+    border: 3px solid @c_1;
+    display: block;
+    width: 25%;
+    float: left;
+    #m_prose > #default > .spacing(@top: 0;);
+  }
+
+  hr+* {
+    clear: left;
   }
 
 }

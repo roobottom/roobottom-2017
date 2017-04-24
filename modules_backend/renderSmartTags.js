@@ -33,7 +33,11 @@ module.exports = function() {
           for(let i in file.page.images) {
             if(file.page.images[i].set === tagOpts.set) {
               figure_object["images"].push(file.page.images[i]);
+              if(tagOpts.class) {
+                figure_object["class"] = tagOpts.class;
+              }
             }
+
           };
           let renderedTag = nunjucks_env.render(path.join(__dirname, '../_source/patterns/modules/m_figure/m_figure.smartTag'),figure_object);
           replacedTags.push({

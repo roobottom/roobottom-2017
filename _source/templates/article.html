@@ -22,14 +22,14 @@
     m_pageTitle(page.title,date=page.date,humanDate=page.humanDate,modifier=textModifier),
     c_grid([
       m_prose(contents,textModifier)
-    ],'single')
+    ],'prose')
   ],pageModifier)
 }}
 {{ c_aside([
   c_grid([
     m_cloud(page.tags,'Tagged:'),
     call__prevNext()
-  ],'single')
+  ],'prose')
 ])}}
 
 {% endblock %}

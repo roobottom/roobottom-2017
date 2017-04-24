@@ -105,8 +105,8 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_pagination {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 .m_pagination__intro {
@@ -121,14 +121,14 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_pagination__intro {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_pagination__intro {
     font-size: 1.75em;
-    line-height: 1.28571429;
+    line-height: 1.10714286;
   }
 }
 .m_pagination__items {
@@ -277,13 +277,13 @@ body.page-type-home {
 }
 @media screen and (min-width: 19rem) {
   .m_navigation--main .m_navigation__link {
-    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (1.9375 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_navigation--main .m_navigation__link {
     font-size: 1.1875em;
-    line-height: 1.89473684;
+    line-height: 1.63157895;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -303,7 +303,7 @@ body.page-type-home {
 @media screen and (min-width: 44rem) {
   .m_navigation--chunky {
     font-size: 5.0625em;
-    line-height: 1.11111111;
+    line-height: 0.95679012;
   }
 }
 .m_navigation--chunky .m_navigation__item {
@@ -312,8 +312,8 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_navigation--chunky .m_navigation__item {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 .m_navigation--chunky .m_navigation__link {
@@ -323,13 +323,13 @@ body.page-type-home {
 .m_figure {
   margin-top: 1.625rem;
   margin-bottom: 1.625rem;
-  margin-left: -2.25rem;
-  margin-right: -2.25rem;
+  margin-left: -1.9375rem;
+  margin-right: -1.9375rem;
 }
 @media screen and (min-width: 44rem) {
   .m_figure {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -341,28 +341,28 @@ body.page-type-home {
   display: block;
   color: #c6c5cd;
   font-style: italic;
-  font-size: 0.9375em;
-  line-height: 1.6;
+  font-size: 0.75em;
+  line-height: 1.75;
   margin-top: 0.40625rem;
   margin-bottom: 1.625rem;
-  margin-left: 2.25rem;
-  margin-right: 2.25rem;
+  margin-left: 1.9375rem;
+  margin-right: 1.9375rem;
 }
 @media screen and (min-width: 19rem) {
   .m_figure__caption {
-    line-height: calc(1.5em + (2.125 - 1.5) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.3125em + (1.625 - 1.3125) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_figure__caption {
-    font-size: 1.0625em;
-    line-height: 2;
+    font-size: 0.875em;
+    line-height: 1.85714286;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_figure__caption {
-    margin-top: 0.5625rem;
-    margin-bottom: 2.25rem;
+    margin-top: 0.484375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -377,6 +377,18 @@ body.page-type-home {
 }
 .m_figure__image + .m_figure__image {
   margin-top: 1px;
+}
+@media screen and (min-width: 44rem) {
+  .m_figure--pull-both {
+    margin-left: -1.9375rem;
+    margin-right: -1.9375rem;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_figure--pull-both .m_figure__caption {
+    margin-left: 1.9375rem;
+    margin-right: 1.9375rem;
+  }
 }
 .m_prose h1,
 .m_prose h2,
@@ -403,8 +415,8 @@ body.page-type-home {
   .m_prose figure,
   .m_prose blockquote,
   .m_prose li {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 .m_prose--bg-light h1,
@@ -455,7 +467,7 @@ body.page-type-home {
 @media screen and (min-width: 44rem) {
   .m_prose h1 {
     font-size: 5.0625em;
-    line-height: 1.11111111;
+    line-height: 0.95679012;
   }
 }
 .m_prose h2 {
@@ -467,13 +479,13 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_prose h2 {
-    font-size: 3.5625em;
-    line-height: 1.26315789;
+    font-size: 2.6875em;
+    line-height: 1.44186047;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose h2 {
-    margin-top: 3.9375rem;
+    margin-top: 3.390625rem;
     margin-bottom: 0rem;
   }
 }
@@ -487,12 +499,12 @@ body.page-type-home {
 @media screen and (min-width: 44rem) {
   .m_prose h3 {
     font-size: 1.75em;
-    line-height: 1.28571429;
+    line-height: 1.10714286;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose h3 {
-    margin-top: 3.9375rem;
+    margin-top: 3.390625rem;
     margin-bottom: 0rem;
   }
 }
@@ -502,13 +514,22 @@ body.page-type-home {
 }
 @media screen and (min-width: 19rem) {
   .m_prose p {
-    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (1.9375 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose p {
     font-size: 1.1875em;
-    line-height: 1.89473684;
+    line-height: 1.63157895;
+  }
+}
+@supports (inital-letter: 2) or (-webkit-initial-letter: 2) {
+  .m_prose p:first-child::first-letter {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    -webkit-initial-letter: 2;
+    inital-letter: 2;
+    margin-right: .5em;
   }
 }
 .m_prose h2 + p,
@@ -519,8 +540,8 @@ body.page-type-home {
 @media screen and (min-width: 44rem) {
   .m_prose h2 + p,
   .m_prose h3 + p {
-    margin-top: 0.5625rem;
-    margin-bottom: 2.25rem;
+    margin-top: 0.484375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 .m_prose a {
@@ -542,28 +563,27 @@ body.page-type-home {
   font-size: 1.0625em;
   line-height: 1.52941176;
   color: #353449;
-  list-style-position: inside;
   margin-left: 1em;
   padding: 0;
 }
 @media screen and (min-width: 44rem) {
   .m_prose > ul,
   .m_prose > ol {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 @media screen and (min-width: 19rem) {
   .m_prose > ul,
   .m_prose > ol {
-    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (1.9375 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose > ul,
   .m_prose > ol {
     font-size: 1.1875em;
-    line-height: 1.89473684;
+    line-height: 1.63157895;
   }
 }
 @media screen and (min-width: 44rem) {
@@ -574,12 +594,12 @@ body.page-type-home {
 }
 .m_prose li {
   margin-top: 0rem;
-  margin-bottom: 0.8125rem;
+  margin-bottom: 0.40625rem;
 }
 @media screen and (min-width: 44rem) {
   .m_prose li {
     margin-top: 0rem;
-    margin-bottom: 1.125rem;
+    margin-bottom: 0.484375rem;
   }
 }
 .m_prose li:last-child {
@@ -621,7 +641,7 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_prose blockquote {
-    padding: 2.25rem;
+    padding: 1.9375rem;
   }
 }
 .m_prose blockquote + blockquote {
@@ -630,7 +650,7 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_prose blockquote + blockquote {
-    margin-top: 2.25rem;
+    margin-top: 1.9375rem;
     margin-bottom: 0rem;
   }
 }
@@ -751,13 +771,13 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_prose pre {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose pre {
-    padding: 2.25rem;
+    padding: 1.9375rem;
   }
 }
 .m_prose pre:before {
@@ -776,13 +796,13 @@ body.page-type-home {
 }
 @media screen and (min-width: 19rem) {
   .m_prose pre > code {
-    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (1.9375 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose pre > code {
     font-size: 1.1875em;
-    line-height: 1.89473684;
+    line-height: 1.63157895;
   }
 }
 .m_prose p > code,
@@ -817,19 +837,19 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_prose table {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 @media screen and (min-width: 19rem) {
   .m_prose table {
-    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (1.9375 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prose table {
     font-size: 1.1875em;
-    line-height: 1.89473684;
+    line-height: 1.63157895;
   }
 }
 .m_prose td,
@@ -866,6 +886,23 @@ body.page-type-home {
   background-color: #00B7D9;
   padding: 0 .2em;
 }
+.m_prose hr {
+  border: 3px solid #7A75FF;
+  display: block;
+  width: 25%;
+  float: left;
+  margin-top: 0rem;
+  margin-bottom: 1.625rem;
+}
+@media screen and (min-width: 44rem) {
+  .m_prose hr {
+    margin-top: 0rem;
+    margin-bottom: 1.9375rem;
+  }
+}
+.m_prose hr + * {
+  clear: left;
+}
 .m_pageTitle {
   margin-top: 0rem;
   margin-bottom: 1.625rem;
@@ -879,7 +916,7 @@ body.page-type-home {
 @media screen and (min-width: 44rem) {
   .m_pageTitle {
     margin-top: 0rem;
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.9375rem;
   }
 }
 .m_pageTitle--bg-light {
@@ -896,7 +933,7 @@ body.page-type-home {
 @media screen and (min-width: 44rem) {
   .m_pageTitle__title {
     font-size: 5.0625em;
-    line-height: 1.11111111;
+    line-height: 0.95679012;
   }
 }
 .m_pageTitle__meta {
@@ -915,18 +952,18 @@ body.page-type-home {
 }
 @media screen and (min-width: 19rem) {
   .m_pageTitle__date {
-    line-height: calc(1.375em + (1.9375 - 1.375) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.375em + (1.625 - 1.375) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle__date {
     font-size: 0.875em;
-    line-height: 2.21428571;
+    line-height: 1.85714286;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_pageTitle__date {
-    margin-top: 0.5625rem;
+    margin-top: 0.484375rem;
     margin-bottom: 0rem;
   }
 }
@@ -998,7 +1035,7 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_introduction p {
-    margin: 2.25rem 0;
+    margin: 1.9375rem 0;
   }
 }
 .m_introduction p,
@@ -1107,19 +1144,19 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__meta > p {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 @media screen and (min-width: 19rem) {
   .m_teaser__meta > p {
-    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (1.9375 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__meta > p {
     font-size: 1.1875em;
-    line-height: 1.89473684;
+    line-height: 1.63157895;
   }
 }
 .m_teaser__title {
@@ -1129,24 +1166,24 @@ body.page-type-home {
   font-style: normal;
   font-family: 'Raleway', sans-serif;
   font-size: 1.6875em;
-  line-height: 1.33333333;
+  line-height: 1.14814815;
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__title {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_teaser__title {
     font-size: 2.3125em;
-    line-height: 1.26486486;
+    line-height: 1.08918919;
   }
 }
 @media screen and (min-width: 75.25rem) {
   .m_teaser__title {
     font-size: 3.5625em;
-    line-height: 1.26315789;
+    line-height: 1.0877193;
   }
 }
 .m_teaser__titlelink {
@@ -1214,12 +1251,12 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_prevNext {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 1.9375rem;
   }
 }
 .m_prevNext__item--next {
-  margin-left: 0.3125rem;
+  margin-left: auto;
   text-align: right;
 }
 .m_prevNext__item--prev {
@@ -1234,14 +1271,14 @@ body.page-type-home {
 @media screen and (min-width: 19rem) {
   .m_prevNext__label,
   .m_prevNext__link {
-    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (1.9375 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_prevNext__label,
   .m_prevNext__link {
     font-size: 1.1875em;
-    line-height: 1.89473684;
+    line-height: 1.63157895;
   }
 }
 .m_prevNext__label {
@@ -1276,13 +1313,13 @@ body.page-type-home {
 }
 @media screen and (min-width: 19rem) {
   .m_tag {
-    line-height: calc(1.5em + (2.125 - 1.5) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.5em + (1.8125 - 1.5) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_tag {
     font-size: 1.0625em;
-    line-height: 2;
+    line-height: 1.70588235;
   }
 }
 .m_tag__name,
@@ -1323,25 +1360,25 @@ body.page-type-home {
 }
 @media screen and (min-width: 19rem) {
   .m_cloud__title {
-    line-height: calc(1.625em + (2.25 - 1.625) * ((100vw - 19em)/(44 - 19)));
+    line-height: calc(1.625em + (1.9375 - 1.625) * ((100vw - 19em)/(44 - 19)));
   }
 }
 @media screen and (min-width: 44rem) {
   .m_cloud__title {
     font-size: 1.1875em;
-    line-height: 1.89473684;
+    line-height: 1.63157895;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_cloud__title {
     margin-top: 0rem;
-    margin-bottom: 0.5625rem;
+    margin-bottom: 0.484375rem;
   }
 }
 @media screen and (min-width: 44rem) {
   .m_masthead {
-    margin-left: calc(-50vw + 24.25rem);
-    margin-right: calc(-50vw + 24.25rem);
+    margin-left: calc(-50vw + 23.9375rem);
+    margin-right: calc(-50vw + 23.9375rem);
   }
 }
 .m_masthead > svg {
@@ -1474,7 +1511,7 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .m_pointer {
-    margin-right: -2.25rem;
+    margin-right: -1.9375rem;
   }
 }
 .m_pointer__arm {
@@ -1556,17 +1593,17 @@ body.page-type-home {
   cursor: pointer;
 }
 .c_page__content {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
+  padding-left: 1.9375rem;
+  padding-right: 1.9375rem;
+  padding-top: 1.9375rem;
+  padding-bottom: 1.9375rem;
 }
 @media screen and (min-width: 75.25rem) {
   .c_page__content {
     padding-left: 0;
     padding-right: 0;
     margin: 0 auto;
-    max-width: 73rem;
+    max-width: 73.3125rem;
   }
 }
 .c_page--prose {
@@ -1576,8 +1613,8 @@ body.page-type-home {
   background-color: transparent;
 }
 .c_header__content {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
+  padding-left: 1.9375rem;
+  padding-right: 1.9375rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
@@ -1590,7 +1627,7 @@ body.page-type-home {
     padding-left: 0;
     padding-right: 0;
     margin: 0 auto;
-    max-width: 73rem;
+    max-width: 73.3125rem;
   }
 }
 .c_header__content > *:first-child {
@@ -1666,18 +1703,25 @@ body.page-type-home {
     max-width: 44rem;
   }
 }
+@media screen and (min-width: 44rem) {
+  .c_grid--prose {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 37.75rem;
+  }
+}
 .c_aside__content {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
+  padding-left: 1.9375rem;
+  padding-right: 1.9375rem;
+  padding-top: 1.9375rem;
+  padding-bottom: 1.9375rem;
 }
 @media screen and (min-width: 75.25rem) {
   .c_aside__content {
     padding-left: 0;
     padding-right: 0;
     margin: 0 auto;
-    max-width: 73rem;
+    max-width: 73.3125rem;
   }
 }
 
