@@ -23,7 +23,7 @@
   }
 
   &__image {
-    width: 100%;
+    max-width: 100%;
     display: block;
   }
 
@@ -31,6 +31,8 @@
     margin-top: 1px;
   }
 
+
+  //pull both
   &--pull-both {
     #breakpoint > .med({
       margin-left: unit(-1 * @gutter/@base,rem);
@@ -43,7 +45,15 @@
       margin-left: unit(@gutter/@base,rem);
       margin-right: unit(@gutter/@base,rem);
     });
+  }
 
+  //pull right
+  &--pull-right {
+    margin: 0 0 unit(@gutter/@base,rem) 0;
+    float: right;
+    #breakpoint > .med({
+      margin-right: unit(-1 * @gutter/@base,rem);
+    });
   }
 
 }
