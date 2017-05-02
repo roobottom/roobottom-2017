@@ -49,10 +49,12 @@
 
   //pull right
   &--pull-right {
-    margin: 0 0 unit(@gutter/@base,rem) 0;
-    float: right;
+    margin-left: 0;
+    margin-right: 0;
     #breakpoint > .med({
-      margin-right: unit(-1 * @gutter/@base,rem);
+      margin: 0 unit(-1 * @gutter/@base,rem) unit(@gutter/@base,rem) unit(@gutter/@base,rem);
+      float: right;
+      max-width: 50%;
     });
   }
 
