@@ -1,5 +1,5 @@
 ---
-title: Previous and Next Module
+title: Previous and Next
 data:
   prev:
     title: 'The road to Firefly 6, part 1'

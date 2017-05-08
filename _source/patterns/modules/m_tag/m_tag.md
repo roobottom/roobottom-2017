@@ -1,5 +1,5 @@
 ---
-title: Tag module
+title: Tag
 data:
   shortName: A Tag
   longName: This is a tag, but unlike other tags this one has a very long title indeed. There aren't any limits on tag names.

@@ -1,5 +1,5 @@
 ---
-title: Page title module
+title: Page title
 data:
   title: 'Rebel Scum'
   meta: 'Page 182'

@@ -1,5 +1,5 @@
 ---
-title: Icon module
+title: Icons
 data:
   A: 'house'
   B: 'teacup'

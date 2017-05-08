@@ -1,5 +1,5 @@
 ---
-title: Cloud module
+title: Tag cloud
 data:
   tags:
     -

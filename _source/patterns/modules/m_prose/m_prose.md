@@ -1,5 +1,5 @@
 ---
-title: Prose module
+title: Prose
 dataFile:
   name: 'example_article.txt'
   markdown: true

@@ -2,10 +2,19 @@
 {% macro c(contents) %}
   {{contents|safe}}
 {% endmacro %}
+{% macro call__m_collection() %}
+  {% for collection in site.patterns %}
+    {{m_collection(collection.name|capitalize,collection.patterns,'patterns/')}}
+  {% endfor %}
+{% endmacro %}
 {% block content %}
-{{ c_page([
-    m_pageTitle(page.title),
+{{
+  c_inventory(
+  call__m_collection(),
+  [
+    m_pageTitle(page.title,modifier='bg-light'),
     c(contents)
   ])
 }}
+
 {% endblock %}

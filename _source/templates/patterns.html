@@ -2,21 +2,18 @@
 {% macro c(contents) %}
   {{contents|safe}}
 {% endmacro %}
-{% macro patternListing() %}
+{% macro call__m_collection() %}
   {% for collection in site.patterns %}
-      <h2>{{ collection.name }}</h2>
-      <ul>
-      {% for pattern in collection.patterns %}
-          <li><a href="/patterns/{{pattern.name}}">{{pattern.name}}</a></li>
-      {% endfor %}
-      </ul>
+    {{m_collection(collection.name|capitalize,collection.patterns,'patterns/')}}
   {% endfor %}
 {% endmacro %}
 {% block content %}
-{{ c_page([
-    m_pageTitle(page.title),
-    c(contents),
-    patternListing()
+{{
+  c_inventory(
+  call__m_collection(),
+  [
+    m_pageTitle(page.title,modifier='bg-light'),
+    m_prose(contents,'bg-light')
   ])
 }}
 

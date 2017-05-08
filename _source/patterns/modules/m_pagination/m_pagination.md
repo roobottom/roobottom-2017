@@ -1,5 +1,5 @@
 ---
-title: Pagination module
+title: Pagination
 data:
   paginationA:
     -

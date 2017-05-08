@@ -40,6 +40,7 @@ module.exports = function(site) {
 
     file.example = {
       name: fileobj.name,
+      niceName: file.meta.title,
       type: dirArray[1],
       data: file.meta.data
     }

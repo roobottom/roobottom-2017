@@ -1,5 +1,5 @@
 ---
-title: 'Navigation module'
+title: Navigation
 data:
   standardMenu:
     -

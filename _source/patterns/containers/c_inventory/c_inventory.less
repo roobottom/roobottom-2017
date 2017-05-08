@@ -1,0 +1,26 @@
+.c_inventory {
+
+  &__content {
+    #layout > .max;
+    #breakpoint > .med({
+      display: flex;
+      align-content: stretch;
+    });
+  }
+
+  &__toc {
+    flex-grow: 1;
+    padding: unit(@gutter/@base,rem) 0;
+  }
+
+  &__items {
+    flex-grow: 2;
+    padding: unit(@gutter/@base,rem);
+    #breakpoint > .med ({
+      max-width: 70%;
+    });
+  }
+
+
+  background-color: darken(@c_prose_bg,4%);
+}

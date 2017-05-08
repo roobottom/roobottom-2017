@@ -1,5 +1,5 @@
 ---
-title: 'Figure module'
+title: Figures
 data:
   path: '/images/examples'
   setA:

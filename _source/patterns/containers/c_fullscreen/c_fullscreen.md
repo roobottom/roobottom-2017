@@ -1,5 +1,5 @@
 ---
-title: Fullscreen module
+title: Fullscreen
 data:
   dummyDiv: '<div class="test">Container contents. <a href="#">Close fullscreen</a></div>'
 ---

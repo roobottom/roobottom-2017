@@ -1,5 +1,5 @@
 ---
-title: Page container
+title: Page
 data:
   dummyDiv: '<div class="test">Container contents</div>'
 ---

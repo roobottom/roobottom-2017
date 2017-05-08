@@ -1,5 +1,5 @@
 ---
-title: Introduction module
+title: Introduction
 dataFile:
   name: exampleintroduction.markdown
   markdown: true

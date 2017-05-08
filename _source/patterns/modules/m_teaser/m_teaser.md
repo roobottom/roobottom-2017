@@ -1,5 +1,5 @@
 ---
-title: 'Teaser module'
+title: Teaser
 data:
   title: 'Rebel Scum'
   url: '#'

@@ -1,0 +1,16 @@
+{% macro m_collection(title,items,linkbase) %}
+  <div class="m_collection" id="collection-{{title|lower}}">
+    <h3 class="m_collection__title">
+      <a href="#collection-{{title|lower}}" class="m_collection__titleLink">{{ title }}</a>
+    </h3>
+    <ul class="m_collection__items" role="menubar">
+    {% for item in items %}
+        <li class="m_collection__item">
+          <a href="/{{linkbase}}{{item.name}}" class="m_collection__link" role="menuitem">
+            {% if item.niceName %}{{item.niceName}}{% else %}{{item.name}}{% endif %}
+          </a>
+        </li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}

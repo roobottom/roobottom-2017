@@ -1,5 +1,5 @@
 ---
-title: Header container
+title: Header
 data:
   dummyDiv: '<div class="test">Container contents</div>'
 ---

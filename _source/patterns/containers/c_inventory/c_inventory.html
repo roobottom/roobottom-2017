@@ -1,0 +1,12 @@
+{% macro c_inventory(toc,contents) %}
+  <div class="c_inventory">
+    <div class="c_inventory__content">
+      <div class="c_inventory__toc">{{toc}}</div>
+      <div class="c_inventory__items">
+        {% for content in contents -%}
+        {{ content }}
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
