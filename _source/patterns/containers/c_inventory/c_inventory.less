@@ -2,25 +2,33 @@
 
   &__content {
     #layout > .max;
-    #breakpoint > .med({
-      display: flex;
-      align-content: stretch;
-    });
+    @supports (display:grid) or (display:-ms-grid) {
+      #breakpoint > .med({
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-column-gap: unit(@gutter/@base,rem);
+      });
+
+      .c_inventory__toc,
+      .c_inventory__items {
+        float: none;
+        width: auto;
+      }
+
+    }
+
   }
 
-  &__toc {
-    flex-grow: 1;
-    padding: unit(@gutter/@base,rem) 0;
-  }
+  #breakpoint > .med({
+    &__toc {
+      width: 20%;
+      float: left;
+    }
+    &__items {
+      width: 70%;
+      float: right;
+    }
+  });
 
-  &__items {
-    flex-grow: 2;
-    padding: unit(@gutter/@base,rem);
-    #breakpoint > .med ({
-      max-width: 70%;
-    });
-  }
-
-
-  background-color: darken(@c_prose_bg,4%);
+  padding: unit(@gutter/@base,rem) 0;
 }

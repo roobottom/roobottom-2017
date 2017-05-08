@@ -2,15 +2,22 @@
 
   #breakpoint > .med({
     text-align: center;
+    &--align-start,
+    &--align-start-bg-light {
+      text-align: left;
+    }
   });
 
 
   #m_prose > #default > .spacing(@top:0;);
   color: @c_text;
 
-  &--bg-light {
+  &--bg-light,
+  &--align-start-bg-light {
     color: @c_text_dark;
   }
+
+
 
   &__title {
     #m_prose > #heading > .base();
