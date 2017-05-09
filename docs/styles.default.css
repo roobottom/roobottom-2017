@@ -1519,17 +1519,21 @@ body.page-type-home {
 .m_fairground__square {
   stroke: rgba(122, 117, 255, 0.25);
 }
+.m_fairground--nuclear {
+  position: fixed;
+}
 .m_fairground--nuclear > path {
-  fill: #FFA000;
+  fill: #c6c5cd;
   animation: nuclear 1s ease-in-out 0s 6 alternate;
-  fill-opacity: 0;
+  fill-opacity: .2;
 }
 @keyframes nuclear {
   from {
-    fill-opacity: 0;
+    fill-opacity: .2;
   }
   to {
     fill-opacity: 1;
+    fill: #FFA000;
   }
 }
 .m_pointer {
