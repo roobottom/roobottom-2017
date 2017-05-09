@@ -1519,6 +1519,9 @@ body.page-type-home {
 .m_fairground__square {
   stroke: rgba(122, 117, 255, 0.25);
 }
+.m_fairground--nuclear > path {
+  fill: #373615;
+}
 .m_pointer {
   display: -ms-flexbox;
   display: flex;

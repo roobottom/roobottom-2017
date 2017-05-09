@@ -18,6 +18,9 @@
 {% set textModifier %}{% if page.modifier and page.modifier != '' %}bg-{{page.modifier}}{% else %}bg-light{% endif %}{% endset %}
 
 {% block content %}
+{% if page.fairground %}
+{{ m_fairground(page.fairground) }}
+{% endif %}
 {{ c_page([
     m_pageTitle(page.title,date=page.date,humanDate=page.humanDate,modifier=textModifier),
     c_grid([
