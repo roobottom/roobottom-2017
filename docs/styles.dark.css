@@ -1520,7 +1520,17 @@ body.page-type-home {
   stroke: rgba(205, 208, 210, 0.1);
 }
 .m_fairground--nuclear > path {
-  fill: #373615;
+  fill: #FFA000;
+  animation: nuclear 1s ease-in-out 0s 6 alternate;
+  fill-opacity: 0;
+}
+@keyframes nuclear {
+  from {
+    fill-opacity: 0;
+  }
+  to {
+    fill-opacity: 1;
+  }
 }
 .m_pointer {
   display: -ms-flexbox;
