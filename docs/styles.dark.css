@@ -86,7 +86,8 @@ img {
   display: block;
 }
 .patternExample {
-  outline: 1px dashed #8D007C;
+  outline: 1px dashed #26A2FF;
+  padding: 1.9375rem;
 }
 body {
   font-family: 'Opensans', sans-serif;
