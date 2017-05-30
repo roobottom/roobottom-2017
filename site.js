@@ -12,28 +12,18 @@ module.exports = {
       url: '/articles',
       title: 'Articles',
       type: 'article'
+    }
+  ],
+  footer: [
+    {
+      url: '/patterns',
+      title: 'Pattern library',
+      type: 'pattern'
     },
     {
       url: '/tags',
       title: 'Tags',
       type: 'tag'
-    },
-    {
-      url: '/patterns',
-      title: 'Pattern library',
-      type: 'pattern'
-    }
-  ],
-  social: [
-    {
-      url: 'https://github.com/roobottom',
-      title: 'Github',
-      icon: 'github'
-    },
-    {
-      url: 'https://twitter.com/roobottom',
-      title: 'Twitter',
-      icon: 'twitter'
     }
   ],
   articles: {

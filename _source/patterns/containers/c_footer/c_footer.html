@@ -1,0 +1,12 @@
+{% macro c_footer(modules,modifier) %}
+  <footer class="c_footer{% if modifier %} c_footer--{{modifier}}{% endif %}">
+    <div class="c_footer__content">
+      {% for module in modules -%}
+        {{module}}
+      {%- endfor %}
+      <div class="c_footer__copyright">
+        &copy; Jon J Roobottom
+      </div>
+    </div>
+  </footer>
+{% endmacro %}

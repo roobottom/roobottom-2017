@@ -22,6 +22,7 @@
 {% from "patterns/containers/c_grid/c_grid.html" import c_grid %}
 {% from "patterns/containers/c_aside/c_aside.html" import c_aside %}
 {% from "patterns/containers/c_inventory/c_inventory.html" import c_inventory %}
+{% from "patterns/containers/c_footer/c_footer.html" import c_footer %}
 <!doctype html>
 <html lang="en">
     <head>
@@ -39,11 +40,17 @@
           m_siteHeader(),
           m_navigation(site.menu,'main'),
           m_menuControl(state='closed',target='#main-menu')
-        ])
+        ],page.type)
       }}
 
       {% block content %}
       {% endblock %}
+
+      {{
+        c_footer([
+          m_navigation(site.footer,'inline-bleached')
+        ])
+      }}
 
 
       {{

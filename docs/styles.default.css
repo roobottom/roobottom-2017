@@ -223,6 +223,7 @@ body.page-type-home {
 }
 .m_navigation__items {
   padding: 0;
+  margin: 0;
 }
 .m_navigation__item {
   display: block;
@@ -254,12 +255,12 @@ body.page-type-home {
   margin-right: .5rem;
 }
 .m_navigation--inline-bleached .m_navigation__link {
-  color: white;
+  color: #353449;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(53, 52, 73, 0.5);
 }
 .m_navigation--inline-bleached .m_navigation__link:hover {
-  border-color: white;
+  border-color: #353449;
 }
 .m_navigation--main .m_navigation__items {
   display: -ms-flexbox;
@@ -1751,26 +1752,33 @@ body.page-type-home {
     max-width: none;
   }
 }
-.c_header--transparent {
-  background-color: transparent;
-}
-.c_header__content {
+.c_header {
   padding-left: 1.9375rem;
   padding-right: 1.9375rem;
+}
+@media screen and (min-width: 75.25rem) {
+  .c_header {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    max-width: 73.3125rem;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .c_header--home .c_header__content {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    max-width: 43.375rem;
+  }
+}
+.c_header__content {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
   justify-content: flex-end;
   -ms-flex-align: center;
   align-items: center;
-}
-@media screen and (min-width: 75.25rem) {
-  .c_header__content {
-    padding-left: 0;
-    padding-right: 0;
-    margin: 0 auto;
-    max-width: 73.3125rem;
-  }
 }
 .c_header__content > *:first-child {
   margin-right: auto;
@@ -1847,7 +1855,8 @@ body.page-type-home {
 }
 @media screen and (min-width: 44rem) {
   .c_grid--prose {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     margin: 0 auto;
     max-width: 43.375rem;
   }
@@ -1905,6 +1914,37 @@ body.page-type-home {
   .c_inventory__items {
     width: 70%;
     float: right;
+  }
+}
+.c_footer {
+  padding-left: 1.9375rem;
+  padding-right: 1.9375rem;
+  padding-bottom: 1.9375rem;
+}
+@media screen and (min-width: 75.25rem) {
+  .c_footer {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    max-width: 73.3125rem;
+  }
+}
+.c_footer__content {
+  border-top: 1px solid rgba(53, 52, 73, 0.3);
+  padding-top: 0.96875rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+@media screen and (min-width: 44rem) {
+  .c_footer__content {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    max-width: 43.375rem;
   }
 }
 
