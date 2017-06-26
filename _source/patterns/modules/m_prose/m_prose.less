@@ -19,7 +19,7 @@
       background-color: contrast(@foreground, @color, darken(@color, 30%));
     }
 
-    .size(@min: 17; @max: 19;) {
+    .size(@min: 19; @max: 21;) {
 
       @lh_min: (@lower_lh - 17) + @min; //should be == @lower_lh at default size;
       @lh_max: (@upper_lh - 19) + @max; //should be == @lh_max at default size;
@@ -178,7 +178,8 @@
       font-weight: bold;
       -webkit-initial-letter: 2;
       inital-letter: 2;
-      margin-right: .5em;
+      margin-right: .1em;
+      color: @c_1;
     }
   }
 
