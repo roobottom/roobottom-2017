@@ -574,16 +574,6 @@ body.page-type-home {
     line-height: 1.57142857;
   }
 }
-@supports (inital-letter: 2) or (-webkit-initial-letter: 2) {
-  .m_prose p:first-child::first-letter {
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    -webkit-initial-letter: 2;
-    inital-letter: 2;
-    margin-right: .1em;
-    color: #26A2FF;
-  }
-}
 .m_prose h2 + p,
 .m_prose h3 + p {
   margin-top: 0.40625rem;
@@ -921,6 +911,7 @@ body.page-type-home {
 .m_prose abbr {
   border-bottom: 1px dotted #8D007C;
   cursor: help;
+  text-decoration: none;
 }
 .m_prose sub {
   vertical-align: sub;

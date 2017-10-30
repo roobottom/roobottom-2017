@@ -172,17 +172,6 @@
     #m_prose > #default > .size;
   }
 
-  p:first-child::first-letter {
-    @supports (inital-letter: 2) or (-webkit-initial-letter: 2) {
-      font-family: 'Raleway', sans-serif;
-      font-weight: bold;
-      -webkit-initial-letter: 2;
-      inital-letter: 2;
-      margin-right: .1em;
-      color: @c_1;
-    }
-  }
-
   h2 + p,
   h3 + p {
     #m_prose > #default > .spacing(@top: 0.25;)
@@ -394,6 +383,7 @@
   abbr {
     border-bottom: 1px dotted @c_2;
     cursor: help;
+    text-decoration: none;
   }
 
   //sub and sup

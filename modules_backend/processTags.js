@@ -36,7 +36,7 @@ module.exports = function(basename, count, site) {
     //create a page for each tag.
     postsWithTag.forEach((tag, index) => {
       var file = new gutil.File({
-        path: './tags/' + tag.name.replace(' ','-') + '/index.html',
+        path: './tags/' + tag.name.replace(/ /g, '-') + '/index.html',
         contents: new Buffer('')
       });
       file.page = {
