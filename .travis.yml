@@ -8,5 +8,11 @@ before_script:
   - chmod 755 ./travis/push.sh
 script:
   - "gulp build"
-after_success:
-  - ./travis/push.sh
+deploy:
+  provider: pages
+  local_dir: docs
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  repo: roobottom-2017-live
+  on:
+    branch: master
