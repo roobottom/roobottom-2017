@@ -1,8 +1,8 @@
 ---
 title: Introduction
 dataFile:
-  name: exampleintroduction.markdown
+  name: eg-intro.txt
   markdown: true
-  key: copy
+  key: example
 ---
-{{m_introduction(copy)}}
+{{m_introduction(example)}}
