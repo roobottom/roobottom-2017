@@ -1,27 +1,16 @@
 #!/bin/sh
 
-setup_git() {
-  git config --global user.email "travis@travis-ci.org"
-  git config --global user.name "Travis CI"
-}
-
-copy_generated_files() {
-  rsync -r --exclude=.git ./docs/ ~/roobottom-deploy/
-  cd ~/roobottom-deploy
-}
-
-commit_website_files() {
+if [ -n "$GH_TOKEN" ]; then
+  cd "$TRAVIS_BUILD_DIR"
+  # This generates a `web` directory containing the website.
+  make web
+  cd web
   git init
+  git checkout master
   git add .
-  git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
-}
-
-upload_files() {
-  git remote add master https://$GH_PUSH_TOKEN@github.com/roobottom/roobottom-2017-live.git &2> /dev/null
-  git push --set-upstream master master
-}
-
-setup_git
-copy_generated_files
-commit_website_files
-upload_files
+  git -c user.name='travis' -c user.email='travis' commit -m init
+  # Make sure to make the output quiet, or else the API token will leak!
+  # This works because the API key can replace your password.
+  git push -f -q https://roobottom:$GH_TOKEN@github.com/roobottom/roobottom-2017-live &2>/dev/null
+  cd "$TRAVIS_BUILD_DIR"
+fi
