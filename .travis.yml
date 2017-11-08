@@ -13,6 +13,6 @@ deploy:
   local_dir: docs
   skip_cleanup: true
   github_token: $GH_TOKEN
-  repo: roobottom-2017-live
+  repo: roobottom/roobottom-2017-live
   on:
     branch: master
