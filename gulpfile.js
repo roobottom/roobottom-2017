@@ -25,6 +25,8 @@ const renderSmartTags = require('./modules_backend/renderSmartTags');
 //patterns
 const updatePatternsObject = require('./modules_backend/updatePatternsObject');
 const renderPatternExamples = require('./modules_backend/renderPatternExamples');
+//images
+const processImage = require('./modules_backend/processImage');
 
 const site = require('./site');
 
@@ -51,10 +53,17 @@ var mdOptions = {
   }
 }
 
-/*
-01. Articles
+/* 01. Image meta
 */
-gulp.task('articles:process', () => {
+gulp.task('image:meta',() => {
+  return gulp.src(site.images_folder)
+  .pipe(processImage())
+});
+
+/*
+02. Articles
+*/
+gulp.task('articles:process', ['image:meta'], () => {
   return gulp.src(site.articles.source)
     .pipe($.fm({property: 'page', remove: true}))
     .pipe(updatePostsObject(site))
@@ -89,7 +98,7 @@ gulp.task('articles:tags', ['articles:archives'], () => {
 });
 
 /*
-02. Pattern Library
+03. Pattern Library
 */
 gulp.task('pattern-library', ['articles:tags'], () => {
   return gulp.src('./_source/patterns/**/*.md')
@@ -107,7 +116,7 @@ gulp.task('pattern-library', ['articles:tags'], () => {
 });
 
 /*
-03. Pages
+04. Pages
 */
 gulp.task('pages', ['pattern-library'], () => {
   return gulp.src('./_source/pages/*.md')
@@ -150,12 +159,13 @@ gulp.task('drafts',()=>{
     .pipe(gulp.dest(site.publish_folder))
 });
 
-
 /*
 --. images
 */
-gulp.task('images:fullsize',() => {
+gulp.task('images:medium',() => {
+  let imgDest = site.publish_folder + '/images';
   return gulp.src(site.images_folder)
+  .pipe($.newer(imgDest))
   .pipe($.if(src => {
     let filename = path.parse(src.path);
     if (filename.ext == '.jpg' || filename.ext == '.jpeg')
@@ -163,17 +173,43 @@ gulp.task('images:fullsize',() => {
     },
     parallel(
       $.resize({
-          width : 680,
-          noProfile: true,
-          crop : false,
-          upscale : false
+          width : 740,
+          noProfile: true
         })
     )
   ))
-  .pipe(gulp.dest(site.publish_folder + '/images'))
+  .pipe(gulp.dest(imgDest))
 });
 
-gulp.task('images',['images:fullsize'])
+gulp.task('images:large',() => {
+  let imgDest = site.publish_folder + '/images';
+  return gulp.src(site.images_folder)
+  .pipe($.if(src => {
+    let filename = path.parse(src.path);
+    if (filename.ext == '.jpg' || filename.ext == '.jpeg')
+      return true;
+    },
+    $.rename((src)=> {
+      src.basename = 'large_' + src.basename
+    })
+  ))
+  .pipe($.newer(imgDest))
+  .pipe($.if(src => {
+    let filename = path.parse(src.path);
+    if (filename.ext == '.jpg' || filename.ext == '.jpeg')
+      return true;
+    },
+    parallel(
+      $.resize({
+          width : 1600,
+          noProfile: true
+        })
+    )
+  ))
+  .pipe(gulp.dest(imgDest))
+});
+
+gulp.task('images',['images:medium','images:large']);
 
 /*
 --. icons
@@ -248,12 +284,12 @@ gulp.task('static',() => {
 
 //the default task. This will call the first step in the build-chain of pages
 //pages and archives MUST be run in a set order.
-gulp.task('default',['server','styles','static','drafts','icons','js','watch']);
+gulp.task('default',['server','styles','static','drafts','icons','images','js','watch']);
 
 //build task. This does everything for one build.
-gulp.task('build',['pages','styles','static','drafts','icons','js']);
+gulp.task('build',['pages','styles','static','drafts','icons','images','js']);
 
 //watchers
 gulp.task('watch',['pages'],()=>{
-  gulp.watch(['./_source/**/*'],['pages','styles','static','drafts','icons','js']);
+  gulp.watch(['./_source/**/*'],['pages','styles','static','drafts','images','icons','js']);
 });

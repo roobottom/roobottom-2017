@@ -34,3 +34,20 @@ Where:
 ### Dummy data for a pattern
 
 There is an API that enables passing-in of dummy data to the patterns via the pattern description file. This is done via `YMAL` front-matter in the description file.
+
+## Smart Tags API
+
+SmartTags allow output of patterns within posts. Supported patterns are:
+
+* Figure
+* Masthead
+
+### Figure
+
+Use the format `(figure set:setName,class:className)`
+
+* *Span-both* extends the image to 1600px on either side: `span-both`
+* *Poke-both* extends the image to 810px on either side: `poke-both`
+* *Pull-both* extends the image to 1000px on either side: `pull-both`
+* *Pull-left* floats image left aligned with a pull-both image: `pull-left`
+* *Pull-left* floats image right aligned with a pull-both image: `pull-right`

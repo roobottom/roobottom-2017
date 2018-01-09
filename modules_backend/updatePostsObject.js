@@ -10,6 +10,7 @@ const through = require('through2');
 const moment = require('moment');
 const marked = require('marked');
 const _ = require('lodash');
+const fs = require('fs');
 
 //remove any unwanted tags during md>html conversion with marked.
 var renderer = new marked.Renderer();
@@ -38,14 +39,6 @@ module.exports = function(site) {
     //extract the id from the file path
     let fileobj = path.parse(file.path);
     file.page.id = fileobj.name;
-
-    //extract the first image as the cover
-    if(file.page.images) {
-      var fullImage = file.page.images[0].image;
-      var smallImage = fullImage.split('.jpg');
-      file.page.cover = '/images/articles/' + file.page.id + '/' + smallImage[0] + '-small.jpg';
-    }
-
 
     file.page.category = fileobj.dir.split('/').slice(-1)[0];
     file.page.humanDate = moment(file.page.date).format('dddd, MMMM Do YYYY');

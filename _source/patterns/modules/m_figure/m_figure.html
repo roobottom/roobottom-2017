@@ -1,8 +1,9 @@
 {% macro m_figure(images,path,modifier) %}
 <figure class="m_figure{% if modifier %} m_figure--{{modifier}}{% endif %}">
+  {% if modifier == 'span-both' %}{% set imageMod = 'large_' %}{% endif %}
   {% for i in images %}
-    <a href="{{path}}/{{i.image}}" class="m_figure__link">
-      <img src="{{path}}/{{i.image}}" class="m_figure__image"{% if i.caption %} alt="{{i.caption}}"{% endif %}/>
+    <a href="{{path}}/large_{{i.image}}" class="m_figure__link">
+      <img src="{{path}}/{{imageMod}}{{i.image}}" class="m_figure__image"{% if i.caption %} alt="{{i.caption}}"{% endif %} data-m_figure__width="{{i.width}}" data-m_figure__height="{{i.height}}"/>
     </a>
     {% if i.caption %}
       <figcaption class="m_figure__caption">{{i.caption}}</figcaption>

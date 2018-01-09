@@ -27,11 +27,25 @@ module.exports = function() {
       while(match = regexp.exec(contents)) {
         let tagOpts = getTagOptions(match[1]);
 
+
         //figures and images
         if(tags[i] == 'figure' || tags[i] == 'gallery') {
           var figure_object = {images:[],page:file.page};
+
           for(let i in file.page.images) {
             if(file.page.images[i].set === tagOpts.set) {
+
+              //update the images object with width and height
+              let fileContents = fs.readFileSync(path.join(__dirname,'../_images/meta.js'), 'utf-8');
+
+              JSON.parse(fileContents).forEach(item => {
+                if(file.page.images[i].image == item.image) {
+                  file.page.images[i].width = item.width;
+                  file.page.images[i].height = item.height;
+                };
+              });
+
+              //push figure object
               figure_object["images"].push(file.page.images[i]);
               if(tagOpts.class) {
                 figure_object["class"] = tagOpts.class;

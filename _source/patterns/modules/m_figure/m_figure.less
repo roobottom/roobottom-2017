@@ -11,19 +11,15 @@
     display: block;
     color: @c_grey;
     font-style: italic;
+    text-align: center;
     #m_prose > #default > .size(@max: 14; @min: 12;);
     #m_prose > #default > .spacing(@top: .25; );
-
     margin-left: unit(@gutter/@base,rem);
     margin-right: unit(@gutter/@base,rem);
-    #breakpoint > .med({
-      margin-left: 0;
-      margin-right: 0;
-    });
   }
 
   &__image {
-    max-width: 100%;
+    width: 100%;
     display: block;
   }
 
@@ -31,73 +27,87 @@
     margin-top: 1px;
   }
 
+  @med_pull: unit(@bp_prose/@base,rem);
 
-  //pull both
+  @wideish_image: 810;
+  @wideish_pull: unit((-1 * ((@wideish_image - @bp_prose) / 2))/@base,rem);
+
+  @wide_image: 1000;
+  @wide_pull: unit((-1 * ((@wide_image - @bp_prose) / 2))/@base,rem);
+
+  @extra_wide_image: 1600;
+  @extra_wide_pull: unit((-1 * ((@extra_wide_image - @bp_prose) / 2))/@base,rem);
+
+  //poke, pull and span
+  &--poke-both
+  &--pull-both,
+  &--span-both {
+    #breakpoint > .med({
+      margin-left: ~"calc(-100vw / 2 + @{med_pull} / 2)";
+      margin-right: ~"calc(-100vw / 2 + @{med_pull} / 2)";
+    });
+  }
+
+  &--poke-both {
+    @media screen and (min-width: unit(@wideish_image,px)) {
+      margin-left: @wideish_pull;
+      margin-right: @wideish_pull;
+    }
+  }
+
   &--pull-both {
-    #breakpoint > .med({
-      margin-left: unit(-1 * @gutter/@base,rem);
-      margin-right: unit(-1 * @gutter/@base,rem);
-    });
-  }
-
-  &--pull-both &__caption {
-    #breakpoint > .med({
-      margin-left: unit(@gutter/@base,rem);
-      margin-right: unit(@gutter/@base,rem);
-    });
-  }
-
-
-
-  //pull right
-  &--pull-right,
-  &--always-pull-right {
-    margin-left: 0;
-    margin-right: 0;
-    @media screen and (min-width: 420px) {
-      margin: 0 unit(-1 * @gutter/@base,rem) unit(@gutter/@base,rem) unit(@gutter/@base,rem);
-      float: right;
-      max-width: 50%;
-    }
-    @media screen and (min-width: 690px) {
-      max-width: 34%;
+    @media screen and (min-width: unit(@wide_image,px)) {
+      margin-left: @wide_pull;
+      margin-right: @wide_pull;
     }
   }
-  &--always-pull-right &__caption,
+
+  &--span-both {
+    @media screen and (min-width: unit(@extra_wide_image,px)) {
+      margin-left: @extra_wide_pull;
+      margin-right: @extra_wide_pull;
+    }
+  }
+
+  &--pull-left &__image,
+  &--pull-right &__image {
+    width: auto;
+    margin: auto;
+  }
+
+  &--pull-left &__caption,
   &--pull-right &__caption {
-    margin-left: 0;
-  }
-  &--always-pull-right {
-    margin: 0 unit(-1 * @gutter/@base,rem) unit(@gutter/@base,rem) unit(@gutter/@base,rem);
-    float: right;
-    max-width: 50%;
+    margin-bottom: 0;
   }
 
-  //pull left
-  &--pull-left,
-  &--always-pull-left {
-    margin-left: 0;
-    margin-right: 0;
-    @media screen and (min-width: 420px) {
-      margin: 0  unit(@gutter/@base,rem) unit(@gutter/@base,rem) unit(-1 * @gutter/@base,rem);
+  &--pull-left {
+    #breakpoint > .med({
+      margin-left: ~"calc(-100vw / 2 + @{med_pull} / 2)";
+      margin-right: unit(@gutter/@base,rem);
+      float: left;
+      max-width: 50%;
+      padding-top: 10px; //align with top of text
+    });
+    @media screen and (min-width: unit(@wide_image,px)) {
+      margin-left: @wide_pull;
+      max-width: 63%;
+    }
+  }
+
+  &--pull-right {
+    width: auto;
+    #breakpoint > .med({
+      margin-right: ~"calc(-100vw / 2 + @{med_pull} / 2)";
+      margin-left: unit(@gutter/@base,rem);
       float: right;
       max-width: 50%;
+      padding-top: 10px; //align with top of text
+    });
+    @media screen and (min-width: unit(@wide_image,px)) {
+      margin-right: @wide_pull;
+      max-width: 63%;
     }
-    @media screen and (min-width: 690px) {
-      max-width: 34%;
-    }
   }
-  &--always-pull-left &__caption,
-  &--pull-left &__caption {
-    margin-right: 0;
-  }
-  &--always-pull-left {
-    margin: 0  unit(@gutter/@base,rem) unit(@gutter/@base,rem) unit(-1 * @gutter/@base,rem);
-    float: right;
-    max-width: 50%;
-  }
-
-
 
 
 
