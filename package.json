@@ -45,7 +45,7 @@
     "pluralize": "^4.0.0",
     "remarkable": "^1.7.1",
     "svg.js": "^2.4.0",
-    "webpack": "beta",
+    "webpack": "^3.1.0",
     "webpack-stream": "^3.2.0"
   }
 }
