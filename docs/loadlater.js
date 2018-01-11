@@ -190,11 +190,25 @@ if(typeof module !== "undefined" && typeof module.exports !== "undefined") {
 
 const c_fullscreen = __webpack_require__(4);
 const m_switcher = __webpack_require__(5);
+const m_figure = __webpack_require__(6);
 const utils = __webpack_require__(0);
 
 (function(w, d, undefined){
   c_fullscreen(w,d);
   m_switcher(w,d);
+  m_figure(w,d);
+
+  //gauges tracking script
+  var _gauges = _gauges || [];
+  var t   = d.createElement('script');
+  t.type  = 'text/javascript';
+  t.async = true;
+  t.id    = 'gauges-tracker';
+  t.setAttribute('data-site-id', '5a55f8e56eb5fb659f003fa9');
+  t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+  t.src = 'https://d2fuc4clr7gvcn.cloudfront.net/track.js';
+  var s = d.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(t, s);
 }(window,document));
 
 
@@ -280,6 +294,53 @@ module.exports = function(w,d) {
       utils.removeClass(el,'m_switcher--is-active');
     });
   };
+
+};
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const util = __webpack_require__(0);
+
+module.exports = function(w,d) {//window,document
+  var galleries = d.querySelectorAll('[data-gallery]');//select all galleries on this page
+  var galleryItem = '[data-gallery-item]'; //the selector for each gallery item
+
+  Array.prototype.forEach.call(galleries, function(gallery, i){
+    let items = gallery.querySelectorAll(galleryItem);
+    let imagenum = items.length;
+    let totalwidth = gallery.offsetWidth;
+    let usedwidth = 0;
+    let ratios = [];
+    let ratiosum = 0;
+
+    Array.prototype.forEach.call(items, function(item, i){
+      ratios.push(item.getAttribute('data-width') / item.getAttribute('data-height'));
+      ratiosum += ratios[ratios.length - 1];
+    });
+
+    let ratioavg = ratiosum / imagenum;
+    let totalpct = Math.floor((usedwidth / totalwidth) * 100) / 100;
+    if (totalpct === 0) { totalpct = 1; }
+    let eachpct = 1 / imagenum;
+
+    Array.prototype.forEach.call(items, function(item, i){
+      item.style.width = (((ratios[i] / ratioavg) * eachpct) * 100) + '%';
+    });
+
+
+    //loop through each item and get it's ratio
+    // Array.prototype.forEach.call(items, function(item, i){
+    //   let width = parseInt(item.getAttribute('data-width'));
+    //   let height = parseInt(item.getAttribute('data-height'));
+    //   ratios.push(width/height);
+    //   ratiosum += ratios[ratios.length - 1];
+    // });
+    // var avg = ratiosum/items.length;
+    // console.log(ratios,ratiosum,totalItems,avg);
+  });
 
 };
 

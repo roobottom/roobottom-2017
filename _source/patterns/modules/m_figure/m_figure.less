@@ -10,7 +10,6 @@
   &__caption {
     display: block;
     color: @c_grey;
-    font-style: italic;
     text-align: center;
     #m_prose > #default > .size(@max: 14; @min: 12;);
     #m_prose > #default > .spacing(@top: .25; );
@@ -18,13 +17,22 @@
     margin-right: unit(@gutter/@base,rem);
   }
 
+  &__captionNumber {
+    color: lighten(@c_grey,20%);
+  }
+
+  &__captionNumber + &__captionNumber {
+    margin-left: unit(@gutter/4/@base,rem);
+  }
+
   &__image {
     width: 100%;
     display: block;
   }
 
-  &__image + &__image {
+  &__item + &__item > &__image {
     margin-top: 1px;
+    #breakpoint > .med({ margin-top: 0;});
   }
 
   @med_pull: unit(@bp_prose/@base,rem);
@@ -109,6 +117,17 @@
     }
   }
 
-
+  //galleries
+  &__gallery {
+    #breakpoint > .med({
+      display: flex;
+      .m_figure__item {
+        margin-right: unit(@gutter/2/@base,rem);
+      }
+      .m_figure__item:last-of-type {
+        margin-right: 0;
+      }
+    });
+  }
 
 }

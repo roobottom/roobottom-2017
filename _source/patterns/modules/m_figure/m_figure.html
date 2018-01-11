@@ -1,13 +1,23 @@
 {% macro m_figure(images,path,modifier) %}
 <figure class="m_figure{% if modifier %} m_figure--{{modifier}}{% endif %}">
   {% if modifier == 'span-both' %}{% set imageMod = 'large_' %}{% endif %}
+  {% if images | length > 1 %}{% set isGallery = true %}{% endif %}
+  {% if isGallery %}<div class="m_figure__gallery" data-gallery>{% endif %}
   {% for i in images %}
-    <a href="{{path}}/large_{{i.image}}" class="m_figure__link">
-      <img src="{{path}}/{{imageMod}}{{i.image}}" class="m_figure__image"{% if i.caption %} alt="{{i.caption}}"{% endif %} data-m_figure__width="{{i.width}}" data-m_figure__height="{{i.height}}"/>
+    <a href="{{path}}/large_{{i.image}}" class="m_figure__item"{% if isGallery %} data-gallery-item data-width="{{i.width}}" data-height="{{i.height}}"{% endif %}>
+      <img src="{{path}}/{{imageMod}}{{i.image}}" class="m_figure__image"{% if i.caption %} alt="{{i.caption}}"{% endif %}/>
     </a>
-    {% if i.caption %}
+    {% if i.caption and not isGallery %}
       <figcaption class="m_figure__caption">{{i.caption}}</figcaption>
     {% endif %}
   {% endfor %}
+  {% if isGallery %}
+  </div>
+    <figcaption class="m_figure__caption">
+    {% for i in images %}
+      {% if i.caption %}<span class="m_figure__captionNumber">{{loop.index}}.</span> {{i.caption}} {% endif %}
+    {% endfor %}
+    </figcaption>
+  {% endif %}
 </figure>
 {% endmacro %}

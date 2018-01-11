@@ -335,7 +335,6 @@ body.page-type-home {
 .m_figure__caption {
   display: block;
   color: #9ba1a5;
-  font-style: italic;
   text-align: center;
   font-size: 0.75em;
   line-height: 1.75;
@@ -361,12 +360,23 @@ body.page-type-home {
     margin-bottom: 1.9375rem;
   }
 }
+.m_figure__captionNumber {
+  color: #d1d3d6;
+}
+.m_figure__captionNumber + .m_figure__captionNumber {
+  margin-left: 0.484375rem;
+}
 .m_figure__image {
   width: 100%;
   display: block;
 }
-.m_figure__image + .m_figure__image {
+.m_figure__item + .m_figure__item > .m_figure__image {
   margin-top: 1px;
+}
+@media screen and (min-width: 44rem) {
+  .m_figure__item + .m_figure__item > .m_figure__image {
+    margin-top: 0;
+  }
 }
 @media screen and (min-width: 44rem) {
   .m_figure--poke-both .m_figure--pull-both,
@@ -433,6 +443,18 @@ body.page-type-home {
   .m_figure--pull-right {
     margin-right: -9.5625rem;
     max-width: 63%;
+  }
+}
+@media screen and (min-width: 44rem) {
+  .m_figure__gallery {
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .m_figure__gallery .m_figure__item {
+    margin-right: 0.96875rem;
+  }
+  .m_figure__gallery .m_figure__item:last-of-type {
+    margin-right: 0;
   }
 }
 .m_prose {
@@ -580,15 +602,18 @@ body.page-type-home {
     margin-bottom: 1.9375rem;
   }
 }
-.m_prose a {
+.m_prose p > a,
+.m_prose li > a {
   color: #008af2;
   text-decoration: none;
   border-bottom: 1px solid rgba(38, 162, 255, 0.2);
 }
-.m_prose a:hover {
+.m_prose p > a:hover,
+.m_prose li > a:hover {
   background-color: rgba(38, 162, 255, 0.1);
 }
-.m_prose a:active {
+.m_prose p > a:active,
+.m_prose li > a:active {
   outline: 1px solid #26A2FF;
   background-color: rgba(38, 162, 255, 0.1);
 }
