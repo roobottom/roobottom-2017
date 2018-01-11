@@ -25,17 +25,6 @@ module.exports = function(w,d) {//window,document
     Array.prototype.forEach.call(items, function(item, i){
       item.style.width = (((ratios[i] / ratioavg) * eachpct) * 100) + '%';
     });
-
-
-    //loop through each item and get it's ratio
-    // Array.prototype.forEach.call(items, function(item, i){
-    //   let width = parseInt(item.getAttribute('data-width'));
-    //   let height = parseInt(item.getAttribute('data-height'));
-    //   ratios.push(width/height);
-    //   ratiosum += ratios[ratios.length - 1];
-    // });
-    // var avg = ratiosum/items.length;
-    // console.log(ratios,ratiosum,totalItems,avg);
   });
 
 };
