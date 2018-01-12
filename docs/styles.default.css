@@ -602,18 +602,18 @@ body.page-type-home {
     margin-bottom: 1.9375rem;
   }
 }
-.m_prose p > a,
-.m_prose li > a {
+.m_prose p a,
+.m_prose li a {
   color: #4942ff;
   text-decoration: none;
   border-bottom: 1px solid rgba(122, 117, 255, 0.2);
 }
-.m_prose p > a:hover,
-.m_prose li > a:hover {
+.m_prose p a:hover,
+.m_prose li a:hover {
   background-color: rgba(122, 117, 255, 0.1);
 }
-.m_prose p > a:active,
-.m_prose li > a:active {
+.m_prose p a:active,
+.m_prose li a:active {
   outline: 1px solid #7A75FF;
   background-color: rgba(122, 117, 255, 0.1);
 }
