@@ -193,22 +193,20 @@ const m_switcher = __webpack_require__(5);
 const m_figure = __webpack_require__(6);
 const utils = __webpack_require__(0);
 
+var clicky_site_ids = [101098446];
+
 (function(w, d, undefined){
   c_fullscreen(w,d);
   m_switcher(w,d);
   m_figure(w,d);
 
-  //gauges tracking script
-  var _gauges = _gauges || [];
-  var t   = d.createElement('script');
-  t.type  = 'text/javascript';
-  t.async = true;
-  t.id    = 'gauges-tracker';
-  t.setAttribute('data-site-id', '5a55f8e56eb5fb659f003fa9');
-  t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
-  t.src = 'https://d2fuc4clr7gvcn.cloudfront.net/track.js';
-  var s = d.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(t, s);
+  //clicky tracking script
+  var s = d.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//static.getclicky.com/js';
+  ( d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0] ).appendChild(s);
+
 }(window,document));
 
 
