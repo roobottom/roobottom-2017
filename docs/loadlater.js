@@ -199,14 +199,6 @@ var clicky_site_ids = [101098446];
   c_fullscreen(w,d);
   m_switcher(w,d);
   m_figure(w,d);
-
-  //clicky tracking script
-  var s = d.createElement('script');
-  s.type = 'text/javascript';
-  s.async = true;
-  s.src = '//static.getclicky.com/js';
-  ( d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0] ).appendChild(s);
-
 }(window,document));
 
 
