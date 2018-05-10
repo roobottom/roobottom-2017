@@ -1226,6 +1226,13 @@ body.page-type-home {
     line-height: 1.57142857;
   }
 }
+.m_teaser__meta > p > a {
+  color: white;
+  text-decoration: underline;
+}
+.m_teaser--moved-notice .m_teaser__meta {
+  max-width: none;
+}
 .m_teaser__title {
   margin-top: 1.625rem;
   margin-bottom: 1.625rem;
@@ -1300,10 +1307,6 @@ body.page-type-home {
   .m_teaser__day {
     font-size: 1.375rem;
   }
-}
-.m_teaser__link {
-  text-decoration: none;
-  border-bottom: 2px solid;
 }
 .m_teaser__link:active {
   outline: 1px solid;
