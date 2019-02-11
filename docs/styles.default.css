@@ -1897,7 +1897,7 @@ body.page-type-home {
     max-width: 73.3125rem;
   }
 }
-@supports ((display: -ms-grid) or (display: grid)) or (display:-ms-grid) {
+@supports (display:grid) or (display:-ms-grid) {
   @media screen and (min-width: 44rem) {
     .c_inventory__content {
       display: -ms-grid;
