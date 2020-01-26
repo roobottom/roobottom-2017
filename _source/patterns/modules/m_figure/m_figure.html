@@ -15,7 +15,7 @@
   </div>
     <figcaption class="m_figure__caption">
     {% for i in images %}
-      {% if i.caption %}<span class="m_figure__captionNumber">{{loop.index}}.</span> {{i.caption}} {% endif %}
+      {% if i.caption %}<span class="m_figure__captionNumber">{{loop.index}}.</span> {{i.caption}} {% if not loop.last and i.caption | length > 50 %}<br>{% endif %}{% endif %}
     {% endfor %}
     </figcaption>
   {% endif %}
