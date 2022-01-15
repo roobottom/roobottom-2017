@@ -26,7 +26,7 @@
     "gulp-svg-sprite": "^1.3.6",
     "gulp-util": "^3.0.7",
     "lodash": "^4.17.2",
-    "marked": "^0.3.6",
+    "marked": "^4.0.10",
     "moment": "^2.17.1",
     "nunjucks": "^3.0.0",
     "through2": "^2.0.1"
